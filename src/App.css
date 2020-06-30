@@ -1,3 +1,6 @@
 .App {
-  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(256, 1fr);
+  grid-template-rows: repeat(144, 1fr);
+  height: 100vh;
 }

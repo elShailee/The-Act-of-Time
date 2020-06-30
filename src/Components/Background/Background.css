@@ -1,0 +1,5 @@
+#gameBackground {
+  background: #555;
+  grid-column: 1/257;
+  grid-row: 1/145;
+}
