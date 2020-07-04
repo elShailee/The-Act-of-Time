@@ -1,6 +1,55 @@
 .App {
-  display: grid;
-  grid-template-columns: repeat(256, 1fr);
-  grid-template-rows: repeat(144, 1fr);
+  width: 100%;
   height: 100vh;
+}
+
+#mapContainer {
+  width: 100%;
+  height: 100vh;
+  background-color: #777;
+}
+
+#upperLeftButtonsContainer {
+  background-color: turquoise;
+  height: calc(100% / 18 * 4);
+  width: calc(100% / 32 * 10);
+  position: absolute;
+  left: calc(100% / 32 * 0.5);
+  top: calc(100% / 18 * 0.5);
+}
+
+#characterInfoContainer {
+  width: calc(100% / 32 * 10);
+  height: calc(100% / 18 * 2.5);
+  background-color: slateblue;
+  position: absolute;
+  left: calc(100% / 32 * 11);
+  top: calc(100% / 18 * 0.2);
+}
+
+#upperRightButtonsContainer {
+  background-color: tan;
+  height: calc(100% / 18 * 4);
+  width: calc(100% / 32 * 8);
+  position: absolute;
+  right: calc(100% / 32 * 0.5);
+  top: calc(100% / 18 * 0.5);
+}
+
+#disastersContainer {
+  background-color: magenta;
+  height: calc(100% / 18 * 5);
+  width: calc(100% / 32 * 6);
+  position: absolute;
+  left: calc(100% / 32 * 0.5);
+  top: calc(100% / 18 * 6);
+}
+
+#bottomRightButtonsContainer {
+  background-color: mediumseagreen;
+  height: calc(100% / 18 * 4.5);
+  width: calc(100% / 32 * 3);
+  position: absolute;
+  right: calc(100% / 32 * 0.5);
+  bottom: calc(100% / 18 * 0.5);
 }
