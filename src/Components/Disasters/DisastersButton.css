@@ -1,0 +1,8 @@
+#disastersButton {
+  position: absolute;
+  width: calc(100% / 6 * 2);
+  height: 40%;
+  background-color: magenta;
+  border-radius: 50%;
+  border: 1px solid black;
+}

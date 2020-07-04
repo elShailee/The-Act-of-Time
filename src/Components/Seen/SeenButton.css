@@ -1,4 +1,10 @@
-#SeenButton {
-  background-color: cadetblue;
-  grid-row: 97/109;
+#seenButton {
+  position: absolute;
+  background-color: cornflowerblue;
+  width: 50%;
+  height: calc(100% / 3);
+  border-radius: 50%;
+  top: 0;
+  right: 0px;
+  border: 1px solid black;
 }

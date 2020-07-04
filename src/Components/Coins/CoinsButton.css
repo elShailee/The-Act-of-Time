@@ -1,0 +1,9 @@
+#coinsButton {
+  width: calc(100% / 9 * 2);
+  height: calc(100% / 3);
+  background-color: orange;
+  border: 1px solid black;
+  position: absolute;
+  left: calc(100% / 9 * 5);
+  top: 0;
+}
