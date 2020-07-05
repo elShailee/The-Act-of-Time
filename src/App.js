@@ -7,12 +7,15 @@ import CoinsButton from './Components/Coins/CoinsButton';
 import DisastersButton from './Components/Disasters/DisastersButton';
 import SeenButton from './Components/Seen/SeenButton';
 import CraftingButton from './Components/Crafting/CraftingButton';
+import Map from './Components/Map/Map';
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <div id="mapContainer"></div>
+        <div id="mapContainer">
+          <Map></Map>
+        </div>
 
         <div id="upperLeftButtonsContainer">
           <EnergyButton></EnergyButton>

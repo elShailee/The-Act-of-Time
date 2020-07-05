@@ -1,8 +1,8 @@
 #seenButton {
   position: absolute;
   background-color: cornflowerblue;
-  width: 50%;
-  height: calc(100% / 3);
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   top: 0;
   right: 0px;

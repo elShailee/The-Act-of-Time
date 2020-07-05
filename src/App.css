@@ -6,50 +6,55 @@
 #mapContainer {
   width: 100%;
   height: 100vh;
-  background-color: #777;
+  z-index: 0;
 }
 
 #upperLeftButtonsContainer {
-  width: calc(100% / 32 * 9);
-  height: calc(100% / 18 * 3);
+  width: 360px;
+  height: 120px;
   background-color: turquoise;
   position: absolute;
-  left: calc(100% / 32 * 0.5);
-  top: calc(100% / 18 * 0.5);
+  left: 20px;
+  top: 20px;
+  z-index: 2;
 }
 
 #characterInfoContainer {
-  width: calc(100% / 32 * 10);
-  height: calc(100% / 18 * 2.5);
+  width: 400px;
+  height: 100px;
   background-color: slateblue;
   position: absolute;
-  left: calc(100% / 32 * 11);
-  top: calc(100% / 18 * 0.2);
+  left: calc(50% - 200px);
+  top: calc(8px);
+  z-index: 1;
 }
 
 #upperRightButtonsContainer {
   background-color: tan;
-  width: calc(100% / 32 * 8);
-  height: calc(100% / 18 * 10);
+  width: 320px;
+  height: 400px;
   position: absolute;
-  right: calc(100% / 32 * 0.5);
-  top: calc(100% / 18 * 0.5);
+  right: 20px;
+  top: 20px;
+  z-index: 2;
 }
 
 #disastersContainer {
   background-color: pink;
-  width: calc(100% / 32 * 6);
-  height: calc(100% / 18 * 5);
+  width: 240px;
+  height: 200px;
   position: absolute;
-  left: calc(100% / 32 * 0.5);
-  top: calc(100% / 18 * 6);
+  left: 20px;
+  top: calc(100% / 3);
+  z-index: 1;
 }
 
 #bottomRightButtonsContainer {
   background-color: mediumseagreen;
-  width: calc(100% / 32 * 3);
-  height: calc(100% / 18 * 4.5);
+  width: 120px;
+  height: 180px;
   position: absolute;
-  right: calc(100% / 32 * 0.75);
-  bottom: calc(100% / 18 * 0.75);
+  right: 30px;
+  bottom: 30px;
+  z-index: 1;
 }
