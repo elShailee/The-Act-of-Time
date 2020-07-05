@@ -3,6 +3,10 @@
   height: 100vh;
 }
 
+:root {
+  --containersOpacity: 0;
+}
+
 #mapContainer {
   width: 100%;
   height: 100vh;
@@ -12,7 +16,7 @@
 #upperLeftButtonsContainer {
   width: 360px;
   height: 120px;
-  background-color: turquoise;
+  background-color: rgba(64, 224, 208, var(--containersOpacity));
   position: absolute;
   left: 20px;
   top: 20px;
@@ -22,7 +26,7 @@
 #characterInfoContainer {
   width: 400px;
   height: 100px;
-  background-color: slateblue;
+  background-color: rgba(106, 90, 205, var(--containersOpacity));
   position: absolute;
   left: calc(50% - 200px);
   top: calc(8px);
@@ -30,7 +34,7 @@
 }
 
 #upperRightButtonsContainer {
-  background-color: tan;
+  background-color: rgba(210, 180, 140, var(--containersOpacity));
   width: 320px;
   height: 400px;
   position: absolute;
@@ -39,8 +43,8 @@
   z-index: 2;
 }
 
-#disastersContainer {
-  background-color: pink;
+#disastersContainerContainer {
+  background-color: rgba(255, 192, 203, var(--containersOpacity));
   width: 240px;
   height: 200px;
   position: absolute;
@@ -50,11 +54,11 @@
 }
 
 #bottomRightButtonsContainer {
-  background-color: mediumseagreen;
+  background-color: rgba(60, 179, 113, var(--containersOpacity));
   width: 120px;
   height: 180px;
   position: absolute;
-  right: 30px;
-  bottom: 30px;
+  right: 20px;
+  bottom: 20px;
   z-index: 1;
 }

@@ -1,8 +1,31 @@
 #characterInfo {
   width: 400px;
   height: 100px;
-  background-color: slateblue;
+  background-color: darkblue;
   position: absolute;
-  border: 1px solid black;
   text-align: center;
+  clip-path: polygon(0 20px, 20px 0, 400px 0, 360px 60px, 180px 60px, 160px 100px, 40px 100px);
+  z-index: 4;
+}
+
+#xpCapacity {
+  background-color: #aaa;
+  position: absolute;
+  width: 180px;
+  height: 10px;
+  top: 60px;
+  left: 170px;
+  clip-path: polygon(0 0, 180px 0, 173px 10px, 0 10px);
+  z-index: 2;
+}
+
+#xpQuantity {
+  background-color: aqua;
+  position: absolute;
+  width: 160px;
+  height: 10px;
+  top: 60px;
+  left: 170px;
+  clip-path: polygon(0 0, 160px 0, 153px 10px, 0 10px);
+  z-index: 2;
 }
