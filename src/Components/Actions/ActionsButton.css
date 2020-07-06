@@ -1,0 +1,7 @@
+#actionsButton {
+  background-color: khaki;
+  position: absolute;
+  width: 320px;
+  height: 40px;
+  border: 1px solid black;
+}
