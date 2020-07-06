@@ -13,30 +13,28 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <div id="mapContainer">
-          <Map></Map>
-        </div>
+        <Map />
 
         <div id="upperLeftButtonsContainer">
-          <EnergyButton></EnergyButton>
-          <CoinsButton></CoinsButton>
+          <EnergyButton />
+          <CoinsButton />
         </div>
 
         <div id="characterInfoContainer">
-          <CharacterInfo></CharacterInfo>
+          <CharacterInfo />
         </div>
 
         <div id="upperRightButtonsContainer">
-          <ActionsButton></ActionsButton>
+          <ActionsButton />
         </div>
 
         <div id="disastersContainerContainer">
-          <DisastersContainer></DisastersContainer>
+          <DisastersContainer />
         </div>
 
         <div id="bottomRightButtonsContainer">
-          <SeenButton></SeenButton>
-          <CraftingButton></CraftingButton>
+          <SeenButton />
+          <CraftingButton />
         </div>
       </div>
     );

@@ -7,8 +7,8 @@ export default function Map() {
   return (
     <div id="mapComponent">
       <div id="mapNavigationTools">
-        <MapCompass></MapCompass>
-        <MapZoomSlider></MapZoomSlider>
+        <MapCompass />
+        <MapZoomSlider />
       </div>
     </div>
   );
