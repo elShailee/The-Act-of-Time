@@ -1,10 +1,27 @@
 import React from 'react';
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import CoinsTab from './CoinsTab';
 import './CoinsButton.css';
 
-export default function CoinsButton({ showOrHideCoinsTab }) {
+export default function ClickAway() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleClick = () => {
+    setOpen(prev => !prev);
+  };
+
+  const handleClickAway = () => {
+    setOpen(false);
+  };
+
   return (
-    <div id="coinsButton" onClick={() => showOrHideCoinsTab()}>
-      Coins
-    </div>
+    <ClickAwayListener onClickAway={handleClickAway}>
+      <div>
+        <div onClick={handleClick} id="coinsButton">
+          Coins
+        </div>
+        {open ? <CoinsTab /> : null}
+      </div>
+    </ClickAwayListener>
   );
 }

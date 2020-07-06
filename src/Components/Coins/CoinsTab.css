@@ -5,4 +5,10 @@
   width: 160px;
   height: 80px;
   background-color: blue;
+  text-align: center;
+}
+
+.generalButton {
+  text-transform: none;
+  background-color: #fff;
 }

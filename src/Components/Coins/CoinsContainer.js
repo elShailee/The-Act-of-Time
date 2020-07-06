@@ -16,16 +16,10 @@ export default class CoinsContainer extends Component {
       shouldCatchRandomClicksAsExits = 'shouldCatchRandomClicksAsExits';
     }
     return (
-      <div id="coinsContainer" className={shouldCatchRandomClicksAsExits} onClick={() => this.showOrHideCoinsTab()}>
+      <div id="coinsContainer" className={shouldCatchRandomClicksAsExits}>
         <CoinsButton showOrHideCoinsTab={() => this.showOrHideCoinsTab()} />
         {coinsTab}
       </div>
     );
   }
-
-  showOrHideCoinsTab = () => {
-    let tmpValue = this.state.isCoinsTabsDisplayed;
-    tmpValue = !tmpValue;
-    this.setState({ isCoinsTabsDisplayed: tmpValue });
-  };
 }
