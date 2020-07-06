@@ -3,7 +3,7 @@ import './App.css';
 import CharacterInfo from './Components/Character/CharacterInfo';
 import ActionsButton from './Components/Actions/ActionsButton';
 import EnergyButton from './Components/Energy/EnergyButton';
-import CoinsButton from './Components/Coins/CoinsButton';
+import CoinsContainer from './Components/Coins/CoinsContainer';
 import SeenButton from './Components/Seen/SeenButton';
 import CraftingButton from './Components/Crafting/CraftingButton';
 import Map from './Components/Map/Map';
@@ -11,13 +11,17 @@ import DisastersContainer from './Components/Disasters/DisastersContainer';
 
 class App extends React.Component {
   render() {
+    if (browserIsEdge()) {
+      return "this Application doesn't work on microsoft edge, please try to open it using Google Chrome or Firefox";
+    }
+
     return (
       <div className="App">
         <Map />
 
         <div id="upperLeftButtonsContainer">
           <EnergyButton />
-          <CoinsButton />
+          <CoinsContainer />
         </div>
 
         <div id="characterInfoContainer">
@@ -38,6 +42,12 @@ class App extends React.Component {
         </div>
       </div>
     );
+  }
+}
+
+function browserIsEdge() {
+  if (!!window.StyleMedia) {
+    return true;
   }
 }
 
