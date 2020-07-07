@@ -1,0 +1,9 @@
+#mapZoomSlider {
+  position: absolute;
+  width: 30px;
+  height: 200px;
+  background-color: #ddd;
+  top: 0;
+  left: 0;
+  writing-mode: vertical-lr;
+}
