@@ -1,7 +1,8 @@
 import React from 'react';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import CoinsTab from './CoinsTab';
 import './CoinsButton.css';
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import { Button } from '@material-ui/core';
 
 export default function ClickAway() {
   const [open, setOpen] = React.useState(false);
@@ -17,9 +18,9 @@ export default function ClickAway() {
   return (
     <ClickAwayListener onClickAway={handleClickAway}>
       <div>
-        <div onClick={handleClick} id="coinsButton">
+        <Button onClick={handleClick} id="coinsButton">
           Coins
-        </div>
+        </Button>
         {open ? <CoinsTab /> : null}
       </div>
     </ClickAwayListener>

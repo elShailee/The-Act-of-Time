@@ -1,12 +1,15 @@
 import React from 'react';
 import './CoinsTab.css';
 import Button from '@material-ui/core/Button';
+import CoinsPurchaseWindow from './CoinsPurchaseWindow';
 import { makeStyles } from '@material-ui/core/styles';
 import { grey, yellow } from '@material-ui/core/colors';
 import Backdrop from '@material-ui/core/Backdrop';
+import { Typography, Box, Card } from '@material-ui/core';
 
+//Styling openCoinsPurchaseWindowButton
 const useStyles = makeStyles({
-  coinsTabButton: {
+  openCoinsPurchaseWindowButton: {
     color: grey[800],
     backgroundColor: yellow[700],
     '&:hover': {
@@ -27,23 +30,26 @@ export default function CoinsTab(props) {
     setOpen(false);
   };
   const handleToggle = () => {
-    setOpen(!open);
+    setOpen(true);
   };
 
   return (
-    <div id="coinsTab">
-      You have XX Coins.
-      <br />
+    <Card id="coinsTab">
+      <Typography variant={'subtitle2'}>
+        <Box p={0.9}>You have XX Coins.</Box>
+      </Typography>
+
       <Button
         variant="contained"
-        className={classes.coinsTabButton + ' designAdditionsForGetMoreButton'}
+        className={classes.openCoinsPurchaseWindowButton + ' designAdditionsForGetMoreButton'}
         onClick={handleToggle}
       >
         Get More
-      </Button>{' '}
-      <Backdrop className={classes.backdrop} open={open} onClick={handleClose}>
-        Bananas
+      </Button>
+
+      <Backdrop className={classes.backdrop} open={open}>
+        <CoinsPurchaseWindow handleClose={handleClose} />
       </Backdrop>
-    </div>
+    </Card>
   );
 }
