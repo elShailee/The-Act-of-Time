@@ -3,7 +3,7 @@ import './App.css';
 import CharacterInfo from './Components/Character/CharacterInfo';
 import ActionsButton from './Components/Actions/ActionsButton';
 import EnergyButton from './Components/Energy/EnergyButton';
-import CoinsContainer from './Components/Coins/CoinsContainer';
+import CoinsButton from './Components/Coins/CoinsButton';
 import SeenButton from './Components/Seen/SeenButton';
 import CraftingButton from './Components/Crafting/CraftingButton';
 import Map from './Components/Map/Map';
@@ -19,13 +19,13 @@ class App extends React.Component {
       <div className="App">
         <Map />
 
-        <div id="upperLeftButtonsContainer">
-          <EnergyButton />
-          <CoinsContainer />
-        </div>
-
         <div id="characterInfoContainer">
           <CharacterInfo />
+        </div>
+
+        <div id="upperLeftButtonsContainer">
+          <EnergyButton />
+          <CoinsButton />
         </div>
 
         <div id="upperRightButtonsContainer">

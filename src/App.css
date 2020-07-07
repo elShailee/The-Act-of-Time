@@ -8,7 +8,6 @@
   position: absolute;
   left: 0px;
   top: 0px;
-  z-index: 2;
 }
 
 #characterInfoContainer {
@@ -17,7 +16,6 @@
   position: absolute;
   left: calc(50% - 200px);
   top: calc(8px);
-  z-index: 1;
 }
 
 #upperRightButtonsContainer {
@@ -26,7 +24,6 @@
   position: absolute;
   right: 20px;
   top: 20px;
-  z-index: 2;
 }
 
 #disastersContainerContainer {
@@ -35,7 +32,6 @@
   position: absolute;
   left: 20px;
   top: calc(100% / 3);
-  z-index: 1;
 }
 
 #bottomRightButtonsContainer {
@@ -44,5 +40,4 @@
   position: absolute;
   right: 20px;
   bottom: 20px;
-  z-index: 1;
 }

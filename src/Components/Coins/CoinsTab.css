@@ -8,7 +8,6 @@
   text-align: center;
 }
 
-.generalButton {
-  text-transform: none;
-  background-color: #fff;
+.designAdditionsForGetMoreButton {
+  top: 15px;
 }
