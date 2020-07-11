@@ -17,6 +17,7 @@ export default function ClickAway() {
 
   return (
     <ClickAwayListener onClickAway={handleClickAway}>
+      {/* ClickAwayListener Has to contain only one component, hence the blank div*/}
       <div>
         <Button onClick={handleClick} id="coinsButton">
           Coins

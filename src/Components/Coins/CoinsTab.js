@@ -1,10 +1,16 @@
+/* TODO:
+
+    - Work out the red Warning from Modal
+    after learned hooks and refs
+*/
+
 import React from 'react';
 import './CoinsTab.css';
 import Button from '@material-ui/core/Button';
 import CoinsPurchaseWindow from './CoinsPurchaseWindow';
 import { makeStyles } from '@material-ui/core/styles';
 import { grey, yellow } from '@material-ui/core/colors';
-import Backdrop from '@material-ui/core/Backdrop';
+import Modal from '@material-ui/core/Modal';
 import { Typography, Box, Card } from '@material-ui/core';
 
 //Styling openCoinsPurchaseWindowButton
@@ -17,8 +23,12 @@ const useStyles = makeStyles({
     },
     textTransform: 'none',
   },
-  backdrop: {
-    zIndex: 1,
+  modal: {
+    width: '30vw',
+    height: '60vh',
+    position: 'absolute',
+    marginLeft: '35vw',
+    marginTop: '20vh',
   },
 });
 
@@ -47,9 +57,9 @@ export default function CoinsTab(props) {
         Get More
       </Button>
 
-      <Backdrop className={classes.backdrop} open={open}>
-        <CoinsPurchaseWindow handleClose={handleClose} />
-      </Backdrop>
+      <Modal className={classes.modal} open={open} onClose={handleClose}>
+        <CoinsPurchaseWindow />
+      </Modal>
     </Card>
   );
 }

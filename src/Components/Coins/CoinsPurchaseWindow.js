@@ -4,8 +4,8 @@ import GeneralCloseButton from '../GeneralComponents/GeneralCloseButton/GeneralC
 
 export default function CoinsPurchaseWindow({ handleClose }) {
   return (
-    <Paper variant="outlined" style={{ background: '#ffd095', borderRadius: '7px' }}>
-      <Box width="30vw" height="60vh">
+    <Paper variant="outlined" style={{ background: '#ffd095', borderRadius: '7px', height: '100%' }}>
+      <Box>
         <br />
         <GeneralCloseButton closeWindow={handleClose} />
         <br />
