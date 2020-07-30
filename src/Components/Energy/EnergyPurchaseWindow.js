@@ -1,7 +1,7 @@
 import React from 'react';
 import { Paper } from '@material-ui/core';
 
-export default function CoinsPurchaseWindow({ handleClose }) {
+export default function EnergyPurchaseWindow({ handleClose }) {
   return (
     <Paper
       variant="outlined"
@@ -10,12 +10,12 @@ export default function CoinsPurchaseWindow({ handleClose }) {
       <br />
       <br />
       <br />
-      Buy Coins
+      Buy Energy
       <br />
       <br />
       <br />
       <br />
-      Earn Coins
+      Earn Energy
     </Paper>
   );
 }

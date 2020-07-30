@@ -2,7 +2,7 @@ import React from 'react';
 import './CoinsTab.css';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
-import { grey, yellow } from '@material-ui/core/colors';
+import { yellow } from '@material-ui/core/colors';
 import { Typography, Box, Card } from '@material-ui/core';
 import GeneralWindow from '../GeneralComponents/GeneralWindow/GeneralWindow';
 import CoinsPurchaseWindow from './CoinsPurchaseWindow';
@@ -10,7 +10,6 @@ import CoinsPurchaseWindow from './CoinsPurchaseWindow';
 //Styling getMoreCoinsButton
 const useStyles = makeStyles({
   getMoreCoinsButton: {
-    color: grey[800],
     backgroundColor: yellow[700],
     '&:hover': {
       backgroundColor: yellow[500],

@@ -5,7 +5,7 @@ import './CoinsButton.css';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import { Button } from '@material-ui/core';
 
-export default function ClickAway() {
+export default function CoinsButton() {
   const [isCoinsTabOpen, setCoinsTabOpen] = React.useState(false);
 
   const handleCoinsButtonClick = () => {

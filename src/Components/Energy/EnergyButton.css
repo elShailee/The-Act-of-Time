@@ -1,9 +1,12 @@
 #energyButton {
-  position: absolute;
-  background-color: aqua;
   width: 160px;
   height: 40px;
+  background-color: aqua;
   border: 1px solid black;
+}
+
+#energyButtonContainer {
   left: 20px;
   top: 20px;
+  position: absolute;
 }
