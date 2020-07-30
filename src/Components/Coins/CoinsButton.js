@@ -1,28 +1,32 @@
 import React from 'react';
 import CoinsTab from './CoinsTab';
+import GeneralTab from '../GeneralComponents/GeneralTab/GeneralTab';
 import './CoinsButton.css';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import { Button } from '@material-ui/core';
 
 export default function ClickAway() {
-  const [open, setOpen] = React.useState(false);
+  const [isCoinsTabOpen, setCoinsTabOpen] = React.useState(false);
 
-  const handleClick = () => {
-    setOpen(prev => !prev);
+  const handleCoinsButtonClick = () => {
+    setCoinsTabOpen(!isCoinsTabOpen);
   };
 
-  const handleClickAway = () => {
-    setOpen(false);
+  const handleCoinsTabClickAway = () => {
+    setCoinsTabOpen(false);
   };
+
+  let togglableContent = isCoinsTabOpen ? (
+    <GeneralTab closeTab={handleCoinsTabClickAway} content={<CoinsTab />} />
+  ) : null;
 
   return (
-    <ClickAwayListener onClickAway={handleClickAway}>
-      {/* ClickAwayListener Has to contain only one component, hence the blank div*/}
-      <div>
-        <Button onClick={handleClick} id="coinsButton">
+    <ClickAwayListener onClickAway={handleCoinsTabClickAway}>
+      <div id="coinsButtonContainer">
+        <Button onClick={handleCoinsButtonClick} id="coinsButton">
           Coins
         </Button>
-        {open ? <CoinsTab /> : null}
+        {togglableContent}
       </div>
     </ClickAwayListener>
   );

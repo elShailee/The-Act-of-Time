@@ -1,21 +1,15 @@
-/* TODO:
-
-    - Work out the red Warning from Modal
-    after learned hooks and refs
-*/
-
 import React from 'react';
 import './CoinsTab.css';
 import Button from '@material-ui/core/Button';
-import CoinsPurchaseWindow from './CoinsPurchaseWindow';
 import { makeStyles } from '@material-ui/core/styles';
 import { grey, yellow } from '@material-ui/core/colors';
-import Modal from '@material-ui/core/Modal';
 import { Typography, Box, Card } from '@material-ui/core';
+import GeneralWindow from '../GeneralComponents/GeneralWindow/GeneralWindow';
+import CoinsPurchaseWindow from './CoinsPurchaseWindow';
 
-//Styling openCoinsPurchaseWindowButton
+//Styling getMoreCoinsButton
 const useStyles = makeStyles({
-  openCoinsPurchaseWindowButton: {
+  getMoreCoinsButton: {
     color: grey[800],
     backgroundColor: yellow[700],
     '&:hover': {
@@ -23,25 +17,22 @@ const useStyles = makeStyles({
     },
     textTransform: 'none',
   },
-  modal: {
-    width: '30vw',
-    height: '60vh',
-    position: 'absolute',
-    marginLeft: '35vw',
-    marginTop: '20vh',
-  },
 });
 
 export default function CoinsTab(props) {
   const classes = useStyles(props);
+  const [isCoinsWindowOpen, setCoinsWindowOpen] = React.useState(false);
 
-  const [open, setOpen] = React.useState(false);
-  const handleClose = () => {
-    setOpen(false);
+  const CloseCoinsPurchaseWindow = () => {
+    setCoinsWindowOpen(false);
   };
-  const handleToggle = () => {
-    setOpen(true);
+  const OpenCoinsPurchaseWindow = () => {
+    setCoinsWindowOpen(true);
   };
+
+  let togglablContent = isCoinsWindowOpen ? (
+    <GeneralWindow content={<CoinsPurchaseWindow />} closeWindow={CloseCoinsPurchaseWindow} />
+  ) : null;
 
   return (
     <Card id="coinsTab">
@@ -49,17 +40,11 @@ export default function CoinsTab(props) {
         <Box p={0.9}>You have XX Coins.</Box>
       </Typography>
 
-      <Button
-        variant="contained"
-        className={classes.openCoinsPurchaseWindowButton + ' designAdditionsForGetMoreButton'}
-        onClick={handleToggle}
-      >
+      <Button variant="contained" className={classes.getMoreCoinsButton} onClick={OpenCoinsPurchaseWindow}>
         Get More
       </Button>
 
-      <Modal className={classes.modal} open={open} onClose={handleClose}>
-        <CoinsPurchaseWindow />
-      </Modal>
+      {togglablContent}
     </Card>
   );
 }
