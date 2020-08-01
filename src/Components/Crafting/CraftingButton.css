@@ -1,11 +1,8 @@
 #craftingButton {
-  position: absolute;
   width: 100px;
   height: 100px;
   background-color: chartreuse;
-  bottom: 0;
-  left: 0;
-  border: 1px solid black;
+  border: 0px solid black;
   border-radius: 50%;
   text-align: center;
   line-height: 100px;

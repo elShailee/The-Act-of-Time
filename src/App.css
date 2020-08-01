@@ -3,40 +3,32 @@
 -------------------*/
 
 #upperLeftButtonsContainer {
-  width: 360px;
-  height: 120px;
   position: absolute;
-  left: 0px;
-  top: 0px;
+  left: 20px;
+  top: 20px;
+  display: flex;
 }
 
 #characterInfoContainer {
-  width: 400px;
-  height: 100px;
   position: absolute;
   left: calc(50% - 200px);
   top: calc(8px);
 }
 
 #upperRightButtonsContainer {
-  width: 320px;
-  height: 400px;
   position: absolute;
   right: 20px;
   top: 20px;
 }
 
 #disastersContainerContainer {
-  width: 240px;
-  height: 200px;
   position: absolute;
   left: 20px;
   top: calc(100% / 3);
+  display: flex;
 }
 
 #bottomRightButtonsContainer {
-  width: 120px;
-  height: 180px;
   position: absolute;
   right: 20px;
   bottom: 20px;

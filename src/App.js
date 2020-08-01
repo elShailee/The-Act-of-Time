@@ -7,7 +7,8 @@ import CoinsButton from './Components/Coins/CoinsButton';
 import SeenButton from './Components/Seen/SeenButton';
 import CraftingButton from './Components/Crafting/CraftingButton';
 import Map from './Components/Map/Map';
-import DisastersContainer from './Components/Disasters/DisastersContainer';
+import DisastersIcon from './Components/Disasters/DisastersIcon';
+import DisasterCounter from './Components/Disasters/DisasterCounter';
 
 export default function App() {
   if (browserIsEdge()) {
@@ -32,7 +33,8 @@ export default function App() {
       </div>
 
       <div id="disastersContainerContainer">
-        <DisastersContainer />
+        <DisastersIcon />
+        <DisasterCounter />
       </div>
 
       <div id="bottomRightButtonsContainer">

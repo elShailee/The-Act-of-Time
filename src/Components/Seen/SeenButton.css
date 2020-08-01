@@ -1,12 +1,11 @@
 #seenButton {
-  position: absolute;
   background-color: cornflowerblue;
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  top: 0;
-  right: 0px;
-  border: 1px solid black;
+  margin-bottom: 20px;
+  margin-left: 60px;
+  border: 0px solid black;
 
   text-align: center;
   line-height: 60px;

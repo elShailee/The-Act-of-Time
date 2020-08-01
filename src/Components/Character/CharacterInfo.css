@@ -2,7 +2,6 @@
   width: 400px;
   height: 100px;
   background-color: darkblue;
-  position: absolute;
   text-align: center;
   clip-path: polygon(0 20px, 20px 0, 400px 0, 360px 60px, 180px 60px, 160px 100px, 40px 100px);
 }

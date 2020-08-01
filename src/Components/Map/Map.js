@@ -5,7 +5,12 @@ import MapZoomSlider from './MapZoomSlider';
 
 export default function Map() {
   return (
-    <div id="mapComponent">
+    <div
+      id="mapComponent"
+      onClick={() => {
+        console.log('Map Component Clicked');
+      }}
+    >
       <div id="mapNavigationTools">
         <MapCompass />
         <MapZoomSlider />
