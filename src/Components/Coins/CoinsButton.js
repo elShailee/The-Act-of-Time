@@ -1,33 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import CoinsTab from './CoinsTab';
 import GeneralTab from '../GeneralComponents/GeneralTab/GeneralTab';
 import './CoinsButton.css';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import { Button } from '@material-ui/core';
+import { MountedComponentsContext } from '../../Contexts/MountedComponentsContext';
 
 export default function CoinsButton() {
-  const [isCoinsTabOpen, setCoinsTabOpen] = React.useState(false);
+  const { componentsList, ToggleOn, ToggleOff } = useContext(MountedComponentsContext);
 
-  const handleCoinsButtonClick = () => {
-    setCoinsTabOpen(!isCoinsTabOpen);
-  };
-
-  const handleCoinsTabClickAway = () => {
-    setCoinsTabOpen(false);
-  };
-
-  let togglableContent = isCoinsTabOpen ? (
-    <GeneralTab closeTab={handleCoinsTabClickAway} content={<CoinsTab />} />
-  ) : null;
+  let isCoinsTabOpen = componentsList.secondaries.CoinsTab;
+  let togglableContent;
+  if (isCoinsTabOpen) {
+    togglableContent = <GeneralTab closeTab={() => ToggleOff('CoinsTab')} content={<CoinsTab />} />;
+  } else togglableContent = null;
 
   return (
-    <ClickAwayListener onClickAway={handleCoinsTabClickAway}>
-      <div id="coinsButtonContainer">
-        <Button onClick={handleCoinsButtonClick} id="coinsButton">
-          Coins
-        </Button>
-        {togglableContent}
-      </div>
-    </ClickAwayListener>
+    <div id="coinsButtonContainer">
+      <Button
+        onClick={() => (componentsList.secondaries.CoinsTab ? ToggleOff('CoinsTab') : ToggleOn('CoinsTab'))}
+        id="coinsButton"
+      >
+        Coins
+      </Button>
+      {togglableContent}
+    </div>
   );
 }

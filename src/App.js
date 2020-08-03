@@ -9,6 +9,7 @@ import CraftingButton from './Components/Crafting/CraftingButton';
 import Map from './Components/Map/Map';
 import DisastersIcon from './Components/Disasters/DisastersIcon';
 import DisasterCounter from './Components/Disasters/DisasterCounter';
+import MountedComponentsContextProvider from './Contexts/MountedComponentsContext';
 
 export default function App() {
   if (browserIsEdge()) {
@@ -17,30 +18,32 @@ export default function App() {
 
   return (
     <div className="App">
-      <Map />
+      <MountedComponentsContextProvider>
+        <Map />
 
-      <div id="characterInfoContainer">
-        <CharacterInfo />
-      </div>
+        <div id="characterInfoContainer">
+          <CharacterInfo />
+        </div>
 
-      <div id="upperLeftButtonsContainer">
-        <EnergyButton />
-        <CoinsButton />
-      </div>
+        <div id="upperLeftButtonsContainer">
+          <EnergyButton />
+          <CoinsButton />
+        </div>
 
-      <div id="upperRightButtonsContainer">
-        <ActionsButton />
-      </div>
+        <div id="upperRightButtonsContainer">
+          <ActionsButton />
+        </div>
 
-      <div id="disastersContainerContainer">
-        <DisastersIcon />
-        <DisasterCounter />
-      </div>
+        <div id="disastersContainerContainer">
+          <DisastersIcon />
+          <DisasterCounter />
+        </div>
 
-      <div id="bottomRightButtonsContainer">
-        <SeenButton />
-        <CraftingButton />
-      </div>
+        <div id="bottomRightButtonsContainer">
+          <SeenButton />
+          <CraftingButton />
+        </div>
+      </MountedComponentsContextProvider>
     </div>
   );
 }

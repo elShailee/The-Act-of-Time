@@ -1,6 +1,5 @@
 import React from 'react';
 import GeneralCloseButton from '../GeneralCloseButton/GeneralCloseButton';
-import { ClickAwayListener } from '@material-ui/core';
 
 export default function GeneralWindow({ content, closeWindow, windowPosition }) {
   const basicWindowStyle = {
@@ -31,13 +30,11 @@ export default function GeneralWindow({ content, closeWindow, windowPosition }) 
   );
 
   return (
-    <ClickAwayListener onClickAway={closeWindow}>
-      <div style={composedWindowStyle}>
-        <GeneralCloseButton closeWindow={closeWindow} />
-        <div id="contentContainer" style={{ marginTop: '7px' }}>
-          {content}
-        </div>
+    <div style={composedWindowStyle}>
+      <GeneralCloseButton closeWindow={closeWindow} />
+      <div id="contentContainer" style={{ marginTop: '7px' }}>
+        {content}
       </div>
-    </ClickAwayListener>
+    </div>
   );
 }

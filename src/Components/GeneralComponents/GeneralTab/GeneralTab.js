@@ -1,10 +1,5 @@
 import React from 'react';
-import { ClickAwayListener } from '@material-ui/core';
 
-export default function GeneralTab({ closeTab, content }) {
-  return (
-    <ClickAwayListener onClickAway={closeTab}>
-      <div style={{ width: 'fit-content' }}>{content}</div>
-    </ClickAwayListener>
-  );
+export default function GeneralTab({ content }) {
+  return <div style={{ width: 'fit-content' }}>{content}</div>;
 }
