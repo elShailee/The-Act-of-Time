@@ -1,33 +1,32 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import EnergyTab from './EnergyTab';
-import GeneralTab from '../GeneralComponents/GeneralTab/GeneralTab';
 import './EnergyButton.css';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import { Button } from '@material-ui/core';
+import { MountedComponentsContext } from '../../Contexts/MountedComponentsContext';
 
 export default function EnergyButton() {
-  const [isEnergyTabOpen, setEnergyTabOpen] = React.useState(false);
+  const { componentsList, ToggleOn, ToggleOff } = useContext(MountedComponentsContext);
 
-  const handleEnergyButtonClick = () => {
-    setEnergyTabOpen(!isEnergyTabOpen);
+  let isEnergyTabOpen = componentsList.secondaries.EnergyTab;
+  let togglableContent;
+  if (isEnergyTabOpen) {
+    togglableContent = <EnergyTab handleClose={() => ToggleOff(['EnergyTab', 'EnergyPurchaseWindow'])} />;
+  } else togglableContent = null;
+
+  const handleClick = ifMounted => {
+    if (ifMounted) {
+      ToggleOff(['EnergyTab', 'EnergyPurchaseWindow']);
+    } else {
+      ToggleOn(['EnergyTab']);
+    }
   };
-
-  const handleEnergyTabClickAway = () => {
-    setEnergyTabOpen(false);
-  };
-
-  let togglableContent = isEnergyTabOpen ? (
-    <GeneralTab closeTab={handleEnergyTabClickAway} content={<EnergyTab />} />
-  ) : null;
 
   return (
-    <ClickAwayListener onClickAway={handleEnergyTabClickAway}>
-      <div id="energyButtonContainer">
-        <Button onClick={handleEnergyButtonClick} id="energyButton">
-          Energy
-        </Button>
-        {togglableContent}
-      </div>
-    </ClickAwayListener>
+    <div id="energyButtonContainer">
+      <Button onClick={() => handleClick(isEnergyTabOpen)} id="energyButton">
+        Energy
+      </Button>
+      {togglableContent}
+    </div>
   );
 }

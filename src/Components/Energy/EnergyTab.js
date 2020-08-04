@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './EnergyTab.css';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Card } from '@material-ui/core';
-import GeneralWindow from '../GeneralComponents/GeneralWindow/GeneralWindow';
 import EnergyPurchaseWindow from './EnergyPurchaseWindow';
+import { MountedComponentsContext } from '../../Contexts/MountedComponentsContext';
 
 //Styling getMoreEnergyButton
 const useStyles = makeStyles({
@@ -31,18 +31,14 @@ const useStyles = makeStyles({
 
 export default function EnergyTab(props) {
   const classes = useStyles(props);
-  const [isEnergyWindowOpen, setEnergyWindowOpen] = React.useState(false);
 
-  const CloseEnergyPurchaseWindow = () => {
-    setEnergyWindowOpen(false);
-  };
-  const OpenEnergyPurchaseWindow = () => {
-    setEnergyWindowOpen(true);
-  };
+  const { componentsList, ToggleOn, ToggleOff } = useContext(MountedComponentsContext);
 
-  let togglablContent = isEnergyWindowOpen ? (
-    <GeneralWindow content={<EnergyPurchaseWindow />} closeWindow={CloseEnergyPurchaseWindow} />
-  ) : null;
+  let isEnergyPurchaseWindowOpen = componentsList.primaries.EnergyPurchaseWindow;
+  let togglablContent;
+  if (isEnergyPurchaseWindowOpen) {
+    togglablContent = <EnergyPurchaseWindow handleClose={() => ToggleOff(['EnergyPurchaseWindow'])} />;
+  } else togglablContent = null;
 
   return (
     <Card id="energyTab">
@@ -60,7 +56,11 @@ export default function EnergyTab(props) {
         Rate: XX♠/h
       </Typography>
 
-      <Button variant="contained" className={classes.getMoreEnergyButton} onClick={OpenEnergyPurchaseWindow}>
+      <Button
+        variant="contained"
+        className={classes.getMoreEnergyButton}
+        onClick={() => ToggleOn(['EnergyPurchaseWindow'])}
+      >
         Get More
       </Button>
 

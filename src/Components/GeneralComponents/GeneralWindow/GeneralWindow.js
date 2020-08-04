@@ -1,7 +1,7 @@
 import React from 'react';
 import GeneralCloseButton from '../GeneralCloseButton/GeneralCloseButton';
 
-export default function GeneralWindow({ content, closeWindow, windowPosition }) {
+export default function GeneralWindow(props) {
   const basicWindowStyle = {
     backgroundColor: '#ddcc66',
     textAlign: 'right',
@@ -26,14 +26,14 @@ export default function GeneralWindow({ content, closeWindow, windowPosition }) 
 
   const composedWindowStyle = Object.assign(
     basicWindowStyle,
-    windowPosition === 'right' ? rightlyPositionedWindowStyle : centeredWindowStyle
+    props.windowPosition === 'right' ? rightlyPositionedWindowStyle : centeredWindowStyle
   );
 
   return (
     <div style={composedWindowStyle}>
-      <GeneralCloseButton closeWindow={closeWindow} />
+      <GeneralCloseButton closeWindow={props.handleClose} />
       <div id="contentContainer" style={{ marginTop: '7px' }}>
-        {content}
+        {props.children}
       </div>
     </div>
   );

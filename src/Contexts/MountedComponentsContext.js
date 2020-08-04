@@ -20,23 +20,28 @@ class MountedComponentsContextProvider extends Component {
 
   ToggleOn = uiComponent => {
     const priorityGroups = Object.keys(this.state.componentsList);
-    for (let i = 0; i < priorityGroups.length; i++) {
-      if (uiComponent in this.state.componentsList[priorityGroups[i]]) {
-        const { componentsList: newComponentsList } = this.state;
-        newComponentsList[priorityGroups[i]][uiComponent] = true;
-        this.setState({ componentsList: newComponentsList });
+    uiComponent.forEach(propedComponent => {
+      for (let i = 0; i < priorityGroups.length; i++) {
+        if (propedComponent in this.state.componentsList[priorityGroups[i]]) {
+          const { componentsList: newComponentsList } = this.state;
+          newComponentsList[priorityGroups[i]][propedComponent] = true;
+          this.setState({ componentsList: newComponentsList });
+        }
       }
-    }
+    });
   };
+
   ToggleOff = uiComponent => {
     const priorityGroups = Object.keys(this.state.componentsList);
-    for (let i = 0; i < priorityGroups.length; i++) {
-      if (uiComponent in this.state.componentsList[priorityGroups[i]]) {
-        const { componentsList: newComponentsList } = this.state;
-        newComponentsList[priorityGroups[i]][uiComponent] = false;
-        this.setState({ componentsList: newComponentsList });
+    uiComponent.forEach(propedComponent => {
+      for (let i = 0; i < priorityGroups.length; i++) {
+        if (propedComponent in this.state.componentsList[priorityGroups[i]]) {
+          const { componentsList: newComponentsList } = this.state;
+          newComponentsList[priorityGroups[i]][propedComponent] = false;
+          this.setState({ componentsList: newComponentsList });
+        }
       }
-    }
+    });
   };
 
   render() {

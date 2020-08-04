@@ -4,9 +4,9 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import { yellow } from '@material-ui/core/colors';
 import { Typography, Box, Card } from '@material-ui/core';
-import GeneralWindow from '../GeneralComponents/GeneralWindow/GeneralWindow';
 import CoinsPurchaseWindow from './CoinsPurchaseWindow';
 import { MountedComponentsContext } from '../../Contexts/MountedComponentsContext';
+import GeneralTab from '../GeneralComponents/GeneralTab/GeneralTab';
 
 //Styling getMoreCoinsButton
 const useStyles = makeStyles({
@@ -27,26 +27,26 @@ export default function CoinsTab(props) {
   let isCoinsPurchaseWindowOpen = componentsList.primaries.CoinsPurchaseWindow;
   let togglablContent;
   if (isCoinsPurchaseWindowOpen) {
-    togglablContent = (
-      <GeneralWindow content={<CoinsPurchaseWindow />} closeWindow={() => ToggleOff('CoinsPurchaseWindow')} />
-    );
+    togglablContent = <CoinsPurchaseWindow handleClose={() => ToggleOff(['CoinsPurchaseWindow'])} />;
   } else togglablContent = null;
 
   return (
-    <Card id="coinsTab">
-      <Typography variant={'subtitle2'}>
-        <Box p={0.9}>You have XX Coins.</Box>
-      </Typography>
+    <GeneralTab>
+      <Card id="coinsTab">
+        <Typography variant={'subtitle2'}>
+          <Box p={0.9}>You have XX Coins.</Box>
+        </Typography>
 
-      <Button
-        variant="contained"
-        className={classes.getMoreCoinsButton}
-        onClick={() => ToggleOn('CoinsPurchaseWindow')}
-      >
-        Get More
-      </Button>
+        <Button
+          variant="contained"
+          className={classes.getMoreCoinsButton}
+          onClick={() => ToggleOn(['CoinsPurchaseWindow'])}
+        >
+          Get More
+        </Button>
 
-      {togglablContent}
-    </Card>
+        {togglablContent}
+      </Card>
+    </GeneralTab>
   );
 }

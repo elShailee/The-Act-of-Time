@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import CoinsTab from './CoinsTab';
-import GeneralTab from '../GeneralComponents/GeneralTab/GeneralTab';
 import './CoinsButton.css';
 import { Button } from '@material-ui/core';
 import { MountedComponentsContext } from '../../Contexts/MountedComponentsContext';
@@ -11,15 +10,20 @@ export default function CoinsButton() {
   let isCoinsTabOpen = componentsList.secondaries.CoinsTab;
   let togglableContent;
   if (isCoinsTabOpen) {
-    togglableContent = <GeneralTab closeTab={() => ToggleOff('CoinsTab')} content={<CoinsTab />} />;
+    togglableContent = <CoinsTab handleClose={() => ToggleOff(['CoinsTab', 'CoinsPurchaseWindow'])} />;
   } else togglableContent = null;
+
+  const handleClick = ifMounted => {
+    if (ifMounted) {
+      ToggleOff(['CoinsTab', 'CoinsPurchaseWindow']);
+    } else {
+      ToggleOn(['CoinsTab']);
+    }
+  };
 
   return (
     <div id="coinsButtonContainer">
-      <Button
-        onClick={() => (componentsList.secondaries.CoinsTab ? ToggleOff('CoinsTab') : ToggleOn('CoinsTab'))}
-        id="coinsButton"
-      >
+      <Button onClick={() => handleClick(isCoinsTabOpen)} id="coinsButton">
         Coins
       </Button>
       {togglableContent}
