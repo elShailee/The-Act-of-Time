@@ -7,21 +7,27 @@ import CoinsButton from './Components/Coins/CoinsButton';
 import SeenButton from './Components/Seen/SeenButton';
 import CraftingButton from './Components/Crafting/CraftingButton';
 import Map from './Components/Map/Map';
-import DisastersContainer from './Components/Disasters/DisastersContainer';
+import DisastersIcon from './Components/Disasters/DisastersIcon';
+import DisasterCounter from './Components/Disasters/DisasterCounter';
+import MountedComponentsContextProvider from './Contexts/MountedComponentsContext';
 
-class App extends React.Component {
-  render() {
-    return (
-      <div className="App">
+export default function App() {
+  if (browserIsEdge()) {
+    return "this Application doesn't work on microsoft edge, please try to open it using Google Chrome or Firefox";
+  }
+
+  return (
+    <div className="App">
+      <MountedComponentsContextProvider>
         <Map />
+
+        <div id="characterInfoContainer">
+          <CharacterInfo />
+        </div>
 
         <div id="upperLeftButtonsContainer">
           <EnergyButton />
           <CoinsButton />
-        </div>
-
-        <div id="characterInfoContainer">
-          <CharacterInfo />
         </div>
 
         <div id="upperRightButtonsContainer">
@@ -29,16 +35,21 @@ class App extends React.Component {
         </div>
 
         <div id="disastersContainerContainer">
-          <DisastersContainer />
+          <DisastersIcon />
+          <DisasterCounter />
         </div>
 
         <div id="bottomRightButtonsContainer">
           <SeenButton />
           <CraftingButton />
         </div>
-      </div>
-    );
-  }
+      </MountedComponentsContextProvider>
+    </div>
+  );
 }
 
-export default App;
+function browserIsEdge() {
+  if (!!window.StyleMedia) {
+    return true;
+  }
+}
