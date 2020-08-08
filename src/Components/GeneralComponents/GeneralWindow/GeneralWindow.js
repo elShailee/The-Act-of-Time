@@ -32,9 +32,7 @@ export default function GeneralWindow(props) {
   return (
     <div style={composedWindowStyle}>
       <GeneralCloseButton closeWindow={props.handleClose} />
-      <div id="contentContainer" style={{ marginTop: '7px' }}>
-        {props.children}
-      </div>
+      <div style={{ marginTop: '7px' }}>{props.children}</div>
     </div>
   );
 }

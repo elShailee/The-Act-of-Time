@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import CoinsTab from './CoinsTab';
 import './CoinsButton.css';
-import { Button } from '@material-ui/core';
 import { MountedComponentsContext } from '../../Contexts/MountedComponentsContext';
+import GeneralButton from '../GeneralComponents/GeneralButton/GeneralButton';
 
 export default function CoinsButton() {
   const { componentsList, ToggleOn, ToggleOff } = useContext(MountedComponentsContext);
@@ -23,9 +23,9 @@ export default function CoinsButton() {
 
   return (
     <div id="coinsButtonContainer">
-      <Button onClick={() => handleClick(isCoinsTabOpen)} id="coinsButton">
+      <GeneralButton id="coinsButton" color="#ffa500" onClick={() => handleClick(isCoinsTabOpen)}>
         Coins
-      </Button>
+      </GeneralButton>
       {togglableContent}
     </div>
   );
