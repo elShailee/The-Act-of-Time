@@ -1,5 +1,5 @@
 import React from 'react';
-import GeneralCloseButton from '../GeneralCloseButton/GeneralCloseButton';
+import GeneralCloseButton from 'Components/GeneralComponents/GeneralCloseButton';
 
 export default function GeneralWindow(props) {
   const basicWindowStyle = {
@@ -15,6 +15,9 @@ export default function GeneralWindow(props) {
     left: '50%',
     top: '50%',
     transform: 'translate(-50%,-50%)',
+    //the transform makes the window's anchor point to be in its center instead of top left,
+    //that way it is possible to center it easily instead of calculating its position according
+    //to it's dimensions
   };
 
   const rightlyPositionedWindowStyle = {
@@ -22,6 +25,9 @@ export default function GeneralWindow(props) {
     right: '7%',
     top: '50%',
     transform: 'translate(-50%,-50%)',
+    //the transform makes the window's anchor point to be in its center instead of top left,
+    //that way it is possible to center it easily instead of calculating its position according
+    //to it's dimensions
   };
 
   const composedWindowStyle = Object.assign(

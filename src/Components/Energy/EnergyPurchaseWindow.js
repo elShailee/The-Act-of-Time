@@ -1,6 +1,6 @@
 import React from 'react';
 import { Paper } from '@material-ui/core';
-import GeneralWindow from '../GeneralComponents/GeneralWindow/GeneralWindow';
+import GeneralWindow from 'Components/GeneralComponents/GeneralWindow';
 
 export default function EnergyPurchaseWindow({ handleClose }) {
   return (

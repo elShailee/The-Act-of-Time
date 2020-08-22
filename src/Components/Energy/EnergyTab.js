@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Card } from '@material-ui/core';
 import EnergyPurchaseWindow from './EnergyPurchaseWindow';
-import { MountedComponentsContext } from '../../Contexts/MountedComponentsContext';
+import { MountedComponentsContext } from 'Contexts/MountedComponentsContext';
 
 //Styling getMoreEnergyButton
 const useStyles = makeStyles({
@@ -32,13 +32,8 @@ const useStyles = makeStyles({
 export default function EnergyTab(props) {
   const classes = useStyles(props);
 
-  const { componentsList, ToggleOn, ToggleOff } = useContext(MountedComponentsContext);
-
-  let isEnergyPurchaseWindowOpen = componentsList.primaries.EnergyPurchaseWindow;
-  let togglablContent;
-  if (isEnergyPurchaseWindowOpen) {
-    togglablContent = <EnergyPurchaseWindow handleClose={() => ToggleOff(['EnergyPurchaseWindow'])} />;
-  } else togglablContent = null;
+  const { mountedComponentsDict, MountComponents, UnmountComponents } = useContext(MountedComponentsContext);
+  const isEnergyPurchaseWindowOpen = mountedComponentsDict.primaries.EnergyPurchaseWindow;
 
   return (
     <Card id="energyTab">
@@ -59,12 +54,14 @@ export default function EnergyTab(props) {
       <Button
         variant="contained"
         className={classes.getMoreEnergyButton}
-        onClick={() => ToggleOn(['EnergyPurchaseWindow'])}
+        onClick={() => MountComponents(['EnergyPurchaseWindow'])}
       >
         Get More
       </Button>
 
-      {togglablContent}
+      {isEnergyPurchaseWindowOpen && (
+        <EnergyPurchaseWindow handleClose={() => UnmountComponents(['EnergyPurchaseWindow'])} />
+      )}
     </Card>
   );
 }

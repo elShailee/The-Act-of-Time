@@ -2,31 +2,27 @@ import React, { useContext } from 'react';
 import CoinsTab from './CoinsTab';
 import './CoinsButton.css';
 import { Button } from '@material-ui/core';
-import { MountedComponentsContext } from '../../Contexts/MountedComponentsContext';
+import { MountedComponentsContext } from 'Contexts/MountedComponentsContext';
 
 export default function CoinsButton() {
-  const { componentsList, ToggleOn, ToggleOff } = useContext(MountedComponentsContext);
+  const { mountedComponentsDict, MountComponents, UnmountComponents } = useContext(MountedComponentsContext);
 
-  let isCoinsTabOpen = componentsList.secondaries.CoinsTab;
-  let togglableContent;
-  if (isCoinsTabOpen) {
-    togglableContent = <CoinsTab handleClose={() => ToggleOff(['CoinsTab', 'CoinsPurchaseWindow'])} />;
-  } else togglableContent = null;
+  const isCoinsTabOpen = mountedComponentsDict.secondaries.CoinsTab;
 
-  const handleClick = ifMounted => {
-    if (ifMounted) {
-      ToggleOff(['CoinsTab', 'CoinsPurchaseWindow']);
+  const handleClick = () => {
+    if (isCoinsTabOpen) {
+      UnmountComponents(['CoinsTab', 'CoinsPurchaseWindow']);
     } else {
-      ToggleOn(['CoinsTab']);
+      MountComponents(['CoinsTab']);
     }
   };
 
   return (
     <div id="coinsButtonContainer">
-      <Button onClick={() => handleClick(isCoinsTabOpen)} id="coinsButton">
+      <Button onClick={handleClick} id="coinsButton">
         Coins
       </Button>
-      {togglableContent}
+      {isCoinsTabOpen && <CoinsTab handleClose={() => UnmountComponents(['CoinsTab', 'CoinsPurchaseWindow'])} />}
     </div>
   );
 }

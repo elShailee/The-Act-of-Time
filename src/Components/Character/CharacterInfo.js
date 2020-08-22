@@ -3,7 +3,7 @@ import './CharacterInfo.css';
 
 export default function CharacterInfo() {
   return (
-    <div id="characterIntoContainer">
+    <div id="characterInfoContainer">
       <div id="xpCapacity"></div>
       <div id="xpQuantity"></div>
       <div id="characterInfo">CharInfo</div>
