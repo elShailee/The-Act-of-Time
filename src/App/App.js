@@ -1,7 +1,7 @@
 import React from 'react';
 import Gameplay from 'Gameplay';
 import texts from 'Texts/Texts';
-import { isValidBrowser } from 'UtilityFunctions/OnOpenFunctions';
+import { isValidBrowser } from './AppUtils';
 
 export default function App() {
   const isValidBrowserBool = isValidBrowser();

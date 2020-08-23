@@ -1,3 +1,6 @@
+//Todo:
+// remove props as a parameter once materialUI is removed.
+
 import React, { useContext } from 'react';
 import './CoinsTab.css';
 import Button from '@material-ui/core/Button';

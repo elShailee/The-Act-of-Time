@@ -1,7 +1,8 @@
 import React from 'react';
 import GeneralCloseButton from 'Components/GeneralComponents/GeneralCloseButton';
 
-export default function GeneralWindow(props) {
+export default function GeneralWindow({ windowPosition, children, handleClose }) {
+  const isWindowRightSided = windowPosition === 'right' || windowPosition === 'Right';
   const basicWindowStyle = {
     backgroundColor: '#ddcc66',
     textAlign: 'right',
@@ -22,24 +23,24 @@ export default function GeneralWindow(props) {
 
   const rightlyPositionedWindowStyle = {
     position: 'fixed',
-    right: '7%',
-    top: '50%',
+    right: '-8%',
+    top: '55%',
     transform: 'translate(-50%,-50%)',
     //the transform makes the window's anchor point to be in its center instead of top left,
     //that way it is possible to center it easily instead of calculating its position according
     //to it's dimensions
   };
 
-  const composedWindowStyle = Object.assign(
+  const customizedWindowStyle = Object.assign(
     basicWindowStyle,
-    props.windowPosition === 'right' ? rightlyPositionedWindowStyle : centeredWindowStyle
+    isWindowRightSided ? rightlyPositionedWindowStyle : centeredWindowStyle
   );
 
   return (
-    <div style={composedWindowStyle}>
-      <GeneralCloseButton closeWindow={props.handleClose} />
+    <div style={customizedWindowStyle}>
+      <GeneralCloseButton closeWindow={handleClose} />
       <div id="contentContainer" style={{ marginTop: '7px' }}>
-        {props.children}
+        {children}
       </div>
     </div>
   );
