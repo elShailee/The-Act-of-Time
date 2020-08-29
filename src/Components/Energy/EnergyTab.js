@@ -67,7 +67,7 @@ export default function EnergyTab(props) {
       </Button>
 
       {isEnergyPurchaseWindowOpen && (
-        <EnergyPurchaseWindow handleClose={() => unmountComponents(['EnergyPurchaseWindow'])} />
+        <EnergyPurchaseWindow unmountEnergyPurchaseWindow={() => unmountComponents(['EnergyPurchaseWindow'])} />
       )}
     </Card>
   );

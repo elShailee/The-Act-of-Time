@@ -10,7 +10,7 @@ export default function CoinsButton() {
 
   const isCoinsTabOpen = mountedComponentsDict.secondaries.CoinsTab;
 
-  const handleClick = () => {
+  const onCoinsButtonClick = () => {
     if (isCoinsTabOpen) {
       unmountComponents(['CoinsTab', 'CoinsPurchaseWindow']);
     } else {
@@ -20,10 +20,10 @@ export default function CoinsButton() {
 
   return (
     <div id="coinsButtonContainer">
-      <Button onClick={handleClick} id="coinsButton">
+      <Button onClick={onCoinsButtonClick} id="coinsButton">
         {componentsTitles.coinsButton}
       </Button>
-      {isCoinsTabOpen && <CoinsTab handleClose={() => unmountComponents(['CoinsTab', 'CoinsPurchaseWindow'])} />}
+      {isCoinsTabOpen && <CoinsTab unmountCoinsTab={() => unmountComponents(['CoinsTab', 'CoinsPurchaseWindow'])} />}
     </div>
   );
 }

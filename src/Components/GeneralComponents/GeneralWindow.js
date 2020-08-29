@@ -1,7 +1,7 @@
 import React from 'react';
 import GeneralCloseButton from 'Components/GeneralComponents/GeneralCloseButton';
 
-export default function GeneralWindow({ windowPosition, children, handleClose }) {
+export default function GeneralWindow({ windowPosition, children, unmountGeneralWindow }) {
   const isWindowRightSided = windowPosition === 'right' || windowPosition === 'Right';
   const basicWindowStyle = {
     backgroundColor: '#ddcc66',
@@ -38,7 +38,7 @@ export default function GeneralWindow({ windowPosition, children, handleClose })
 
   return (
     <div style={customizedWindowStyle}>
-      <GeneralCloseButton closeWindow={handleClose} />
+      <GeneralCloseButton unmountWindow={unmountGeneralWindow} />
       <div id="contentContainer" style={{ marginTop: '7px' }}>
         {children}
       </div>

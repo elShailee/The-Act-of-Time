@@ -50,7 +50,7 @@ export default function CoinsTab(props) {
         </Button>
 
         {isCoinsPurchaseWindowOpen && (
-          <CoinsPurchaseWindow handleClose={() => unmountComponents(['CoinsPurchaseWindow'])} />
+          <CoinsPurchaseWindow unmountCoinsPurchaseWindow={() => unmountComponents(['CoinsPurchaseWindow'])} />
         )}
       </Card>
     </GeneralTab>
