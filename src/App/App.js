@@ -1,11 +1,10 @@
 import React from 'react';
-import Gameplay from 'Gameplay';
-import texts from 'Texts/Texts';
-import { isValidBrowser } from './AppUtils';
+import GameplayScreen from 'Screens/GameplayScreen/GameplayScreen';
+import { isBrowserValid, invalidBrowserMessage } from './AppUtils';
 
 export default function App() {
-  const isValidBrowserBool = isValidBrowser();
-  if (isValidBrowserBool) {
-    return <Gameplay />;
-  } else return texts.logs.errors.invalidBrowser;
+  const isBrowserValidBool = isBrowserValid();
+  if (isBrowserValidBool) {
+    return <GameplayScreen />;
+  } else return invalidBrowserMessage;
 }

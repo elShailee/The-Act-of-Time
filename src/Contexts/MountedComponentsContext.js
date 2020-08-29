@@ -18,34 +18,33 @@ class MountedComponentsContextProvider extends Component {
     },
   };
 
-  ComponentsMounterAndUnmounter = (componentsToMountArray, isToMount) => {
+  mountOrunmountComponents = (componentsToMountArray, shouldMount) => {
     const mountedComponentsDict = this.state.mountedComponentsDict;
     const { ...priorityGroups } = mountedComponentsDict;
     componentsToMountArray.forEach(componentToMountOrUnmount => {
-      for (const group in priorityGroups) {
-        const groupInDict = mountedComponentsDict[group];
+      for (const priorityGroup in priorityGroups) {
+        const groupInDict = mountedComponentsDict[priorityGroup];
         if (componentToMountOrUnmount in groupInDict) {
           const { mountedComponentsDict: newMountedComponentsDict } = this.state;
-          newMountedComponentsDict[group][componentToMountOrUnmount] = isToMount;
+          newMountedComponentsDict[priorityGroup][componentToMountOrUnmount] = shouldMount;
           this.setState({ mountedComponentsDict: newMountedComponentsDict });
         }
       }
     });
   };
 
-  MountComponents = componentsToUnmountArray => {
-    this.ComponentsMounterAndUnmounter(componentsToUnmountArray, true);
+  mountComponents = componentsToUnmountArray => {
+    this.mountOrunmountComponents(componentsToUnmountArray, true);
   };
-  UnmountComponents = componentsToUnmountArray => {
-    this.ComponentsMounterAndUnmounter(componentsToUnmountArray, false);
+  unmountComponents = componentsToUnmountArray => {
+    this.mountOrunmountComponents(componentsToUnmountArray, false);
   };
 
   render() {
+    const { state, mountComponents, unmountComponents, props } = this;
     return (
-      <MountedComponentsContext.Provider
-        value={{ ...this.state, MountComponents: this.MountComponents, UnmountComponents: this.UnmountComponents }}
-      >
-        {this.props.children}
+      <MountedComponentsContext.Provider value={{ ...state, mountComponents, unmountComponents }}>
+        {props.children}
       </MountedComponentsContext.Provider>
     );
   }

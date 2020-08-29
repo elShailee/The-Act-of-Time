@@ -3,26 +3,27 @@ import CoinsTab from './CoinsTab';
 import './CoinsButton.css';
 import { Button } from '@material-ui/core';
 import { MountedComponentsContext } from 'Contexts/MountedComponentsContext';
+import { componentsTitles } from 'Texts/texts';
 
 export default function CoinsButton() {
-  const { mountedComponentsDict, MountComponents, UnmountComponents } = useContext(MountedComponentsContext);
+  const { mountedComponentsDict, mountComponents, unmountComponents } = useContext(MountedComponentsContext);
 
   const isCoinsTabOpen = mountedComponentsDict.secondaries.CoinsTab;
 
   const handleClick = () => {
     if (isCoinsTabOpen) {
-      UnmountComponents(['CoinsTab', 'CoinsPurchaseWindow']);
+      unmountComponents(['CoinsTab', 'CoinsPurchaseWindow']);
     } else {
-      MountComponents(['CoinsTab']);
+      mountComponents(['CoinsTab']);
     }
   };
 
   return (
     <div id="coinsButtonContainer">
       <Button onClick={handleClick} id="coinsButton">
-        Coins
+        {componentsTitles.coinsButton}
       </Button>
-      {isCoinsTabOpen && <CoinsTab handleClose={() => UnmountComponents(['CoinsTab', 'CoinsPurchaseWindow'])} />}
+      {isCoinsTabOpen && <CoinsTab handleClose={() => unmountComponents(['CoinsTab', 'CoinsPurchaseWindow'])} />}
     </div>
   );
 }

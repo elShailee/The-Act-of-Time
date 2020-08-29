@@ -25,3 +25,9 @@
   left: 170px;
   clip-path: polygon(0 0, 160px 0, 153px 10px, 0 10px);
 }
+
+#characterInfoContainer {
+  position: absolute;
+  left: calc(50% - 200px);
+  top: calc(8px);
+}

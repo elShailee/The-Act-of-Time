@@ -9,12 +9,6 @@
   display: flex;
 }
 
-#characterInfoContainer {
-  position: absolute;
-  left: calc(50% - 200px);
-  top: calc(8px);
-}
-
 #upperRightButtonsContainer {
   position: absolute;
   right: 20px;
