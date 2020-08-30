@@ -4,7 +4,7 @@ export const MountedComponentsContext = createContext();
 
 class MountedComponentsContextProvider extends Component {
   state = {
-    componentsList: {
+    mountedComponentsDict: {
       primaries: {
         CraftingWindow: false,
         ItemInfiWindow: false,
@@ -18,36 +18,33 @@ class MountedComponentsContextProvider extends Component {
     },
   };
 
-  ToggleOn = uiComponent => {
-    const priorityGroups = Object.keys(this.state.componentsList);
-    uiComponent.forEach(propedComponent => {
-      for (let i = 0; i < priorityGroups.length; i++) {
-        if (propedComponent in this.state.componentsList[priorityGroups[i]]) {
-          const { componentsList: newComponentsList } = this.state;
-          newComponentsList[priorityGroups[i]][propedComponent] = true;
-          this.setState({ componentsList: newComponentsList });
+  mountOrunmountComponents = (componentsToMountArray, shouldMount) => {
+    const mountedComponentsDict = this.state.mountedComponentsDict;
+    const { ...priorityGroups } = mountedComponentsDict;
+    componentsToMountArray.forEach(componentToMountOrUnmount => {
+      for (const priorityGroup in priorityGroups) {
+        const groupInDict = mountedComponentsDict[priorityGroup];
+        if (componentToMountOrUnmount in groupInDict) {
+          const { mountedComponentsDict: newMountedComponentsDict } = this.state;
+          newMountedComponentsDict[priorityGroup][componentToMountOrUnmount] = shouldMount;
+          this.setState({ mountedComponentsDict: newMountedComponentsDict });
         }
       }
     });
   };
 
-  ToggleOff = uiComponent => {
-    const priorityGroups = Object.keys(this.state.componentsList);
-    uiComponent.forEach(propedComponent => {
-      for (let i = 0; i < priorityGroups.length; i++) {
-        if (propedComponent in this.state.componentsList[priorityGroups[i]]) {
-          const { componentsList: newComponentsList } = this.state;
-          newComponentsList[priorityGroups[i]][propedComponent] = false;
-          this.setState({ componentsList: newComponentsList });
-        }
-      }
-    });
+  mountComponents = componentsToUnmountArray => {
+    this.mountOrunmountComponents(componentsToUnmountArray, true);
+  };
+  unmountComponents = componentsToUnmountArray => {
+    this.mountOrunmountComponents(componentsToUnmountArray, false);
   };
 
   render() {
+    const { state, mountComponents, unmountComponents, props } = this;
     return (
-      <MountedComponentsContext.Provider value={{ ...this.state, ToggleOn: this.ToggleOn, ToggleOff: this.ToggleOff }}>
-        {this.props.children}
+      <MountedComponentsContext.Provider value={{ ...state, mountComponents, unmountComponents }}>
+        {props.children}
       </MountedComponentsContext.Provider>
     );
   }

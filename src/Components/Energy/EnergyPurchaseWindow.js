@@ -1,13 +1,19 @@
 import React from 'react';
 import { Paper } from '@material-ui/core';
-import GeneralWindow from '../GeneralComponents/GeneralWindow/GeneralWindow';
+import GeneralWindow from 'Components/GeneralComponents/GeneralWindow';
 
-export default function EnergyPurchaseWindow({ handleClose }) {
+export default function EnergyPurchaseWindow({ unmountEnergyPurchaseWindow }) {
   return (
-    <GeneralWindow handleClose={handleClose}>
+    <GeneralWindow unmountGeneralWindow={unmountEnergyPurchaseWindow}>
       <Paper
         variant="outlined"
-        style={{ background: '#ffd095', borderRadius: '7px', height: '500px', width: '400px', textAlign: 'center' }}
+        style={{
+          background: '#ffd095',
+          borderRadius: '7px',
+          height: '500px',
+          width: '400px',
+          textAlign: 'center',
+        }}
       >
         <br />
         <br />

@@ -3,7 +3,7 @@
   height: 80px;
   background-color: magenta;
   border-radius: 50%;
-  border: 1px solid black;
+  border: 1px solid;
   line-height: 80px;
   text-align: center;
 }

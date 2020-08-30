@@ -1,10 +1,14 @@
+//Todo:
+// remove props as a parameter once materialUI is removed.
+
 import React, { useContext } from 'react';
 import './EnergyTab.css';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Card } from '@material-ui/core';
 import EnergyPurchaseWindow from './EnergyPurchaseWindow';
-import { MountedComponentsContext } from '../../Contexts/MountedComponentsContext';
+import { MountedComponentsContext } from 'Contexts/MountedComponentsContext';
+import { buttonsText, energy } from 'Texts/texts';
 
 //Styling getMoreEnergyButton
 const useStyles = makeStyles({
@@ -32,39 +36,39 @@ const useStyles = makeStyles({
 export default function EnergyTab(props) {
   const classes = useStyles(props);
 
-  const { componentsList, ToggleOn, ToggleOff } = useContext(MountedComponentsContext);
-
-  let isEnergyPurchaseWindowOpen = componentsList.primaries.EnergyPurchaseWindow;
-  let togglablContent;
-  if (isEnergyPurchaseWindowOpen) {
-    togglablContent = <EnergyPurchaseWindow handleClose={() => ToggleOff(['EnergyPurchaseWindow'])} />;
-  } else togglablContent = null;
+  const { mountedComponentsDict, mountComponents, unmountComponents } = useContext(MountedComponentsContext);
+  const isEnergyPurchaseWindowOpen = mountedComponentsDict.primaries.EnergyPurchaseWindow;
 
   return (
     <Card id="energyTab">
       <Typography variant={'subtitle2'} className={classes.energyInfo} id="timeUntillFullText">
-        Full Energy in:
+        {energy.fullIn}
         <br />
         XX:XX:XX
       </Typography>
 
       <Typography variant={'subtitle2'} className={classes.energyInfo} id="energyAmountText">
-        XX♠
+        XX
+        {energy.energySymbol}
       </Typography>
 
       <Typography variant={'subtitle2'} className={classes.energyInfo} id="rechargeRateText">
-        Rate: XX♠/h
+        {energy.rate}
+        XX
+        {energy.energyPerHour}
       </Typography>
 
       <Button
         variant="contained"
         className={classes.getMoreEnergyButton}
-        onClick={() => ToggleOn(['EnergyPurchaseWindow'])}
+        onClick={() => mountComponents(['EnergyPurchaseWindow'])}
       >
-        Get More
+        {buttonsText.getMore}
       </Button>
 
-      {togglablContent}
+      {isEnergyPurchaseWindowOpen && (
+        <EnergyPurchaseWindow unmountEnergyPurchaseWindow={() => unmountComponents(['EnergyPurchaseWindow'])} />
+      )}
     </Card>
   );
 }
