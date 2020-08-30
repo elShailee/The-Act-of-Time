@@ -1,5 +1,6 @@
 import React from 'react';
 import GeneralCloseButton from 'Components/GeneralComponents/GeneralCloseButton';
+import './GeneralWindow.css';
 
 export default function GeneralWindow({ windowPosition, children, unmountGeneralWindow }) {
   const isWindowRightSided = windowPosition === 'right' || windowPosition === 'Right';
@@ -38,7 +39,7 @@ export default function GeneralWindow({ windowPosition, children, unmountGeneral
 
   return (
     <div style={customizedWindowStyle}>
-      <GeneralCloseButton unmountWindow={unmountGeneralWindow} />
+      <GeneralCloseButton className="generalWindowCloseButton" unmountWindow={unmountGeneralWindow} />
       <div id="contentContainer" style={{ marginTop: '7px' }}>
         {children}
       </div>

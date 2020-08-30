@@ -15,7 +15,7 @@ const texts = {
   },
   coins: {
     amountPt1: 'You have ',
-    amountPt2: 'Coins.',
+    amountPt2: ' Coins.',
   },
   energy: {
     energySymbol: '♠',

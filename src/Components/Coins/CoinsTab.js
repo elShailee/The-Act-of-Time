@@ -3,7 +3,7 @@
 
 import React, { useContext } from 'react';
 import './CoinsTab.css';
-import Button from '@material-ui/core/Button';
+import GeneralButton from 'Components/GeneralComponents/GeneralButton';
 import { makeStyles } from '@material-ui/core/styles';
 import { yellow } from '@material-ui/core/colors';
 import { Typography, Box, Card } from '@material-ui/core';
@@ -41,13 +41,9 @@ export default function CoinsTab(props) {
           </Box>
         </Typography>
 
-        <Button
-          variant="contained"
-          className={classes.getMoreCoinsButton}
-          onClick={() => mountComponents(['CoinsPurchaseWindow'])}
-        >
+        <GeneralButton id="getMoreCoinsButton" onClick={() => mountComponents(['CoinsPurchaseWindow'])}>
           {buttonsText.getMore}
-        </Button>
+        </GeneralButton>
 
         {isCoinsPurchaseWindowOpen && (
           <CoinsPurchaseWindow unmountCoinsPurchaseWindow={() => unmountComponents(['CoinsPurchaseWindow'])} />

@@ -1,0 +1,28 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 100%;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  letter-spacing: 0.02857em;
+  font-size: 0.875rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.button.onHover {
+  filter: brightness(115%) saturate(65%);
+}
+
+.button.onMousePress {
+  filter: brightness(87%) saturate(100%);
+}
+
+.button.capitalized {
+  text-transform: uppercase;
+}
+.button.bordered {
+  border: 1px solid;
+}

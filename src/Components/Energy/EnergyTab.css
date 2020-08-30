@@ -29,3 +29,19 @@
   grid-row-start: 4;
   grid-row-end: 5;
 }
+
+#getMoreEnergyButton {
+  background-color: #00cccc;
+  width: 60px;
+  height: 30px;
+  grid-row-start: 3;
+  grid-row-end: 5;
+  font-size: 12px;
+}
+
+.energyInfo {
+  font-size: 12px;
+  background-color: #aadddd;
+  border-radius: 3px;
+  text-align: center;
+}
