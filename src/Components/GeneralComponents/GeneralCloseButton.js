@@ -4,7 +4,7 @@ import './GeneralCloseButton.css';
 
 export default function GeneralCloseButton({ unmountWindow, className }) {
   return (
-    <GeneralButton className={className + ' generalCloseButton bordered'} onClick={unmountWindow}>
+    <GeneralButton className={className + ' generalCloseButton bordered'} onButtonClick={unmountWindow}>
       X
     </GeneralButton>
   );

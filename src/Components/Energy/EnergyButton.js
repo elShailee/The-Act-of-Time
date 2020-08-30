@@ -19,7 +19,7 @@ export default function EnergyButton() {
 
   return (
     <div id="energyButtonContainer">
-      <GeneralButton className="capitalized bordered" onClick={onEnergyButtonClick} id="energyButton">
+      <GeneralButton className="uppercased bordered" onButtonClick={onEnergyButtonClick} id="energyButton">
         {componentsTitles.energyButton}
       </GeneralButton>
       {isEnergyTabOpen && (

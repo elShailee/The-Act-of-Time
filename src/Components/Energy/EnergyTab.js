@@ -29,7 +29,7 @@ export default function EnergyTab() {
         {energy.energyPerHour}
       </Typography>
 
-      <GeneralButton id="getMoreEnergyButton" onClick={() => mountComponents(['EnergyPurchaseWindow'])}>
+      <GeneralButton id="getMoreEnergyButton" onButtonClick={() => mountComponents(['EnergyPurchaseWindow'])}>
         {buttonsText.getMore}
       </GeneralButton>
 

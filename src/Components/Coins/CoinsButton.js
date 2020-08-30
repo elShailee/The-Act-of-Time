@@ -22,8 +22,8 @@ export default function CoinsButton() {
     <div id="coinsButtonContainer">
       <GeneralButton
         id="coinsButton"
-        className="capitalized bordered"
-        onClick={() => onCoinsButtonClick(isCoinsTabOpen)}
+        className="uppercased bordered"
+        onButtonClick={() => onCoinsButtonClick(isCoinsTabOpen)}
       >
         {componentsTitles.coinsButton}
       </GeneralButton>
