@@ -6,14 +6,13 @@ class MountedComponentsContextProvider extends Component {
   state = {
     mountedComponentsDict: {
       primaries: {
-        CraftingWindow: false,
-        ItemInfiWindow: false,
         EnergyPurchaseWindow: false,
         CoinsPurchaseWindow: false,
       },
       secondaries: {
         CoinsTab: false,
         EnergyTab: false,
+        ActionsTab: false,
       },
     },
   };

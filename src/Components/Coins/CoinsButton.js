@@ -7,7 +7,6 @@ import { componentsTitles } from 'Texts/texts';
 
 export default function CoinsButton() {
   const { mountedComponentsDict, mountComponents, unmountComponents } = useContext(MountedComponentsContext);
-
   const isCoinsTabOpen = mountedComponentsDict.secondaries.CoinsTab;
 
   const onCoinsButtonClick = () => {
@@ -20,11 +19,7 @@ export default function CoinsButton() {
 
   return (
     <div id="coinsButtonContainer">
-      <GeneralButton
-        id="coinsButton"
-        className="uppercased bordered"
-        onButtonClick={() => onCoinsButtonClick(isCoinsTabOpen)}
-      >
+      <GeneralButton id="coinsButton" className="uppercased bordered" onButtonClick={onCoinsButtonClick}>
         {componentsTitles.coinsButton}
       </GeneralButton>
       {isCoinsTabOpen && <CoinsTab unmountCoinsTab={() => unmountComponents(['CoinsTab', 'CoinsPurchaseWindow'])} />}

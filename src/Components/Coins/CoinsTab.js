@@ -13,24 +13,16 @@ export default function CoinsTab() {
   const isCoinsPurchaseWindowOpen = mountedComponentsDict.primaries.CoinsPurchaseWindow;
 
   return (
-    <GeneralTab>
-      <Card id="coinsTab">
-        <Typography variant={'subtitle2'}>
-          <Box p={0.9}>
-            {coins.amountPt1}
-            XX
-            {coins.amountPt2}
-          </Box>
-        </Typography>
-
-        <GeneralButton id="getMoreCoinsButton" onButtonClick={() => mountComponents(['CoinsPurchaseWindow'])}>
-          {buttonsText.getMore}
-        </GeneralButton>
-
-        {isCoinsPurchaseWindowOpen && (
-          <CoinsPurchaseWindow unmountCoinsPurchaseWindow={() => unmountComponents(['CoinsPurchaseWindow'])} />
-        )}
-      </Card>
+    <GeneralTab id="coinsTab">
+      {coins.amountPt1}
+      XX
+      {coins.amountPt2}
+      <GeneralButton id="getMoreCoinsButton" onButtonClick={() => mountComponents(['CoinsPurchaseWindow'])}>
+        {buttonsText.getMore}
+      </GeneralButton>
+      {isCoinsPurchaseWindowOpen && (
+        <CoinsPurchaseWindow unmountCoinsPurchaseWindow={() => unmountComponents(['CoinsPurchaseWindow'])} />
+      )}
     </GeneralTab>
   );
 }

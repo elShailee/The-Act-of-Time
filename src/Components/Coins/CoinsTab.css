@@ -1,6 +1,6 @@
 #coinsTab {
-  width: 160px;
-  height: 74px;
+  width: 140px;
+  height: 60px;
   background-color: blue;
   text-align: center;
 }
@@ -12,4 +12,5 @@
   margin-right: auto;
   background-color: #ffa500;
   font-size: 12px;
+  margin-top: 8px;
 }
