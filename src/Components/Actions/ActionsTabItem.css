@@ -1,0 +1,12 @@
+.actionsTabItem {
+  background-color: rgb(206, 135, 73);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.ActionsTabItemDraghandle {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  float: right;
+}

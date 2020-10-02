@@ -1,12 +1,18 @@
 import React from 'react';
 import './ActionsTab.css';
 import GeneralTab from 'Components/GeneralComponents/GeneralTab';
-import ActionTabItem from './ActionTabItem';
+import { DragDropContext } from 'react-beautiful-dnd';
+import FirstFiveActions from './FirstFiveActions';
+import FirstFiveActionsContext from 'Contexts/FirstFiveActionsContext';
 
 export default function ActionsTab() {
   return (
     <GeneralTab id="actionsTab">
-      <ActionTabItem />
+      <FirstFiveActionsContext>
+        <DragDropContext>
+          <FirstFiveActions />
+        </DragDropContext>
+      </FirstFiveActionsContext>
     </GeneralTab>
   );
 }
