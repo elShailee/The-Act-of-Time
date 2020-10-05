@@ -29,5 +29,5 @@
 #characterInfoContainer {
   position: absolute;
   left: calc(50% - 200px);
-  top: calc(8px);
+  top: 8px;
 }
