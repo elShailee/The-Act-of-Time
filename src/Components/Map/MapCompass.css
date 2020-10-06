@@ -1,12 +1,18 @@
 #mapCompass {
+  --mapCompass-size: 160px;
+  --halfOf-mapCompass-size: calc(var(--mapCompass-size) / 2);
   position: absolute;
   bottom: 0;
   right: 0;
-  clip-path: polygon(0 80px, 80px 160px, 160px 80px, 80px 0);
-  height: 160px;
-  width: 160px;
+  clip-path: polygon(
+    0 var(--halfOf-mapCompass-size),
+    var(--halfOf-mapCompass-size) var(--mapCompass-size),
+    var(--mapCompass-size) var(--halfOf-mapCompass-size),
+    var(--halfOf-mapCompass-size) 0
+  );
+  height: var(--mapCompass-size);
+  width: var(--mapCompass-size);
   background: #333;
-  border-style: 1px solid black;
-  line-height: 160px;
+  line-height: var(--mapCompass-size);
   text-align: center;
 }

@@ -1,7 +1,7 @@
 #energyButton {
-  position: absolute;
-  background-color: aqua;
   width: 160px;
   height: 40px;
-  border: 1px solid black;
+  background-color: aqua;
+  border: 1px solid;
+  margin-right: 40px;
 }

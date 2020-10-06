@@ -1,12 +1,8 @@
 #craftingButton {
-  position: absolute;
-  width: 100px;
-  height: 100px;
+  width: var(--craftingButton-size);
+  height: var(--craftingButton-size);
   background-color: chartreuse;
-  bottom: 0;
-  left: 0;
-  border: 1px solid black;
   border-radius: 50%;
   text-align: center;
-  line-height: 100px;
+  line-height: var(--craftingButton-size);
 }

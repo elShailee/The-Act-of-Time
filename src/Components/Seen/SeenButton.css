@@ -1,13 +1,11 @@
 #seenButton {
-  position: absolute;
   background-color: cornflowerblue;
-  width: 60px;
-  height: 60px;
+  width: var(--seenButton-size);
+  height: var(--seenButton-size);
   border-radius: 50%;
-  top: 0;
-  right: 0px;
-  border: 1px solid black;
+  margin-bottom: 20px;
+  margin-left: calc(var(--craftingButton-size) / 2);
 
   text-align: center;
-  line-height: 60px;
+  line-height: var(--seenButton-size);
 }

@@ -1,0 +1,29 @@
+#energyTab {
+  width: 160px;
+  height: 60px;
+  padding: 10px;
+  background-color: #99bbbb;
+
+  display: grid;
+  grid-template-columns: 90px 60px;
+  grid-column-gap: 10px;
+  grid-template-rows: 20px 10px 10px 20px;
+}
+
+#timeUntillFullText {
+  height: 30px;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+#energyAmountText {
+  height: 20px;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+#rechargeRateText {
+  height: 20px;
+  grid-row-start: 4;
+  grid-row-end: 5;
+}

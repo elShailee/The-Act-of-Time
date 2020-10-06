@@ -1,0 +1,25 @@
+/*-------------------
+  Button Containers
+-------------------*/
+
+#upperLeftButtonsContainer {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  display: flex;
+}
+
+#disastersContainerContainer {
+  position: absolute;
+  left: 20px;
+  top: calc(100% / 3);
+  display: flex;
+}
+
+#bottomRightButtonsContainer {
+  --seenButton-size: 60px;
+  --craftingButton-size: 100px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
