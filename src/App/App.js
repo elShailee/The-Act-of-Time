@@ -1,7 +1,9 @@
 import React from 'react';
 import GameplayScreen from 'Screens/GameplayScreen/GameplayScreen';
-import { renderOnlyIfBrowserValid } from './AppUtils';
+import RenderIfBrowserValidHOC from 'App/RenderIfBrowserValidHoc';
 
-export default function App() {
-  return renderOnlyIfBrowserValid(<GameplayScreen />);
-}
+export default () => (
+  <RenderIfBrowserValidHOC>
+    <GameplayScreen />
+  </RenderIfBrowserValidHOC>
+);

@@ -1,5 +1,5 @@
 import React, { Component, createContext } from 'react';
-import { isVarAnObject } from 'Utils/utilFuncs';
+import { isAnObject } from 'Utils/utilFuncs';
 import { errorMessagesTexts } from 'Texts/gameplayTexts';
 
 export const MountedComponentsContext = createContext();
@@ -15,6 +15,8 @@ class MountedComponentsContextProvider extends Component {
   };
 
   mountOrunmountComponents = (componentsToMountArray, shouldMount) => {
+    if (typeof componentsToMountArray === 'string') componentsToMountArray = [componentsToMountArray];
+
     const isComponentsArrayValid = this.isComponentsArrayValid(componentsToMountArray);
     if (!isComponentsArrayValid) {
       console.log(errorMessagesTexts.invalidComponentsToMount);
@@ -41,7 +43,7 @@ class MountedComponentsContextProvider extends Component {
   };
 
   isComponentsArrayValid = arreyOfComponentsNames => {
-    if (!isVarAnObject(arreyOfComponentsNames) || arreyOfComponentsNames === undefined) {
+    if (!isAnObject(arreyOfComponentsNames) || arreyOfComponentsNames === undefined) {
       return false;
     }
     return true;
