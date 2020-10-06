@@ -1,11 +1,11 @@
 import React from 'react';
 import './ActionsButton.css';
-import { componentsTitles } from 'Texts/texts';
+import { actionsButtonTexts } from 'Texts/gameplayTexts';
 
 export default function ActionButton() {
   return (
-    <div id="upperRightButtonsContainer">
-      <div id="actionsButton">{componentsTitles.actions}</div>
+    <div id="actionsButtonAndTabContainer">
+      <div id="actionsButton">{actionsButtonTexts.title}</div>
     </div>
   );
 }

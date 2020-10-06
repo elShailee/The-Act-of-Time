@@ -1,10 +1,8 @@
 import React from 'react';
 import GameplayScreen from 'Screens/GameplayScreen/GameplayScreen';
-import { isBrowserValid, invalidBrowserMessage } from './AppUtils';
+import { renderOnlyIfBrowserValid } from './AppUtils';
 
 export default function App() {
-  const isBrowserValidBool = isBrowserValid();
-  if (isBrowserValidBool) {
-    return <GameplayScreen />;
-  } else return invalidBrowserMessage;
+  const contentAfterBrowserCheck = renderOnlyIfBrowserValid(<GameplayScreen />);
+  return contentAfterBrowserCheck;
 }

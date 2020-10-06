@@ -8,7 +8,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Card } from '@material-ui/core';
 import EnergyPurchaseWindow from './EnergyPurchaseWindow';
 import { MountedComponentsContext } from 'Contexts/MountedComponentsContext';
-import { buttonsText, energy } from 'Texts/texts';
+import { energyTabTexts } from 'Texts/gameplayTexts';
+import EnergyIcon from 'Images/placeholderIcon.png';
 
 //Styling getMoreEnergyButton
 const useStyles = makeStyles({
@@ -37,25 +38,28 @@ export default function EnergyTab(props) {
   const classes = useStyles(props);
 
   const { mountedComponentsDict, mountComponents, unmountComponents } = useContext(MountedComponentsContext);
-  const isEnergyPurchaseWindowOpen = mountedComponentsDict.primaries.EnergyPurchaseWindow;
+  const isEnergyPurchaseWindowOpen = mountedComponentsDict.EnergyPurchaseWindow;
+
+  const energyIcon = <img src={EnergyIcon} alt="" className="tinyIcons" />;
 
   return (
     <Card id="energyTab">
       <Typography variant={'subtitle2'} className={classes.energyInfo} id="timeUntillFullText">
-        {energy.fullIn}
+        {energyTabTexts.fullIn}
         <br />
         XX:XX:XX
       </Typography>
 
       <Typography variant={'subtitle2'} className={classes.energyInfo} id="energyAmountText">
         XX
-        {energy.energySymbol}
+        {energyIcon}
       </Typography>
 
       <Typography variant={'subtitle2'} className={classes.energyInfo} id="rechargeRateText">
-        {energy.rate}
+        {energyTabTexts.rate}
         XX
-        {energy.energyPerHour}
+        {energyIcon}
+        {energyTabTexts.perHour}
       </Typography>
 
       <Button
@@ -63,7 +67,7 @@ export default function EnergyTab(props) {
         className={classes.getMoreEnergyButton}
         onClick={() => mountComponents(['EnergyPurchaseWindow'])}
       >
-        {buttonsText.getMore}
+        {energyTabTexts.getMore}
       </Button>
 
       {isEnergyPurchaseWindowOpen && (

@@ -10,7 +10,7 @@ import { Typography, Box, Card } from '@material-ui/core';
 import CoinsPurchaseWindow from './CoinsPurchaseWindow';
 import { MountedComponentsContext } from 'Contexts/MountedComponentsContext';
 import GeneralTab from 'Components/GeneralComponents/GeneralTab';
-import { buttonsText, coins } from 'Texts/texts';
+import { coinsTabTexts } from 'Texts/gameplayTexts';
 
 //Styling getMoreCoinsButton
 const useStyles = makeStyles({
@@ -28,16 +28,16 @@ export default function CoinsTab(props) {
 
   const { mountedComponentsDict, mountComponents, unmountComponents } = useContext(MountedComponentsContext);
 
-  const isCoinsPurchaseWindowOpen = mountedComponentsDict.primaries.CoinsPurchaseWindow;
+  const isCoinsPurchaseWindowOpen = mountedComponentsDict.CoinsPurchaseWindow;
 
   return (
     <GeneralTab>
       <Card id="coinsTab">
         <Typography variant={'subtitle2'}>
           <Box p={0.9}>
-            {coins.amountPt1}
+            {coinsTabTexts.coinsAmountPt1}
             XX
-            {coins.amountPt2}
+            {coinsTabTexts.coinsAmountPt2}
           </Box>
         </Typography>
 
@@ -46,7 +46,7 @@ export default function CoinsTab(props) {
           className={classes.getMoreCoinsButton}
           onClick={() => mountComponents(['CoinsPurchaseWindow'])}
         >
-          {buttonsText.getMore}
+          {coinsTabTexts.getMore}
         </Button>
 
         {isCoinsPurchaseWindowOpen && (

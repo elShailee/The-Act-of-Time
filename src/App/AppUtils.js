@@ -1,14 +1,16 @@
-export function isBrowserValid() {
+import { errorMessagesTexts } from 'Texts/gameplayTexts';
+export function renderOnlyIfBrowserValid(contentToRender) {
   // Internet Explorer 6-11
   const isIE = false || !!document.documentMode || navigator.userAgent.indexOf('MSIE') !== -1;
 
   // Edge 20-78 (not Chromium based)
   const isOldEdge = !isIE && !!window.StyleMedia;
 
-  const isInvalidBrowser = isIE || isOldEdge;
+  const isBrowserValid = !(isIE || isOldEdge);
 
-  return !isInvalidBrowser;
+  if (isBrowserValid) {
+    return contentToRender;
+  } else {
+    return errorMessagesTexts.invalidBrowser;
+  }
 }
-
-export const invalidBrowserMessage =
-  'This Application is not supported for this browser, please try to open it using an up-to-date version of Google Chrome, Mozilla Firefox, or Microsoft Edge.';

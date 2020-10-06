@@ -3,11 +3,11 @@ import EnergyTab from './EnergyTab';
 import './EnergyButton.css';
 import { Button } from '@material-ui/core';
 import { MountedComponentsContext } from 'Contexts/MountedComponentsContext';
-import { componentsTitles } from 'Texts/texts';
+import { energyButtonTexts } from 'Texts/gameplayTexts';
 
 export default function EnergyButton() {
   const { mountedComponentsDict, mountComponents, unmountComponents } = useContext(MountedComponentsContext);
-  const isEnergyTabOpen = mountedComponentsDict.secondaries.EnergyTab;
+  const isEnergyTabOpen = mountedComponentsDict.EnergyTab;
 
   const onEnergyButtonClick = ifMounted => {
     if (isEnergyTabOpen) {
@@ -20,11 +20,9 @@ export default function EnergyButton() {
   return (
     <div id="energyButtonContainer">
       <Button onClick={onEnergyButtonClick} id="energyButton">
-        {componentsTitles.energyButton}
+        {energyButtonTexts.title}
       </Button>
-      {isEnergyTabOpen && (
-        <EnergyTab unmountEnergyTab={() => unmountComponents(['EnergyTab', 'EnergyPurchaseWindow'])} />
-      )}
+      {isEnergyTabOpen && <EnergyTab unmountEnergyTab={() => unmountComponents(['EnergyTab', 'EnergyPurchaseWindow'])} />}
     </div>
   );
 }

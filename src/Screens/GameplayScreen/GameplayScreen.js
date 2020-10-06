@@ -1,5 +1,6 @@
 import React from 'react';
 import './GameplayScreen.css';
+import 'GeneralStyles/iconsStyles.css';
 import CharacterInfo from 'Components/Character/CharacterInfo';
 import ActionsButton from 'Components/Actions/ActionsButton';
 import EnergyButton from 'Components/Energy/EnergyButton';
@@ -15,8 +16,6 @@ export default function GameplayScreen() {
   return (
     <div className="GameplayScreen">
       <MountedComponentsContextProvider>
-        <Map />
-
         <CharacterInfo />
 
         <div id="upperLeftButtonsContainer">
@@ -35,6 +34,7 @@ export default function GameplayScreen() {
           <SeenButton />
           <CraftingButton />
         </div>
+        <Map />
       </MountedComponentsContextProvider>
     </div>
   );
