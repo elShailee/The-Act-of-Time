@@ -1,3 +1,7 @@
 .generalWindowCloseButton {
   margin-left: auto;
 }
+
+.generalWindowContentContainer {
+  margin-top: 7px;
+}

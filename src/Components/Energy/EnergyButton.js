@@ -2,12 +2,12 @@ import React, { useContext } from 'react';
 import EnergyTab from './EnergyTab';
 import './EnergyButton.css';
 import { MountedComponentsContext } from 'Contexts/MountedComponentsContext';
-import { componentsTitles } from 'Texts/texts';
+import { energyButtonTexts } from 'Texts/gameplayTexts';
 import GeneralButton from 'Components/GeneralComponents/GeneralButton';
 
 export default function EnergyButton() {
   const { mountedComponentsDict, mountComponents, unmountComponents } = useContext(MountedComponentsContext);
-  const isEnergyTabOpen = mountedComponentsDict.secondaries.EnergyTab;
+  const isEnergyTabOpen = mountedComponentsDict.EnergyTab;
 
   const onEnergyButtonClick = () => {
     if (isEnergyTabOpen) {
@@ -20,11 +20,9 @@ export default function EnergyButton() {
   return (
     <div id="energyButtonContainer">
       <GeneralButton className="uppercased bordered" onButtonClick={onEnergyButtonClick} id="energyButton">
-        {componentsTitles.energyButton}
+        {energyButtonTexts.title}
       </GeneralButton>
-      {isEnergyTabOpen && (
-        <EnergyTab unmountEnergyTab={() => unmountComponents(['EnergyTab', 'EnergyPurchaseWindow'])} />
-      )}
+      {isEnergyTabOpen && <EnergyTab unmountEnergyTab={() => unmountComponents(['EnergyTab', 'EnergyPurchaseWindow'])} />}
     </div>
   );
 }

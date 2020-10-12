@@ -4,33 +4,37 @@ import GeneralButton from 'Components/GeneralComponents/GeneralButton';
 import { Typography, Card } from '@material-ui/core';
 import EnergyPurchaseWindow from './EnergyPurchaseWindow';
 import { MountedComponentsContext } from 'Contexts/MountedComponentsContext';
-import { buttonsText, energy } from 'Texts/texts';
+import { energyTabTexts } from 'Texts/gameplayTexts';
+import EnergyIcon from 'Images/placeholderIcon.png';
 
 export default function EnergyTab() {
   const { mountedComponentsDict, mountComponents, unmountComponents } = useContext(MountedComponentsContext);
-  const isEnergyPurchaseWindowOpen = mountedComponentsDict.primaries.EnergyPurchaseWindow;
+  const isEnergyPurchaseWindowOpen = mountedComponentsDict.EnergyPurchaseWindow;
+
+  const energyIcon = <img src={EnergyIcon} alt="" className="tinyIcons" />;
 
   return (
     <Card id="energyTab">
       <Typography variant={'subtitle2'} className="energyInfo" id="timeUntillFullText">
-        {energy.fullIn}
+        {energyTabTexts.fullIn}
         <br />
         XX:XX:XX
       </Typography>
 
       <Typography variant={'subtitle2'} className="energyInfo" id="energyAmountText">
         XX
-        {energy.energySymbol}
+        {energyIcon}
       </Typography>
 
       <Typography variant={'subtitle2'} className="energyInfo" id="rechargeRateText">
-        {energy.rate}
+        {energyTabTexts.rate}
         XX
-        {energy.energyPerHour}
+        {energyIcon}
+        {energyTabTexts.perHour}
       </Typography>
 
       <GeneralButton id="getMoreEnergyButton" onButtonClick={() => mountComponents(['EnergyPurchaseWindow'])}>
-        {buttonsText.getMore}
+        {energyTabTexts.getMore}
       </GeneralButton>
 
       {isEnergyPurchaseWindowOpen && (

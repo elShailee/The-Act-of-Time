@@ -4,3 +4,9 @@
   height: 40px;
   border: 1px solid;
 }
+
+#actionsButtonAndTabContainer {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}

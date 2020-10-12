@@ -1,7 +1,7 @@
 import React from 'react';
 import './DisastersIcon.css';
-import { componentsTitles } from 'Texts/texts';
+import { disastersIconTexts } from 'Texts/gameplayTexts';
 
 export default function DisastersIcon() {
-  return <div id="DisastersIcon">{componentsTitles.disaster}</div>;
+  return <div id="DisastersIcon">{disastersIconTexts.title}</div>;
 }

@@ -1,13 +1,13 @@
 import React from 'react';
 import './CharacterInfo.css';
-import { componentsTitles } from 'Texts/texts';
+import { characterInfoTexts } from 'Texts/gameplayTexts';
 
 export default function CharacterInfo() {
   return (
     <div id="characterInfoContainer">
-      <div id="xpCapacity"></div>
-      <div id="xpQuantity"></div>
-      <div id="characterInfo">{componentsTitles.character}</div>
+      <div className="xpBar" id="xpCapacity"></div>
+      <div className="xpBar" id="xpQuantity"></div>
+      <div id="characterInfo">{characterInfoTexts.title}</div>
     </div>
   );
 }

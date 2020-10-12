@@ -1,7 +1,7 @@
 import React from 'react';
 import './MapCompass.css';
-import { componentsTitles } from 'Texts/texts';
+import { mapCompassTexts } from 'Texts/gameplayTexts';
 
 export default function MapCompass() {
-  return <div id="mapCompass">{componentsTitles.mapCompass}</div>;
+  return <div id="mapCompass">{mapCompassTexts.title}</div>;
 }

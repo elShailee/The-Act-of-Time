@@ -40,9 +40,7 @@ export default function GeneralWindow({ windowPosition, children, unmountGeneral
   return (
     <div style={customizedWindowStyle}>
       <GeneralCloseButton className="generalWindowCloseButton" unmountWindow={unmountGeneralWindow} />
-      <div id="contentContainer" style={{ marginTop: '7px' }}>
-        {children}
-      </div>
+      <div className="generalWindowContentContainer">{children}</div>
     </div>
   );
 }

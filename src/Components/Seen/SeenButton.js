@@ -1,7 +1,7 @@
 import React from 'react';
 import './SeenButton.css';
-import { componentsTitles } from 'Texts/texts';
+import { seenButtonTexts } from 'Texts/gameplayTexts';
 
 export default function SeenButton() {
-  return <div id="seenButton">{componentsTitles.seen}</div>;
+  return <div id="seenButton">{seenButtonTexts.title}</div>;
 }
