@@ -16,7 +16,7 @@ export default function CoinsTab() {
     <GeneralTab>
       <Card id="coinsTab">
         <Typography variant={'subtitle2'}>
-          <Box p={0.9}>
+          <Box m={0.9}>
             {coinsTabTexts.coinsAmountPt1}
             XX
             {coinsTabTexts.coinsAmountPt2}
