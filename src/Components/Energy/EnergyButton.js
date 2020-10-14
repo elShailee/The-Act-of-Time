@@ -19,7 +19,7 @@ export default function EnergyButton() {
 
   return (
     <div id="energyButtonContainer">
-      <GeneralButton className="uppercased bordered" onButtonClick={onEnergyButtonClick} id="energyButton">
+      <GeneralButton uppercased outlined onButtonClick={onEnergyButtonClick} id="energyButton">
         {energyButtonTexts.title}
       </GeneralButton>
       {isEnergyTabOpen && <EnergyTab unmountEnergyTab={() => unmountComponents(['EnergyTab', 'EnergyPurchaseWindow'])} />}

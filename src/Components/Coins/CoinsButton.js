@@ -20,11 +20,7 @@ export default function CoinsButton() {
 
   return (
     <div id="coinsButtonContainer">
-      <GeneralButton
-        id="coinsButton"
-        className="uppercased bordered"
-        onButtonClick={() => onCoinsButtonClick(isCoinsTabOpen)}
-      >
+      <GeneralButton id="coinsButton" uppercased outlined onButtonClick={() => onCoinsButtonClick(isCoinsTabOpen)}>
         {coinsButtonTexts.title}
       </GeneralButton>
       {isCoinsTabOpen && <CoinsTab unmountCoinsTab={() => unmountComponents(['CoinsTab', 'CoinsPurchaseWindow'])} />}

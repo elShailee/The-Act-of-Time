@@ -1,4 +1,4 @@
-.button {
+.generalButton {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,17 +9,25 @@
   user-select: none;
 }
 
-.button.onHover {
+.generalButton.onHover {
   filter: brightness(115%) saturate(65%);
 }
 
-.button.onMousePress {
+.generalButton.onMousePress {
   filter: brightness(87%) saturate(100%);
 }
 
-.button.uppercased {
+.generalButton.uppercased {
   text-transform: uppercase;
 }
-.button.bordered {
+.generalButton.outlined {
+  border: 1px solid;
+}
+
+.generalButton.closeButton {
+  margin-left: auto;
+  width: 40px;
+  height: 30px;
+  background-color: orchid;
   border: 1px solid;
 }
