@@ -1,15 +1,15 @@
 import React, { useContext } from 'react';
 import EnergyTab from './EnergyTab';
 import './EnergyButton.css';
-import { Button } from '@material-ui/core';
 import { MountedComponentsContext } from 'Contexts/MountedComponentsContext';
 import { energyButtonTexts } from 'Texts/gameplayTexts';
+import GeneralButton from 'Components/GeneralComponents/GeneralButton';
 
 export default function EnergyButton() {
   const { mountedComponentsDict, mountComponents, unmountComponents } = useContext(MountedComponentsContext);
   const isEnergyTabOpen = mountedComponentsDict.EnergyTab;
 
-  const onEnergyButtonClick = ifMounted => {
+  const onEnergyButtonClick = () => {
     if (isEnergyTabOpen) {
       unmountComponents(['EnergyTab', 'EnergyPurchaseWindow']);
     } else {
@@ -19,9 +19,9 @@ export default function EnergyButton() {
 
   return (
     <div id="energyButtonContainer">
-      <Button onClick={onEnergyButtonClick} id="energyButton">
+      <GeneralButton uppercased outlined onButtonClick={onEnergyButtonClick} id="energyButton">
         {energyButtonTexts.title}
-      </Button>
+      </GeneralButton>
       {isEnergyTabOpen && <EnergyTab unmountEnergyTab={() => unmountComponents(['EnergyTab', 'EnergyPurchaseWindow'])} />}
     </div>
   );

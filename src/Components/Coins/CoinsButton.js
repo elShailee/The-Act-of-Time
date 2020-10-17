@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import CoinsTab from './CoinsTab';
 import './CoinsButton.css';
-import { Button } from '@material-ui/core';
+import GeneralButton from 'Components/GeneralComponents/GeneralButton';
 import { MountedComponentsContext } from 'Contexts/MountedComponentsContext';
 import { coinsButtonTexts } from 'Texts/gameplayTexts';
 
@@ -20,9 +20,9 @@ export default function CoinsButton() {
 
   return (
     <div id="coinsButtonContainer">
-      <Button onClick={onCoinsButtonClick} id="coinsButton">
+      <GeneralButton id="coinsButton" uppercased outlined onButtonClick={() => onCoinsButtonClick(isCoinsTabOpen)}>
         {coinsButtonTexts.title}
-      </Button>
+      </GeneralButton>
       {isCoinsTabOpen && <CoinsTab unmountCoinsTab={() => unmountComponents(['CoinsTab', 'CoinsPurchaseWindow'])} />}
     </div>
   );

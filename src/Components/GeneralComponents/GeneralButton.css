@@ -1,0 +1,33 @@
+.generalButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  font-size: 14px;
+  font-family: Helvetica;
+  cursor: pointer;
+  user-select: none;
+}
+
+.generalButton.onHover {
+  filter: brightness(115%) saturate(65%);
+}
+
+.generalButton.onMousePress {
+  filter: brightness(87%) saturate(100%);
+}
+
+.generalButton.uppercased {
+  text-transform: uppercase;
+}
+.generalButton.outlined {
+  border: 1px solid;
+}
+
+.generalButton.closeButton {
+  margin-left: auto;
+  width: 40px;
+  height: 30px;
+  background-color: orchid;
+  border: 1px solid;
+}

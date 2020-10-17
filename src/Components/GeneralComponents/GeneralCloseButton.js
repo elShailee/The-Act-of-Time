@@ -1,10 +1,10 @@
 import React from 'react';
-import { Button } from '@material-ui/core';
+import GeneralButton from './GeneralButton';
 
-export default function GeneralCloseButton({ unmountWindow }) {
+export default function GeneralCloseButton({ unmountWindow, className }) {
   return (
-    <Button variant="contained" onClick={unmountWindow}>
+    <GeneralButton className={className} closeButton onButtonClick={unmountWindow}>
       X
-    </Button>
+    </GeneralButton>
   );
 }
