@@ -7,23 +7,26 @@ export const ActionsContext = createContext();
 class ActionsContextProvider extends Component {
   state = { ...ActionsTabExampleData() };
 
-  applyFiveActionsReorder = () => {
-    console.log('applyFiveActionsReorder triggered, still needs creating, though...');
+  applyActionsReorder = () => {
+    console.log('applyActionsReorder triggered, still needs creating, though...');
   };
 
-  renderFirstFiveActions = () => {
-    const actionsOrder = this.state.actionsOrder;
-    const items = actionsOrder.map(itemId => {
-      const actionItem = this.state.actions[itemId];
+  renderActionTabItems = numOfItemsToRender => {
+    const { actionsOrder, actions } = this.state;
+    if (!numOfItemsToRender) numOfItemsToRender = actionsOrder.length;
+
+    const relevantItemsIds = actionsOrder.slice(0, numOfItemsToRender);
+    const renderedActionTabItems = relevantItemsIds.map(itemId => {
+      const actionItem = actions[itemId];
       return <ActionsTabItem actionItem={actionItem} key={itemId} />;
     });
-    return items;
+    return renderedActionTabItems;
   };
 
   render() {
-    const { state, applyFiveActionsReorder, renderFirstFiveActions, getFirstFiveActions, props } = this;
+    const { state, applyActionsReorder, renderActionTabItems, getFirstFiveActions, props } = this;
     return (
-      <ActionsContext.Provider value={{ ...state, applyFiveActionsReorder, renderFirstFiveActions, getFirstFiveActions }}>
+      <ActionsContext.Provider value={{ ...state, applyActionsReorder, renderActionTabItems, getFirstFiveActions }}>
         {props.children}
       </ActionsContext.Provider>
     );

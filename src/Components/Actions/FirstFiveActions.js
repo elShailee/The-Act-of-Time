@@ -8,8 +8,7 @@ export default function FirstFiveActions() {
     <Droppable className="FirstFiveActionsContainer" type="firstFiveActions" droppableId="FirstFiveActionsContainer">
       {provided => (
         <div {...provided.droppableProps} ref={provided.innerRef}>
-          idk, some content.
-          {actionsContext.renderFirstFiveActions()}
+          {actionsContext.renderActionTabItems(5)}
         </div>
       )}
     </Droppable>

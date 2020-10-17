@@ -1,5 +1,5 @@
 #actionsButton {
-  --actionsButton-width: 320px;
+  --actionsButton-width: 280px;
   background-color: khaki;
   width: var(--actionsButton-width);
   height: 40px;

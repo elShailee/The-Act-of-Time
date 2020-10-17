@@ -44,7 +44,7 @@ export default function ActionsTabExampleData() {
         description: 'You never know what could happen...',
       },
     },
-    actionsOrder: ['action-1', 'action-2', 'action-3', 'action-4', 'action-5'],
+    actionsOrder: ['action-1', 'action-2', 'action-3', 'action-4', 'action-5', 'action-6', 'action-7'],
   };
   return actionsList;
 }
