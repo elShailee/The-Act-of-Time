@@ -3,16 +3,16 @@ import './ActionsTab.css';
 import GeneralTab from 'Components/GeneralComponents/GeneralTab';
 import { DragDropContext } from 'react-beautiful-dnd';
 import FirstFiveActions from './FirstFiveActions';
-import FirstFiveActionsContext from 'Contexts/FirstFiveActionsContext';
+import ActionsContext from 'Contexts/ActionsContext';
 
 export default function ActionsTab() {
   return (
     <GeneralTab id="actionsTab">
-      <FirstFiveActionsContext>
+      <ActionsContext>
         <DragDropContext>
           <FirstFiveActions />
         </DragDropContext>
-      </FirstFiveActionsContext>
+      </ActionsContext>
     </GeneralTab>
   );
 }

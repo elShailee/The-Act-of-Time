@@ -1,5 +1,5 @@
 export default function ActionsTabExampleData() {
-  const fiveActionsList = {
+  const actionsList = {
     actions: {
       'action-1': {
         id: 'action-1',
@@ -31,8 +31,20 @@ export default function ActionsTabExampleData() {
         eta: '04:04:03',
         description: 'Some call flames a double-edged blade, keep that in mind.',
       },
+      'action-6': {
+        id: 'action-6',
+        title: 'Dig a Cave',
+        eta: '04:44:03',
+        description: 'Tools makes all the difference.',
+      },
+      'action-7': {
+        id: 'action-7',
+        title: 'Set a Bear Trap',
+        eta: '04:59:03',
+        description: 'You never know what could happen...',
+      },
     },
     actionsOrder: ['action-1', 'action-2', 'action-3', 'action-4', 'action-5'],
   };
-  return fiveActionsList;
+  return actionsList;
 }

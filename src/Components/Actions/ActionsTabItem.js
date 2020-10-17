@@ -2,10 +2,10 @@ import React from 'react';
 import './ActionsTabItem.css';
 import hamburgerMenuIcon from 'Images/hamburgerMenuIcon.png';
 
-export default function ActionsTabItem() {
+export default function ActionsTabItem({ actionItem }) {
   return (
     <div className="actionsTabItem">
-      Banana in XX:XX:XX <img src={hamburgerMenuIcon} alt="" class="ActionsTabItemDraghandle" />
+      {actionItem.id} in XX:XX:XX <img src={hamburgerMenuIcon} alt="" className="ActionsTabItemDraghandle" />
     </div>
   );
 }
