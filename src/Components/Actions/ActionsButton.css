@@ -3,7 +3,6 @@
   background-color: khaki;
   width: var(--actionsButton-width);
   height: 40px;
-  border: 1px solid;
 }
 
 #actionsButtonAndTabContainer {

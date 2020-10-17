@@ -1,16 +1,17 @@
 #coinsTab {
-  width: 160px;
+  width: 140px;
   background-color: blue;
   text-align: center;
 }
 
 #getMoreCoinsButton {
-  width: 58px;
-  height: 31px;
+  width: 80px;
+  height: 30px;
   margin: 10px;
   margin-left: auto;
   margin-right: auto;
   background-color: #ffa500;
-  font-size: 12px;
+  font-size: 14px;
   margin-top: 8px;
+  margin-bottom: 0px;
 }
