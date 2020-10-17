@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Droppable } from 'react-beautiful-dnd';
 import { ActionsContext } from 'Contexts/ActionsContext';
 
-export default function FirstFiveActions() {
+export default function FirstFewActions() {
   const actionsContext = useContext(ActionsContext);
   return (
     <Droppable className="FirstFiveActionsContainer" type="firstFiveActions" droppableId="FirstFiveActionsContainer">
