@@ -1,3 +1,4 @@
 #actionsTab {
   background-color: sandybrown;
+  width: var(--actionsButton-width);
 }

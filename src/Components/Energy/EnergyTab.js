@@ -3,39 +3,38 @@ import './EnergyTab.css';
 import GeneralButton from 'Components/GeneralComponents/GeneralButton';
 import EnergyPurchaseWindow from './EnergyPurchaseWindow';
 import { MountedComponentsContext } from 'Contexts/MountedComponentsContext';
-import { buttonsText, energy } from 'Texts/texts';
+import { energyTabTexts } from 'Texts/gameplayTexts';
+import EnergyIcon from 'Images/placeholderIcon.png';
 import GeneralTab from 'Components/GeneralComponents/GeneralTab';
 
 export default function EnergyTab() {
-  const { mountedComponentsDict, mountComponents, unmountComponents } = useContext(
-    MountedComponentsContext
-  );
-  const isEnergyPurchaseWindowOpen = mountedComponentsDict.primaries.EnergyPurchaseWindow;
+  const { mountedComponentsDict, mountComponents, unmountComponents } = useContext(MountedComponentsContext);
+  const isEnergyPurchaseWindowOpen = mountedComponentsDict.EnergyPurchaseWindow;
+
+  const energyIcon = <img src={EnergyIcon} alt="" className="tinyIcons" />;
 
   return (
     <GeneralTab id="energyTab">
       <div className="energyInfo" id="timeUntillFullText">
-        {energy.fullIn}
+        {energyTabTexts.fullIn}
         <br />
         XX:XX:XX
       </div>
 
       <div className="energyInfo" id="energyAmountText">
         XX
-        {energy.energySymbol}
+        {energyIcon}
       </div>
 
       <div className="energyInfo" id="rechargeRateText">
-        {energy.rate}
+        {energyTabTexts.rate}
         XX
-        {energy.energyPerHour}
+        {energyIcon}
+        {energyTabTexts.perHour}
       </div>
 
-      <GeneralButton
-        id="getMoreEnergyButton"
-        onButtonClick={() => mountComponents(['EnergyPurchaseWindow'])}
-      >
-        {buttonsText.getMore}
+      <GeneralButton id="getMoreEnergyButton" onButtonClick={() => mountComponents(['EnergyPurchaseWindow'])}>
+        {energyTabTexts.getMore}
       </GeneralButton>
 
       {isEnergyPurchaseWindowOpen && (

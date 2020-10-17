@@ -1,7 +1,7 @@
 import React from 'react';
 import './CraftingButton.css';
-import { componentsTitles } from 'Texts/texts';
+import { craftingButtonTexts } from 'Texts/gameplayTexts';
 
 export default function CraftingButton() {
-  return <div id="craftingButton">{componentsTitles.crafting}</div>;
+  return <div id="craftingButton">{craftingButtonTexts.title}</div>;
 }

@@ -1,42 +1,53 @@
 import React, { Component, createContext } from 'react';
+import { isAnObject } from 'Utils/utilFuncs';
+import { errorMessagesTexts } from 'Texts/gameplayTexts';
 
 export const MountedComponentsContext = createContext();
 
 class MountedComponentsContextProvider extends Component {
   state = {
     mountedComponentsDict: {
-      primaries: {
-        EnergyPurchaseWindow: false,
-        CoinsPurchaseWindow: false,
-      },
-      secondaries: {
-        CoinsTab: false,
-        EnergyTab: false,
-        ActionsTab: false,
-      },
+      ActionsTab: false,
+      EnergyPurchaseWindow: false,
+      CoinsPurchaseWindow: false,
+      CoinsTab: false,
+      EnergyTab: false,
     },
   };
 
   mountOrunmountComponents = (componentsToMountArray, shouldMount) => {
+    if (typeof componentsToMountArray === 'string') componentsToMountArray = [componentsToMountArray];
+
+    const isComponentsArrayValid = this.isComponentsArrayValid(componentsToMountArray);
+    if (!isComponentsArrayValid) {
+      console.log(errorMessagesTexts.invalidComponentsToMount);
+      return;
+    }
+
     const mountedComponentsDict = this.state.mountedComponentsDict;
-    const { ...priorityGroups } = mountedComponentsDict;
-    componentsToMountArray.forEach(componentToMountOrUnmount => {
-      for (const priorityGroup in priorityGroups) {
-        const groupInDict = mountedComponentsDict[priorityGroup];
-        if (componentToMountOrUnmount in groupInDict) {
-          const { mountedComponentsDict: newMountedComponentsDict } = this.state;
-          newMountedComponentsDict[priorityGroup][componentToMountOrUnmount] = shouldMount;
-          this.setState({ mountedComponentsDict: newMountedComponentsDict });
-        }
+
+    componentsToMountArray.forEach(componentName => {
+      const doesComponentAppearInDict = componentName in mountedComponentsDict;
+      if (doesComponentAppearInDict) {
+        const newMountedComponentsDict = mountedComponentsDict;
+        newMountedComponentsDict[componentName] = shouldMount;
+        this.setState({ mountedComponentsDict: newMountedComponentsDict });
       }
     });
   };
 
-  mountComponents = componentsToUnmountArray => {
-    this.mountOrunmountComponents(componentsToUnmountArray, true);
+  mountComponents = componentsToMountArray => {
+    this.mountOrunmountComponents(componentsToMountArray, true);
   };
   unmountComponents = componentsToUnmountArray => {
     this.mountOrunmountComponents(componentsToUnmountArray, false);
+  };
+
+  isComponentsArrayValid = arreyOfComponentsNames => {
+    if (!isAnObject(arreyOfComponentsNames) || arreyOfComponentsNames === undefined) {
+      return false;
+    }
+    return true;
   };
 
   render() {

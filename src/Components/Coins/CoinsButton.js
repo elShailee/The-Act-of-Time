@@ -3,11 +3,12 @@ import CoinsTab from './CoinsTab';
 import './CoinsButton.css';
 import GeneralButton from 'Components/GeneralComponents/GeneralButton';
 import { MountedComponentsContext } from 'Contexts/MountedComponentsContext';
-import { componentsTitles } from 'Texts/texts';
+import { coinsButtonTexts } from 'Texts/gameplayTexts';
 
 export default function CoinsButton() {
   const { mountedComponentsDict, mountComponents, unmountComponents } = useContext(MountedComponentsContext);
-  const isCoinsTabOpen = mountedComponentsDict.secondaries.CoinsTab;
+
+  const isCoinsTabOpen = mountedComponentsDict.CoinsTab;
 
   const onCoinsButtonClick = () => {
     if (isCoinsTabOpen) {
@@ -19,8 +20,8 @@ export default function CoinsButton() {
 
   return (
     <div id="coinsButtonContainer">
-      <GeneralButton id="coinsButton" className="uppercased bordered" onButtonClick={onCoinsButtonClick}>
-        {componentsTitles.coinsButton}
+      <GeneralButton id="coinsButton" uppercased outlined onButtonClick={() => onCoinsButtonClick(isCoinsTabOpen)}>
+        {coinsButtonTexts.title}
       </GeneralButton>
       {isCoinsTabOpen && <CoinsTab unmountCoinsTab={() => unmountComponents(['CoinsTab', 'CoinsPurchaseWindow'])} />}
     </div>

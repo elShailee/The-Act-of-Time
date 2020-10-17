@@ -1,21 +1,37 @@
 import React, { useState } from 'react';
 import './GeneralButton.css';
 
-export default function GeneralButton({ className, id, onButtonClick, children }) {
-  const classNamePlusButton = className + ' button';
-  const [composedClassName, setComposedClassName] = useState(classNamePlusButton);
+//Instructions for adding style props below
+
+export default function GeneralButton({ id, onButtonClick, children, ...props }) {
+  let classNamePlusGeneralButton = 'generalButton';
+  for (const variant in variantsDict) {
+    props[variant] && (classNamePlusGeneralButton += ' ' + variant);
+  }
+
+  const [dynamicClassName, setDynamicClassName] = useState(classNamePlusGeneralButton);
 
   return (
     <div
       id={id}
-      className={composedClassName}
+      className={dynamicClassName}
       onClick={onButtonClick}
-      onMouseOver={() => setComposedClassName(classNamePlusButton + ' onHover')}
-      onMouseLeave={() => setComposedClassName(classNamePlusButton)}
-      onMouseDown={() => setComposedClassName(classNamePlusButton + ' onMousePress')}
-      onMouseUp={() => setComposedClassName(classNamePlusButton + ' onHover')}
+      onMouseOver={() => setDynamicClassName(classNamePlusGeneralButton + ' onHover')}
+      onMouseLeave={() => setDynamicClassName(classNamePlusGeneralButton)}
+      onMouseDown={() => setDynamicClassName(classNamePlusGeneralButton + ' onMousePress')}
+      onMouseUp={() => setDynamicClassName(classNamePlusGeneralButton + ' onHover')}
     >
       {children}
     </div>
   );
 }
+
+const variantsDict = {
+  uppercased: 'uppercased',
+  outlined: 'outlined',
+  closeButton: 'closeButton',
+};
+
+// If you want to add a new proped style for GeneralButton you need to:
+// 1. Add the name of the prop into variantsDict above, just like the existing ones.
+// 2. add the style you want to implement to GeneralButton.css under the selector .generalButton.yourNewPropName .

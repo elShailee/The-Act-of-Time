@@ -1,6 +1,13 @@
 #actionsButton {
+  --actionsButton-width: 320px;
   background-color: khaki;
-  width: 320px;
+  width: var(--actionsButton-width);
   height: 40px;
   border: 1px solid;
+}
+
+#actionsButtonAndTabContainer {
+  position: absolute;
+  right: 20px;
+  top: 20px;
 }

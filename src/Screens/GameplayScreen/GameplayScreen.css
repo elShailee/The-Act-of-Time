@@ -9,12 +9,6 @@
   display: flex;
 }
 
-#upperRightButtonsContainer {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-}
-
 #disastersContainerContainer {
   position: absolute;
   left: 20px;
@@ -23,6 +17,8 @@
 }
 
 #bottomRightButtonsContainer {
+  --seenButton-size: 60px;
+  --craftingButton-size: 100px;
   position: absolute;
   right: 20px;
   bottom: 20px;
