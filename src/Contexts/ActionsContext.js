@@ -12,15 +12,23 @@ class ActionsContextProvider extends Component {
   };
 
   renderActionTabItems = numOfItemsToRender => {
-    const { actionsOrder, actions } = this.state;
+    return this.renderActionItems(numOfItemsToRender, 'actionTabItems');
+  };
+
+  renderActionItems = (numOfItemsToRender, renderType) => {
+    const { actionsOrder } = this.state;
     if (!numOfItemsToRender) numOfItemsToRender = actionsOrder.length;
 
     const relevantItemsIds = actionsOrder.slice(0, numOfItemsToRender);
-    const renderedActionTabItems = relevantItemsIds.map(itemId => {
-      const actionItem = actions[itemId];
-      return <ActionsTabItem actionItem={actionItem} key={itemId} />;
+    const renderedActionItems = relevantItemsIds.map(itemId => {
+      return this.generateActionItem(itemId, renderType);
     });
-    return renderedActionTabItems;
+    return renderedActionItems;
+  };
+
+  generateActionItem = (actionItemId, type) => {
+    const actionItem = this.state.actions[actionItemId];
+    if (type === 'actionTabItems') return <ActionsTabItem actionItem={actionItem} key={actionItemId} />;
   };
 
   render() {
