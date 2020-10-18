@@ -11,7 +11,7 @@ export default function ActionButton() {
 
   const onActionsButtonClick = () => {
     if (isActionsTabMounted) {
-      unmountComponents(['ActionsTab', 'ActionsWindow']);
+      unmountComponents(['ActionsTab']);
     } else {
       mountComponents(['ActionsTab']);
     }
