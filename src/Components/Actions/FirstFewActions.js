@@ -1,17 +1,19 @@
 import React, { useContext } from 'react';
-import { Droppable } from 'react-beautiful-dnd';
+import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import { ActionsContext } from 'Contexts/ActionsContext';
 
 export default function FirstFewActions() {
   const actionsContext = useContext(ActionsContext);
   return (
-    <Droppable className="FirstFiveActionsContainer" type="firstFiveActions" droppableId="FirstFiveActionsContainer">
-      {provided => (
-        <div {...provided.droppableProps} ref={provided.innerRef}>
-          {actionsContext.renderActionTabItems(5)}
-          {provided.placeholder}
-        </div>
-      )}
-    </Droppable>
+    <DragDropContext onDragEnd={result => actionsContext.applyActionsReorder(result)}>
+      <Droppable type="firstFewActions" droppableId="FirstFewActionsContainer">
+        {provided => (
+          <div {...provided.droppableProps} ref={provided.innerRef}>
+            {actionsContext.renderActionTabItems(5)}
+            {provided.placeholder}
+          </div>
+        )}
+      </Droppable>
+    </DragDropContext>
   );
 }

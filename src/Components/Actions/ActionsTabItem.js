@@ -2,11 +2,10 @@ import React from 'react';
 import './ActionsTabItem.css';
 import hamburgerMenuIcon from 'Images/hamburgerMenuIcon.png';
 import { Draggable } from 'react-beautiful-dnd';
-import { getDraggableItemIndexFromActionId } from './Utils';
 
-export default function ActionsTabItem({ actionItem }) {
+export default function ActionsTabItem({ actionItem, index }) {
   return (
-    <Draggable draggableId={actionItem.id} index={getDraggableItemIndexFromActionId(actionItem.id)}>
+    <Draggable draggableId={actionItem.id} index={index}>
       {provided => (
         <div className="actionsTabItem" {...provided.draggableProps} ref={provided.innerRef}>
           {actionItem.id} in {actionItem.eta}
