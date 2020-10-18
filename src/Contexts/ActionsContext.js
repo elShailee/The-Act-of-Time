@@ -1,11 +1,11 @@
 import React, { Component, createContext } from 'react';
-import ActionsTabExampleData from 'ExampleData/ActionsTabExampleData';
+import ActionsExampleData from 'ExampleData/ActionsExampleData';
 import ActionsTabItem from 'Components/Actions/ActionsTabItem';
 
 export const ActionsContext = createContext();
 
 class ActionsContextProvider extends Component {
-  state = { ...ActionsTabExampleData() };
+  state = { ...ActionsExampleData() };
 
   applyActionsReorder = () => {
     console.log('applyActionsReorder triggered, still needs creating, though...');

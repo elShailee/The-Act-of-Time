@@ -1,4 +1,4 @@
-export default function ActionsTabExampleData() {
+export default function ActionsExampleData() {
   const actionsList = {
     actions: {
       'action-1': {

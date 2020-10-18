@@ -9,6 +9,7 @@ export default function FirstFewActions() {
       {provided => (
         <div {...provided.droppableProps} ref={provided.innerRef}>
           {actionsContext.renderActionTabItems(5)}
+          {provided.placeholder}
         </div>
       )}
     </Droppable>
