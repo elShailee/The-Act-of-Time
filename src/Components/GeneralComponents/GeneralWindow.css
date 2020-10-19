@@ -1,14 +1,12 @@
 .generalWindow {
+  width: fit-content;
+  position: fixed;
   background-color: #ddcc66;
-  text-align: right;
   padding: 7px;
   border-radius: 5px;
-  z-index: 1;
 }
 
 .centered {
-  width: fit-content;
-  position: fixed;
   top: 52%; /* simply wanted it down a bit for astetics, thats whats behind the 2%*/
   left: 50%;
   transform: translate(-50%, -50%);
@@ -18,8 +16,6 @@
 }
 
 .rightSided {
-  width: fit-content;
-  position: fixed;
   right: 100px;
   top: 52%;
   transform: translate(0, -50%);
@@ -32,12 +28,12 @@
 }
 
 .contentContainer {
+  width: fit-content;
+  min-width: 20vw;
+  height: 80vh;
   margin-top: 7px;
   background: #ffd095;
   border-radius: 7px;
   border: 1px #ddb075 solid;
   text-align: center;
-  height: 80vh;
-  width: fit-content;
-  min-width: 20vw;
 }

@@ -1,9 +1,9 @@
 import React from 'react';
 import GeneralWindow from 'Components/GeneralComponents/GeneralWindow';
 
-export default function EnergyPurchaseWindow({ unmountEnergyPurchaseWindow }) {
+export default function EnergyPurchaseWindow({ unmountEnergyPurchaseWindow, ...props }) {
   return (
-    <GeneralWindow unmountGeneralWindow={unmountEnergyPurchaseWindow}>
+    <GeneralWindow unmountGeneralWindow={unmountEnergyPurchaseWindow} {...props}>
       <br />
       <br />
       <br />

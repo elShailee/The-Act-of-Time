@@ -8,13 +8,13 @@ export default function ActionsTabItem({ actionItem, index }) {
     <Draggable draggableId={actionItem.id} index={index}>
       {provided => (
         <div className="actionsTabItem" {...provided.draggableProps} ref={provided.innerRef}>
-          {actionItem.id} in {actionItem.eta}
           <img
             src={hamburgerMenuIcon}
             alt=""
             className="actionsTabItemDraghandle smallIcons"
             {...provided.dragHandleProps}
           />
+          {actionItem.id} in {actionItem.eta}
         </div>
       )}
     </Draggable>

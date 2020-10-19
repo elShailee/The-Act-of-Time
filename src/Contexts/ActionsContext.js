@@ -5,7 +5,8 @@ import ActionsTabItem from 'Components/Actions/ActionsTabItem';
 export const ActionsContext = createContext();
 
 class ActionsContextProvider extends Component {
-  state = { ...ActionsExampleData() };
+  state = ActionsExampleData();
+  actionsItemsTypes = { tabItem: 'tabItem' };
 
   applyActionsReorder = result => {
     const { actionsOrder } = this.state;
@@ -21,15 +22,15 @@ class ActionsContextProvider extends Component {
   };
 
   renderActionTabItems = numOfItemsToRender => {
-    return this.renderActionItems(numOfItemsToRender, 'actionTabItems');
+    return this.renderActionItems(numOfItemsToRender, this.actionsItemsTypes.tabItem);
   };
 
   renderActionItems = (numOfItemsToRender, renderType) => {
     const { actionsOrder } = this.state;
     if (!numOfItemsToRender) numOfItemsToRender = actionsOrder.length;
 
-    const relevantItemsIds = actionsOrder.slice(0, numOfItemsToRender);
-    const renderedActionItems = relevantItemsIds.map((itemId, index) => {
+    const itemsToRenderIds = actionsOrder.slice(0, numOfItemsToRender);
+    const renderedActionItems = itemsToRenderIds.map((itemId, index) => {
       return this.generateActionItem(itemId, index, renderType);
     });
     return renderedActionItems;
@@ -37,7 +38,8 @@ class ActionsContextProvider extends Component {
 
   generateActionItem = (actionItemId, index, type) => {
     const actionItem = this.state.actions[actionItemId];
-    if (type === 'actionTabItems') return <ActionsTabItem actionItem={actionItem} key={actionItemId} index={index} />;
+    if (type === this.actionsItemsTypes.tabItem)
+      return <ActionsTabItem actionItem={actionItem} key={actionItemId} index={index} />;
   };
 
   render() {

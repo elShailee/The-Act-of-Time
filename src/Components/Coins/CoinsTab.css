@@ -7,11 +7,9 @@
 #getMoreCoinsButton {
   width: 80px;
   height: 30px;
-  margin: 10px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 8px;
   background-color: #ffa500;
   font-size: 14px;
-  margin-top: 8px;
-  margin-bottom: 0px;
 }

@@ -38,9 +38,7 @@ export default function EnergyTab() {
       </GeneralButton>
 
       {isEnergyPurchaseWindowOpen && (
-        <EnergyPurchaseWindow
-          unmountEnergyPurchaseWindow={() => unmountComponents(['EnergyPurchaseWindow'])}
-        />
+        <EnergyPurchaseWindow unmountEnergyPurchaseWindow={() => unmountComponents(['EnergyPurchaseWindow'])} />
       )}
     </GeneralTab>
   );
