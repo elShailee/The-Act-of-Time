@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import './EnergyTab.css';
 import GeneralButton from 'Components/GeneralComponents/GeneralButton';
-import { Typography, Card } from '@material-ui/core';
 import EnergyPurchaseWindow from './EnergyPurchaseWindow';
 import { MountedComponentsContext } from 'Contexts/MountedComponentsContext';
 import { energyTabTexts } from 'Texts/gameplayTexts';
 import EnergyIcon from 'Images/placeholderIcon.png';
+import GeneralTab from 'Components/GeneralComponents/GeneralTab';
 
 export default function EnergyTab() {
   const { mountedComponentsDict, mountComponents, unmountComponents } = useContext(MountedComponentsContext);
@@ -14,24 +14,24 @@ export default function EnergyTab() {
   const energyIcon = <img src={EnergyIcon} alt="" className="tinyIcons" />;
 
   return (
-    <Card id="energyTab">
-      <Typography variant={'subtitle2'} className="energyInfo" id="timeUntillFullText">
+    <GeneralTab id="energyTab">
+      <div className="energyInfo" id="timeUntillFullText">
         {energyTabTexts.fullIn}
         <br />
         XX:XX:XX
-      </Typography>
+      </div>
 
-      <Typography variant={'subtitle2'} className="energyInfo" id="energyAmountText">
+      <div className="energyInfo" id="energyAmountText">
         XX
         {energyIcon}
-      </Typography>
+      </div>
 
-      <Typography variant={'subtitle2'} className="energyInfo" id="rechargeRateText">
+      <div className="energyInfo" id="rechargeRateText">
         {energyTabTexts.rate}
         XX
         {energyIcon}
         {energyTabTexts.perHour}
-      </Typography>
+      </div>
 
       <GeneralButton id="getMoreEnergyButton" onButtonClick={() => mountComponents(['EnergyPurchaseWindow'])}>
         {energyTabTexts.getMore}
@@ -40,6 +40,6 @@ export default function EnergyTab() {
       {isEnergyPurchaseWindowOpen && (
         <EnergyPurchaseWindow unmountEnergyPurchaseWindow={() => unmountComponents(['EnergyPurchaseWindow'])} />
       )}
-    </Card>
+    </GeneralTab>
   );
 }

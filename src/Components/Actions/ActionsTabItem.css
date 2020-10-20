@@ -1,0 +1,12 @@
+.actionsTabItem {
+  display: flex;
+  background-color: rgb(252, 202, 156);
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 5px;
+  user-select: none;
+}
+
+.actionsTabItemDraghandle {
+  margin-right: 8px;
+}

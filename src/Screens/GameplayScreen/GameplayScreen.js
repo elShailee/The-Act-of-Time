@@ -14,7 +14,7 @@ import MountedComponentsContextProvider from 'Contexts/MountedComponentsContext'
 
 export default function GameplayScreen() {
   return (
-    <div className="GameplayScreen">
+    <div id="gameplayScreen">
       <MountedComponentsContextProvider>
         <CharacterInfo />
 

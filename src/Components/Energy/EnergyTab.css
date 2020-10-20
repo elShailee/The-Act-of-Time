@@ -29,17 +29,21 @@
 }
 
 #getMoreEnergyButton {
+  grid-row-start: 3;
+  grid-row-end: 5;
+
   background-color: #00cccc;
   width: 60px;
   height: 30px;
-  grid-row-start: 3;
-  grid-row-end: 5;
   font-size: 12px;
 }
 
 .energyInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   font-size: 12px;
   background-color: #aadddd;
   border-radius: 3px;
-  text-align: center;
 }
