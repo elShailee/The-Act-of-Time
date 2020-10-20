@@ -1,9 +1,9 @@
 import React from 'react';
 import GeneralWindow from 'Components/GeneralComponents/GeneralWindow';
 
-export default function CoinsPurchaseWindow({ unmountCoinsPurchaseWindow, ...props }) {
+export default function CoinsPurchaseWindow({ unmountCoinsPurchaseWindow }) {
   return (
-    <GeneralWindow unmountGeneralWindow={unmountCoinsPurchaseWindow} {...props}>
+    <GeneralWindow unmountGeneralWindow={unmountCoinsPurchaseWindow}>
       <br />
       <br />
       <br />
