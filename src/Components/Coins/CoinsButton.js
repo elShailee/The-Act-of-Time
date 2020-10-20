@@ -12,9 +12,9 @@ export default function CoinsButton() {
 
   const onCoinsButtonClick = () => {
     if (isCoinsTabOpen) {
-      unmountComponents(['CoinsTab', 'CoinsPurchaseWindow']);
+      unmountComponents('CoinsTab');
     } else {
-      mountComponents(['CoinsTab']);
+      mountComponents('CoinsTab');
     }
   };
 
@@ -23,7 +23,7 @@ export default function CoinsButton() {
       <GeneralButton id="coinsButton" uppercased outlined onButtonClick={() => onCoinsButtonClick(isCoinsTabOpen)}>
         {coinsButtonTexts.title}
       </GeneralButton>
-      {isCoinsTabOpen && <CoinsTab unmountCoinsTab={() => unmountComponents(['CoinsTab', 'CoinsPurchaseWindow'])} />}
+      {isCoinsTabOpen && <CoinsTab />}
     </div>
   );
 }

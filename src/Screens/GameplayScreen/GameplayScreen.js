@@ -11,6 +11,7 @@ import Map from 'Components/Map/Map';
 import DisastersIcon from 'Components/Disasters/DisastersIcon';
 import DisasterCounter from 'Components/Disasters/DisasterCounter';
 import MountedComponentsContextProvider from 'Contexts/MountedComponentsContext';
+import AllTheFloatingWindows from 'Components/AllTheFloatingWindows/AllTheFloatingWindows';
 
 export default function GameplayScreen() {
   return (
@@ -35,6 +36,7 @@ export default function GameplayScreen() {
           <CraftingButton />
         </div>
         <Map />
+        <AllTheFloatingWindows />
       </MountedComponentsContextProvider>
     </div>
   );

@@ -1,27 +1,26 @@
 import React, { useContext } from 'react';
 import './CoinsTab.css';
 import GeneralButton from 'Components/GeneralComponents/GeneralButton';
-import CoinsPurchaseWindow from './CoinsPurchaseWindow';
 import { MountedComponentsContext } from 'Contexts/MountedComponentsContext';
 import GeneralTab from 'Components/GeneralComponents/GeneralTab';
 import { coinsTabTexts } from 'Texts/gameplayTexts';
 
 export default function CoinsTab() {
-  const { mountedComponentsDict, mountComponents, unmountComponents } = useContext(MountedComponentsContext);
+  const { mountComponents, unmountComponents } = useContext(MountedComponentsContext);
 
-  const isCoinsPurchaseWindowOpen = mountedComponentsDict.CoinsPurchaseWindow;
+  const getMoreButtonClickHandler = () => {
+    mountComponents('CoinsPurchaseWindow');
+    unmountComponents('CoinsTab');
+  };
 
   return (
     <GeneralTab id="coinsTab">
       {coinsTabTexts.coinsAmountPt1}
       XX
       {coinsTabTexts.coinsAmountPt2}
-      <GeneralButton id="getMoreCoinsButton" onButtonClick={() => mountComponents(['CoinsPurchaseWindow'])}>
+      <GeneralButton id="getMoreCoinsButton" onButtonClick={() => getMoreButtonClickHandler()}>
         {coinsTabTexts.getMore}
       </GeneralButton>
-      {isCoinsPurchaseWindowOpen && (
-        <CoinsPurchaseWindow unmountCoinsPurchaseWindow={() => unmountComponents(['CoinsPurchaseWindow'])} />
-      )}
     </GeneralTab>
   );
 }
