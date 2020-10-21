@@ -11,9 +11,9 @@ export default function EnergyButton() {
 
   const onEnergyButtonClick = () => {
     if (isEnergyTabOpen) {
-      unmountComponents(['EnergyTab', 'EnergyPurchaseWindow']);
+      unmountComponents('EnergyTab');
     } else {
-      mountComponents(['EnergyTab']);
+      mountComponents('EnergyTab');
     }
   };
 
@@ -22,7 +22,7 @@ export default function EnergyButton() {
       <GeneralButton uppercased outlined onButtonClick={onEnergyButtonClick} id="energyButton">
         {energyButtonTexts.title}
       </GeneralButton>
-      {isEnergyTabOpen && <EnergyTab unmountEnergyTab={() => unmountComponents(['EnergyTab', 'EnergyPurchaseWindow'])} />}
+      {isEnergyTabOpen && <EnergyTab />}
     </div>
   );
 }

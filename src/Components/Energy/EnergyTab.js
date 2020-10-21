@@ -1,15 +1,18 @@
 import React, { useContext } from 'react';
 import './EnergyTab.css';
 import GeneralButton from 'Components/GeneralComponents/GeneralButton';
-import EnergyPurchaseWindow from './EnergyPurchaseWindow';
 import { MountedComponentsContext } from 'Contexts/MountedComponentsContext';
 import { energyTabTexts } from 'Texts/gameplayTexts';
 import EnergyIcon from 'Images/placeholderIcon.png';
 import GeneralTab from 'Components/GeneralComponents/GeneralTab';
 
 export default function EnergyTab() {
-  const { mountedComponentsDict, mountComponents, unmountComponents } = useContext(MountedComponentsContext);
-  const isEnergyPurchaseWindowOpen = mountedComponentsDict.EnergyPurchaseWindow;
+  const { mountComponents, unmountComponents } = useContext(MountedComponentsContext);
+
+  const getMoreButtonClickHandler = () => {
+    mountComponents('EnergyPurchaseWindow');
+    unmountComponents('EnergyTab');
+  };
 
   const energyIcon = <img src={EnergyIcon} alt="" className="tinyIcons" />;
 
@@ -33,13 +36,9 @@ export default function EnergyTab() {
         {energyTabTexts.perHour}
       </div>
 
-      <GeneralButton id="getMoreEnergyButton" onButtonClick={() => mountComponents(['EnergyPurchaseWindow'])}>
+      <GeneralButton id="getMoreEnergyButton" onButtonClick={() => getMoreButtonClickHandler()}>
         {energyTabTexts.getMore}
       </GeneralButton>
-
-      {isEnergyPurchaseWindowOpen && (
-        <EnergyPurchaseWindow unmountEnergyPurchaseWindow={() => unmountComponents(['EnergyPurchaseWindow'])} />
-      )}
     </GeneralTab>
   );
 }
