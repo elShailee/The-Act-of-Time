@@ -1,6 +1,6 @@
 import React, { Component, createContext } from 'react';
 import activeActions from 'ExampleData/activeActionsExampleData';
-import actionsLibraryExampleData from 'ExampleData/actionsLibraryExampleData';
+import actionsLibrary from 'ExampleData/actionsLibraryExampleData';
 import ActionsTabItem from 'Components/Actions/ActionsTabItem';
 
 export const ActionsContext = createContext();
@@ -13,6 +13,7 @@ class ActionsContextProvider extends Component {
     }
     return actionsOrder;
   };
+
   state = { actions: activeActions, actionsOrder: this.getActionsOrder() };
   actionsItemsTypes = { tabItem: 'tabItem' };
 
@@ -39,17 +40,25 @@ class ActionsContextProvider extends Component {
 
     const itemsToRenderIds = actionsOrder.slice(0, numOfItemsToRender);
     const renderedActionItems = itemsToRenderIds.map((itemId, index) => {
-      return this.generateActionItem(itemId, index, renderType);
+      const actionObject = this.generateActionObject(itemId);
+      return this.generateActionItemJSX(actionObject, index, renderType);
     });
     return renderedActionItems;
   };
 
-  generateActionItem = (actionItemId, index, actionItemType) => {
-    const activeActionItem = this.state.actions[actionItemId];
-    const lib = actionsLibraryExampleData;
-    const uiActionItem = { ...lib[activeActionItem.actionType], ...activeActionItem };
-    if (actionItemType === this.actionsItemsTypes.tabItem) {
-      return <ActionsTabItem actionItem={uiActionItem} key={actionItemId} index={index} />;
+  generateActionObject = actionItemId => {
+    const actionItemInDB = this.state.actions[actionItemId];
+
+    const lib = actionsLibrary;
+    const actionItemInLib = { ...lib[actionItemInDB.actionType] };
+
+    const fullActionItem = Object.assign({}, actionItemInLib, actionItemInDB);
+    return fullActionItem;
+  };
+
+  generateActionItemJSX = (actionItem, index, renderType) => {
+    if (renderType === this.actionsItemsTypes.tabItem) {
+      return <ActionsTabItem actionItem={actionItem} key={actionItem.id} index={index} />;
     }
   };
 

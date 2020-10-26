@@ -14,6 +14,10 @@ export default function ActionsTabItem({ actionItem, index }) {
     />
   );
 
+  const eta = Math.floor(actionItem.endingTime / 100000);
+  //The division and floor are just for the large int to be small enough to fit in the screen
+  //Need to create dynamic counter for this and replace it.
+
   return (
     <Draggable draggableId={actionItem.id} index={index}>
       {provided => (
@@ -21,8 +25,7 @@ export default function ActionsTabItem({ actionItem, index }) {
           <img src={hamburgerMenuIcon} alt="" className="smallIcons" {...provided.dragHandleProps} />
           <div>{actionItem.title}</div>
           {' - '}
-          <div>{Math.floor(actionItem.endingTime / 100000)}</div>
-          {/*the division and floor are just for the large int to be small enough to fit in the screen*/}
+          <div>{eta}</div>
           {actionAbortButton}
         </div>
       )}
