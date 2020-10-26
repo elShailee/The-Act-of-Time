@@ -1,5 +1,6 @@
 .actionsTabItem {
   display: flex;
+  justify-content: space-between;
   background-color: rgb(252, 202, 156);
   border-radius: 5px;
   padding: 10px;
@@ -7,6 +8,6 @@
   user-select: none;
 }
 
-.actionsTabItemDraghandle {
-  margin-right: 8px;
+.actionsTabItemXIcon {
+  cursor: pointer;
 }
