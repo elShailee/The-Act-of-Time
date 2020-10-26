@@ -1,11 +1,19 @@
 import React, { Component, createContext } from 'react';
-import ActionsExampleData from 'ExampleData/ActionsExampleData';
+import activeActions from 'ExampleData/activeActionsExampleData';
+import actionsLibraryExampleData from 'ExampleData/actionsLibraryExampleData';
 import ActionsTabItem from 'Components/Actions/ActionsTabItem';
 
 export const ActionsContext = createContext();
 
 class ActionsContextProvider extends Component {
-  state = ActionsExampleData();
+  getActionsOrder = () => {
+    const actionsOrder = [];
+    for (const action in activeActions) {
+      actionsOrder.push(action);
+    }
+    return actionsOrder;
+  };
+  state = { actions: activeActions, actionsOrder: this.getActionsOrder() };
   actionsItemsTypes = { tabItem: 'tabItem' };
 
   applyActionsReorder = result => {
@@ -22,10 +30,10 @@ class ActionsContextProvider extends Component {
   };
 
   renderActionTabItems = numOfItemsToRender => {
-    return this.renderActionItems(numOfItemsToRender, this.actionsItemsTypes.tabItem);
+    return this.renderActionItems(this.actionsItemsTypes.tabItem, numOfItemsToRender);
   };
 
-  renderActionItems = (numOfItemsToRender, renderType) => {
+  renderActionItems = (renderType, numOfItemsToRender) => {
     const { actionsOrder } = this.state;
     if (!numOfItemsToRender) numOfItemsToRender = actionsOrder.length;
 
@@ -36,10 +44,13 @@ class ActionsContextProvider extends Component {
     return renderedActionItems;
   };
 
-  generateActionItem = (actionItemId, index, type) => {
-    const actionItem = this.state.actions[actionItemId];
-    if (type === this.actionsItemsTypes.tabItem)
-      return <ActionsTabItem actionItem={actionItem} key={actionItemId} index={index} />;
+  generateActionItem = (actionItemId, index, actionItemType) => {
+    const activeActionItem = this.state.actions[actionItemId];
+    const lib = actionsLibraryExampleData;
+    const uiActionItem = { ...lib[activeActionItem.actionType], ...activeActionItem };
+    if (actionItemType === this.actionsItemsTypes.tabItem) {
+      return <ActionsTabItem actionItem={uiActionItem} key={actionItemId} index={index} />;
+    }
   };
 
   render() {

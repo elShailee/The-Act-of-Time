@@ -19,7 +19,10 @@ export default function ActionsTabItem({ actionItem, index }) {
       {provided => (
         <div className="actionsTabItem" {...provided.draggableProps} ref={provided.innerRef}>
           <img src={hamburgerMenuIcon} alt="" className="smallIcons" {...provided.dragHandleProps} />
-          {actionItem.id} in {actionItem.eta}
+          <div>{actionItem.title}</div>
+          {' - '}
+          <div>{Math.floor(actionItem.endingTime / 100000)}</div>
+          {/*the division and floor are just for the large int to be small enough to fit in the screen*/}
           {actionAbortButton}
         </div>
       )}
