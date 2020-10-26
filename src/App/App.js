@@ -1,9 +1,11 @@
 import React from 'react';
 import GameplayScreen from 'Screens/GameplayScreen/GameplayScreen';
-import RenderIfBrowserValidHOC from 'App/RenderIfBrowserValidHoc';
+import RenderIfBrowserValidHOC from 'App/RenderIfBrowserValidHOC';
 
-export default () => (
+const App = () => (
   <RenderIfBrowserValidHOC>
     <GameplayScreen />
   </RenderIfBrowserValidHOC>
 );
+
+export default App;
