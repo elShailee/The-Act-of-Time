@@ -14,12 +14,19 @@ export default function ActionsTabItem({ actionItem, index }) {
     />
   );
 
+  const actionEndingTime = Math.floor(actionItem.endingTime / 100000);
+  //actionItem.endingTime is a unix timestamp regarding it's end,
+  //the division and floor are just for the large int to be small enough to fit in the screen
+  //Need to create dynamic counter for this and replace it.
+
   return (
     <Draggable draggableId={actionItem.id} index={index}>
       {provided => (
         <div className="actionsTabItem" {...provided.draggableProps} ref={provided.innerRef}>
           <img src={hamburgerMenuIcon} alt="" className="smallIcons" {...provided.dragHandleProps} />
-          {actionItem.id} in {actionItem.eta}
+          <div>{actionItem.title}</div>
+          {' - '}
+          <div>{actionEndingTime}</div>
           {actionAbortButton}
         </div>
       )}
