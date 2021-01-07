@@ -1,3 +1,18 @@
+//
+//        - MountedComponentsContext -
+//
+//    This context track which components are and aren't monted.
+//
+//  HOW TO USE:
+//   -   add those lines where a component is to be mounted -
+//          import { MountedComponentsContext } from 'Contexts/MountedComponentsContext';
+//          const { mountedComponentsDict, mountComponents, unmountComponents } = useContext(MountedComponentsContext);  (inside a function's body)
+//   -   you can then access the mounting-state of a component via mountedComponentsDict.ComponentName
+//   -   you can mount and unmount components via mountComponents() and unmountComponents(), they can both take either a string of the component's name, or and array of strings.
+//   -   remember to conditionally render the components at hand. a simple way is:
+//          const isRelevantComponentMounted = mountedComponentsDict.RelevantComponent;
+//          {isRelevantComponentMounted && <RelevantComponent />}
+
 import React, { Component, createContext } from 'react';
 import { isAnObject } from 'Utils/utilFuncs';
 import { errorMessagesTexts } from 'Texts/gameplayTexts';
