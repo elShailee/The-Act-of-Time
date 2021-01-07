@@ -1,10 +1,12 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import './ActionsTabItem.css';
 import hamburgerMenuIcon from 'Images/hamburgerMenuIcon.png';
 import xIcon from 'Images/xIcon.png';
 import { Draggable } from 'react-beautiful-dnd';
+import moment from 'moment';
 
 export default function ActionsTabItem({ actionItem, index }) {
+  const [actionEndingTime,setActionEndingTime] = useState('0');
   const actionAbortButton = (
     <img
       src={xIcon}
@@ -14,13 +16,18 @@ export default function ActionsTabItem({ actionItem, index }) {
     />
   );
 
-  const actionEndingTime = Math.floor(actionItem.endingTime / 100000);
-  //actionItem.endingTime is a unix timestamp regarding it's end,
-  //the division and floor are just for the large int to be small enough to fit in the screen
-  //Need to create dynamic counter for this and replace it.
+
+  // When ending time is updated, set the format in seconds.
+  useEffect(() => {
+    if(typeof actionItem.endingTime === 'number')
+    {
+      setActionEndingTime(moment(actionItem.endingTime - actionItem.startingTime).format('s'));
+    }
+  }, [actionItem])
+ 
 
   return (
-    <Draggable draggableId={actionItem.id} index={index}>
+    <Draggable id={actionItem.id} draggableId={actionItem.id} index={index}>
       {provided => (
         <div className="actionsTabItem" {...provided.draggableProps} ref={provided.innerRef}>
           <img src={hamburgerMenuIcon} alt="" className="smallIcons" {...provided.dragHandleProps} />
