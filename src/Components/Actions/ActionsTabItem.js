@@ -6,7 +6,7 @@ import { Draggable } from 'react-beautiful-dnd';
 import moment from 'moment';
 
 export default function ActionsTabItem({ actionItem, index }) {
-  const [actionEndingTime,setActionEndingTime] = useState('0');
+  const [actionDuration,setActionDuration] = useState(0);
   const actionAbortButton = (
     <img
       src={xIcon}
@@ -19,13 +19,31 @@ export default function ActionsTabItem({ actionItem, index }) {
 
   // When ending time is updated, set the format in seconds.
   useEffect(() => {
-    if(typeof actionItem.endingTime === 'number')
+    if(typeof actionItem.endingTime === 'number' && typeof actionItem.startingTime === 'number')
     {
       let dur = moment.duration(moment(actionItem.endingTime).diff(moment(actionItem.startingTime)))
-      setActionEndingTime(dur.asSeconds());
+      setActionDuration(dur.asSeconds());
     }
-  }, [actionItem])
- 
+  }, [actionItem.endingTime, actionItem.startingTime])
+
+
+  //set countdown for an action.
+  useEffect(() => {
+
+    //if countdown get to 0, stop counting down.
+    //In this part you can call the trigger of ending an action.
+    //TODO trigger updating server
+    if (!actionDuration) return;
+
+    //set interval, every 1 second reduce the timer.
+    const intervalDuration = setInterval(() => {
+      setActionDuration(actionDuration - 1);
+    }, 1000);
+
+    //clear the interval on cleanup.
+    return () => clearInterval(intervalDuration);
+
+  }, [actionDuration]);
 
   return (
     <Draggable id={actionItem.id} draggableId={actionItem.id} index={index}>
@@ -34,7 +52,7 @@ export default function ActionsTabItem({ actionItem, index }) {
           <img src={hamburgerMenuIcon} alt="" className="smallIcons" {...provided.dragHandleProps} />
           <div>{actionItem.title}</div>
           {' - '}
-          <div>{actionEndingTime}</div>
+          <div>{actionDuration}</div>
           {actionAbortButton}
         </div>
       )}

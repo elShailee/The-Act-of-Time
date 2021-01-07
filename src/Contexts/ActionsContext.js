@@ -10,8 +10,10 @@ class ActionsContextProvider extends Component {
     const actionsOrder = [];
     for (const action in activeActions) {
     
+      //! setting the time to be current time and the end time to 5 min later.
+      //! suppose to be removed.
       activeActions[action].startingTime = +moment();
-      activeActions[action].endingTime = +moment().add(5,'minutes');
+      activeActions[action].endingTime = +moment().add(1,'minutes');
 
       actionsOrder.push(action);
     }
