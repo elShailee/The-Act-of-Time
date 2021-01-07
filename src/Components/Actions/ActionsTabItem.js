@@ -21,7 +21,8 @@ export default function ActionsTabItem({ actionItem, index }) {
   useEffect(() => {
     if(typeof actionItem.endingTime === 'number')
     {
-      setActionEndingTime(moment(actionItem.endingTime - actionItem.startingTime).format('s'));
+      let dur = moment.duration(moment(actionItem.endingTime).diff(moment(actionItem.startingTime)))
+      setActionEndingTime(dur.asSeconds());
     }
   }, [actionItem])
  

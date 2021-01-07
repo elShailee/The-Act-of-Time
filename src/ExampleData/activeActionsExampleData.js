@@ -1,4 +1,4 @@
-const activeActionsExampleData = {
+let activeActionsExampleData = {
   f4we65fdfs: {
     id: 'f4we65fdfs',
     actionType: 'walk',

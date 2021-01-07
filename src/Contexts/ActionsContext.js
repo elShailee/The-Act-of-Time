@@ -2,13 +2,17 @@ import React, { Component, createContext } from 'react';
 import activeActions from 'ExampleData/activeActionsExampleData';
 import actionsLibrary from 'ExampleData/actionsLibraryExampleData';
 import ActionsTabItem from 'Components/Actions/ActionsTabItem';
-
+import moment from 'moment'
 export const ActionsContext = createContext();
 
 class ActionsContextProvider extends Component {
   getActionsOrder = () => {
     const actionsOrder = [];
     for (const action in activeActions) {
+    
+      activeActions[action].startingTime = +moment();
+      activeActions[action].endingTime = +moment().add(5,'minutes');
+
       actionsOrder.push(action);
     }
     return actionsOrder;
@@ -16,6 +20,8 @@ class ActionsContextProvider extends Component {
 
   state = { actions: activeActions, actionsOrder: this.getActionsOrder() };
   actionsItemsTypes = { tabItem: 'tabItem' };
+  
+
 
   applyActionsReorder = result => {
     const { actionsOrder } = this.state;
