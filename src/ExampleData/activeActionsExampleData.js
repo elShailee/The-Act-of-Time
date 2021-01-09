@@ -1,3 +1,4 @@
+import moment from 'moment';
 let activeActionsExampleData = {
   f4we65fdfs: {
     id: 'f4we65fdfs',
@@ -56,4 +57,10 @@ let activeActionsExampleData = {
     duration: 20000000,
   },
 };
+      //! setting the time to be current time and the end time to 1 min later.
+      //! suppose to be removed.
+for(let action in activeActionsExampleData){
+  activeActionsExampleData[action].startingTime = +moment();
+  activeActionsExampleData[action].endingTime = +moment().add(1,'minutes');
+}
 export default activeActionsExampleData;

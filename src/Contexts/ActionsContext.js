@@ -2,19 +2,13 @@ import React, { Component, createContext } from 'react';
 import activeActions from 'ExampleData/activeActionsExampleData';
 import actionsLibrary from 'ExampleData/actionsLibraryExampleData';
 import ActionsTabItem from 'Components/Actions/ActionsTabItem';
-import moment from 'moment'
+
 export const ActionsContext = createContext();
 
 class ActionsContextProvider extends Component {
   getActionsOrder = () => {
     const actionsOrder = [];
     for (const action in activeActions) {
-    
-      //! setting the time to be current time and the end time to 5 min later.
-      //! suppose to be removed.
-      activeActions[action].startingTime = +moment();
-      activeActions[action].endingTime = +moment().add(1,'minutes');
-
       actionsOrder.push(action);
     }
     return actionsOrder;

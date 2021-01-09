@@ -20,7 +20,7 @@ export default function CoinsButton() {
 
   return (
     <div id="coinsButtonContainer">
-      <GeneralButton id="coinsButton" uppercased outlined onButtonClick={() => onCoinsButtonClick(isCoinsTabOpen)}>
+      <GeneralButton id="coinsButton" uppercased outlined onButtonClick={() => onCoinsButtonClick()}>
         {coinsButtonTexts.title}
       </GeneralButton>
       {isCoinsTabOpen && <CoinsTab />}

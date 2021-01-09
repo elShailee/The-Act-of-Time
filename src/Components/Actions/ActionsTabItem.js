@@ -5,6 +5,7 @@ import xIcon from 'Images/xIcon.png';
 import { Draggable } from 'react-beautiful-dnd';
 import moment from 'moment';
 
+
 export default function ActionsTabItem({ actionItem, index }) {
   const [actionDuration,setActionDuration] = useState(0);
   const actionAbortButton = (
@@ -17,30 +18,30 @@ export default function ActionsTabItem({ actionItem, index }) {
   );
 
 
-  // When ending time is updated, set the format in seconds.
+  // * When ending time is updated, set the format in seconds.
   useEffect(() => {
     if(typeof actionItem.endingTime === 'number' && typeof actionItem.startingTime === 'number')
     {
       let dur = moment.duration(moment(actionItem.endingTime).diff(moment(actionItem.startingTime)))
-      setActionDuration(dur.asSeconds());
+      setActionDuration(dur.asSeconds().toFixed(0));
     }
-  }, [actionItem.endingTime, actionItem.startingTime])
+  }, [actionItem])
 
 
-  //set countdown for an action.
+  // * set countdown for an action.
   useEffect(() => {
 
-    //if countdown get to 0, stop counting down.
-    //In this part you can call the trigger of ending an action.
+    // * if countdown get to 0, stop counting down.
+    // * In this part you can call the trigger of ending an action.
     //TODO trigger updating server
-    if (!actionDuration) return;
+    if (actionDuration<=0) return;
 
-    //set interval, every 1 second reduce the timer.
+    // * set interval, every 1 second reduce the timer.
     const intervalDuration = setInterval(() => {
       setActionDuration(actionDuration - 1);
     }, 1000);
 
-    //clear the interval on cleanup.
+    // * clear the interval on cleanup.
     return () => clearInterval(intervalDuration);
 
   }, [actionDuration]);
