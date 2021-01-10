@@ -1,4 +1,4 @@
-#characterInfoContainer {
+#characterInfoBarContainer {
   --characterInfo-width: 400px;
   --halfOf-characterInfo-width: calc(var(--characterInfo-width) / 2);
   position: absolute;
@@ -25,25 +25,24 @@
 .characterName {
 	float: right;
 	padding-right: 100px;
-	font-family: = 'Helvetica'; 
+	font-family: 'Helvetica'; 
 	font-size: 20px;
   	color: white;
 }
 
 .characterImage {
 	float: left;
-	padding-left: 100px;
-	border: 1px solid #ddd;
-	border-radius: 4px;
-	width: 50px;
-	height: 70px;
+	padding-left: 50px;
+  border-radius: 100px;
+	width: 100px;
+	height: 100px;
 }
 
 .characterLevel {
 	float: right;
 	padding-right: 120px;
 	padding-top: 15px;
-	font-family: = 'Helvetica'; 
+	font-family: 'Helvetica'; 
 	font-size: 15px;
   	color: white;
 }

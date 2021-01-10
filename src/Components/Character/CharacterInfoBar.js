@@ -1,10 +1,9 @@
 import React from 'react';
 import './CharacterInfoBar.css';
-import { characterInfoTexts } from 'Texts/gameplayTexts';
 import characterInfo from 'ExampleData/characterInfoExampleData';
 //import characterImage from characterInfo.characterImage;
 
-export default function CharacterInfo() {
+export default function characterInfoBar() {
   return (
     <div id="characterInfoBarContainer">
 			<div className="xpBar" id="xpCapacity"></div>
