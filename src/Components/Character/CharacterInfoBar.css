@@ -1,5 +1,5 @@
 #characterInfoBarContainer {
-  --character-Image-width: 85px;
+  --character-Image-size: 85px;
   --characterInfo-width: 300px;
   --halfOf-characterInfo-width: calc(var(--characterInfo-width) / 2);
   position: absolute;
@@ -50,8 +50,8 @@
   border-radius: 50%;
   padding-top: 9px;
   padding-bottom: 9px;
-  width: var(--character-Image-width);
-  height: var(--character-Image-width);
+  width: var(--character-Image-size);
+  height: var(--character-Image-size);
   cursor: pointer;
 }
 
