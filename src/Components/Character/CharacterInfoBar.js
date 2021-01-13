@@ -4,6 +4,9 @@ import characterInfo from 'ExampleData/characterInfoExampleData';
 //import characterImage from characterInfo.characterImage;
 
 export default function characterInfoBar() {
+	const onCharcterInfoClick = () => {
+		
+	  };
   return (
     <div id="characterInfoBarContainer">
 			<div className="xpBar" id="xpCapacity"></div>
@@ -11,8 +14,8 @@ export default function characterInfoBar() {
 			
 			<div id="characterInfoBar">				
 			<div class="characterName">{characterInfo.characterName} </div>
-			<img alt="characterImage" class="characterImage" src={characterInfo.characterImage} />
-			<div class="characterLevel"> {characterInfo.characterLevel} </div>
+			<div class="characterLevel">Lvl {characterInfo.characterLevel} </div>
+			<img alt="characterImage" class="characterImage" src={characterInfo.characterImage} onClick={onCharcterInfoClick}/>
 		</div>
 
     </div>

@@ -30,21 +30,18 @@
   	color: white;
 }
 
-.characterImage {
-	float: left;
-	padding-left: 50px;
-  border-radius: 100px;
-	width: 100px;
-	height: 100px;
-}
-
 .characterLevel {
 	float: right;
-	padding-right: 120px;
-	padding-top: 15px;
+	padding-top: 35px;
 	font-family: 'Helvetica'; 
 	font-size: 15px;
   	color: white;
+}
+
+.characterImage {
+  border-radius: 50%;
+	width: 100px;
+	height: 100px;
 }
 
 .xpBar {
