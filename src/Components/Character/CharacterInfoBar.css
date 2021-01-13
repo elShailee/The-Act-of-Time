@@ -1,5 +1,6 @@
 #characterInfoBarContainer {
-  --characterInfo-width: 400px;
+  --character-Image-width: 85px;
+  --characterInfo-width: 300px;
   --halfOf-characterInfo-width: calc(var(--characterInfo-width) / 2);
   position: absolute;
   left: calc(50% - var(--halfOf-characterInfo-width));
@@ -12,36 +13,46 @@
   background-color: darkblue;
   text-align: center;
   clip-path: polygon(
-    0 20px,
-    20px 0,
+    50px 20px,
+    70px 0,
     var(--characterInfo-width) 0,
     calc(var(--characterInfo-width) - 40px) 60px,
     180px 60px,
     160px 100px,
-    40px 100px
+    80px 100px
   );
 }
 
+
 .characterName {
-	float: right;
-	padding-right: 100px;
-	font-family: 'Helvetica'; 
+  float: right;
+  padding-right: 35px;
+  width: 100px;
+  font-family: 'Helvetica'; 
 	font-size: 20px;
   	color: white;
 }
 
 .characterLevel {
-	float: right;
-	padding-top: 35px;
+  padding-right: 30px;
+  padding-top: 35px;
 	font-family: 'Helvetica'; 
 	font-size: 15px;
-  	color: white;
+  color: white;
+}
+
+.characterTextDetailes {
+  float: right;
 }
 
 .characterImage {
+  float: right;
   border-radius: 50%;
-	width: 100px;
-	height: 100px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  width: var(--character-Image-width);
+  height: var(--character-Image-width);
+  cursor: pointer;
 }
 
 .xpBar {
@@ -52,14 +63,14 @@
 }
 
 #xpCapacity {
-  --xpCapacity-width: 180px;
+  --xpCapacity-width: 85px;
   background-color: #aaa;
   width: var(--xpCapacity-width);
   clip-path: polygon(0 0, var(--xpCapacity-width) 0, calc(var(--xpCapacity-width) - 7px) 10px, 0 10px);
 }
 
 #xpQuantity {
-  --xpQuantity-width: 50px;
+  --xpQuantity-width: 40px;
   background-color: aqua;
   width: var(--xpQuantity-width);
   clip-path: polygon(0 0, var(--xpQuantity-width) 0, calc(var(--xpQuantity-width) - 7px) 10px, 0 10px);
