@@ -1,52 +1,54 @@
 #characterInfoBarContainer {
   --character-Image-size: 85px;
-  --characterInfo-width: 300px;
-  --halfOf-characterInfo-width: calc(var(--characterInfo-width) / 2);
+  --characterInfoBar-width: 300px;
+  --halfOf-characterInfoBar-width: calc(var(--characterInfoBar-width) / 2);
   position: absolute;
-  left: calc(50% - var(--halfOf-characterInfo-width));
+  left: calc(50% - var(--halfOf-characterInfoBar-width));
   top: 8px;
 }
 
 #characterInfoBar {
-  width: var(--characterInfo-width);
+  width: var(--characterInfoBar-width);
   height: 100px;
   background-color: darkblue;
   text-align: center;
   clip-path: polygon(
     50px 20px,
     70px 0,
-    var(--characterInfo-width) 0,
-    calc(var(--characterInfo-width) - 40px) 60px,
+    var(--characterInfoBar-width) 0,
+    calc(var(--characterInfoBar-width) - 40px) 60px,
     180px 60px,
     160px 100px,
-    80px 100px
+    80px 100px,
   );
 }
 
-
-.characterName {
+.characterTextCointainer {
+  width: 135px;
   float: right;
-  padding-right: 35px;
-  width: 100px;
-  font-family: 'Helvetica'; 
-	font-size: 20px;
-  	color: white;
 }
 
-.characterLevel {
-  padding-right: 30px;
-  padding-top: 35px;
+.characterNameText {
+  padding-top: 5px;
+  margin-right: 35px;
+  width: 100px;
+  height: 20px;
+  font-family: 'Helvetica'; 
+	font-size: 20px;
+  color: white;
+}
+
+.characterLevelText {
+  margin-right: 30px;
+  width: 100px;
+  height: 20px;
 	font-family: 'Helvetica'; 
 	font-size: 15px;
   color: white;
 }
 
-.characterTextDetailes {
-  float: right;
-}
-
 .characterImage {
-  float: right;
+  margin-left: 70px;
   border-radius: 50%;
   padding-top: 9px;
   padding-bottom: 9px;
