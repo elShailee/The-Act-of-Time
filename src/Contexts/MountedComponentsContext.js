@@ -42,7 +42,7 @@ class MountedComponentsContextProvider extends Component {
     const mountedComponentsDict = this.state.mountedComponentsDict;
 
     componentsToMountArray.forEach(componentName => {
-      const doesComponentAppearInDict = componentName in mountedComponentsDict;
+      const doesComponentAppearInDict = componentName;
       if (doesComponentAppearInDict) {
         const newMountedComponentsDict = mountedComponentsDict;
         newMountedComponentsDict[componentName] = shouldMount;
