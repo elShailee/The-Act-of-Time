@@ -5,10 +5,10 @@ We created this project in order to have a real-life experience in coding, from 
 This project WAS NOT created by a team of experienced developers, but as a platform for us to lean and become one.<br />
 
 ## Collaborators
- - <a href="Github.com/elShailee">Shailee Eliyahu</a>
- - <a href="Github.com/shemeshx">Idan Shemesh</a>
- - <a href="Github.com/odeyah/">Odeya</a>
- - <a href="Github.com/EyalEliyahu">Eyal Eliyahu</a>
+ - <a href="https://github.com/elShailee">Shailee Eliyahu</a>
+ - <a href="https://github.com/shemeshx">Idan Shemesh</a>
+ - <a href="https://github.com/odeyah">Odeya</a>
+ - <a href="https://github.com/EyalEliyahu">Eyal Eliyahu</a>
 
 ## Technologies
 Front:
