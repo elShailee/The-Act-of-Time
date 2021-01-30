@@ -18,6 +18,7 @@ const gameplayTexts = {
   },
   actionsButtonTexts: {
     title: 'Actions',
+    moreActions : 'More Actions'
   },
   characterInfoTexts: {
     title: 'Character Info',
