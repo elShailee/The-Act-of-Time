@@ -1,21 +1,26 @@
 import React, { Component, createContext } from 'react';
-import activeActions from 'ExampleData/activeActionsExampleData';
+//import activeActions from 'ExampleData/activeActionsExampleData'; //Switched to Server
 import actionsLibrary from 'ExampleData/actionsLibraryExampleData';
 import ActionsTabItem from 'Components/Actions/ActionsTabItem';
 
 export const ActionsContext = createContext();
 
 class ActionsContextProvider extends Component {
-  getActionsOrder = () => {
+  state = { actions: {}, actionsOrder: {} };
+  actionsItemsTypes = { tabItem: 'tabItem' };
+
+  async componentDidMount() {
+    const activeActions = await fetch('http://localhost:8000/api/actions/').then(res => res.json());
+    this.setState({ actions: activeActions, actionsOrder: this.getActionsOrder(activeActions) });
+  }
+
+  getActionsOrder = activeActions => {
     const actionsOrder = [];
     for (const action in activeActions) {
       actionsOrder.push(action);
     }
     return actionsOrder;
   };
-
-  state = { actions: activeActions, actionsOrder: this.getActionsOrder() };
-  actionsItemsTypes = { tabItem: 'tabItem' };
 
   applyActionsReorder = result => {
     const { actionsOrder } = this.state;
