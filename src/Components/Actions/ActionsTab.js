@@ -12,7 +12,7 @@ export default function ActionsTab() {
 
   const onActionsButtonClick = () => {
       unmountComponents('ActionsTab');
-      mountComponents('MoreActionsDialog');
+      mountComponents('ActionsWindow');
   };
 
   return (
