@@ -4,10 +4,11 @@ import hamburgerMenuIcon from 'Images/hamburgerMenuIcon.png';
 import xIcon from 'Images/xIcon.png';
 import { Draggable } from 'react-beautiful-dnd';
 import moment from 'moment';
-
+import Countdown from '../../Utils/GeneralComponents/Countdown'
 
 export default function ActionsTabItem({ actionItem, index }) {
-  const [actionDuration,setActionDuration] = useState(0);
+  const duration = Countdown(actionItem.startingTime, actionItem.endingTime);
+  
   const actionAbortButton = (
     <img
       src={xIcon}
@@ -17,35 +18,6 @@ export default function ActionsTabItem({ actionItem, index }) {
     />
   );
 
-
-  // * When ending time is updated, set the format in seconds.
-  useEffect(() => {
-    if(typeof actionItem.endingTime === 'number' && typeof actionItem.startingTime === 'number')
-    {
-      let dur = moment.duration(moment(actionItem.endingTime).diff(moment(actionItem.startingTime)))
-      setActionDuration(dur.asSeconds().toFixed(0));
-    }
-  }, [actionItem])
-
-
-  // * set countdown for an action.
-  useEffect(() => {
-
-    // * if countdown get to 0, stop counting down.
-    // * In this part you can call the trigger of ending an action.
-    //TODO trigger updating server
-    if (actionDuration<=0) return;
-
-    // * set interval, every 1 second reduce the timer.
-    const intervalDuration = setInterval(() => {
-      setActionDuration(actionDuration - 1);
-    }, 1000);
-
-    // * clear the interval on cleanup.
-    return () => clearInterval(intervalDuration);
-
-  }, [actionDuration]);
-
   return (
     <Draggable id={actionItem.id} draggableId={actionItem.id} index={index}>
       {provided => (
@@ -53,7 +25,8 @@ export default function ActionsTabItem({ actionItem, index }) {
           <img src={hamburgerMenuIcon} alt="" className="smallIcons" {...provided.dragHandleProps} />
           <div>{actionItem.title}</div>
           {' - '}
-          <div>{actionDuration}</div>
+          {/* <div>{actionDuration}</div> */}
+          {duration}
           {actionAbortButton}
         </div>
       )}

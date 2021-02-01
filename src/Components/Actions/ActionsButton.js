@@ -1,25 +1,34 @@
-import React, { useContext } from 'react';
-import './ActionsButton.css';
-import GeneralButton from 'Components/GeneralComponents/GeneralButton';
-import { actionsButtonTexts } from 'Texts/gameplayTexts';
-import { MountedComponentsContext } from 'Contexts/MountedComponentsContext';
-import ActionsTab from './ActionsTab';
+import React, { useContext } from "react";
+import "./ActionsButton.css";
+import GeneralButton from "Components/GeneralComponents/GeneralButton";
+import { actionsButtonTexts } from "Texts/gameplayTexts";
+import { MountedComponentsContext } from "Contexts/MountedComponentsContext";
+import ActionsTab from "./ActionsTab";
 
 export default function ActionButton() {
-  const { mountedComponentsDict, mountComponents, unmountComponents } = useContext(MountedComponentsContext);
+  const {
+    mountedComponentsDict,
+    mountComponents,
+    unmountComponents,
+  } = useContext(MountedComponentsContext);
   const isActionsTabMounted = mountedComponentsDict.ActionsTab;
 
   const onActionsButtonClick = () => {
     if (isActionsTabMounted) {
-      unmountComponents(['ActionsTab']);
+      unmountComponents(["ActionsTab"]);
     } else {
-      mountComponents(['ActionsTab']);
+      mountComponents(["ActionsTab"]);
     }
   };
 
   return (
     <div id="actionsButtonAndTabContainer">
-      <GeneralButton id="ActionsButton" uppercased outlined onButtonClick={onActionsButtonClick}>
+      <GeneralButton
+        id="ActionsButton"
+        uppercased
+        outlined
+        onButtonClick={onActionsButtonClick}
+      >
         {actionsButtonTexts.title}
       </GeneralButton>
       {isActionsTabMounted && <ActionsTab />}

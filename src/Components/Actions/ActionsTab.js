@@ -21,8 +21,6 @@ export default function ActionsTab() {
         <FirstFewActions />
         <GeneralButton id="MoreActionsBtn" uppercased outlined onButtonClick={() => onActionsButtonClick()}>{actionsTabTexts.getMore}</GeneralButton>
       </ActionsContextProvider>
-    
     </GeneralTab>
-    
   );
 }
