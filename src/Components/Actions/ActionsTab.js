@@ -4,7 +4,7 @@ import GeneralTab from 'Components/GeneralComponents/GeneralTab';
 import FirstFewActions from './FirstFewActions';
 import ActionsContextProvider from 'Contexts/ActionsContext';
 import GeneralButton from 'Components/GeneralComponents/GeneralButton';
-import { actionsButtonTexts } from 'Texts/gameplayTexts';
+import { actionsTabTexts } from 'Texts/gameplayTexts';
 import { MountedComponentsContext } from 'Contexts/MountedComponentsContext';
 
 export default function ActionsTab() {
@@ -19,10 +19,8 @@ export default function ActionsTab() {
     <GeneralTab id="actionsTab">
       <ActionsContextProvider>
         <FirstFewActions />
-        <GeneralButton id="MoreActionsBtn" uppercased outlined onButtonClick={() => onActionsButtonClick()}>{actionsButtonTexts.moreActions}</GeneralButton>
+        <GeneralButton id="MoreActionsBtn" uppercased outlined onButtonClick={() => onActionsButtonClick()}>{actionsTabTexts.getMore}</GeneralButton>
       </ActionsContextProvider>
-    
     </GeneralTab>
-    
   );
 }

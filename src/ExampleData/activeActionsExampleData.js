@@ -5,7 +5,7 @@ let activeActionsExampleData = {
     actionType: 'walk',
     endLocation: { x: 100, y: 100 },
     startingTime: 654987351,
-    endingTime: 674987351,
+    endingTime: 654987371,
     duration: 20000000,
   },
   f6g5w1efw2b: {
@@ -53,7 +53,7 @@ let activeActionsExampleData = {
     actionType: 'setBearTrap',
     endLocation: { x: 0, y: 0 },
     startingTime: 814987351,
-    endingTime: 834987351,
+    endingTime: 814987371,
     duration: 20000000,
   },
 };
@@ -61,6 +61,6 @@ let activeActionsExampleData = {
       //! suppose to be removed.
 for(let action in activeActionsExampleData){
   activeActionsExampleData[action].startingTime = +moment();
-  activeActionsExampleData[action].endingTime = +moment().add(1,'minutes');
+  activeActionsExampleData[action].endingTime = +moment().add(100,'seconds');
 }
 export default activeActionsExampleData;

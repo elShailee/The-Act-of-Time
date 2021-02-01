@@ -7,6 +7,7 @@ const gameplayTexts = {
     coinsAmountPt2: 'Coins.',
     getMore: 'Get More',
   },
+  
   energyButtonTexts: {
     title: 'Energy',
   },
@@ -18,7 +19,9 @@ const gameplayTexts = {
   },
   actionsButtonTexts: {
     title: 'Actions',
-    moreActions : 'More Actions'
+  },
+  actionsTabTexts: {
+    getMore : 'Get More'
   },
   characterInfoTexts: {
     title: 'Character Info',
@@ -51,6 +54,7 @@ export const {
   energyButtonTexts,
   energyTabTexts,
   actionsButtonTexts,
+  actionsTabTexts,
   characterInfoTexts,
   disastersIconTexts,
   craftingButtonTexts,

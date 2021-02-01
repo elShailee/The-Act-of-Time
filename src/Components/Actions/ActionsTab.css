@@ -1,28 +1,13 @@
 #actionsTab {
   background-color: sandybrown;
 }
-.actionsWindowWrap{
-  text-align: center;
-}
-.actionsWindow{
-  -webkit-appearance: button;
-    text-rendering: auto;
-    letter-spacing: normal;
-    word-spacing: normal;
-    display: inline-block;
-    cursor: default;
-    background-color: rgb(255, 94, 0);
-    box-sizing: border-box;
-    margin: 0.5rem;
-    font: 1rem system-ui;
-    padding: 1px 7px 2px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
-    
-}
 
 #MoreActionsBtn{
-  background-color:  #ffa500;
-  padding: 0.2rem;
+  background-color: #ffa500; 
+  padding: 0.5rem; 
+  width: 50%; 
+  margin-right: auto; 
+  margin-left: auto; 
+  margin-top: 0.5rem; 
+  border: 1px solid chocolate;
 }
