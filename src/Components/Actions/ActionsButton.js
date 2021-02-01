@@ -6,8 +6,7 @@ import ActionsTab from './ActionsTab';
 import {useDispatch, useSelector} from 'react-redux'
 import { unmountComponents,mountComponents } from 'Redux/Slices/MountedComponents';
 export default function ActionButton() {
-  //const { mountedComponentsDict, mountComponents, unmountComponents } = useContext(MountedComponentsContext);
-  //const isActionsTabMounted = mountedComponentsDict.ActionsTab;
+
   const dispatch = useDispatch();
   const isActionsTabMounted = useSelector(state => state.MountedComponents.ActionsTab)
   
