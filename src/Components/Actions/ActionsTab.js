@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import './ActionsTab.css';
 import GeneralTab from 'Components/GeneralComponents/GeneralTab';
 import FirstFewActions from './FirstFewActions';

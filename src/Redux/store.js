@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { combineReducers } from 'redux'
-import count from './Slices/count'
+import MountedComponents from './Slices/MountedComponents'
 const reducer = combineReducers({
-    count
+    MountedComponents
 })
 
 const store = configureStore({reducer})
