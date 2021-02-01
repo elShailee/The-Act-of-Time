@@ -1,9 +1,8 @@
-import React,{useEffect,useState} from 'react';
+import React from 'react';
 import './ActionsTabItem.css';
 import hamburgerMenuIcon from 'Images/hamburgerMenuIcon.png';
 import xIcon from 'Images/xIcon.png';
 import { Draggable } from 'react-beautiful-dnd';
-import moment from 'moment';
 import Countdown from '../../Utils/GeneralComponents/Countdown'
 
 export default function ActionsTabItem({ actionItem, index }) {
@@ -25,7 +24,6 @@ export default function ActionsTabItem({ actionItem, index }) {
           <img src={hamburgerMenuIcon} alt="" className="smallIcons" {...provided.dragHandleProps} />
           <div>{actionItem.title}</div>
           {' - '}
-          {/* <div>{actionDuration}</div> */}
           {duration}
           {actionAbortButton}
         </div>
