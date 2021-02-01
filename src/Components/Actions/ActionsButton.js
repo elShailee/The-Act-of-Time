@@ -19,7 +19,7 @@ export default function ActionButton() {
 
   return (
     <div id="actionsButtonAndTabContainer">
-      <GeneralButton id="actionsButton" uppercased outlined onButtonClick={onActionsButtonClick}>
+      <GeneralButton id="ActionsButton" uppercased outlined onButtonClick={onActionsButtonClick}>
         {actionsButtonTexts.title}
       </GeneralButton>
       {isActionsTabMounted && <ActionsTab />}
