@@ -2,6 +2,7 @@ import React, { Component, createContext } from 'react';
 //import activeActions from 'ExampleData/activeActionsExampleData'; //Switched to Server
 import actionsLibrary from 'ExampleData/actionsLibraryExampleData';
 import ActionsTabItem from 'Components/Actions/ActionsTabItem';
+import { getData } from 'Utils/restFuncs';
 
 export const ActionsContext = createContext();
 
@@ -10,7 +11,8 @@ class ActionsContextProvider extends Component {
   actionsItemsTypes = { tabItem: 'tabItem' };
 
   async componentDidMount() {
-    const activeActions = await fetch('http://localhost:8000/api/actions/').then(res => res.json());
+    const URL = 'http://localhost:8000/api/actions/';
+    const activeActions = await getData(URL);
     this.setState({ actions: activeActions, actionsOrder: this.getActionsOrder(activeActions) });
   }
 
