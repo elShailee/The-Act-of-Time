@@ -2,7 +2,7 @@ import React, { Component, createContext } from 'react';
 //import activeActions from 'ExampleData/activeActionsExampleData'; //Switched to Server
 import actionsLibrary from 'ExampleData/actionsLibraryExampleData';
 import ActionsTabItem from 'Components/Actions/ActionsTabItem';
-import { getData } from 'Utils/restFuncs';
+import { fetchJSON } from 'Utils/restFuncs';
 
 export const ActionsContext = createContext();
 
@@ -12,7 +12,7 @@ class ActionsContextProvider extends Component {
 
   async componentDidMount() {
     const URL = 'http://localhost:8000/api/actions/';
-    const activeActions = await getData(URL);
+    const activeActions = await fetchJSON(URL);
     this.setState({ actions: activeActions, actionsOrder: this.getActionsOrder(activeActions) });
   }
 
