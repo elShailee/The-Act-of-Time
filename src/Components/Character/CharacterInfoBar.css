@@ -1,7 +1,7 @@
 #characterInfoBarContainer {
-  --CIB-width: 250px;
+  --CIB-width: 250px; /*CIB = character Info Bar*/
   --CIB-height: 100px;
-  --CIB-textPartHigh: calc(var(--CIB-height)*0.6);
+  --CIB-textPartHight: calc(var(--CIB-height)*0.6);
   --halfOf-CIB-width: calc(var(--CIB-width) / 2);
   --CIB-text-width: 100px;
   --CIB-Image-size: 90px;
@@ -22,8 +22,8 @@
     0px 0px, /*top left corner going down*/
     0px 0px, /*top left corner*/
     var(--CIB-width) 0px, /*top right corner*/
-    calc(var(--CIB-width)*0.84) var(--CIB-textPartHigh), /*bottom right corner*/
-    calc(var(--CIB-width)*0.52) var(--CIB-textPartHigh), /*right middele corner*/
+    calc(var(--CIB-width)*0.84) var(--CIB-textPartHight), /*bottom right corner*/
+    calc(var(--CIB-width)*0.52) var(--CIB-textPartHight), /*right middele corner*/
     calc(var(--CIB-width)*0.44) var(--CIB-height), /*right bottom middele corner*/
     calc(var(--CIB-width)*0.16) var(--CIB-height));/*left bottom corner*/
   
@@ -32,7 +32,7 @@
 .characterTextCointainer {
   width: var(--halfOf-CIB-width);
   float: right;
-  padding-top: calc( calc( var(--CIB-textPartHigh) - calc(var(--bigFontSize) + var(--fontSize)))/2);
+  padding-top: calc( calc( var(--CIB-textPartHight) - calc(var(--bigFontSize) + var(--fontSize)))/2);
 }
 
 .characterNameText {
