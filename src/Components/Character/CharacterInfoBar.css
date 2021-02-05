@@ -2,7 +2,7 @@
   --characterInfoBar-width: 250px;
   --halfOf-characterInfoBar-width: calc(var(--characterInfoBar-width) / 2);
   --character-text-width: 100px;
-  --character-Image-size: 85px;
+  --character-Image-size: 90px;
   position: absolute;
   left: calc(50% - var(--halfOf-characterInfoBar-width));
   top: 8px;
@@ -45,20 +45,18 @@
 }
 
 .characterImage {
-  margin-left: 30px;
+  float: right;
+  padding: 5px;
   border-radius: 50%;
-  padding-top: 9px;
-  padding-bottom: 9px;
   width: var(--character-Image-size);
   height: var(--character-Image-size);
-  cursor: pointer;
 }
 
 .xpBar {
   position: absolute;
-  height: 10px;
+  height: 15px;
   top: 60px;
-  left: 125px;
+  left: var(--halfOf-characterInfoBar-width);
 }
 
 #xpCapacity {
