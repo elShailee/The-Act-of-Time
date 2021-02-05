@@ -1,73 +1,78 @@
 #characterInfoBarContainer {
-  --characterInfoBar-width: 250px;
-  --halfOf-characterInfoBar-width: calc(var(--characterInfoBar-width) / 2);
-  --character-text-width: 100px;
-  --character-Image-size: 90px;
+  --CIB-width: 250px;
+  --CIB-height: 100px;
+  --CIB-textPartHigh: calc(var(--CIB-height)*0.6);
+  --halfOf-CIB-width: calc(var(--CIB-width) / 2);
+  --CIB-text-width: 100px;
+  --CIB-Image-size: 90px;
+  --bigFontSize: 20px;
+  --fontSize: 15px;
+  --CIB-font: Helvetica;
   position: absolute;
-  left: calc(50% - var(--halfOf-characterInfoBar-width));
+  left: calc(50% - var(--halfOf-CIB-width));
   top: 8px;
 }
 
 #characterInfoBar {
-  width: var(--characterInfoBar-width);
-  height: 100px;
-  background-color: darkblue;
+  width: var(--CIB-width);
+  height: var(--CIB-height);
+  background-color: #800020;
   text-align: center;
   clip-path: polygon(
     0px 0px, /*top left corner going down*/
     0px 0px, /*top left corner*/
-    var(--characterInfoBar-width) 0px, /*top right corner*/
-    calc(var(--characterInfoBar-width) - 40px) 60px, /*bottom right corner*/
-    130px 60px, /*right middele corner*/
-    110px 100px, /*right bottom middele corner*/
-    40px 100px);/*left bottom corner*/
+    var(--CIB-width) 0px, /*top right corner*/
+    calc(var(--CIB-width)*0.84) var(--CIB-textPartHigh), /*bottom right corner*/
+    calc(var(--CIB-width)*0.52) var(--CIB-textPartHigh), /*right middele corner*/
+    calc(var(--CIB-width)*0.44) var(--CIB-height), /*right bottom middele corner*/
+    calc(var(--CIB-width)*0.16) var(--CIB-height));/*left bottom corner*/
   
 }
 
 .characterTextCointainer {
-  width: var(--halfOf-characterInfoBar-width);
+  width: var(--halfOf-CIB-width);
   float: right;
+  padding-top: calc( calc( var(--CIB-textPartHigh) - calc(var(--bigFontSize) + var(--fontSize)))/2);
 }
 
 .characterNameText {
-  padding-top: 5px;
-  width: var(--character-text-width);
-  font-family: 'Helvetica'; 
-	font-size: 20px;
+  width: var(--CIB-text-width);
+  font-family: var(--CIB-font); 
+	font-size: var(--bigFontSize);
   color: white;
 }
 
 .characterLevelText {
-  width: var(--character-text-width);
-	font-family: 'Helvetica'; 
-	font-size: 15px;
+  width: var(--CIB-text-width);
+	font-family: var(--CIB-font); 
+	font-size: var(--fontSize);
   color: white;
 }
 
 .characterImage {
   float: right;
-  padding: 5px;
+  padding: calc(calc(var(--CIB-height) - var(--CIB-Image-size))/2);
   border-radius: 50%;
-  width: var(--character-Image-size);
-  height: var(--character-Image-size);
+  width: var(--CIB-Image-size);
+  height: var(--CIB-Image-size);
 }
 
 .xpBar {
   position: absolute;
   height: 15px;
-  top: 60px;
-  left: var(--halfOf-characterInfoBar-width);
+  top: calc(var(--CIB-height)*0.6);
+  left: calc(var(--halfOf-CIB-width) - 3px);
 }
 
 #xpCapacity {
-  --xpCapacity-width: 85px;
+  --xpCapacity-width: calc(var(--CIB-width)*0.34);
   background-color: #aaa;
   width: var(--xpCapacity-width);
   clip-path: polygon(0 0, var(--xpCapacity-width) 0, calc(var(--xpCapacity-width) - 7px) 10px, 0 10px);
 }
 
 #xpQuantity {
-  --xpQuantity-width: 40px;
+  --xpQuantity-width: calc(var(--CIB-width)*0.16);
   background-color: aqua;
   width: var(--xpQuantity-width);
   clip-path: polygon(0 0, var(--xpQuantity-width) 0, calc(var(--xpQuantity-width) - 7px) 10px, 0 10px);
