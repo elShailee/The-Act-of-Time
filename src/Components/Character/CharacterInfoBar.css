@@ -1,12 +1,12 @@
 #characterInfoBarContainer {
   --CIB-width: 250px; /*CIB = character Info Bar*/
-  --CIB-height: 100px;
-  --CIB-textPartHight: calc(var(--CIB-height)*0.6);
-  --halfOf-CIB-width: calc(var(--CIB-width) / 2);
-  --CIB-text-width: 100px;
-  --CIB-Image-size: 90px;
-  --bigFontSize: 20px;
-  --fontSize: 15px;
+  --CIB-height: calc(var(--CIB-width)*0.4);/*100px at default*/
+  --CIB-textPartHight: calc(var(--CIB-height)*0.6);/*60px at default*/
+  --halfOf-CIB-width: calc(var(--CIB-width) / 2);/*125px at default*/
+  --CIB-text-width: calc(var(--CIB-width)*0.4);/*100px at default*/
+  --CIB-Image-size: calc(var(--CIB-width)*0.36);/*90px at default*/
+  --bigFontSize: calc(var(--CIB-width)*0.08);/*20px at default*/
+  --fontSize: calc(var(--CIB-width)*0.06);/*15px at default*/
   --CIB-font: Helvetica;
   position: absolute;
   left: calc(50% - var(--halfOf-CIB-width));
