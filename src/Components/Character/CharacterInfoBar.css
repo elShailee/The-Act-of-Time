@@ -1,12 +1,12 @@
 #characterInfoBarContainer {
-  --CIB-width: 250px; /*CIB = character Info Bar*/
-  --CIB-height: calc(var(--CIB-width)*0.4);/*100px at default*/
-  --CIB-textPartHight: calc(var(--CIB-height)*0.6);/*60px at default*/
-  --halfOf-CIB-width: calc(var(--CIB-width) / 2);/*125px at default*/
-  --CIB-text-width: calc(var(--CIB-width)*0.4);/*100px at default*/
-  --CIB-Image-size: calc(var(--CIB-width)*0.36);/*90px at default*/
-  --bigFontSize: calc(var(--CIB-width)*0.08);/*20px at default*/
-  --fontSize: calc(var(--CIB-width)*0.06);/*15px at default*/
+  --CIB-width: 275px; /*CIB = character Info Bar 275 at default*/
+  --CIB-height: calc(var(--CIB-width)*0.4);/*110px at default*/
+  --CIB-textPartHight: calc(var(--CIB-height)*0.6);/*66px at default*/
+  --halfOf-CIB-width: calc(var(--CIB-width) / 2);/*137.5px at default*/
+  --CIB-text-width: calc(var(--CIB-width)*0.4);/*110px at default*/
+  --CIB-Image-size: calc(var(--CIB-width)*0.32);/*88px at default*/
+  --bigFontSize: calc(var(--CIB-width)*0.08);/*22px at default*/
+  --fontSize: calc(var(--CIB-width)*0.06);/*16.5px at default*/
   --CIB-font: Helvetica;
   position: absolute;
   left: calc(50% - var(--halfOf-CIB-width));
@@ -19,20 +19,20 @@
   background-color: #800020;
   text-align: center;
   clip-path: polygon(
-    0px 0px, /*top left corner going down*/
-    0px 0px, /*top left corner*/
-    var(--CIB-width) 0px, /*top right corner*/
+    calc(var(--CIB-width)*0.06) calc(var(--CIB-width)*0.15), /*left corner going down*/
+    calc(var(--CIB-width)*0.15) 0px, /*top left corner*/
+    calc(var(--CIB-width)*0.9) 0px, /*top right corner*/
+    calc(var(--CIB-width)*0.98) calc(var(--CIB-width)*0.08), /*right corner*/
     calc(var(--CIB-width)*0.84) var(--CIB-textPartHight), /*bottom right corner*/
     calc(var(--CIB-width)*0.52) var(--CIB-textPartHight), /*right middele corner*/
-    calc(var(--CIB-width)*0.44) var(--CIB-height), /*right bottom middele corner*/
-    calc(var(--CIB-width)*0.16) var(--CIB-height));/*left bottom corner*/
-  
+    calc(var(--CIB-width)*0.44) var(--CIB-height), /*middele bottom corner*/
+    calc(var(--CIB-width)*0.16) var(--CIB-height));/*left bottom corner*/  
 }
 
 .characterTextCointainer {
   width: var(--halfOf-CIB-width);
   float: right;
-  padding-top: calc( calc( var(--CIB-textPartHight) - calc(var(--bigFontSize) + var(--fontSize)))/2);
+  padding-top: calc( calc( var(--CIB-textPartHight) - calc(var(--bigFontSize) + var(--fontSize)))/3);
 }
 
 .characterNameText {
@@ -59,21 +59,21 @@
 
 .xpBar {
   position: absolute;
-  height: 15px;
+  height: calc(var(--CIB-height)*0.05);
   top: calc(var(--CIB-height)*0.6);
-  left: calc(var(--halfOf-CIB-width) - 3px);
+  left: var(--halfOf-CIB-width);
 }
 
 #xpCapacity {
-  --xpCapacity-width: calc(var(--CIB-width)*0.34);
+  --xpCapacity-width: calc(var(--CIB-width)*0.30);
   background-color: #aaa;
   width: var(--xpCapacity-width);
-  clip-path: polygon(0 0, var(--xpCapacity-width) 0, calc(var(--xpCapacity-width) - 7px) 10px, 0 10px);
+  clip-path: polygon(0 0, var(--xpCapacity-width) 0, calc(var(--xpCapacity-width)*0.92) calc(var(--CIB-height)*0.05), 0 calc(var(--CIB-height)*0.05));
 }
 
 #xpQuantity {
   --xpQuantity-width: calc(var(--CIB-width)*0.16);
   background-color: aqua;
   width: var(--xpQuantity-width);
-  clip-path: polygon(0 0, var(--xpQuantity-width) 0, calc(var(--xpQuantity-width) - 7px) 10px, 0 10px);
+  clip-path: polygon(0 0, var(--xpQuantity-width) 0, calc(var(--xpQuantity-width) *0.96) calc(var(--CIB-height)*0.05), 0 calc(var(--CIB-height)*0.05));
 }
