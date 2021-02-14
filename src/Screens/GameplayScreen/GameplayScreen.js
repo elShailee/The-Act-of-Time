@@ -1,7 +1,7 @@
 import React from 'react';
 import './GameplayScreen.css';
 import 'GeneralStyles/iconsStyles.css';
-import CharacterInfo from 'Components/Character/CharacterInfo';
+import CharacterInfoBar from 'Components/Character/CharacterInfoBar';
 import ActionsButton from 'Components/Actions/ActionsButton';
 import EnergyButton from 'Components/Energy/EnergyButton';
 import CoinsButton from 'Components/Coins/CoinsButton';
@@ -17,7 +17,7 @@ export default function GameplayScreen() {
   return (
     <div id="gameplayScreen">
       <MountedComponentsContextProvider>
-        <CharacterInfo />
+        <CharacterInfoBar />
 
         <div id="upperLeftButtonsContainer">
           <EnergyButton />
