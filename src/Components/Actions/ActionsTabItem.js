@@ -1,13 +1,29 @@
-import React from "react";
+import React, { useMemo } from "react";
 import "./ActionsTabItem.css";
 import hamburgerMenuIcon from "Images/hamburgerMenuIcon.png";
 import xIcon from "Images/xIcon.png";
 import { Draggable } from "react-beautiful-dnd";
-import Countdown from "../../Utils/GeneralComponents/Countdown";
-
+import useCountdown from "../../Utils/GeneralComponents/useCountdown";
+import moment from "moment";
 export default function ActionsTabItem({ actionItem, index }) {
-  const duration = Countdown(actionItem.startingTime, actionItem.endingTime);
-
+  const countdown = useCountdown(
+    actionItem.startingTime,
+    actionItem.endingTime
+  );
+  const duration = useMemo(() => {
+    let hours = "";
+    if (hours) {
+      hours = moment.duration(countdown).hours();
+      if (hours < 10) hours = "0" + hours;
+    }
+    let minutes = moment.duration(countdown).minutes();
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    let seconds = moment.duration(countdown).seconds();
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+    return hours !== ""
+      ? hours + ":" + minutes + ":" + seconds
+      : minutes + ":" + seconds;
+  }, [countdown]);
   const actionAbortButton = (
     <img
       src={xIcon}
@@ -33,8 +49,8 @@ export default function ActionsTabItem({ actionItem, index }) {
           />
           <div>{actionItem.title}</div>
           {" - "}
-          {duration}
-          {actionAbortButton}
+          <div>{duration}</div>
+          <div>{actionAbortButton}</div>
         </div>
       )}
     </Draggable>

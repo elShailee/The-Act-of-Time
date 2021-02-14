@@ -1,32 +1,30 @@
 import { useState, useEffect } from "react";
 import moment from "moment";
 import "moment-duration-format";
-export default function Countdown(startTime, endTime) {
+export default function useCountdown(startTime, endTime) {
   const [duration, setDuration] = useState(
     moment.duration(endTime - startTime)
   );
-  const [zero, setZero] = useState(false);
+  const [hasReachedZero , setHasReachedZero ] = useState(false);
   useEffect(() => {
     const interval = 1000;
 
     let intervalDuration;
-    if (!zero) {
+    if (!hasReachedZero) {
       intervalDuration = setInterval(() => {
         setDuration(moment.duration(duration.asMilliseconds() - interval));
       }, interval);
     }
 
-    if (!zero && duration.asMilliseconds() <= 0) {
+    if (!hasReachedZero && duration.asMilliseconds() <= 0) {
       setDuration(moment.duration(0));
-      setZero(true);
+      setHasReachedZero(true);
       clearInterval(intervalDuration);
     }
     return () => {
       clearInterval(intervalDuration);
     };
-  }, [duration, zero]);
+  }, [duration, hasReachedZero]);
 
-  return moment
-    .duration(duration.asMilliseconds(), "milliseconds")
-    .format("hh:mm:ss");
+  return duration.asMilliseconds();
 }

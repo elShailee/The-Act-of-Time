@@ -24,7 +24,7 @@ export default function ActionButton() {
   return (
     <div id="actionsButtonAndTabContainer">
       <GeneralButton
-        id="ActionsButton"
+        id="actionsButton"
         uppercased
         outlined
         onButtonClick={onActionsButtonClick}
