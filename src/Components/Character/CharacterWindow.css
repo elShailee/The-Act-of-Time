@@ -1,0 +1,78 @@
+.generalWindow {
+	--CW-width: 400px;
+	--CW-higeht: 420px;
+	--CW-Image-size: calc(var(--CW-width) * 0.3);
+	font-size: 15px;
+	width: var(--CW-width);
+	height: var(--CW-higeht);
+}
+
+.contentContainer {
+	width: calc(var(--CW-width) * 0.99);
+	height: calc(var(--CW-higeht) * 0.9);
+}
+.CharacterImage {
+	border-radius: 50%;
+	width: var(--CW-Image-size);
+	height: var(--CW-Image-size);
+}
+
+.characterName {
+	text-align: center;
+	font-size: 30px;
+}
+
+.characterLvl {
+	font-size: 20px;
+}
+
+.WxpBar {
+	--xp-Width: calc(var(--CW-width) * 0.33);
+	--xp-Height: calc(var(--CW-higeht) * 0.07);
+}
+
+#WxpCapacity {
+	--xpCapacity-width: calc(var(--CW-width) * 0.33);
+	position: absolute;
+	background-color: #aaa;
+	height: var(--xp-Height);
+	width: var(--xpCapacity-width);
+	clip-path: polygon(0 0, calc(var(--CW-width) * 0.33) 0, calc(var(--CW-width) * 0.33) 20, 0 20);
+}
+
+#WxpQuantity {
+	--xpQuantity-width: calc(var(--CW-width) * 0.16);
+	position: absolute;
+	background-color: aqua;
+	width: var(--xpQuantity-width);
+	height: var(--xp-Height);
+	clip-path: polygon(
+		0 0,
+		var(--xpQuantity-width) 0,
+		calc(var(--xpQuantity-width) * 0.96) var(--xp-Height),
+		0 var(--xp-Height)
+	);
+}
+
+.characterStats {
+	height: calc(var(--CW-higeht) * 0.54);
+	width: calc(var(--CW-width) * 0.48);
+	background-color: white;
+	border-radius: 5%;
+	text-align: left;
+}
+
+.characterInfo {
+	float: right;
+	width: calc(var(--CW-width) * 0.48);
+	background-color: white;
+	border-radius: 5%;
+	text-align: left;
+}
+
+.CharacterItems {
+	float: right;
+	background-color: rgba(90, 41, 41, 0.603);
+	height: calc(var(--CW-higeht) * 0.25);
+	width: calc(var(--CW-higeht) * 0.45);
+}

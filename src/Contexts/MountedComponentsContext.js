@@ -20,58 +20,59 @@ import { errorMessagesTexts } from 'Texts/gameplayTexts';
 export const MountedComponentsContext = createContext();
 
 class MountedComponentsContextProvider extends Component {
-  state = {
-    mountedComponentsDict: {
-      ActionsTab: false,
-      EnergyPurchaseWindow: false,
-      CoinsPurchaseWindow: false,
-      CoinsTab: false,
-      EnergyTab: false,
-    },
-  };
+	state = {
+		mountedComponentsDict: {
+			ActionsTab: false,
+			EnergyPurchaseWindow: false,
+			CoinsPurchaseWindow: false,
+			CoinsTab: false,
+			EnergyTab: false,
+			CharacterWindow: false,
+		},
+	};
 
-  mountOrunmountComponents = (componentsToMountArray, shouldMount) => {
-    if (typeof componentsToMountArray === 'string') componentsToMountArray = [componentsToMountArray];
+	mountOrunmountComponents = (componentsToMountArray, shouldMount) => {
+		if (typeof componentsToMountArray === 'string') componentsToMountArray = [componentsToMountArray];
 
-    const isComponentsArrayValid = this.isComponentsArrayValid(componentsToMountArray);
-    if (!isComponentsArrayValid) {
-      console.log(errorMessagesTexts.invalidComponentsToMount);
-      return;
-    }
+		const isComponentsArrayValid = this.isComponentsArrayValid(componentsToMountArray);
+		if (!isComponentsArrayValid) {
+			console.log(errorMessagesTexts.invalidComponentsToMount);
+			return;
+		}
 
-    const mountedComponentsDict = this.state.mountedComponentsDict;
+		const mountedComponentsDict = this.state.mountedComponentsDict;
 
-    componentsToMountArray.forEach(componentName => {
-      const doesComponentAppearInDict = componentName;
-      if (doesComponentAppearInDict) {
-        const newMountedComponentsDict = mountedComponentsDict;
-        newMountedComponentsDict[componentName] = shouldMount;
-        this.setState({ mountedComponentsDict: newMountedComponentsDict });
-      }
-    });
-  };
+		componentsToMountArray.forEach(componentName => {
+			const doesComponentAppearInDict = componentName;
+			if (doesComponentAppearInDict) {
+				const newMountedComponentsDict = mountedComponentsDict;
+				newMountedComponentsDict[componentName] = shouldMount;
+				this.setState({ mountedComponentsDict: newMountedComponentsDict });
+			}
+		});
+	};
 
-  mountComponents = componentsToMountArray => {
-    this.mountOrunmountComponents(componentsToMountArray, true);
-  };
-  unmountComponents = componentsToUnmountArray => {
-    this.mountOrunmountComponents(componentsToUnmountArray, false);
-  };
+	mountComponents = componentsToMountArray => {
+		this.mountOrunmountComponents(componentsToMountArray, true);
+	};
+	unmountComponents = componentsToUnmountArray => {
+		this.mountOrunmountComponents(componentsToUnmountArray, false);
+	};
 
-  isComponentsArrayValid = arreyOfComponentsNames => {
-    if (!isAnObject(arreyOfComponentsNames) || arreyOfComponentsNames === undefined) {
-      return false;
-    }
-    return true;
-  };
+	isComponentsArrayValid = arreyOfComponentsNames => {
+		if (!isAnObject(arreyOfComponentsNames) || arreyOfComponentsNames === undefined) {
+			return false;
+		}
+		return true;
+	};
 
-  render() {
-    const { state, mountComponents, unmountComponents, props } = this;
-    return (
-      <MountedComponentsContext.Provider value={{ ...state, mountComponents, unmountComponents }}>
-        {props.children}
-      </MountedComponentsContext.Provider>
-    );
-  }
+	render() {
+		const { state, mountComponents, unmountComponents, props } = this;
+		return (
+			<MountedComponentsContext.Provider value={{ ...state, mountComponents, unmountComponents }}>
+				{props.children}
+			</MountedComponentsContext.Provider>
+		);
+	}
 }
 export default MountedComponentsContextProvider;
