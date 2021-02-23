@@ -1,4 +1,5 @@
 import characterImage from 'Images/characterImage.png';
+import itemImage from 'Images/placeholderIcon.png';
 
 const characterInfoExampleData = {
 	fromDB: {
@@ -17,11 +18,38 @@ const characterInfoExampleData = {
 		coldTolerence: 84,
 		memory: 5,
 		futurePlanning: 3,
+		importantItems: 3,
 	},
 	fromBuild: {
 		numberOfItems: 350,
 		numberOfAchiement: 50,
 		xpRequiredToNextLevel: [20, 50, 100, 250, 600],
+		itemList: [
+			itemImage,
+			itemImage,
+			itemImage,
+			itemImage,
+			itemImage,
+			itemImage,
+			itemImage,
+			itemImage,
+			itemImage,
+			itemImage,
+			itemImage,
+			itemImage,
+			itemImage,
+			itemImage,
+			itemImage,
+			itemImage,
+			itemImage,
+			itemImage,
+			itemImage,
+			itemImage,
+			itemImage,
+			itemImage,
+			itemImage,
+			itemImage,
+		],
 	},
 };
 

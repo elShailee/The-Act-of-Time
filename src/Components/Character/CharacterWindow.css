@@ -19,10 +19,12 @@
 
 .characterName {
 	text-align: center;
+	padding-left: 50px;
 	font-size: 30px;
 }
 
 .characterLvl {
+	position: absolute;
 	font-size: 20px;
 }
 
@@ -41,7 +43,7 @@
 }
 
 #WxpQuantity {
-	--xpQuantity-width: calc(var(--CW-width) * 0.16);
+	--xpQuantity-width: calc(var(--CW-width) * 0.19);
 	position: absolute;
 	background-color: aqua;
 	width: var(--xpQuantity-width);
@@ -72,7 +74,18 @@
 
 .CharacterItems {
 	float: right;
-	background-color: rgba(90, 41, 41, 0.603);
+	/*background-color: rgba(90, 41, 41, 0.603);*/
 	height: calc(var(--CW-higeht) * 0.25);
 	width: calc(var(--CW-higeht) * 0.45);
+}
+
+.item {
+	width: 25px;
+	height: 20px;
+}
+
+img {
+	vertical-align: top;
+	width: 24px;
+	height: 20px;
 }
