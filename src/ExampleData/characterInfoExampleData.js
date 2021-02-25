@@ -17,7 +17,7 @@ const characterInfoExampleData = {
 		heatTolerence: 127,
 		coldTolerence: 84,
 		memory: 5,
-		futurePlanning: 3,
+		futurePlanning: 9,
 		importantItems: 3,
 	},
 	fromBuild: {

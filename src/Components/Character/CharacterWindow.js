@@ -3,10 +3,22 @@ import characterInfo from 'ExampleData/characterInfoExampleData';
 import GeneralWindow from 'Components/GeneralComponents/GeneralWindow';
 import './CharacterWindow.css';
 import { itemsDetailes } from 'Texts/gameplayTexts';
+//import itemT from './CharacterItems.js';
 
-const Timep = Math.round(characterInfo.fromDB.timePlayed / 3600);
-function onHover(props) {
-	return itemsDetailes.item[this.props.id];
+const Timep = Math.round((characterInfo.fromDB.timePlayed / 3600) * 10) / 10;
+const FuturePlan =
+	characterInfo.fromDB.futurePlanning < 7
+		? characterInfo.fromDB.futurePlanning + ' days'
+		: Math.round((characterInfo.fromDB.futurePlanning / 7) * 10) / 10 + ' weeks';
+function onHover(num) {
+	return itemsDetailes.item[num];
+}
+function showItem(num) {
+	return characterInfo.fromDB.importantItems > num ? (
+		<img src={characterInfo.fromBuild.itemList[num]} onMouseOver={() => onHover(num)} />
+	) : (
+		''
+	);
 }
 export default function CharacterWindow({ unmountCharacterWindow }) {
 	return (
@@ -26,8 +38,9 @@ export default function CharacterWindow({ unmountCharacterWindow }) {
 							<div className='characterLvl'>Lvl {characterInfo.fromDB.characterLevel} </div>
 						</td>
 						<td className='XPBar'>
-							<div className='WxpBar' id='WxpCapacity'></div>
-							<div className='WxpBar' id='WxpQuantity'>
+							<div className='WxpBar' id='WxpCapacity' />
+							<div className='WxpBar' id='WxpQuantity' />
+							<div>
 								{characterInfo.fromDB.xpAchived}/
 								{characterInfo.fromBuild.xpRequiredToNextLevel[characterInfo.fromDB.characterLevel]}
 							</div>
@@ -40,7 +53,7 @@ export default function CharacterWindow({ unmountCharacterWindow }) {
 							<div className='characterStats'>
 								<p>
 									Helth: 47% <br />
-									Avg' sleep duration: 8 h/d
+									Avg sleep duration: 8 h/d
 									<br />
 									Sleep quality: 75% <br />
 									Food quality: {characterInfo.fromDB.foodQuality}
@@ -51,7 +64,7 @@ export default function CharacterWindow({ unmountCharacterWindow }) {
 									<br />
 									Memory: {characterInfo.fromDB.memory} tasks
 									<br />
-									Futer planning: {characterInfo.fromDB.futurePlanning} weeks
+									Future planning: {FuturePlan}
 								</p>
 							</div>
 						</td>
@@ -76,179 +89,83 @@ export default function CharacterWindow({ unmountCharacterWindow }) {
 							<div className='CharacterItems'>
 								<table className='itemTable' border='1'>
 									<tr>
+										<td className='item' id='0'>
+											{showItem(0)}
+										</td>
 										<td className='item' id='1'>
-											{characterInfo.fromDB.importantItems >= 1 ? (
-												<img src={characterInfo.fromBuild.itemList[0]} onMouseOver={onHover} />
-											) : (
-												''
-											)}
+											{showItem(1)}
 										</td>
 										<td className='item' id='2'>
-											{characterInfo.fromDB.importantItems >= 2 ? (
-												<img src={characterInfo.fromBuild.itemList[1]} onMouseOver={onHover} />
-											) : (
-												''
-											)}
+											{showItem(2)}
 										</td>
 										<td className='item' id='3'>
-											{characterInfo.fromDB.importantItems >= 3 ? (
-												<img src={characterInfo.fromBuild.itemList[2]} onMouseOver={onHover} />
-											) : (
-												''
-											)}
+											{showItem(3)}
 										</td>
 										<td className='item' id='4'>
-											{characterInfo.fromDB.importantItems >= 4 ? (
-												<img src={characterInfo.fromBuild.itemList[3]} onMouseOver={onHover} />
-											) : (
-												''
-											)}
+											{showItem(4)}
 										</td>
 										<td className='item' id='5'>
-											{characterInfo.fromDB.importantItems >= 5 ? (
-												<img src={characterInfo.fromBuild.itemList[4]} onMouseOver={onHover} />
-											) : (
-												''
-											)}
-										</td>
-										<td className='item' id='6'>
-											{characterInfo.fromDB.importantItems >= 6 ? (
-												<img src={characterInfo.fromBuild.itemList[5]} onMouseOver={onHover} />
-											) : (
-												''
-											)}
+											{showItem(5)}
 										</td>
 									</tr>
 									<tr>
+										<td className='item' id='6'>
+											{showItem(6)}
+										</td>
 										<td className='item' id='7'>
-											{characterInfo.fromDB.importantItems >= 7 ? (
-												<img src={characterInfo.fromBuild.itemList[6]} onMouseOver={onHover} />
-											) : (
-												''
-											)}
+											{showItem(7)}
 										</td>
 										<td className='item' id='8'>
-											{characterInfo.fromDB.importantItems >= 8 ? (
-												<img src={characterInfo.fromBuild.itemList[7]} onMouseOver={onHover} />
-											) : (
-												''
-											)}
+											{showItem(8)}
 										</td>
 										<td className='item' id='9'>
-											{characterInfo.fromDB.importantItems >= 9 ? (
-												<img src={characterInfo.fromBuild.itemList[8]} onMouseOver={onHover} />
-											) : (
-												''
-											)}
+											{showItem(9)}
 										</td>
 										<td className='item' id='10'>
-											{characterInfo.fromDB.importantItems >= 10 ? (
-												<img src={characterInfo.fromBuild.itemList[9]} onMouseOver={onHover} />
-											) : (
-												''
-											)}
+											{showItem(10)}
 										</td>
 										<td className='item' id='11'>
-											{characterInfo.fromDB.importantItems >= 11 ? (
-												<img src={characterInfo.fromBuild.itemList[10]} onMouseOver={onHover} />
-											) : (
-												''
-											)}
-										</td>
-										<td className='item' id='12'>
-											{characterInfo.fromDB.importantItems >= 12 ? (
-												<img src={characterInfo.fromBuild.itemList[11]} onMouseOver={onHover} />
-											) : (
-												''
-											)}
+											{showItem(11)}
 										</td>
 									</tr>
 									<tr>
+										<td className='item' id='12'>
+											{showItem(12)}
+										</td>
 										<td className='item' id='13'>
-											{characterInfo.fromDB.importantItems >= 13 ? (
-												<img src={characterInfo.fromBuild.itemList[12]} onMouseOver={onHover} />
-											) : (
-												''
-											)}
+											{showItem(13)}
 										</td>
 										<td className='item' id='14'>
-											{characterInfo.fromDB.importantItems >= 14 ? (
-												<img src={characterInfo.fromBuild.itemList[13]} onMouseOver={onHover} />
-											) : (
-												''
-											)}
+											{showItem(14)}
 										</td>
 										<td className='item' id='15'>
-											{characterInfo.fromDB.importantItems >= 15 ? (
-												<img src={characterInfo.fromBuild.itemList[14]} onMouseOver={onHover} />
-											) : (
-												''
-											)}
+											{showItem(15)}
 										</td>
 										<td className='item' id='16'>
-											{characterInfo.fromDB.importantItems >= 16 ? (
-												<img src={characterInfo.fromBuild.itemList[15]} onMouseOver={onHover} />
-											) : (
-												''
-											)}
+											{showItem(16)}
 										</td>
 										<td className='item' id='17'>
-											{characterInfo.fromDB.importantItems >= 17 ? (
-												<img src={characterInfo.fromBuild.itemList[16]} onMouseOver={onHover} />
-											) : (
-												''
-											)}
-										</td>
-										<td className='item' id='18'>
-											{characterInfo.fromDB.importantItems >= 18 ? (
-												<img src={characterInfo.fromBuild.itemList[17]} onMouseOver={onHover} />
-											) : (
-												''
-											)}
+											{showItem(17)}
 										</td>
 									</tr>
 									<tr>
+										<td className='item' id='18'>
+											{showItem(18)}
+										</td>
 										<td className='item' id='19'>
-											{characterInfo.fromDB.importantItems >= 19 ? (
-												<img src={characterInfo.fromBuild.itemList[18]} onMouseOver={onHover} />
-											) : (
-												''
-											)}
+											{showItem(19)}
 										</td>
 										<td className='item' id='20'>
-											{characterInfo.fromDB.importantItems >= 20 ? (
-												<img src={characterInfo.fromBuild.itemList[19]} onMouseOver={onHover} />
-											) : (
-												''
-											)}
+											{showItem(20)}
 										</td>
 										<td className='item' id='21'>
-											{characterInfo.fromDB.importantItems >= 21 ? (
-												<img src={characterInfo.fromBuild.itemList[20]} onMouseOver={onHover} />
-											) : (
-												''
-											)}
+											{showItem(21)}
 										</td>
 										<td className='item' id='22'>
-											{characterInfo.fromDB.importantItems >= 22 ? (
-												<img src={characterInfo.fromBuild.itemList[21]} onMouseOver={onHover} />
-											) : (
-												''
-											)}
+											{showItem(22)}
 										</td>
 										<td className='item' id='23'>
-											{characterInfo.fromDB.importantItems >= 23 ? (
-												<img src={characterInfo.fromBuild.itemList[22]} onMouseOver={onHover} />
-											) : (
-												''
-											)}
-										</td>
-										<td className='item' id='24'>
-											{characterInfo.fromDB.importantItems >= 24 ? (
-												<img src={characterInfo.fromBuild.itemList[23]} onMouseOver={onHover} />
-											) : (
-												''
-											)}
+											{showItem(23)}
 										</td>
 									</tr>
 								</table>

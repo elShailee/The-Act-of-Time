@@ -11,8 +11,8 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	/*  the transform makes the window's anchor point to be in it's center instead of top left,
-        that way it is possible to center it easily instead of calculating its position according
-        to it's dimensions   */
+      that way it is possible to center it easily instead of calculating its position according
+      to it's dimensions   */
 }
 
 .rightSided {
@@ -20,7 +20,7 @@
 	top: 52%;
 	transform: translate(0, -50%);
 	/*  same case as the comment above, instead this time I wanted it's anchor point to be on
-        the center-right edge, so I can space from the right according to the existing buttons size in px  */
+    the center-right edge, so I can space from the right according to the existing buttons size in px  */
 }
 
 .generalWindowTitle {
