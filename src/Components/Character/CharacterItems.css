@@ -1,0 +1,19 @@
+.CI-grid-container {
+	display: grid;
+	grid-template-columns: 35px 35px 35px 35px 35px 35px;
+	grid-template-rows: 35px 35px 35px 35px;
+	background-color: lightsalmon;
+	grid-gap: 5px;
+	padding: 10px;
+}
+.CI-grid-item {
+	padding-top: 5px;
+	background-color: white;
+	border: 1px solid black;
+}
+
+img {
+	vertical-align: top;
+	width: 24px;
+	height: 24px;
+}

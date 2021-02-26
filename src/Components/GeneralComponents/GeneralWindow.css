@@ -35,8 +35,9 @@
 .contentContainer {
 	width: fit-content;
 	min-width: 20vw;
-	height: 80vh;
+	height: 70vh;
 	margin-top: 7px;
+	padding: 10px;
 	background: #ffd095;
 	border-radius: 7px;
 	border: 1px #ddb075 solid;

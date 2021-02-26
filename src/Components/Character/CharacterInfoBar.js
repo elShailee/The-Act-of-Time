@@ -20,7 +20,7 @@ export default function CharacterInfoBar() {
 					<div className='characterLevelText'>Lvl {characterInfo.fromDB.characterLevel} </div>
 				</div>
 				<img
-					alt='character Image'
+					alt='character face'
 					className='characterImage'
 					src={characterInfo.fromDB.characterImage}
 					onClick={onCharcterImageClick}

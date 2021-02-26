@@ -1,0 +1,63 @@
+.CN-grid-container {
+	display: grid;
+	grid-template-columns: 200px 200px;
+	grid-template-rows: auto auto auto;
+	grid-gap: 10px;
+}
+
+.imageItem {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	grid-column-start: 0;
+	grid-column-end: 3;
+}
+
+.nameItem {
+	font-size: 30px;
+	grid-column-start: 1;
+	grid-column-end: 3;
+}
+.characterName {
+	text-align: center;
+	padding-left: 50px;
+	font-size: 30px;
+}
+
+.characterLvl {
+	float: left;
+	padding-left: 20px;
+	font-size: 20px;
+}
+
+.XPBar {
+	padding-right: 70px;
+	--xp-Width: calc(var(--CW-width) * 0.33);
+	--xp-Height: calc(var(--CW-higeht) * 0.07);
+	display: inline-block;
+}
+
+#WxpCapacity {
+	--xpCapacity-width: calc(var(--CW-width) * 0.33);
+	position: absolute;
+	background-color: #aaa;
+	height: var(--xp-Height);
+	width: var(--xpCapacity-width);
+	clip-path: polygon(0 0, calc(var(--CW-width) * 0.33) 0, calc(var(--CW-width) * 0.33) 20, 0 20);
+	text-align: center;
+	font-size: 20px;
+}
+
+#WxpQuantity {
+	--xpQuantity-width: calc(var(--CW-width) * 0.19);
+	position: absolute;
+	background-color: rgba(0, 255, 255, 0.4);
+	width: var(--xpQuantity-width);
+	height: var(--xp-Height);
+	clip-path: polygon(
+		0 0,
+		var(--xpQuantity-width) 0,
+		calc(var(--xpQuantity-width) * 0.96) var(--xp-Height),
+		0 var(--xp-Height)
+	);
+}
