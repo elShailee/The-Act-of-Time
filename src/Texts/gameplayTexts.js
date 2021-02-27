@@ -21,7 +21,7 @@ const gameplayTexts = {
     title: 'Actions',
   },
   actionsTabTexts: {
-    getMore : 'Get More'
+    moreOptions : 'More Options'
   },
   characterInfoTexts: {
     title: 'Character Info',

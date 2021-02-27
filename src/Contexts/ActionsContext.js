@@ -16,7 +16,7 @@ class ActionsContextProvider extends Component {
 
   state = { actions: activeActions, actionsOrder: this.getActionsOrder() };
   actionsItemsTypes = { tabItem: 'tabItem' };
-  
+
 
 
   applyActionsReorder = result => {

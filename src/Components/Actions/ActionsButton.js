@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
-import "./ActionsButton.css";
-import GeneralButton from "Components/GeneralComponents/GeneralButton";
-import { actionsButtonTexts } from "Texts/gameplayTexts";
-import { MountedComponentsContext } from "Contexts/MountedComponentsContext";
-import ActionsTab from "./ActionsTab";
+import React, { useContext } from 'react';
+import './ActionsButton.css';
+import GeneralButton from 'Components/GeneralComponents/GeneralButton';
+import { actionsButtonTexts } from 'Texts/gameplayTexts';
+import { MountedComponentsContext } from 'Contexts/MountedComponentsContext';
+import ActionsTab from './ActionsTab';
 
 export default function ActionButton() {
   const {

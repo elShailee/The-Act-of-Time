@@ -57,7 +57,7 @@ let activeActionsExampleData = {
     duration: 20000000,
   },
 };
-      //! setting the time to be current time and the end time to 1 min later.
+      //! setting the time to be current time and the end time to 1:40 (min:sec).
       //! suppose to be removed.
 for(let action in activeActionsExampleData){
   activeActionsExampleData[action].startingTime = +moment();

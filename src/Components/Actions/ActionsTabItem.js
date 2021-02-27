@@ -1,29 +1,19 @@
-import React, { useMemo } from "react";
-import "./ActionsTabItem.css";
-import hamburgerMenuIcon from "Images/hamburgerMenuIcon.png";
-import xIcon from "Images/xIcon.png";
-import { Draggable } from "react-beautiful-dnd";
-import useCountdown from "../../Utils/GeneralComponents/useCountdown";
-import moment from "moment";
+import React, { useMemo } from 'react';
+import './ActionsTabItem.css';
+import hamburgerMenuIcon from 'Images/hamburgerMenuIcon.png';
+import xIcon from 'Images/xIcon.png';
+import { Draggable } from 'react-beautiful-dnd';
+import {useCountdown,formmatCountdown} from 'Utils/TimingUtils/useCountdown';
+
 export default function ActionsTabItem({ actionItem, index }) {
   const countdown = useCountdown(
     actionItem.startingTime,
     actionItem.endingTime
   );
   const duration = useMemo(() => {
-    let hours = "";
-    if (hours) {
-      hours = moment.duration(countdown).hours();
-      if (hours < 10) hours = "0" + hours;
-    }
-    let minutes = moment.duration(countdown).minutes();
-    minutes = minutes < 10 ? "0" + minutes : minutes;
-    let seconds = moment.duration(countdown).seconds();
-    seconds = seconds < 10 ? "0" + seconds : seconds;
-    return hours !== ""
-      ? hours + ":" + minutes + ":" + seconds
-      : minutes + ":" + seconds;
+    return formmatCountdown(countdown);
   }, [countdown]);
+
   const actionAbortButton = (
     <img
       src={xIcon}
