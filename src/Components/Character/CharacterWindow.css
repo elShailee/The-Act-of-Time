@@ -1,3 +1,13 @@
+.generalWindow {
+	background-color: #cc0033;
+}
+
+.contentContainer {
+	background: #ff99b3;
+	border-radius: 7px;
+	border: 1px #ff4d79 solid;
+}
+
 .CharacterWindowContainer {
 	display: block;
 	grid-template-columns: auto;

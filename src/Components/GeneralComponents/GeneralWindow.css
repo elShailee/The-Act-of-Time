@@ -2,7 +2,7 @@
 	width: fit-content;
 	position: fixed;
 	background-color: #ddcc66;
-	padding: 7px;
+	padding: 10px;
 	border-radius: 5px;
 }
 
@@ -21,15 +21,6 @@
 	transform: translate(0, -50%);
 	/*  same case as the comment above, instead this time I wanted it's anchor point to be on
     the center-right edge, so I can space from the right according to the existing buttons size in px  */
-}
-
-.generalWindowTitle {
-	position: absolute;
-	font-size: 20px;
-}
-
-.generalWindowCloseButton {
-	margin-left: auto;
 }
 
 .contentContainer {

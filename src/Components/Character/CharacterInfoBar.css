@@ -70,7 +70,7 @@
 
 #xpCapacity {
 	--xpCapacity-width: calc(var(--CIB-width) * 0.33);
-	background-color: #aaa;
+	background-color: #ff99b3;
 	width: var(--xpCapacity-width);
 	clip-path: polygon(
 		0 0,
@@ -82,7 +82,7 @@
 
 #xpQuantity {
 	--xpQuantity-width: calc(var(--CIB-width) * 0.16);
-	background-color: aqua;
+	background-color: #ff4d79;
 	width: var(--xpQuantity-width);
 	clip-path: polygon(
 		0 0,

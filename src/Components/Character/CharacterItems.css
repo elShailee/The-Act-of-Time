@@ -1,19 +1,23 @@
+.itemTitle {
+	background-color: #c65353;
+	border: 1px solid #bf4040;
+	width: 80px;
+	height: 40px;
+}
+
 .CI-grid-container {
 	display: grid;
-	grid-template-columns: 35px 35px 35px 35px 35px 35px;
-	grid-template-rows: 35px 35px 35px 35px;
-	background-color: lightsalmon;
-	grid-gap: 5px;
-	padding: 10px;
+	grid-template-columns: 40px 40px 40px 40px 40px;
+	grid-template-rows: 40px 40px 40px;
 }
+
 .CI-grid-item {
-	padding-top: 5px;
-	background-color: white;
-	border: 1px solid black;
+	background-color: #cc6666;
+	border: 1px solid #bf4040;
 }
 
 img {
 	vertical-align: top;
-	width: 24px;
-	height: 24px;
+	width: 38px;
+	height: 38px;
 }

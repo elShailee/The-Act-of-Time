@@ -1,11 +1,23 @@
 .CWB-grid {
-	display: grid;
-	grid-template-columns: auto auto;
-	grid-template-rows: auto auto;
-	grid-gap: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-flow: space-evenly;
+	align-items: flex-start;
 }
 
 .CWB-item1 {
-	grid-row-start: 1;
-	grid-row-end: 3;
+	align-self: flex-start;
+}
+
+.CWB-item2 {
+	align-self: flex-start;
+	width: 50%;
+}
+
+.CWB-item3 {
+	align-self: flex-end;
+}
+
+.hover-box {
+	align-self: flex-end;
 }
