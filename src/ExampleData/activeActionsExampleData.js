@@ -58,10 +58,10 @@ let activeActionsExampleData = {
 	},
 };
 
-//! setting the time to be current time and the end time to 1:40 (min:sec).
+//! setting the time to be current time and the end time to 01:00:02 (hours:min:sec).
 //! suppose to be removed.
 for (let action in activeActionsExampleData) {
 	activeActionsExampleData[action].startingTime = +moment();
-	activeActionsExampleData[action].endingTime = +moment().add(100000, 'seconds');
+	activeActionsExampleData[action].endingTime = +moment().add(3602, 'seconds');
 }
 export default activeActionsExampleData;

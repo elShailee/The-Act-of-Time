@@ -1,8 +1,16 @@
+import moment from 'moment';
+/*
+The function gets time as unix time.
+The function returns time as format - hh:mm:ss.
+If the hours is 0 than the return formant is mm:ss.
+*/
 export default function hhmmssFormat(time) {
 	let hours = '';
 
-	hours = moment.duration(time).hours();
-	if (hours < 10) hours = '0' + hours;
+	if (moment.duration(time).hours() !== 0) {
+		hours = moment.duration(time).hours();
+		if (hours < 10) hours = '0' + hours;
+	}
 
 	let minutes = moment.duration(time).minutes();
 	let seconds = moment.duration(time).seconds();

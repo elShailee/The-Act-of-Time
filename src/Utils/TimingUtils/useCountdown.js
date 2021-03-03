@@ -2,15 +2,17 @@ import { useState, useEffect } from 'react';
 import moment from 'moment';
 import 'moment-duration-format';
 import hhmmssFormat from './hhmmssFormat';
-function useCountdown(startTime, endTime) {
-	/*TODO remove startTime, put only endTime.
-         change calculation by endTime - Now.
-	 */
-	const [duration, setDuration] = useState(moment.duration(endTime - startTime));
+
+/*
+useCountdown hook is used for performing countdown timer.
+The hook gets endTime as unix time (you can use moment object).
+The hook returns countdown as format hh:mm:ss.
+*/
+function useCountdown(endTime) {
+	const [duration, setDuration] = useState(moment.duration(moment(endTime).diff(moment())));
 	const [hasReachedZero, setHasReachedZero] = useState(false);
 	useEffect(() => {
 		const interval = 1000;
-
 		let intervalDuration;
 		if (!hasReachedZero) {
 			intervalDuration = setInterval(() => {
