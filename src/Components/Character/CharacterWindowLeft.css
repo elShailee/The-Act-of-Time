@@ -1,0 +1,17 @@
+.leftSideContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: stretch;
+	align-content: space-between;
+	width: 9vw;
+	height: 60vh;
+}
+
+.CWBL-item1 {
+	align-self: flex-start;
+}
+
+.CWBL-item2 {
+	align-self: flex-end;
+}

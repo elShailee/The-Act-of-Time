@@ -1,15 +1,17 @@
 import React from 'react';
-import CharacterInfo from './CharacterInfo';
-import CharacterItems from './CharacterItems';
-import CharacterStats from './CharacterStats';
+import 'Components/Character/CharacterWindoButtom.css';
+import CharacterWindowLeft from './CharacterWindowLeft';
+import CharacterWindowRight from './CharacterWindowRight';
 
 export default function CharacterWindoButtom() {
 	return (
 		<div className='CWB-grid'>
-			<CharacterInfo className='CWB-item2' />
-			<CharacterStats className='CWB-item1' />
-			<CharacterItems className='CWB-item3' />
-			<div className='hover-box'></div>
+			<div className='leftSide'>
+				<CharacterWindowLeft className='CWBL-item1' />
+			</div>
+			<div className='rightSide'>
+				<CharacterWindowRight className='CWBR-item1' />
+			</div>
 		</div>
 	);
 }

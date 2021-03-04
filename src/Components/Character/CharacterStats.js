@@ -11,7 +11,7 @@ export default function CharacterStats() {
 	return (
 		<div className='CS-grid-container'>
 			<p>
-				Helth: 47% <br /> Avg sleep duration: 8 h/d <br /> Sleep quality: 75% <br /> Food quality:{' '}
+				Helth: 47% <br /> Sleep duration avg: 8 h/d <br /> Sleep quality: 75% <br /> Food quality:
 				{characterInfo.fromDB.foodQuality}
 				<br /> Heat tolerence: {characterInfo.fromDB.heatTolerence}
 				<br /> Cold tolerence: {characterInfo.fromDB.coldTolerence}

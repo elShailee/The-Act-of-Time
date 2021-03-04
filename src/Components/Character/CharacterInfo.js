@@ -14,7 +14,7 @@ export default function CharacterInfo() {
 				Time played: {Timep} hours <br />
 				Item discovered: {characterInfo.fromDB.itemDiscovered}/{characterInfo.fromBuild.numberOfItems}
 				<br />
-				Achiement earned: {characterInfo.fromDB.achiementEarned}/{characterInfo.fromBuild.numberOfAchiement}
+				Achievments: {characterInfo.fromDB.achiementEarned}/{characterInfo.fromBuild.numberOfAchiement}
 				<br />
 				Disatsteres servived: {characterInfo.fromDB.disatsteresServived}/{characterInfo.fromDB.disatsteresOcarancy}
 				<br />
