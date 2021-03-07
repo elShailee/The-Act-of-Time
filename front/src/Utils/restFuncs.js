@@ -1,10 +1,12 @@
 import axios from 'axios';
 
 export async function fetchJSON(URL) {
-  const response = await axios.get(URL).catch(err => {
-    console.log(err);
-    return {};
-  });
+	try {
+		let res = await axios(URL);
+		return res.data;
+	} catch (error) {
+		console.log(error);
 
-  return response.data;
+		return {};
+	}
 }
