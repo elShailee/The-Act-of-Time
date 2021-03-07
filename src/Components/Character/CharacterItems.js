@@ -2,17 +2,15 @@ import React from 'react';
 import 'Components/Character/CharacterItems.css';
 import characterInfo from 'ExampleData/characterInfoExampleData';
 import { itemsDetailes } from 'Texts/gameplayTexts';
-import ReactTooltip from 'react-tooltip';
 
 function onHover(props) {
 	return itemsDetailes.item[props];
 }
 function showItem(num) {
-	return (
-		<ReactTooltip data-tip={itemsDetailes.item[num]}>
-			{characterInfo.fromDB.importantItems > num} ? (
-			<img src={characterInfo.fromBuild.itemList[num]} alt='item detailes' onMouseOver={() => onHover(num)} />) : ( '' ); //
-		</ReactTooltip>
+	return characterInfo.fromDB.importantItems > num ? (
+		<img src={characterInfo.fromBuild.itemList[num]} onMouseOver={() => onHover(num)} />
+	) : (
+		''
 	);
 }
 // function gridItem(numberOfCol, numberOfRow) {
@@ -29,7 +27,7 @@ function showItem(num) {
 
 export default function CharacterItems() {
 	return (
-		<div className='items'>
+		<div>
 			<div className='itemTitle'>passive buffs</div>
 			<div class='CI-grid-container'>
 				{/* gridItem(5, 3); */}

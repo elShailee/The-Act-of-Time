@@ -3,6 +3,7 @@
 	position: fixed;
 	background-color: #ddcc66;
 	padding: 10px;
+	height: 60vh;
 	border-radius: 5px;
 }
 
@@ -26,7 +27,6 @@
 .contentContainer {
 	width: fit-content;
 	min-width: 20vw;
-	height: 60vh;
 	margin-top: 7px;
 	padding: 10px;
 	background: #ffd095;
