@@ -8,19 +8,21 @@ import { actionsTabTexts } from 'Texts/gameplayTexts';
 import { MountedComponentsContext } from 'Contexts/MountedComponentsContext';
 
 export default function ActionsTab() {
-  const { mountComponents, unmountComponents } = useContext(MountedComponentsContext);
+	const { mountComponents, unmountComponents } = useContext(MountedComponentsContext);
 
-  const onActionsButtonClick = () => {
-      unmountComponents('ActionsTab');
-      mountComponents('ActionsWindow');
-  };
+	const onActionsButtonClick = () => {
+		unmountComponents('ActionsTab');
+		mountComponents('ActionsWindow');
+	};
 
-  return (
-    <GeneralTab id="actionsTab">
-      <ActionsContextProvider>
-        <FirstFewActions />
-        <GeneralButton id="MoreActionsBtn" uppercased outlined onButtonClick={() => onActionsButtonClick()}>{actionsTabTexts.getMore}</GeneralButton>
-      </ActionsContextProvider>
-    </GeneralTab>
-  );
+	return (
+		<GeneralTab id='actionsTab'>
+			<ActionsContextProvider>
+				<FirstFewActions />
+				<GeneralButton id='MoreActionsBtn' uppercased outlined onButtonClick={() => onActionsButtonClick()}>
+					{actionsTabTexts.getMore}
+				</GeneralButton>
+			</ActionsContextProvider>
+		</GeneralTab>
+	);
 }
