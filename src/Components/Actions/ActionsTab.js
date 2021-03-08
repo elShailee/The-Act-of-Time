@@ -6,12 +6,15 @@ import ActionsContextProvider from 'Contexts/ActionsContext';
 import GeneralButton from 'Components/GeneralComponents/GeneralButton';
 import { actionsTabTexts } from 'Texts/gameplayTexts';
 import { MountedComponentsContext } from 'Contexts/MountedComponentsContext';
+import { useDispatch } from 'react-redux';
+import { unmountComponents } from 'Redux/Slices/MountedComponents';
 
 export default function ActionsTab() {
-	const { mountComponents, unmountComponents } = useContext(MountedComponentsContext);
+	const { mountComponents } = useContext(MountedComponentsContext);
+	const dispatch = useDispatch();
 
 	const onActionsButtonClick = () => {
-		unmountComponents('ActionsTab');
+		dispatch(unmountComponents(['ActionsTab']));
 		mountComponents('ActionsWindow');
 	};
 
@@ -20,7 +23,7 @@ export default function ActionsTab() {
 			<ActionsContextProvider>
 				<FirstFewActions />
 				<GeneralButton id='moreActionsBtn' uppercased outlined onButtonClick={onActionsButtonClick}>
-					{actionsTabTexts.getMore}
+					{actionsTabTexts.moreOptions}
 				</GeneralButton>
 			</ActionsContextProvider>
 		</GeneralTab>

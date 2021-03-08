@@ -22,7 +22,7 @@ export const MountedComponentsContext = createContext();
 class MountedComponentsContextProvider extends Component {
 	state = {
 		mountedComponentsDict: {
-			ActionsTab: false,
+			ActionsWindow: false,
 			EnergyPurchaseWindow: false,
 			CoinsPurchaseWindow: false,
 			CoinsTab: false,
