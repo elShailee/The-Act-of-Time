@@ -5,11 +5,11 @@ import store from 'Redux/store';
 import { Provider } from 'react-redux';
 
 const App = () => (
-	<Provider store={store}>
-		<RenderIfBrowserValidHOC>
+	<RenderIfBrowserValidHOC>
+		<Provider store={store}>
 			<GameplayScreen />
-		</RenderIfBrowserValidHOC>
-	</Provider>
+		</Provider>
+	</RenderIfBrowserValidHOC>
 );
 
 export default App;

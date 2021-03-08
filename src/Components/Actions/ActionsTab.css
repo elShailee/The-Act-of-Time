@@ -1,13 +1,13 @@
 #actionsTab {
-  background-color: sandybrown;
+	background-color: sandybrown;
 }
 
-#MoreActionsBtn{
-  background-color: #ffa500; 
-  padding: 0.5rem; 
-  width: 50%; 
-  margin-right: auto; 
-  margin-left: auto; 
-  margin-top: 0.5rem; 
-  border: 1px solid chocolate;
+#moreActionsBtn {
+	background-color: #ffa500;
+	padding: 0.5rem;
+	width: 50%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0.5rem;
+	border: 1px solid chocolate;
 }

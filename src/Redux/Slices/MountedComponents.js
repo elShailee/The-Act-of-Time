@@ -16,13 +16,13 @@ const MountedComponentsSlice = createSlice({
 	reducers: {
 		mountComponents: (state, action) => {
 			const componentsToMountArray = action.payload;
-			const res = mountOrunmountComponents(Object.assign({}, state), componentsToMountArray, true);
-			return res;
+			const newState = mountOrunmountComponents(Object.assign({}, state), componentsToMountArray, true);
+			return newState;
 		},
 		unmountComponents: (state, action) => {
 			const componentsToUnmountArray = action.payload;
-			const res = mountOrunmountComponents(Object.assign({}, state), componentsToUnmountArray, false);
-			return res;
+			const newState = mountOrunmountComponents(Object.assign({}, state), componentsToUnmountArray, false);
+			return newState;
 		},
 	},
 });

@@ -1,11 +1,11 @@
-#ActionsButton {
-  background-color: khaki;
-  height: 40px;
+#actionsButton {
+	background-color: khaki;
+	height: 40px;
 }
 
 #actionsButtonAndTabContainer {
-  width: 280px;
-  position: absolute;
-  right: 20px;
-  top: 20px;
+	width: 280px;
+	position: absolute;
+	right: 20px;
+	top: 20px;
 }

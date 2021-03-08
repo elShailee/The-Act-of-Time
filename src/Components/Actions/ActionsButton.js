@@ -5,6 +5,7 @@ import { actionsButtonTexts } from 'Texts/gameplayTexts';
 import ActionsTab from './ActionsTab';
 import { useDispatch, useSelector } from 'react-redux';
 import { unmountComponents, mountComponents } from 'Redux/Slices/MountedComponents';
+
 export default function ActionButton() {
 	const dispatch = useDispatch();
 	const isActionsTabMounted = useSelector(state => state.MountedComponents.ActionsTab);
@@ -19,7 +20,7 @@ export default function ActionButton() {
 
 	return (
 		<div id='actionsButtonAndTabContainer'>
-			<GeneralButton id='ActionsButton' uppercased outlined onButtonClick={onActionsButtonClick}>
+			<GeneralButton id='actionsButton' uppercased outlined onButtonClick={onActionsButtonClick}>
 				{actionsButtonTexts.title}
 			</GeneralButton>
 			{isActionsTabMounted && <ActionsTab />}
