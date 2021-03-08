@@ -19,8 +19,8 @@ export default function ActionsTab() {
 		<GeneralTab id='actionsTab'>
 			<ActionsContextProvider>
 				<FirstFewActions />
-				<GeneralButton id='actionsWindowBtn' uppercased outlined onButtonClick={() => onActionsButtonClick()}>
-					{actionsTabTexts.moreOptions}
+				<GeneralButton id='moreActionsBtn' uppercased outlined onButtonClick={onActionsButtonClick}>
+					{actionsTabTexts.getMore}
 				</GeneralButton>
 			</ActionsContextProvider>
 		</GeneralTab>

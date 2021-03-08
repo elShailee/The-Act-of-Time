@@ -1,4 +1,3 @@
-import moment from 'moment';
 let activeActionsExampleData = {
 	f4we65fdfs: {
 		id: 'f4we65fdfs',

@@ -7,7 +7,6 @@ const gameplayTexts = {
     coinsAmountPt2: 'Coins.',
     getMore: 'Get More',
   },
-  
   energyButtonTexts: {
     title: 'Energy',
   },
@@ -49,17 +48,17 @@ const gameplayTexts = {
 };
 export default gameplayTexts;
 export const {
-  coinsButtonTexts,
-  coinsTabTexts,
-  energyButtonTexts,
-  energyTabTexts,
-  actionsButtonTexts,
-  actionsTabTexts,
-  characterInfoTexts,
-  disastersIconTexts,
-  craftingButtonTexts,
-  seenButtonTexts,
-  zoomSliderTexts,
-  mapCompassTexts,
-  errorMessagesTexts,
+	coinsButtonTexts,
+	coinsTabTexts,
+	energyButtonTexts,
+	energyTabTexts,
+	actionsButtonTexts,
+	actionsTabTexts,
+	characterInfoTexts,
+	disastersIconTexts,
+	craftingButtonTexts,
+	seenButtonTexts,
+	zoomSliderTexts,
+	mapCompassTexts,
+	errorMessagesTexts,
 } = gameplayTexts;
