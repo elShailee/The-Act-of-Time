@@ -6,7 +6,7 @@ import { Draggable } from 'react-beautiful-dnd';
 import { useCountdown } from 'Utils/TimingUtils/useCountdown';
 
 export default function ActionsTabItem({ actionItem, index }) {
-	const duration = useCountdown(actionItem.endingTime);
+	const countdown = useCountdown(actionItem.endingTime);
 
 	const actionAbortButton = (
 		<img
@@ -24,7 +24,7 @@ export default function ActionsTabItem({ actionItem, index }) {
 					<img src={hamburgerMenuIcon} alt='' className='smallIcons' {...provided.dragHandleProps} />
 					<div>{actionItem.title}</div>
 					{' - '}
-					<div>{duration}</div>
+					<div>{countdown}</div>
 					<div>{actionAbortButton}</div>
 				</div>
 			)}
