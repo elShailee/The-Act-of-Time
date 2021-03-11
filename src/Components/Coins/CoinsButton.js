@@ -1,20 +1,20 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import CoinsTab from './CoinsTab';
 import './CoinsButton.css';
 import GeneralButton from 'Components/GeneralComponents/GeneralButton';
-import { MountedComponentsContext } from 'Contexts/MountedComponentsContext';
 import { coinsButtonTexts } from 'Texts/gameplayTexts';
+import { mountComponents, unmountComponents } from 'Redux/Slices/MountedComponents';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function CoinsButton() {
-	const { mountedComponentsDict, mountComponents, unmountComponents } = useContext(MountedComponentsContext);
-
-	const isCoinsTabOpen = mountedComponentsDict.CoinsTab;
+	const dispatch = useDispatch();
+	const isCoinsTabOpen = useSelector(state => state.MountedComponents.CoinsTab);
 
 	const onCoinsButtonClick = () => {
 		if (isCoinsTabOpen) {
-			unmountComponents('CoinsTab');
+			dispatch(unmountComponents('CoinsTab'));
 		} else {
-			mountComponents('CoinsTab');
+			dispatch(mountComponents('CoinsTab'));
 		}
 	};
 
