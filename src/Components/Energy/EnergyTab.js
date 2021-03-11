@@ -1,44 +1,44 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './EnergyTab.css';
 import GeneralButton from 'Components/GeneralComponents/GeneralButton';
-import { MountedComponentsContext } from 'Contexts/MountedComponentsContext';
 import { energyTabTexts } from 'Texts/gameplayTexts';
 import EnergyIcon from 'Images/placeholderIcon.png';
 import GeneralTab from 'Components/GeneralComponents/GeneralTab';
+import { useDispatch } from 'react-redux';
+import { mountComponents, unmountComponents } from 'Redux/Slices/MountedComponents';
 
 export default function EnergyTab() {
-  const { mountComponents, unmountComponents } = useContext(MountedComponentsContext);
+	const dispatch = useDispatch();
+	const getMoreButtonClickHandler = () => {
+		dispatch(mountComponents('EnergyPurchaseWindow'));
+		dispatch(unmountComponents('EnergyTab'));
+	};
 
-  const getMoreButtonClickHandler = () => {
-    mountComponents('EnergyPurchaseWindow');
-    unmountComponents('EnergyTab');
-  };
+	const energyIcon = <img src={EnergyIcon} alt='' className='tinyIcons' />;
 
-  const energyIcon = <img src={EnergyIcon} alt="" className="tinyIcons" />;
+	return (
+		<GeneralTab id='energyTab'>
+			<div className='energyInfo' id='timeUntillFullText'>
+				{energyTabTexts.fullIn}
+				<br />
+				XX:XX:XX
+			</div>
 
-  return (
-    <GeneralTab id="energyTab">
-      <div className="energyInfo" id="timeUntillFullText">
-        {energyTabTexts.fullIn}
-        <br />
-        XX:XX:XX
-      </div>
+			<div className='energyInfo' id='energyAmountText'>
+				XX
+				{energyIcon}
+			</div>
 
-      <div className="energyInfo" id="energyAmountText">
-        XX
-        {energyIcon}
-      </div>
+			<div className='energyInfo' id='rechargeRateText'>
+				{energyTabTexts.rate}
+				XX
+				{energyIcon}
+				{energyTabTexts.perHour}
+			</div>
 
-      <div className="energyInfo" id="rechargeRateText">
-        {energyTabTexts.rate}
-        XX
-        {energyIcon}
-        {energyTabTexts.perHour}
-      </div>
-
-      <GeneralButton id="getMoreEnergyButton" onButtonClick={() => getMoreButtonClickHandler()}>
-        {energyTabTexts.getMore}
-      </GeneralButton>
-    </GeneralTab>
-  );
+			<GeneralButton id='getMoreEnergyButton' onButtonClick={() => getMoreButtonClickHandler()}>
+				{energyTabTexts.getMore}
+			</GeneralButton>
+		</GeneralTab>
+	);
 }
