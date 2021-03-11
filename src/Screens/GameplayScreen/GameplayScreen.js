@@ -10,34 +10,31 @@ import CraftingButton from 'Components/Crafting/CraftingButton';
 import Map from 'Components/Map/Map';
 import DisastersIcon from 'Components/Disasters/DisastersIcon';
 import DisasterCounter from 'Components/Disasters/DisasterCounter';
-import MountedComponentsContextProvider from 'Contexts/MountedComponentsContext';
 import AllTheFloatingWindows from 'Components/AllTheFloatingWindows/AllTheFloatingWindows';
 
 export default function GameplayScreen() {
-  return (
-    <div id="gameplayScreen">
-      <MountedComponentsContextProvider>
-        <CharacterInfoBar />
+	return (
+		<div id='gameplayScreen'>
+			<CharacterInfoBar />
 
-        <div id="upperLeftButtonsContainer">
-          <EnergyButton />
-          <CoinsButton />
-        </div>
+			<div id='upperLeftButtonsContainer'>
+				<EnergyButton />
+				<CoinsButton />
+			</div>
 
-        <ActionsButton />
+			<ActionsButton />
 
-        <div id="disastersContainerContainer">
-          <DisastersIcon />
-          <DisasterCounter />
-        </div>
+			<div id='disastersContainerContainer'>
+				<DisastersIcon />
+				<DisasterCounter />
+			</div>
 
-        <div id="bottomRightButtonsContainer">
-          <SeenButton />
-          <CraftingButton />
-        </div>
-        <Map />
-        <AllTheFloatingWindows />
-      </MountedComponentsContextProvider>
-    </div>
-  );
+			<div id='bottomRightButtonsContainer'>
+				<SeenButton />
+				<CraftingButton />
+			</div>
+			<Map />
+			<AllTheFloatingWindows />
+		</div>
+	);
 }

@@ -16,12 +16,12 @@ const MountedComponentsSlice = createSlice({
 	reducers: {
 		mountComponents: (state, action) => {
 			const componentsToMountArray = action.payload;
-			const newState = mountOrunmountComponents(Object.assign({}, state), componentsToMountArray, true);
+			const newState = mountOrUnmountComponents(Object.assign({}, state), componentsToMountArray, true);
 			return newState;
 		},
 		unmountComponents: (state, action) => {
 			const componentsToUnmountArray = action.payload;
-			const newState = mountOrunmountComponents(Object.assign({}, state), componentsToUnmountArray, false);
+			const newState = mountOrUnmountComponents(Object.assign({}, state), componentsToUnmountArray, false);
 			return newState;
 		},
 	},
@@ -33,7 +33,7 @@ const componentsArrayValidator = arrayOfComponentsNames => {
 	}
 	return true;
 };
-const mountOrunmountComponents = (mountedComponentsDict, componentsToMountArray, shouldMount) => {
+const mountOrUnmountComponents = (mountedComponentsDict, componentsToMountArray, shouldMount) => {
 	if (typeof componentsToMountArray === 'string') componentsToMountArray = [componentsToMountArray];
 	const isComponentsArrayValid = componentsArrayValidator(componentsToMountArray);
 	if (!isComponentsArrayValid) {
