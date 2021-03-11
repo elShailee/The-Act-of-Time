@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import moment from 'moment';
 import 'moment-duration-format';
-import hhmmssFormat from './hhmmssFormat';
+import dhFormat from './dhFormat.js';
 
 /*
 useCountdown hook is used for performing countdown timer.
@@ -30,7 +30,7 @@ function useCountdown(endTime) {
 		};
 	}, [duration, hasReachedZero]);
 
-	return hhmmssFormat(duration.asMilliseconds());
+	return dhFormat(duration.asMilliseconds());
 }
 
 export { useCountdown };

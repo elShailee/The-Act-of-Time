@@ -63,6 +63,6 @@ let activeActionsExampleData = {
 //! suppose to be removed.
 for (let action in activeActionsExampleData) {
 	activeActionsExampleData[action].startingTime = +moment();
-	activeActionsExampleData[action].endingTime = +moment().add(3602, 'seconds');
+	activeActionsExampleData[action].endingTime = +moment().add(86402, 'seconds');
 }
 export default activeActionsExampleData;

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './ActionsTabItem.css';
 import hamburgerMenuIcon from 'Images/hamburgerMenuIcon.png';
 import xIcon from 'Images/xIcon.png';
