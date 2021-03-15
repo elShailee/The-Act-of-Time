@@ -1,11 +1,29 @@
 #seenButton {
-  background-color: cornflowerblue;
-  width: var(--seenButton-size);
-  height: var(--seenButton-size);
-  border-radius: 50%;
-  margin-bottom: 20px;
-  margin-left: calc(var(--craftingButton-size) / 2);
+	background-color: cornflowerblue;
+	width: var(--seenButton-size);
+	height: var(--seenButton-size);
+	border-radius: 50%;
+	margin-bottom: 20px;
+	margin-left: calc(var(--craftingButton-size) / 2);
+	user-select: none;
+	text-align: center;
+	line-height: var(--seenButton-size);
+}
 
-  text-align: center;
-  line-height: var(--seenButton-size);
+@keyframes move {
+	0% {
+		transform: translate(0px, 0px);
+	}
+	100% {
+		transform: translate(0px, 40px);
+	}
+}
+
+@keyframes moveBack {
+	0% {
+		transform: translate(0px, 0px);
+	}
+	100% {
+		transform: translate(0px, -40px);
+	}
 }
