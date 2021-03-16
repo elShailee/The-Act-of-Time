@@ -1,6 +1,4 @@
 import activeActions from 'ExampleData/activeActionsExampleData';
-import actionsLibrary from 'ExampleData/actionsLibraryExampleData';
-import ActionsTabItem from 'Components/Actions/ActionsTabItem';
 import { createSlice } from '@reduxjs/toolkit';
 
 const getActionsOrder = () => {
@@ -11,12 +9,9 @@ const getActionsOrder = () => {
 	return actionsOrder;
 };
 
-const actionsItemsTypes = { tabItem: 'tabItem' };
-
 const initialState = {
 	actions: activeActions,
 	actionsOrder: getActionsOrder(),
-	renderActionTabItems: num => renderActionItems(initialState, actionsItemsTypes.tabItem, num),
 };
 
 const ActionsSlice = createSlice({
@@ -37,31 +32,5 @@ const ActionsSlice = createSlice({
 	},
 });
 
-const generateActionObject = (state, actionItemId) => {
-	const actionItemInDB = state.actions[actionItemId];
-
-	const lib = actionsLibrary;
-	const actionItemInLib = { ...lib[actionItemInDB.actionType] };
-
-	const fullActionItem = Object.assign({}, actionItemInLib, actionItemInDB);
-	return fullActionItem;
-};
-
-const renderActionItems = (state, renderType, numOfItemsToRender) => {
-	const { actionsOrder } = state;
-	if (!numOfItemsToRender) numOfItemsToRender = actionsOrder.length;
-	const itemsToRenderIds = actionsOrder.slice(0, numOfItemsToRender);
-	const renderedActionItems = itemsToRenderIds.map((itemId, index) => {
-		const actionObject = generateActionObject(state, itemId);
-		return generateActionItemJSX(actionObject, index, renderType);
-	});
-	return renderedActionItems;
-};
-
-const generateActionItemJSX = (actionItem, index, renderType) => {
-	if (renderType === actionsItemsTypes.tabItem) {
-		return <ActionsTabItem actionItem={actionItem} key={actionItem.id} index={index} />;
-	}
-};
 export const { applyActionsReorder } = ActionsSlice.actions;
 export default ActionsSlice.reducer;
