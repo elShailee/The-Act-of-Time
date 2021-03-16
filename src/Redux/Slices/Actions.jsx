@@ -11,9 +11,12 @@ const getActionsOrder = () => {
 	return actionsOrder;
 };
 
+const actionsItemsTypes = { tabItem: 'tabItem' };
+
 const initialState = {
 	actions: activeActions,
 	actionsOrder: getActionsOrder(),
+	renderActionTabItems: num => renderActionItems(initialState, actionsItemsTypes.tabItem, num),
 };
 
 const ActionsSlice = createSlice({
@@ -23,43 +26,33 @@ const ActionsSlice = createSlice({
 		applyActionsReorder: (state, action) => {
 			const { actionsOrder } = state;
 			const { source, destination, draggableId } = action.payload;
-
 			if (!destination) return actionsOrder;
 			if (source.index === destination.index && source.draggableId === destination.draggableId) return actionsOrder;
-
 			let newActionsOrder = Array.from(actionsOrder);
 			newActionsOrder.splice(source.index, 1);
 			newActionsOrder.splice(destination.index, 0, draggableId);
-			const newState = this.setState({ actionsOrder: newActionsOrder });
+			const newState = { ...state, actionsOrder: newActionsOrder };
 			return newState;
-		},
-
-		renderActionTabItems: (state, action) => {
-			const newState = renderActionItems(state, this.actionsItemsTypes.tabItem, action.payload);
-			return newState;
-		},
-
-		generateActionObject: (state, action) => {
-			const actionItemInDB = state.actions[action.payload];
-
-			const lib = actionsLibrary;
-			const actionItemInLib = { ...lib[actionItemInDB.actionType] };
-
-			const fullActionItem = Object.assign({}, actionItemInLib, actionItemInDB);
-			return fullActionItem;
 		},
 	},
 });
 
-const actionsItemsTypes = { tabItem: 'tabItem' };
+const generateActionObject = (state, actionItemId) => {
+	const actionItemInDB = state.actions[actionItemId];
+
+	const lib = actionsLibrary;
+	const actionItemInLib = { ...lib[actionItemInDB.actionType] };
+
+	const fullActionItem = Object.assign({}, actionItemInLib, actionItemInDB);
+	return fullActionItem;
+};
 
 const renderActionItems = (state, renderType, numOfItemsToRender) => {
 	const { actionsOrder } = state;
 	if (!numOfItemsToRender) numOfItemsToRender = actionsOrder.length;
-
 	const itemsToRenderIds = actionsOrder.slice(0, numOfItemsToRender);
 	const renderedActionItems = itemsToRenderIds.map((itemId, index) => {
-		const actionObject = this.generateActionObject(itemId);
+		const actionObject = generateActionObject(state, itemId);
 		return generateActionItemJSX(actionObject, index, renderType);
 	});
 	return renderedActionItems;
@@ -70,5 +63,5 @@ const generateActionItemJSX = (actionItem, index, renderType) => {
 		return <ActionsTabItem actionItem={actionItem} key={actionItem.id} index={index} />;
 	}
 };
-export const { applyActionsReorder, renderActionTabItems, generateActionObject } = ActionsSlice.actions;
+export const { applyActionsReorder } = ActionsSlice.actions;
 export default ActionsSlice.reducer;

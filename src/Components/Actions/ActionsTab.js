@@ -5,7 +5,6 @@ import FirstFewActions from './FirstFewActions';
 import GeneralButton from 'Components/GeneralComponents/GeneralButton';
 import { actionsTabTexts } from 'Texts/gameplayTexts';
 import { useDispatch } from 'react-redux';
-import ActionsContextProvider from 'Contexts/ActionsContext';
 import { unmountComponents, mountComponents } from 'Redux/Slices/MountedComponents';
 
 export default function ActionsTab() {
@@ -18,12 +17,10 @@ export default function ActionsTab() {
 
 	return (
 		<GeneralTab id='actionsTab'>
-			<ActionsContextProvider>
-				<FirstFewActions />
-				<GeneralButton id='moreActionsBtn' uppercased outlined onButtonClick={onActionsButtonClick}>
-					{actionsTabTexts.moreOptions}
-				</GeneralButton>
-			</ActionsContextProvider>
+			<FirstFewActions />
+			<GeneralButton id='moreActionsBtn' uppercased outlined onButtonClick={onActionsButtonClick}>
+				{actionsTabTexts.moreOptions}
+			</GeneralButton>
 		</GeneralTab>
 	);
 }
