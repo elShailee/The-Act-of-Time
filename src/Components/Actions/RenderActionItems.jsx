@@ -4,11 +4,11 @@ import actionsLibrary from 'ExampleData/actionsLibraryExampleData';
 import ActionsTabItem from 'Components/Actions/ActionsTabItem';
 
 const actionsItemsTypes = { tabItem: 'tabItem' };
-export function renderActionTabItems(numOfItemsToRender) {
+export default function renderActionTabItems(numOfItemsToRender) {
 	return RenderActionItems(actionsItemsTypes.tabItem, numOfItemsToRender);
 }
 
-export default function RenderActionItems(renderType, numOfItemsToRender) {
+function RenderActionItems(renderType, numOfItemsToRender) {
 	const orderedActionsArray = useSelector(state => state.Actions.orderedActionsArray);
 	if (!numOfItemsToRender) numOfItemsToRender = orderedActionsArray.length;
 	const itemsToRenderIds = orderedActionsArray.slice(0, numOfItemsToRender);
@@ -21,10 +21,8 @@ export default function RenderActionItems(renderType, numOfItemsToRender) {
 
 const generateActionObject = (orderedActionsArray, actionIndex) => {
 	const actionItemInDB = orderedActionsArray[actionIndex];
-
 	const lib = actionsLibrary;
 	const actionItemInLib = { ...lib[actionItemInDB.actionType] };
-
 	const fullActionItem = Object.assign({}, actionItemInLib, actionItemInDB);
 	return fullActionItem;
 };

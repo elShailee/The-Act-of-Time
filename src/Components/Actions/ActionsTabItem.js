@@ -21,7 +21,12 @@ export default function ActionsTabItem({ actionItem, index }) {
 		<Draggable id={actionItem.id} draggableId={actionItem.id} index={index}>
 			{provided => (
 				<div className='actionsTabItem' {...provided.draggableProps} ref={provided.innerRef}>
-					<img src={hamburgerMenuIcon} alt='' className='smallIcons' {...provided.dragHandleProps} />
+					<img
+						src={hamburgerMenuIcon}
+						alt='three lines to show you can select it'
+						className='smallIcons'
+						{...provided.dragHandleProps}
+					/>
 					<div>{actionItem.title}</div>
 					{' - '}
 					<div>{countdown}</div>

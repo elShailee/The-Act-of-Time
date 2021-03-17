@@ -18,14 +18,15 @@ const ActionsSlice = createSlice({
 	initialState,
 	reducers: {
 		applyActionsReorder: (state, action) => {
-			const { orderedActionsArray: actionsInOrder } = state;
+			const { orderedActionsArray } = Object.assign({}, state);
+			console.log(orderedActionsArray);
 			const { source, destination, draggableId } = action.payload;
-			if (!destination) return actionsInOrder;
-			if (source.index === destination.index && source.draggableId === destination.draggableId) return actionsInOrder;
-			let newActionsOrder = Array.from(actionsInOrder);
+			if (!destination) return orderedActionsArray;
+			if (source.index === destination.index && source.draggableId === destination.draggableId) return orderedActionsArray;
+			let newActionsOrder = Array.from(orderedActionsArray);
 			newActionsOrder.splice(source.index, 1);
 			newActionsOrder.splice(destination.index, 0, draggableId);
-			const newState = { ...state, actionsOrder: newActionsOrder };
+			const newState = { ...state, orderedActionsArray: newActionsOrder };
 			return newState;
 		},
 	},
