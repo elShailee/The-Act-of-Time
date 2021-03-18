@@ -18,18 +18,17 @@ const ActionsSlice = createSlice({
 	initialState,
 	reducers: {
 		applyActionsReorder: (state, action) => {
-			const { orderedActionsArray } = Object.assign({}, state);
-			const { source, destination, draggableId } = action.payload;
-			if (!destination) return orderedActionsArray;
-			if (source.index === destination.index && source.draggableId === destination.draggableId) return orderedActionsArray;
-			let newActionsOrder = Array.from(orderedActionsArray);
+			const { orderedActionsArray } = state;
+			const { destination, draggableId } = action.payload; //destenation is the new location that the object was draged to
+			if (!destination) return state; //if it was draged out of the container it will return the existing status
 			let savedAction;
-			let filterdActionsArr = newActionsOrder.filter(ele => {
-				if (draggableId !== ele.id) return true;
-				savedAction = ele;
+			let filterdActionsArr = Array.from(orderedActionsArray).filter(element => {
+				//creatring a new array of objects without the one we draged out
+				if (draggableId !== element.id) return true;
+				savedAction = element;
 				return false;
 			});
-			filterdActionsArr.splice(destination.index, 0, savedAction);
+			filterdActionsArr.splice(destination.index, 0, savedAction); //puting the dragged object in the destenation place
 			const newState = { ...state, orderedActionsArray: filterdActionsArr };
 			return newState;
 		},
