@@ -1,5 +1,5 @@
 import React from 'react';
-import GeneralWindow from 'Screens/GameplayScreen/Components/GeneralComponents/GeneralWindow';
+import GeneralWindow from 'GeneralComponents/GeneralWindow';
 
 export default function EnergyPurchaseWindow({ unmountEnergyPurchaseWindow }) {
 	return (

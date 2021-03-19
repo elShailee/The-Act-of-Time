@@ -1,6 +1,6 @@
 import React from 'react';
 import './ActionsButton.css';
-import GeneralButton from 'Screens/GameplayScreen/Components/GeneralComponents/GeneralButton';
+import GeneralButton from 'GeneralComponents/GeneralButton';
 import texts from 'texts';
 import ActionsTab from './ActionsTab/ActionsTab';
 import { useDispatch, useSelector } from 'react-redux';
