@@ -4,7 +4,7 @@ import actionsLibrary from 'ExampleData/actionsLibraryExampleData';
 import ActionsTabItem from 'Components/Actions/ActionsTabItem';
 
 const actionsItemsTypes = { tabItem: 'tabItem' }; //this is for futre use so we could have more items type
-export default function renderActionTabItems(numOfItemsToRender) {
+export function renderActionTabItems(numOfItemsToRender) {
 	return RenderActionItems(actionsItemsTypes.tabItem, numOfItemsToRender);
 }
 
