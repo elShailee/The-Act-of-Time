@@ -1,16 +1,17 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
-import { ActionsContext } from 'Contexts/ActionsContext';
+import { useDispatch } from 'react-redux';
+import { applyActionsReorder } from 'Redux/Slices/Actions';
+import { renderActionTabItems } from 'Components/Actions/RenderActionItems';
 
 export default function FirstFewActions() {
-	const actionsContext = useContext(ActionsContext);
-
+	const dispatch = useDispatch();
 	return (
-		<DragDropContext onDragEnd={result => actionsContext.applyActionsReorder(result)}>
+		<DragDropContext onDragEnd={result => dispatch(applyActionsReorder(result))}>
 			<Droppable type='firstFewActions' droppableId='FirstFewActionsDroppable'>
 				{provided => (
 					<div {...provided.droppableProps} ref={provided.innerRef}>
-						{actionsContext.renderActionTabItems(5)}
+						{renderActionTabItems(5)}
 						{provided.placeholder}
 					</div>
 				)}
