@@ -1,7 +1,7 @@
 import React from 'react';
 import './CoinsTab.css';
-import GeneralButton from 'Components/GeneralComponents/GeneralButton';
-import GeneralTab from 'Components/GeneralComponents/GeneralTab';
+import GeneralButton from 'Screens/GameplayScreen/Components/GeneralComponents/GeneralButton';
+import GeneralTab from 'Screens/GameplayScreen/Components/GeneralComponents/GeneralTab';
 import { coinsTabTexts } from 'Texts/gameplayTexts';
 import { useDispatch } from 'react-redux';
 import { mountComponents, unmountComponents } from 'Redux/Slices/MountedComponents';

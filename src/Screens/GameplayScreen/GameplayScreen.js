@@ -1,16 +1,16 @@
 import React from 'react';
 import './GameplayScreen.css';
 import 'GeneralStyles/iconsStyles.css';
-import CharacterInfoBar from 'Components/Character/CharacterInfoBar';
-import ActionsButton from 'Components/Actions/ActionsButton';
-import EnergyButton from 'Components/Energy/EnergyButton';
-import CoinsButton from 'Components/Coins/CoinsButton';
-import SeenButton from 'Components/Seen/SeenButton';
-import CraftingButton from 'Components/Crafting/CraftingButton';
-import Map from 'Components/Map/Map';
-import DisastersIcon from 'Components/Disasters/DisastersIcon';
-import DisasterCounter from 'Components/Disasters/DisasterCounter';
-import AllTheFloatingWindows from 'Components/AllTheFloatingWindows/AllTheFloatingWindows';
+import CharacterInfoBar from 'Screens/GameplayScreen/Components/Character/CharacterInfoBar';
+import ActionsButton from 'Screens/GameplayScreen/Components/Actions/ActionsButton';
+import EnergyButton from 'Screens/GameplayScreen/Components/Energy/EnergyButton';
+import CoinsButton from 'Screens/GameplayScreen/Components/Coins/CoinsButton';
+import SeenButton from 'Screens/GameplayScreen/Components/Seen/SeenButton';
+import CraftingButton from 'Screens/GameplayScreen/Components/Crafting/CraftingButton';
+import Map from 'Screens/GameplayScreen/Components/Map/Map';
+import DisastersIcon from 'Screens/GameplayScreen/Components/Disasters/DisastersIcon';
+import DisasterCounter from 'Screens/GameplayScreen/Components/Disasters/DisasterCounter';
+import AllTheFloatingWindows from 'Screens/GameplayScreen/Components/AllTheFloatingWindows';
 
 export default function GameplayScreen() {
 	return (

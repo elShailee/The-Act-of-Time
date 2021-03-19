@@ -1,5 +1,5 @@
 import React from 'react';
-import GeneralWindow from 'Components/GeneralComponents/GeneralWindow';
+import GeneralWindow from 'Screens/GameplayScreen/Components/GeneralComponents/GeneralWindow';
 
 export default function ActionsWindow({ unmountActionsWindow }) {
 	return (

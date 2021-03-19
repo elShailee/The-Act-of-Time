@@ -1,7 +1,7 @@
 import React from 'react';
-import CoinsPurchaseWindow from 'Components/Coins/CoinsPurchaseWindow';
-import EnergyPurchaseWindow from 'Components/Energy/EnergyPurchaseWindow';
-import ActionsWindow from 'Components/Actions/ActionsWindow';
+import CoinsPurchaseWindow from 'Screens/GameplayScreen/Components/Coins/CoinsPurchaseWindow';
+import EnergyPurchaseWindow from 'Screens/GameplayScreen/Components/Energy/EnergyPurchaseWindow';
+import ActionsWindow from 'Screens/GameplayScreen/Components/Actions/ActionsWindow';
 import { useDispatch, useSelector } from 'react-redux';
 import { unmountComponents } from 'Redux/Slices/MountedComponents';
 export default function AllTheFloatingWindows() {

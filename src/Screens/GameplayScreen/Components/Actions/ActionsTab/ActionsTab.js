@@ -1,8 +1,8 @@
 import React from 'react';
 import './ActionsTab.css';
-import GeneralTab from 'Components/GeneralComponents/GeneralTab';
+import GeneralTab from 'Screens/GameplayScreen/Components/GeneralComponents/GeneralTab';
 import FirstFewActions from './FirstFewActions';
-import GeneralButton from 'Components/GeneralComponents/GeneralButton';
+import GeneralButton from 'Screens/GameplayScreen/Components/GeneralComponents/GeneralButton';
 import { actionsTabTexts } from 'Texts/gameplayTexts';
 import { useDispatch } from 'react-redux';
 import { unmountComponents, mountComponents } from 'Redux/Slices/MountedComponents';

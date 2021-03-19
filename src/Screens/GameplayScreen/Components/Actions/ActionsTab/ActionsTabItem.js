@@ -1,7 +1,7 @@
 import React from 'react';
 import './ActionsTabItem.css';
-import hamburgerMenuIcon from 'Images/hamburgerMenuIcon.png';
-import xIcon from 'Images/xIcon.png';
+import hamburgerMenuIcon from 'Assets/hamburgerMenuIcon.png';
+import xIcon from 'Assets/xIcon.png';
 import { Draggable } from 'react-beautiful-dnd';
 import { useCountdown } from 'Utils/TimingUtils/useCountdown';
 

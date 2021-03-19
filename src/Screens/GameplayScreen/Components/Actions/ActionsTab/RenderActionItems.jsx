@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import actionsLibrary from 'ExampleData/actionsLibraryExampleData';
-import ActionsTabItem from 'Components/Actions/ActionsTabItem';
+import ActionsTabItem from './ActionsTabItem';
 
 const actionsItemsTypes = { tabItem: 'tabItem' }; //this is for futre use so we could have more items type
 export function renderActionTabItems(numOfItemsToRender) {

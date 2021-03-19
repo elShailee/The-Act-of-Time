@@ -1,9 +1,9 @@
 import React from 'react';
 import './EnergyTab.css';
-import GeneralButton from 'Components/GeneralComponents/GeneralButton';
+import GeneralButton from 'Screens/GameplayScreen/Components/GeneralComponents/GeneralButton';
 import { energyTabTexts } from 'Texts/gameplayTexts';
-import EnergyIcon from 'Images/placeholderIcon.png';
-import GeneralTab from 'Components/GeneralComponents/GeneralTab';
+import EnergyIcon from 'Assets/placeholderIcon.png';
+import GeneralTab from 'Screens/GameplayScreen/Components/GeneralComponents/GeneralTab';
 import { useDispatch } from 'react-redux';
 import { mountComponents, unmountComponents } from 'Redux/Slices/MountedComponents';
 

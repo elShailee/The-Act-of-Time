@@ -2,7 +2,7 @@ import React from 'react';
 import EnergyTab from './EnergyTab';
 import './EnergyButton.css';
 import { energyButtonTexts } from 'Texts/gameplayTexts';
-import GeneralButton from 'Components/GeneralComponents/GeneralButton';
+import GeneralButton from 'Screens/GameplayScreen/Components/GeneralComponents/GeneralButton';
 import { useSelector, useDispatch } from 'react-redux';
 import { mountComponents, unmountComponents } from 'Redux/Slices/MountedComponents';
 
