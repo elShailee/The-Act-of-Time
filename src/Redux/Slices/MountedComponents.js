@@ -9,6 +9,8 @@ const initialState = {
 	CoinsPurchaseWindow: false,
 	CoinsTab: false,
 	EnergyTab: false,
+	Crafting: false,
+	Seen: false,
 };
 const MountedComponentsSlice = createSlice({
 	name: 'MountedComponents',
