@@ -3,7 +3,7 @@ import './ActionsTab.css';
 import GeneralTab from 'Screens/GameplayScreen/Components/GeneralComponents/GeneralTab';
 import FirstFewActions from './FirstFewActions';
 import GeneralButton from 'Screens/GameplayScreen/Components/GeneralComponents/GeneralButton';
-import { actionsTabTexts } from 'Texts/gameplayTexts';
+import texts from 'texts';
 import { useDispatch } from 'react-redux';
 import { unmountComponents, mountComponents } from 'Redux/Slices/MountedComponents';
 
@@ -19,7 +19,7 @@ export default function ActionsTab() {
 		<GeneralTab id='actionsTab'>
 			<FirstFewActions />
 			<GeneralButton id='moreActionsBtn' uppercased outlined onButtonClick={onActionsButtonClick}>
-				{actionsTabTexts.moreOptions}
+				{texts.gameplay.actions.actionsTab.moreOptions}
 			</GeneralButton>
 		</GeneralTab>
 	);

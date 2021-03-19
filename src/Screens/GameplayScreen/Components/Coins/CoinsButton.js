@@ -2,7 +2,7 @@ import React from 'react';
 import CoinsTab from './CoinsTab';
 import './CoinsButton.css';
 import GeneralButton from 'Screens/GameplayScreen/Components/GeneralComponents/GeneralButton';
-import { coinsButtonTexts } from 'Texts/gameplayTexts';
+import texts from 'texts';
 import { mountComponents, unmountComponents } from 'Redux/Slices/MountedComponents';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -21,7 +21,7 @@ export default function CoinsButton() {
 	return (
 		<div id='coinsButtonContainer'>
 			<GeneralButton id='coinsButton' uppercased outlined onButtonClick={onCoinsButtonClick}>
-				{coinsButtonTexts.title}
+				{texts.gameplay.coins.buttonTitle}
 			</GeneralButton>
 			{isCoinsTabOpen && <CoinsTab />}
 		</div>

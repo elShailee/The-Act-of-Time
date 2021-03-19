@@ -1,7 +1,7 @@
 import React from 'react';
 import './ActionsButton.css';
 import GeneralButton from 'Screens/GameplayScreen/Components/GeneralComponents/GeneralButton';
-import { actionsButtonTexts } from 'Texts/gameplayTexts';
+import texts from 'texts';
 import ActionsTab from './ActionsTab/ActionsTab';
 import { useDispatch, useSelector } from 'react-redux';
 import { unmountComponents, mountComponents } from 'Redux/Slices/MountedComponents';
@@ -21,7 +21,7 @@ export default function ActionButton() {
 	return (
 		<div id='actionsButtonAndTabContainer'>
 			<GeneralButton id='actionsButton' uppercased outlined onButtonClick={onActionsButtonClick}>
-				{actionsButtonTexts.title}
+				{texts.gameplay.actions.buttonTitle}
 			</GeneralButton>
 			{isActionsTabMounted && <ActionsTab />}
 		</div>
