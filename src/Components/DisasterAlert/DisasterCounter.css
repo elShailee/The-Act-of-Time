@@ -1,0 +1,11 @@
+#disasterCounter {
+	position: absolute;
+	width: 100%;
+	padding: 0.5%;
+	background-color: palegreen;
+
+	border: 1px solid;
+	text-align: center;
+
+	user-select: none;
+}

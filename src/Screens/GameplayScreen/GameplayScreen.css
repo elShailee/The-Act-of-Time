@@ -1,5 +1,5 @@
 #gameplayScreen {
-  font-family: Helvetica;
+	font-family: Helvetica;
 }
 
 /*-------------------
@@ -7,23 +7,24 @@
 -------------------*/
 
 #upperLeftButtonsContainer {
-  position: absolute;
-  left: 20px;
-  top: 20px;
-  display: flex;
+	position: absolute;
+	left: 20px;
+	top: 20px;
+	display: flex;
 }
 
 #disastersContainerContainer {
-  position: absolute;
-  left: 20px;
-  top: calc(100% / 3);
-  display: flex;
+	position: absolute;
+	left: 20px;
+	top: calc(100% / 3);
+	display: inline-block;
+	width: 10%;
 }
 
 #bottomRightButtonsContainer {
-  --seenButton-size: 60px;
-  --craftingButton-size: 100px;
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
+	--seenButton-size: 60px;
+	--craftingButton-size: 100px;
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
 }
