@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import ActionsTabItem from './ActionsTabItem';
+import ActionsTabItem from 'Screens/GameplayScreen/Components/Actions/ActionsTab/ActionsTabItem';
 import assembleActionDataItem from 'Services/assembleActionDataObject';
 import texts from 'texts';
 

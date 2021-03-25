@@ -2,7 +2,7 @@ import React from 'react';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import { useDispatch } from 'react-redux';
 import { applyActionsReorder } from 'Redux/Slices/Actions';
-import { renderActionTabItems } from './RenderActionItems';
+import { renderActionTabItems } from 'Services/RenderActionItems';
 
 export default function FirstFewActions() {
 	const dispatch = useDispatch();
