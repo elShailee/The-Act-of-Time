@@ -1,0 +1,26 @@
+#DisastersIcon {
+	user-select: none;
+}
+
+#disasterCounter {
+	position: absolute;
+	width: 8%;
+	padding: 0.5%;
+	background-color: palegreen;
+	border: 1px solid;
+	text-align: center;
+	user-select: none;
+	left: 10%;
+	font-size: 1rem;
+	top: 5%;
+}
+.disasterImage {
+	position: absolute;
+	left: calc(var(--CIB-height) * 0.11);
+	padding: calc(calc(var(--CIB-height) - var(--CIB-Image-size)) / 2);
+	border-radius: 50%;
+	cursor: pointer;
+	width: 8.5%;
+	height: auto;
+	-webkit-user-drag: none;
+}

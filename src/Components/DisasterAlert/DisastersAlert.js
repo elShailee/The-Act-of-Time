@@ -1,7 +1,7 @@
 import React from 'react';
 import disastersData from 'ExampleData/disastersExampleData';
 import { useCountdown } from 'Utils/TimingUtils/useCountdown';
-
+import './DisastersAlert.css';
 export default function DisasterAlert() {
 	const countdown = useCountdown(disastersData.triggerTime);
 	{

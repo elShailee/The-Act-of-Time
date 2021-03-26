@@ -13,12 +13,12 @@
 	display: flex;
 }
 
-#disastersContainerContainer {
+#disastersContainer {
 	position: absolute;
 	left: 20px;
 	top: calc(100% / 3);
-	display: inline-block;
-	width: 10%;
+	display: block;
+	width: 100%;
 }
 
 #bottomRightButtonsContainer {

@@ -23,7 +23,7 @@ export default function GameplayScreen() {
 
 			<ActionsButton />
 
-			<div id='disastersContainerContainer'>
+			<div id='disastersContainer'>
 				<DisasterAlert />
 			</div>
 

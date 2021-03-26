@@ -1,14 +1,6 @@
 #DisastersIcon {
-	text-align: center;
 	user-select: none;
-}
-.disasterImage {
-	position: relative;
-	left: calc(var(--CIB-height) * 0.11);
-	padding: calc(calc(var(--CIB-height) - var(--CIB-Image-size)) / 2);
-	border-radius: 50%;
-	cursor: pointer;
-	width: 100%;
-	height: auto;
-	-webkit-user-drag: none;
+	display: inline;
+	width: 10%;
+	position: absolute;
 }
