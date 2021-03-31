@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import './CraftingButton.css';
+import SeenButton from 'Components/Seen/SeenButton';
 import { craftingButtonTexts } from 'Texts/gameplayTexts';
 import { useDispatch, useSelector } from 'react-redux';
 import { unmountComponents, mountComponents } from 'Redux/Slices/MountedComponents';
@@ -10,8 +11,9 @@ export default function CraftingButton() {
 	const textAnimateRef = useRef();
 	const dispatch = useDispatch();
 	const isCraftingWindowMounted = useSelector(state => state.MountedComponents.CraftingWindow);
+	const isSeenWindowMounted = useSelector(state => state.MountedComponents.SeenWindow);
 
-	function CraftingButtonAnimationSmaller() {
+	function CraftingButtonAnimationMakeSmaller() {
 		animateRef.current.style.animation = 'rotate 2s linear';
 		textAnimateRef.current.style.animation = 'rotateText 2S linear';
 		setTimeout(function () {
@@ -20,7 +22,7 @@ export default function CraftingButton() {
 		}, 1990);
 	}
 
-	function CraftingButtonAnimationBigger() {
+	function CraftingButtonAnimationMakeBigger() {
 		animateRef.current.style.animation = 'rotateBack 2s linear';
 		textAnimateRef.current.style.animation = 'rotateTextBack 2S linear';
 		setTimeout(function () {
@@ -29,7 +31,12 @@ export default function CraftingButton() {
 		}, 1990);
 	}
 
-	useButtonAnimation(CraftingButtonAnimationBigger, CraftingButtonAnimationSmaller);
+	useButtonAnimation(
+		CraftingButtonAnimationMakeBigger,
+		CraftingButtonAnimationMakeSmaller,
+		isCraftingWindowMounted,
+		isSeenWindowMounted,
+	);
 	const onCraftingClick = () => {
 		if (isCraftingWindowMounted) {
 			dispatch(unmountComponents(['CraftingWindow']));

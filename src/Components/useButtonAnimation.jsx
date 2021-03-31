@@ -1,19 +1,22 @@
 import { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
-export default function useButtonAnimation(CraftingButtonAnimationBigger, CraftingButtonAnimationSmaller) {
-	const [isButtonBig, setIsButtonBig] = useState(true);
-	const isCraftingWindowMounted = useSelector(state => state.MountedComponents.CraftingWindow);
-	const isSeenWindowMounted = useSelector(state => state.MountedComponents.SeenWindow);
-	const shouldButtonBeBig = !isCraftingWindowMounted && !isSeenWindowMounted;
+export default function useButtonAnimation(
+	closeWindowAnimation,
+	openWindowAnimation,
+	isFirstWindowMounted,
+	isSecondeWindowMounted,
+) {
+	const [isInStartingLook, setIsInStartingLook] = useState(true);
+	const shouldButtonBeInStartLook = !isFirstWindowMounted && !isSecondeWindowMounted;
 	useEffect(() => {
-		if (shouldButtonBeBig !== isButtonBig) {
-			if (shouldButtonBeBig === true) {
-				CraftingButtonAnimationBigger();
+		if (shouldButtonBeInStartLook !== isInStartingLook) {
+			if (shouldButtonBeInStartLook === true) {
+				closeWindowAnimation();
 			} else {
-				CraftingButtonAnimationSmaller();
+				openWindowAnimation();
 			}
-			setIsButtonBig(shouldButtonBeBig);
+			setIsInStartingLook(shouldButtonBeInStartLook);
 		}
-	}, [shouldButtonBeBig, isButtonBig, CraftingButtonAnimationBigger, CraftingButtonAnimationSmaller]);
+	}, [shouldButtonBeInStartLook, isInStartingLook, closeWindowAnimation, openWindowAnimation]);
 }

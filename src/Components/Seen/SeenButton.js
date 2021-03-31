@@ -9,14 +9,15 @@ export default function SeenButton() {
 	const seenMoveRef = useRef();
 	const dispatch = useDispatch();
 	const isSeenWindowMounted = useSelector(state => state.MountedComponents.SeenWindow);
+	const isCraftingWindowMounted = useSelector(state => state.MountedComponents.CraftingWindow);
 
-	function sennButtonHigh() {
+	function seenButtonShouldMoveDown() {
 		seenMoveRef.current.style.animation = 'move 2s linear';
 	}
-	function sennButtonLow() {
+	function seenButtonShouldMoveUp() {
 		seenMoveRef.current.style.animation = 'moveBack 2s linear';
 	}
-	useButtonAnimation(sennButtonLow, sennButtonHigh);
+	useButtonAnimation(seenButtonShouldMoveUp, seenButtonShouldMoveDown, isSeenWindowMounted, isCraftingWindowMounted);
 	const onSeenClick = () => {
 		if (isSeenWindowMounted) {
 			dispatch(unmountComponents(['SeenWindow']));
