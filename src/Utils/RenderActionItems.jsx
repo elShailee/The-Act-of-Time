@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import ActionsTabItem from 'Screens/GameplayScreen/Components/Actions/ActionsTab/ActionsTabItem';
-import assembleActionDataItem from 'Services/assembleActionDataObject';
+import ActionsTabItem from 'Screens/Gameplay/Components/Actions/ActionsTab/ActionsTabItem';
+import assembleActionDataItem from 'Utils/assembleActionDataObject';
 import texts from 'texts';
 
 const actionsItemsTypes = { tabItem: 'tabItem' }; //this is for futre use so we could have more items type
