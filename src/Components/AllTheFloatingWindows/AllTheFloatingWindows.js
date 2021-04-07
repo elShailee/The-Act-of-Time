@@ -9,9 +9,9 @@ export default function AllTheFloatingWindows() {
 	const dispatch = useDispatch();
 
 	const isCoinsPurchaseWindowMounted = useSelector(state => state.MountedComponents.CoinsPurchaseWindow);
-	const isEnergyPurchaseWindowMounted = useSelector(state => state.MountedComponents.EnergyPurchaseWindow);
 	const isActionsWindowMounted = useSelector(state => state.MountedComponents.ActionsWindow);
 	const isSettingsWindowMounted = useSelector(state => state.MountedComponents.SettingsWindow);
+	const isEnergyPurchaseWindowMounted = useSelector(state => state.MountedComponents.EnergyPurchaseWindow);
 
 	const CoinsPurchaseWindowAsVar = (
 		<CoinsPurchaseWindow unmountCoinsPurchaseWindow={() => dispatch(unmountComponents(['CoinsPurchaseWindow']))} />
