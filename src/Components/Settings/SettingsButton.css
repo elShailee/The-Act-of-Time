@@ -1,6 +1,15 @@
 #settingsButton {
-	width: 3.125vw;
-	height: 3.125vw;
+	--height-unit: var(calc(50vh / 9));
+	width: --height-unit;
+	height: --height-unit;
 	background-color: #778ca1;
 	border: 1px solid #101010;
+	right: 200px;
+	margin-right: calc(calc(25vh / 9));
+}
+
+.settingButtonIcon {
+	width: 33px;
+	height: 33px;
+	padding: 5px;
 }

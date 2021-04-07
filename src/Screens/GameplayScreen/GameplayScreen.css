@@ -8,7 +8,7 @@
 
 #upperRightButtonsContainer {
 	position: absolute;
-	left: 78vw;
+	right: 20px;
 	top: 20px;
 	display: flex;
 }

@@ -1,10 +1,9 @@
-import React from "react";
-import "./SettingsButton.css";
-import SettingsWindow from "./SettingsWindow";
-import GeneralButton from "Components/GeneralComponents/GeneralButton";
-import SettingsIcon from "Images/settingsIcon.png";
-import { mountComponents, unmountComponents } from "Redux/Slices/MountedComponents";
-import { useDispatch, useSelector } from "react-redux";
+import React from 'react';
+import './SettingsButton.css';
+import GeneralButton from 'Components/GeneralComponents/GeneralButton';
+import SettingsIcon from 'Images/settingsIcon.png';
+import { mountComponents, unmountComponents } from 'Redux/Slices/MountedComponents';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function SettingsButton() {
 	const dispatch = useDispatch();
@@ -12,20 +11,19 @@ export default function SettingsButton() {
 
 	const onSettingsButtonClick = () => {
 		if (isSettingsWindowOpen) {
-			dispatch(unmountComponents("SettingsWindow"));
+			dispatch(unmountComponents('SettingsWindow'));
 		} else {
-			dispatch(mountComponents("SettingsWindow"));
+			dispatch(mountComponents('SettingsWindow'));
 		}
 	};
 
-	const settingsIcon = <img src={SettingsIcon} alt='' className='bigIcons' />;
+	const settingsIcon = <img src={SettingsIcon} alt='' className='settingButtonIcon' />;
 
 	return (
 		<div id='settingsButtonContainer'>
 			<GeneralButton id='settingsButton' outlined onButtonClick={onSettingsButtonClick}>
 				{settingsIcon}
 			</GeneralButton>
-			{isSettingsWindowOpen && <SettingsWindow />}
 		</div>
 	);
 }
