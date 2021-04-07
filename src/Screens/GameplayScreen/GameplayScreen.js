@@ -7,6 +7,7 @@ import EnergyButton from 'Components/Energy/EnergyButton';
 import CoinsButton from 'Components/Coins/CoinsButton';
 import SeenButton from 'Components/Seen/SeenButton';
 import CraftingButton from 'Components/Crafting/CraftingButton';
+import SettingsButton from 'Components/Settings/SettingsButton';
 import Map from 'Components/Map/Map';
 import DisastersIcon from 'Components/Disasters/DisastersIcon';
 import DisasterCounter from 'Components/Disasters/DisasterCounter';
@@ -22,7 +23,10 @@ export default function GameplayScreen() {
 				<CoinsButton />
 			</div>
 
-			<ActionsButton />
+			<div id='upperRightButtonsContainer'>
+				<SettingsButton />
+				<ActionsButton />
+			</div>
 
 			<div id='disastersContainerContainer'>
 				<DisastersIcon />
