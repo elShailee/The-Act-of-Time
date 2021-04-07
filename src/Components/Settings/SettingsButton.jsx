@@ -17,7 +17,7 @@ export default function SettingsButton() {
 		}
 	};
 
-	const settingsIcon = <img src={SettingsIcon} alt='' className='settingButtonIcon' />;
+	const settingsIcon = <img src={SettingsIcon} alt='' id='settingsButtonIcon' />;
 
 	return (
 		<div id='settingsButtonContainer'>

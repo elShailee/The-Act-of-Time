@@ -1,15 +1,16 @@
 #settingsButton {
-	--height-unit: var(calc(50vh / 9));
-	width: --height-unit;
-	height: --height-unit;
+	--height-unit: calc(50vh / 9);
+	width: var(--height-unit);
+	height: var(--height-unit);
 	background-color: #778ca1;
 	border: 1px solid #101010;
 	right: 200px;
-	margin-right: calc(calc(25vh / 9));
+	margin-right: calc(var(--height-unit) / 2);
+	padding: 5%;
 }
 
-.settingButtonIcon {
-	width: 33px;
-	height: 33px;
-	padding: 5px;
+#settingsButtonIcon {
+	width: 100%;
+	height: 100%;
+	-webkit-user-drag: none;
 }
