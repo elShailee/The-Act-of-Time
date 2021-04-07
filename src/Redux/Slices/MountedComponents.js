@@ -1,17 +1,19 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { errorMessagesTexts } from 'Texts/gameplayTexts';
-import { isAnObject } from 'Utils/utilFuncs';
+import { createSlice } from "@reduxjs/toolkit";
+import { errorMessagesTexts } from "Texts/gameplayTexts";
+import { isAnObject } from "Utils/utilFuncs";
 
 const initialState = {
 	ActionsTab: false,
 	ActionsWindow: false,
+	SettingsWindow: false,
 	EnergyPurchaseWindow: false,
 	CoinsPurchaseWindow: false,
+	SettingsTab: false,
 	CoinsTab: false,
 	EnergyTab: false,
 };
 const MountedComponentsSlice = createSlice({
-	name: 'MountedComponents',
+	name: "MountedComponents",
 	initialState,
 	reducers: {
 		mountComponents: (state, action) => {
@@ -34,7 +36,7 @@ const componentsArrayValidator = arrayOfComponentsNames => {
 	return true;
 };
 const mountOrUnmountComponents = (mountedComponentsDict, componentsToMountArray, shouldMount) => {
-	if (typeof componentsToMountArray === 'string') componentsToMountArray = [componentsToMountArray];
+	if (typeof componentsToMountArray === "string") componentsToMountArray = [componentsToMountArray];
 	const isComponentsArrayValid = componentsArrayValidator(componentsToMountArray);
 	if (!isComponentsArrayValid) {
 		console.log(errorMessagesTexts.invalidComponentsToMount);
