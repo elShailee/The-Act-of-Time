@@ -10,7 +10,7 @@ import SettingsButton from 'Screens/Gameplay/Components/Settings/SettingsButton'
 import Map from 'Screens/Gameplay/Components/Map/Map';
 import DisastersIcon from 'Screens/Gameplay/Components/Disasters/DisastersIcon';
 import DisasterCounter from 'Screens/Gameplay/Components/Disasters/DisasterCounter';
-import AllTheFloatingWindows from 'Screens/Gameplay/Components/AllTheFloatingWindows';
+import AllTheFloatingWindows from 'Screens/Gameplay/Components/WindowsContainer';
 
 export default function GameplayScreen() {
 	return (
