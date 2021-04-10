@@ -3,12 +3,13 @@ import './ActionsButton.css';
 import GeneralButton from 'GeneralComponents/GeneralButton';
 import texts from 'texts';
 import ActionsTab from './ActionsTab/ActionsTab';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { unmountComponents, mountComponents } from 'Redux/Slices/MountedComponents';
+import { GetActionsTabMounted } from 'Redux/Selectors/MountedComponentsSelectors'
 
 export default function ActionButton() {
 	const dispatch = useDispatch();
-	const isActionsTabMounted = useSelector(state => state.MountedComponents.ActionsTab);
+	const isActionsTabMounted = GetActionsTabMounted();
 
 	const onActionsButtonClick = () => {
 		if (isActionsTabMounted) {

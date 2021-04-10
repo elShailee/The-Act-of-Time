@@ -4,11 +4,12 @@ import './CoinsButton.css';
 import GeneralButton from 'GeneralComponents/GeneralButton';
 import texts from 'texts';
 import { mountComponents, unmountComponents } from 'Redux/Slices/MountedComponents';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { GetCoinsTabMounted } from 'Redux/Selectors/MountedComponentsSelectors';
 
 export default function CoinsButton() {
 	const dispatch = useDispatch();
-	const isCoinsTabOpen = useSelector(state => state.MountedComponents.CoinsTab);
+	const isCoinsTabOpen = GetCoinsTabMounted();
 
 	const onCoinsButtonClick = () => {
 		if (isCoinsTabOpen) {

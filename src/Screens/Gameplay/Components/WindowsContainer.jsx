@@ -3,15 +3,17 @@ import CoinsPurchaseWindow from 'Screens/Gameplay/Components/Coins/CoinsPurchase
 import EnergyPurchaseWindow from 'Screens/Gameplay/Components/Energy/EnergyPurchaseWindow';
 import SettingsWindow from 'Screens/Gameplay/Components/Settings/SettingsWindow';
 import ActionsWindow from 'Screens/Gameplay/Components/Actions/ActionsWindow';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { unmountComponents } from 'Redux/Slices/MountedComponents';
+import {GetCoinsPurchaseWindowMounted, GetEnergyPurchaseWindowMounted, GetSettingsWindowMounted, GetActionsWindowMounted} from 'Redux/Selectors/MountedComponentsSelectors';
+
 export default function AllTheFloatingWindows() {
 	const dispatch = useDispatch();
 
-	const isCoinsPurchaseWindowMounted = useSelector(state => state.MountedComponents.CoinsPurchaseWindow);
-	const isEnergyPurchaseWindowMounted = useSelector(state => state.MountedComponents.EnergyPurchaseWindow);
-	const isSettingsWindowMounted = useSelector(state => state.MountedComponents.SettingsWindow);
-	const isActionsWindowMounted = useSelector(state => state.MountedComponents.ActionsWindow);
+	const isCoinsPurchaseWindowMounted = GetCoinsPurchaseWindowMounted();
+	const isEnergyPurchaseWindowMounted = GetEnergyPurchaseWindowMounted();
+	const isSettingsWindowMounted = GetSettingsWindowMounted();
+	const isActionsWindowMounted = GetActionsWindowMounted();
 
 	const CoinsPurchaseWindowAsVar = (
 		<CoinsPurchaseWindow unmountCoinsPurchaseWindow={() => dispatch(unmountComponents(['CoinsPurchaseWindow']))} />

@@ -3,11 +3,12 @@ import './SettingsButton.css';
 import GeneralButton from 'GeneralComponents/GeneralButton';
 import SettingsIcon from 'Assets/settingsIcon.png';
 import { mountComponents, unmountComponents } from 'Redux/Slices/MountedComponents';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { GetSettingWindowMounted } from 'Redux/Selectors/MountedComponentsSelectors';
 
 export default function SettingsButton() {
 	const dispatch = useDispatch();
-	const isSettingsWindowOpen = useSelector(state => state.MountedComponents.SettingsWindow);
+	const isSettingsWindowOpen = GetSettingWindowMounted();
 
 	const onSettingsButtonClick = () => {
 		if (isSettingsWindowOpen) {
