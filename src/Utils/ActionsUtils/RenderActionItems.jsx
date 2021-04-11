@@ -15,15 +15,16 @@ export function renderActionTabItems(numOfItemsToRender) {
 
 //private logical function
 function RenderActionItems(renderType, numOfItemsToRender) {
-	const orderedActionsArray = useSelector(state => state.Actions.orderedActionsArray);
-	if (!numOfItemsToRender) numOfItemsToRender = orderedActionsArray.length;
-	const itemsActionsToRender = orderedActionsArray.slice(0, numOfItemsToRender); //returns only the first numOfItemsToRender items from the state
-	const renderedActionItems = itemsActionsToRender.map((itemId, index) => {
+	const activeActions = useSelector(state => state.Actions.orderedActionsArray);
+	if (!numOfItemsToRender) numOfItemsToRender = activeActions.length;
+
+	const actionItemsToRender = activeActions.slice(0, numOfItemsToRender); //returns only the first numOfItemsToRender items from the state
+	const renderedActionItems = actionItemsToRender.map((item, index) => {
 		//goes through all the numOfItemsToRender first items and returns a corresponding component for each one of them
-		const actionDataObject = assembleActionDataObject(orderedActionsArray, index);
+		const actionDataObject = assembleActionDataObject(activeActions, index);
 
 		if (renderType === actionsItemsTypes.tabItem) {
-			return <ActionsTabItem actionItem={actionDataObject} key={actionDataObject.id} index={index} />;
+			return <ActionsTabItem actionItem={actionDataObject} key={item.id} index={index} />;
 		}
 		console.log(texts.errors.invalidActionType);
 		return null;
