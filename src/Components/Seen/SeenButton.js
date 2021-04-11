@@ -12,10 +12,10 @@ export default function SeenButton() {
 	const isCraftingWindowMounted = useSelector(state => state.MountedComponents.CraftingWindow);
 
 	function seenButtonShouldMoveDown() {
-		seenMoveRef.current.style.animation = 'move 2s linear';
+		seenMoveRef.current.style.animation = 'move 0.5s linear';
 	}
 	function seenButtonShouldMoveUp() {
-		seenMoveRef.current.style.animation = 'moveBack 2s linear';
+		seenMoveRef.current.style.animation = 'moveBack 0.5s linear';
 	}
 	useButtonAnimation(seenButtonShouldMoveUp, seenButtonShouldMoveDown, isSeenWindowMounted, isCraftingWindowMounted);
 	const onSeenClick = () => {
