@@ -1,14 +1,8 @@
 import { useState, useEffect } from 'react';
-// import { useSelector } from 'react-redux';
 
-export default function useButtonAnimation(
-	closeWindowAnimation,
-	openWindowAnimation,
-	isFirstWindowMounted,
-	isSecondeWindowMounted,
-) {
+export default function useButtonAnimation(closeWindowAnimation, openWindowAnimation, isWindowMounted) {
 	const [isInStartingLook, setIsInStartingLook] = useState(true);
-	const shouldButtonBeInStartLook = !isFirstWindowMounted && !isSecondeWindowMounted;
+	const shouldButtonBeInStartLook = !isWindowMounted;
 	useEffect(() => {
 		if (shouldButtonBeInStartLook !== isInStartingLook) {
 			if (shouldButtonBeInStartLook === true) {
