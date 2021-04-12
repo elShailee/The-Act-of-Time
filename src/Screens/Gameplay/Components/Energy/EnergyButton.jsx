@@ -3,13 +3,13 @@ import EnergyTab from './EnergyTab';
 import './EnergyButton.css';
 import texts from 'texts';
 import GeneralButton from 'GeneralComponents/GeneralButton';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { mountComponents, unmountComponents } from 'Redux/Slices/MountedComponents';
-import { GetEnergyTabMounted } from 'Redux/Selectors/MountedComponentsSelectors';
+import { isMountedComponentSelector } from 'Redux/Selectors/MountedComponentsSelectors';
 
 export default function EnergyButton() {
 	const dispatch = useDispatch();
-	const isEnergyTabOpen = GetEnergyTabMounted();
+	const isEnergyTabOpen = useSelector(isMountedComponentSelector('EnergyTab'));
 
 	const onEnergyButtonClick = () => {
 		if (isEnergyTabOpen) {

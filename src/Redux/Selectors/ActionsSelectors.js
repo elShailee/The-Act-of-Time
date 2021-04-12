@@ -1,3 +1,1 @@
-import { useSelector } from 'react-redux';
-
-export const GetOrderedActionsArray = () => {return useSelector(state => state.Actions.orderedActionsArray)};
+export const orderedActionsArraySelector = state => state.Actions.orderedActionsArray;
