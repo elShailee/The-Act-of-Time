@@ -1,4 +1,4 @@
-#seenButton {
+.seenButton {
 	background-color: cornflowerblue;
 	width: var(--seenButton-size);
 	height: var(--seenButton-size);

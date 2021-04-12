@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react';
 
 export default function useButtonAnimation(closeWindowAnimation, openWindowAnimation, isWindowMounted) {
-	const [isInStartingLook, setIsInStartingLook] = useState(true);
-	const shouldButtonBeInStartLook = !isWindowMounted;
+	const [isInStartingPos, setIsInStartingLook] = useState(true);
+	const shouldButtonBeInStartPos = !isWindowMounted;
 	useEffect(() => {
-		if (shouldButtonBeInStartLook !== isInStartingLook) {
-			if (shouldButtonBeInStartLook === true) {
+		if (shouldButtonBeInStartPos !== isInStartingPos) {
+			if (shouldButtonBeInStartPos === true) {
 				closeWindowAnimation();
 			} else {
 				openWindowAnimation();
 			}
-			setIsInStartingLook(shouldButtonBeInStartLook);
+			setIsInStartingLook(shouldButtonBeInStartPos);
 		}
-	}, [shouldButtonBeInStartLook, isInStartingLook, closeWindowAnimation, openWindowAnimation]);
+	}, [shouldButtonBeInStartPos, isInStartingPos, closeWindowAnimation, openWindowAnimation]);
 }
