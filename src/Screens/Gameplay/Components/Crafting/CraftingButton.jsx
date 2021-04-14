@@ -1,4 +1,3 @@
-//import { useRef } from 'react';
 import './CraftingButton.css';
 import texts from 'texts';
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,7 +11,8 @@ export default function CraftingButton() {
 	const atLeastOneWindowOpen = isCraftingWindowMounted || isSeenWindowMounted;
 
 	const minimizeCraftingButton = useSpring({
-		translate: atLeastOneWindowOpen ? (30, 30) : (0, 0),
+		translateX: atLeastOneWindowOpen ? '2vw' : '0vw',
+		translateY: atLeastOneWindowOpen ? '2vh' : '0vh',
 		rotate: atLeastOneWindowOpen ? 360 : 0,
 		scale: atLeastOneWindowOpen ? 0.6 : 1,
 	});
@@ -28,7 +28,7 @@ export default function CraftingButton() {
 		}
 	};
 	return (
-		<animated.div style={minimizeCraftingButton} className='craftingButtonDefault' onClick={onCraftingClick}>
+		<animated.div style={minimizeCraftingButton} className='craftingButton' onClick={onCraftingClick}>
 			<animated.div style={enlargeCraftingButtonText}>{texts.gameplay.crafting.buttonTitle}</animated.div>
 		</animated.div>
 	);

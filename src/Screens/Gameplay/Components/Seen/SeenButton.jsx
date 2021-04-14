@@ -11,7 +11,7 @@ export default function SeenButton() {
 	const atLeastOneWindowOpen = isCraftingWindowMounted || isSeenWindowMounted;
 
 	const moveSeenButtonDown = useSpring({
-		transform: atLeastOneWindowOpen ? 'translate(0px, 30px)' : 'translate(0px, 0px)',
+		translateY: atLeastOneWindowOpen ? '5vh' : '0vh',
 	});
 
 	const onSeenClick = () => {

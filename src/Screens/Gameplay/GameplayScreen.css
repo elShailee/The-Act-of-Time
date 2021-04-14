@@ -1,4 +1,6 @@
 #gameplayScreen {
+	--height-unit: calc(50vh / 9);
+	--width-unit: 3.125vw;
 	font-family: Helvetica;
 }
 
@@ -8,29 +10,30 @@
 
 #upperRightButtonsContainer {
 	position: absolute;
-	right: 20px;
-	top: 20px;
+	right: var(--width-unit);
+	top: var(--height-unit);
 	display: flex;
 }
 
 #upperLeftButtonsContainer {
 	position: absolute;
-	left: 20px;
-	top: 20px;
+	left: var(--width-unit);
+	top: var(--height-unit);
 	display: flex;
 }
 
 #disastersContainerContainer {
 	position: absolute;
-	left: 20px;
+	left: var(--width-unit);
 	top: calc(100% / 3);
 	display: flex;
 }
 
 #bottomRightButtonsContainer {
-	--seenButton-size: 60px;
-	--craftingButton-size: 100px;
+	--seenButton-size: calc(1.5 * var(--height-unit));
+	--craftingButton-size: calc(2.5 * var(--height-unit));
 	position: absolute;
-	right: 20px;
-	bottom: 20px;
+	overflow: hidden;
+	right: calc(1.5 * var(--width-unit));
+	bottom: calc(1.5 * var(--height-unit));
 }

@@ -1,4 +1,4 @@
-.craftingButtonDefault {
+.craftingButton {
 	width: var(--craftingButton-size);
 	height: var(--craftingButton-size);
 	background-color: chartreuse;
@@ -6,4 +6,5 @@
 	user-select: none;
 	text-align: center;
 	line-height: var(--craftingButton-size);
+	font-size: 1.2vw;
 }
