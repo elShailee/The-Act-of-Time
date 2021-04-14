@@ -52,7 +52,6 @@ const texts = {
 		invalidBrowser:
 			'This Application is not supported for this browser, please try to open it using an up-to-date version of Google Chrome, Mozilla Firefox, or Microsoft Edge.',
 		invalidComponentsToMount: 'please pass a string or an array of strings to either mountComponent() or unmountComponent()',
-		invalidActionType: 'invalid Action type to render.',
 	},
 };
 export default texts;
