@@ -2,7 +2,7 @@ import React from 'react';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import { useDispatch } from 'react-redux';
 import { applyActionsReorder } from 'Redux/Slices/Actions';
-import { renderActionTabItems } from 'Utils/RenderActionItems';
+import { RenderActionTabItems } from 'Utils/ActionsUtils/RenderActionItems';
 
 export default function FirstFewActions() {
 	const dispatch = useDispatch();
@@ -11,7 +11,7 @@ export default function FirstFewActions() {
 			<Droppable type='firstFewActions' droppableId='FirstFewActionsDroppable'>
 				{provided => (
 					<div {...provided.droppableProps} ref={provided.innerRef}>
-						{renderActionTabItems(5)}
+						{RenderActionTabItems(5)}
 						{provided.placeholder}
 					</div>
 				)}
