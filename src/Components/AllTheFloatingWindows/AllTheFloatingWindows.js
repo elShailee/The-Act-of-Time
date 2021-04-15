@@ -11,9 +11,9 @@ export default function AllTheFloatingWindows() {
 
 	const isCoinsPurchaseWindowMounted = useSelector(state => state.MountedComponents.CoinsPurchaseWindow);
 	const isEnergyPurchaseWindowMounted = useSelector(state => state.MountedComponents.EnergyPurchaseWindow);
+	const isActionsWindowMounted = useSelector(state => state.MountedComponents.ActionsWindow);
 	const isCraftingWindowMounted = useSelector(state => state.MountedComponents.CraftingWindow);
 	const isSeenWindowMounted = useSelector(state => state.MountedComponents.SeenWindow);
-	const isActionsWindowMounted = useSelector(state => state.MountedComponents.ActionsWindow);
 
 	const CoinsPurchaseWindowAsVar = (
 		<CoinsPurchaseWindow unmountCoinsPurchaseWindow={() => dispatch(unmountComponents(['CoinsPurchaseWindow']))} />
@@ -21,18 +21,19 @@ export default function AllTheFloatingWindows() {
 	const EnergyPurchaseWindowAsVar = (
 		<EnergyPurchaseWindow unmountEnergyPurchaseWindow={() => dispatch(unmountComponents(['EnergyPurchaseWindow']))} />
 	);
+	const ActionsWindowAsVar = <ActionsWindow unmountActionsWindow={() => dispatch(unmountComponents(['ActionsWindow']))} />;
 	const CraftingWindowAsVar = (
 		<CraftingWindow unmountCraftingWindow={() => dispatch(unmountComponents(['CraftingWindow']))} />
 	);
 	const SeenWindowAsVar = <SeenWindow unmountSeenWindow={() => dispatch(unmountComponents(['SeenWindow']))} />;
-	const ActionsWindowAsVar = <ActionsWindow unmountActionsWindow={() => dispatch(unmountComponents(['ActionsWindow']))} />;
+
 	return (
 		<div>
 			{isCoinsPurchaseWindowMounted && CoinsPurchaseWindowAsVar}
 			{isEnergyPurchaseWindowMounted && EnergyPurchaseWindowAsVar}
+			{isActionsWindowMounted && ActionsWindowAsVar}
 			{isCraftingWindowMounted && CraftingWindowAsVar}
 			{isSeenWindowMounted && SeenWindowAsVar}
-			{isActionsWindowMounted && ActionsWindowAsVar}
 		</div>
 	);
 }

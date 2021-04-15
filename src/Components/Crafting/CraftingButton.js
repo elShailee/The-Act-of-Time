@@ -3,15 +3,15 @@ import CraftingWindow from './CraftingWindow';
 import './CraftingButton.css';
 import GeneralButton from 'Components/GeneralComponents/GeneralButton';
 import { craftingButtonTexts } from 'Texts/gameplayTexts';
-import { mountComponents, unmountComponents } from 'Redux/Slices/MountedComponents'; //???
+import { mountComponents, unmountComponents } from 'Redux/Slices/MountedComponents';
 import { useDispatch, useSelector } from 'react-redux';
 
 export default function CraftingButton() {
 	const dispatch = useDispatch();
-	const isCraftingWindowOpen = useSelector(state => state.MountedComponents.CraftingWindow);
+	const isCraftingWindowMounted = useSelector(state => state.MountedComponents.CraftingWindow);
 
 	const onCraftingButtonClick = () => {
-		if (isCraftingWindowOpen) {
+		if (isCraftingWindowMounted) {
 			dispatch(unmountComponents('CraftingWindow'));
 		} else {
 			dispatch(mountComponents('CraftingWindow'));
@@ -23,7 +23,6 @@ export default function CraftingButton() {
 			<GeneralButton id='craftingButton' uppercased outlined onButtonClick={onCraftingButtonClick}>
 				{craftingButtonTexts.title}
 			</GeneralButton>
-			{isCraftingWindowOpen && <CraftingWindow />}
 		</div>
 	);
 }

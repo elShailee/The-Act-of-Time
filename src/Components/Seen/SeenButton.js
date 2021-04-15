@@ -8,10 +8,10 @@ import { useDispatch, useSelector } from 'react-redux';
 
 export default function SeenButton() {
 	const dispatch = useDispatch();
-	const isSeenWindowOpen = useSelector(state => state.MountedComponents.SeenWindow);
+	const isSeenWindowMounted = useSelector(state => state.MountedComponents.SeenWindow);
 
 	const onSeenButtonClick = () => {
-		if (isSeenWindowOpen) {
+		if (isSeenWindowMounted) {
 			dispatch(unmountComponents('SeenWindow'));
 		} else {
 			dispatch(mountComponents('SeenWindow'));
@@ -23,7 +23,6 @@ export default function SeenButton() {
 			<GeneralButton id='seenButton' uppercased outlined onButtonClick={onSeenButtonClick}>
 				{seenButtonTexts.title}
 			</GeneralButton>
-			{isSeenWindowOpen && <SeenWindow />}
 		</div>
 	);
 }
