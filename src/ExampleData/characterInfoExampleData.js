@@ -1,9 +1,9 @@
-import characterImage from 'Images/characterImage.png';
+import characterImage from 'Assets/characterImage.png';
 
 const characterInfoExampleData = {
-  characterName: 'Johon Do',
-  characterImage,
-  characterLevel: 10,
+	characterName: 'Johon Do',
+	characterImage,
+	characterLevel: 10,
 };
 
 export default characterInfoExampleData;
