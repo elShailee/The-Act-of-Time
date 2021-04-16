@@ -22,7 +22,7 @@
 	display: flex;
 }
 
-#disastersContainerContainer {
+#disastersContainer {
 	position: absolute;
 	left: var(--width-unit);
 	top: calc(100% / 3);

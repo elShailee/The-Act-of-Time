@@ -28,7 +28,7 @@ export default function CraftingButton() {
 		}
 	};
 	return (
-		<animated.div style={minimizeCraftingButton} className='craftingButton' onClick={onCraftingClick}>
+		<animated.div style={minimizeCraftingButton} id='craftingButton' onClick={onCraftingClick}>
 			<animated.div style={enlargeCraftingButtonText}>{texts.gameplay.crafting.buttonTitle}</animated.div>
 		</animated.div>
 	);

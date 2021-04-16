@@ -1,10 +1,8 @@
-.craftingButton {
+#craftingButton {
 	width: var(--craftingButton-size);
 	height: var(--craftingButton-size);
 	background-color: chartreuse;
 	border-radius: 50%;
-	user-select: none;
-	text-align: center;
 	line-height: var(--craftingButton-size);
-	font-size: 1.2vw;
+	font-size: 2.2vh;
 }

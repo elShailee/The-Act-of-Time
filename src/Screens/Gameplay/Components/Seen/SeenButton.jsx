@@ -22,7 +22,7 @@ export default function SeenButton() {
 		}
 	};
 	return (
-		<animated.div style={moveSeenButtonDown} className='seenButton' onClick={onSeenClick}>
+		<animated.div style={moveSeenButtonDown} id='seenButton' onClick={onSeenClick}>
 			{texts.gameplay.seen.buttonTitle}
 		</animated.div>
 	);
