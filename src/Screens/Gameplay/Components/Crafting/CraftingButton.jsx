@@ -18,10 +18,8 @@ export default function CraftingButton() {
 	};
 
 	return (
-		<div id='craftingButtonContainer'>
-			<GeneralButton id='craftingButton' uppercased outlined onButtonClick={onCraftingButtonClick}>
-				{texts.gameplay.crafting.buttonTitle}
-			</GeneralButton>
-		</div>
+		<GeneralButton id='craftingButton' uppercased outlined onButtonClick={onCraftingButtonClick}>
+			{texts.gameplay.crafting.buttonTitle}
+		</GeneralButton>
 	);
 }

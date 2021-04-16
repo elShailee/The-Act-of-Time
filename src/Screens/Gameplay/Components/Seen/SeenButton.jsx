@@ -18,10 +18,8 @@ export default function SeenButton() {
 	};
 
 	return (
-		<div id='seenButtonContainer'>
-			<GeneralButton id='seenButton' uppercased outlined onButtonClick={onSeenButtonClick}>
-				{texts.gameplay.seen.buttonTitle}
-			</GeneralButton>
-		</div>
+		<GeneralButton id='seenButton' uppercased outlined onButtonClick={onSeenButtonClick}>
+			{texts.gameplay.seen.buttonTitle}
+		</GeneralButton>
 	);
 }
