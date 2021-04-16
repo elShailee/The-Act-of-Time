@@ -8,6 +8,10 @@ export default function CraftingWindow({ unmountCraftingWindow }) {
 			<br />
 			<br />
 			Crafting Window
+			<br />
+			<br />
+			<br />
+			<br />
 		</GeneralWindow>
 	);
 }

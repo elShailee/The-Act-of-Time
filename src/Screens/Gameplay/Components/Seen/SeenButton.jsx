@@ -1,4 +1,5 @@
 import './SeenButton.css';
+import GeneralButton from 'GeneralComponents/GeneralButton';
 import texts from 'texts';
 import { useDispatch, useSelector } from 'react-redux';
 import { unmountComponents, mountComponents } from 'Redux/Slices/MountedComponents';
@@ -14,16 +15,19 @@ export default function SeenButton() {
 		translateY: atLeastOneWindowOpen ? '5vh' : '0vh',
 	});
 
-	const onSeenClick = () => {
+	const onSeenButtonClick = () => {
 		if (isSeenWindowMounted) {
-			dispatch(unmountComponents(['SeenWindow']));
+			dispatch(unmountComponents('SeenWindow'));
 		} else {
-			dispatch(mountComponents(['SeenWindow']));
+			dispatch(mountComponents('SeenWindow'));
 		}
 	};
+
 	return (
-		<animated.div style={moveSeenButtonDown} id='seenButton' onClick={onSeenClick}>
-			{texts.gameplay.seen.buttonTitle}
+		<animated.div style={moveSeenButtonDown}>
+			<GeneralButton id='seenButton' uppercased outlined onButtonClick={onSeenButtonClick}>
+				{texts.gameplay.seen.buttonTitle}
+			</GeneralButton>
 		</animated.div>
 	);
 }
