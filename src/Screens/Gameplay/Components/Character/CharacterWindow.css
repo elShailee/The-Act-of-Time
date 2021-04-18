@@ -3,14 +3,117 @@
 }
 
 .contentContainer {
+	margin-top: 6.5vw;
 	background: #ff99b3;
-	border-radius: 7px;
-	border: 1px #ff4d79 solid;
+	border-radius: 1.5vh;
+	border: 0.1vh #ff4d79 solid;
 }
 
 .CharacterWindowContainer {
 	display: block;
 	grid-template-columns: auto;
 	grid-template-rows: auto;
-	grid-gap: 10px;
+	grid-gap: 1vw;
+}
+
+.CWB-grid {
+	display: flex;
+	height: calc(7.4 * (50vh / 9));
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+.leftSideContainer {
+	width: calc(4 * 3.125vw);
+	height: calc(7.5 * (50vh / 9));
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.CWBL-item1 {
+	align-self: flex-start;
+}
+
+.CWBL-item2 {
+	align-self: left;
+	padding-top: 1vh;
+}
+.rightSideContainer {
+	width: calc(4 * 3.125vw);
+	height: calc(7.5 * (50vh / 9));
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.CWBR-item1 {
+	align-self: flex-start;
+}
+
+.CWBR-item2 {
+	padding-top: 1vh;
+	align-self: left;
+}
+.CI-grid-content {
+	user-select: none;
+	padding-left: 0.4vw;
+	color: #333333;
+	background-color: white;
+	border-radius: 5%;
+	text-align: left;
+	font-size: 0.9vw;
+	line-height: 3.5vh;
+	height: calc(4 * (50vh / 9));
+	width: calc(4 * 3.125vw);
+}
+
+.itemTitle {
+	background-color: #c65353;
+	border: 0.2vh solid #bf4040;
+	width: calc(2.4 * 3.125vw);
+	height: calc(0.8 * (50vh / 9));
+	user-select: none;
+	font-size: 1.2vw;
+	color: #333333;
+}
+
+.CI-grid-container {
+	display: grid;
+	grid-template-columns: 2.5vw 2.5vw 2.5vw 2.5vw 2.5vw;
+	grid-template-rows: calc(40vh / 9) calc(40vh / 9) calc(40vh / 9);
+}
+
+.CI-grid-item {
+	background-color: #cc6666;
+	border: 0.1vh solid #bf4040;
+}
+
+img {
+	vertical-align: top;
+	width: 2.4vw;
+	height: calc(38vh / 9);
+}
+
+.CS-grid-container {
+	padding-left: 0.4vw;
+	color: #333333;
+	background-color: white;
+	border-radius: 5%;
+	text-align: left;
+	font-size: 1vw;
+	line-height: 3vh;
+	user-select: none;
+	height: calc(5 * (50vh / 9));
+	width: calc(4 * 3.125vw);
+}
+.hover-box {
+	background-color: #d27979;
+	text-align: left;
+	font-size: 1vw;
+	line-height: 3vh;
+	color: #333333;
+	height: calc(1.5 * (50vh / 9));
+	width: calc(4 * 3.125vw);
+	border-color: #bf4040;
 }

@@ -1,9 +1,9 @@
 .generalWindow {
+	height: calc(11.5 * (50vh / 9));
 	width: fit-content;
 	position: fixed;
 	background-color: #ddcc66;
 	padding: 10px;
-	height: 60vh;
 	border-radius: 5px;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .rightSided {
-	right: 100px;
+	right: calc(4 * 3.125vw);
 	top: 52%;
 	transform: translate(0, -50%);
 	/*  same case as the comment above, instead this time I wanted it's anchor point to be on
@@ -26,6 +26,7 @@
 
 .contentContainer {
 	width: fit-content;
+	height: fit-content;
 	min-width: 20vw;
 	margin-top: 7px;
 	padding: 10px;
@@ -33,4 +34,12 @@
 	border-radius: 7px;
 	border: 1px #ddb075 solid;
 	text-align: center;
+}
+.generalWindowCloseButton {
+	align-self: right;
+	float: right;
+}
+.generalWindowTitle {
+	align-self: left;
+	float: left;
 }

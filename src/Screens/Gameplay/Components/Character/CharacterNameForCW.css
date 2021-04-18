@@ -1,15 +1,15 @@
 .CN-grid-container {
 	display: grid;
-	grid-template-columns: 100px 200px;
-	grid-template-rows: 40px 30px 20px;
-	grid-gap: 10px;
+	grid-template-columns: calc(2.5 * 3.125vw) calc(5 * 3.125vw);
+	grid-template-rows: (50vh/9) calc(0.75 * (50vh / 9)) calc(0.5 * (50vh / 9));
+	grid-gap: 1vh;
 	-webkit-user-drag: none;
 	user-select: none;
 }
 
 .imageItem {
-	width: 100px;
-	height: 100px;
+	width: calc(2.5 * 3.125vw);
+	height: calc(3 * (50vh / 9));
 	border-radius: 50%;
 	grid-row-start: 1;
 	grid-row-end: 4;
@@ -18,19 +18,19 @@
 
 .nameItem {
 	text-align: center;
-	font-size: 41px;
+	font-size: 3vw;
 	font-style: bold;
 	cursor: text;
 }
 
 .lvlItem {
-	padding-left: 20px;
-	font-size: 20px;
+	padding-left: 1.5vw;
+	font-size: 1.4vw;
 }
 
 .XPBar {
-	--xp-Width: 190px;
-	--xp-Height: 20px;
+	--xp-Width: calc(4.75 * 3.125vw);
+	--xp-Height: calc(0.5 * (50vh / 9));
 }
 
 .WxpCapacity {
@@ -46,7 +46,7 @@
 	--xpQuantity-width: calc(var(--xp-Width) * 0.3);
 	width: var(--xpQuantity-width);
 	height: var(--xp-Height);
-	border-width: 2px;
+	border-width: 0.2vh;
 	border-color: #ff99b3;
 	background-color: #ff4d79;
 	clip-path: polygon(
@@ -59,7 +59,7 @@
 
 .WxpInNumbers {
 	position: relative;
-	font-size: 18px;
+	font-size: calc(0.5 * (50vh / 9));
 	text-align: center;
 	color: black;
 }
