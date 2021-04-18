@@ -1,6 +1,5 @@
 import React from 'react';
 import './CraftingButton.css';
-import GeneralButton from 'GeneralComponents/GeneralButton';
 import texts from 'texts';
 import { mountComponents, unmountComponents } from 'Redux/Slices/MountedComponents';
 import { useDispatch, useSelector } from 'react-redux';
@@ -18,8 +17,8 @@ export default function CraftingButton() {
 	};
 
 	return (
-		<GeneralButton id='craftingButton' uppercased outlined onButtonClick={onCraftingButtonClick}>
+		<div className='generalButton' id='craftingButton' onClick={onCraftingButtonClick}>
 			{texts.gameplay.crafting.buttonTitle}
-		</GeneralButton>
+		</div>
 	);
 }

@@ -8,6 +8,7 @@ import SeenWindow from 'Screens/Gameplay/Components/Seen/SeenWindow';
 import CharacterWindow from 'Screens/Gameplay/Components/Character/CharacterWindow';
 import { useDispatch, useSelector } from 'react-redux';
 import { unmountComponents } from 'Redux/Slices/MountedComponents';
+import 'GeneralComponents/GeneralButton.css';
 export default function AllTheFloatingWindows() {
 	const dispatch = useDispatch();
 

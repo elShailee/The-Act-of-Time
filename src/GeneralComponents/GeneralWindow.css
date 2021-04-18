@@ -12,8 +12,8 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	/*  the transform makes the window's anchor point to be in it's center instead of top left,
-      that way it is possible to center it easily instead of calculating its position according
-      to it's dimensions   */
+        that way it is possible to center it easily instead of calculating its position according
+        to it's dimensions   */
 }
 
 .rightSided {
@@ -34,10 +34,6 @@
 	border-radius: 7px;
 	border: 1px #ddb075 solid;
 	text-align: center;
-}
-.generalWindowCloseButton {
-	align-self: right;
-	float: right;
 }
 .generalWindowTitle {
 	align-self: left;

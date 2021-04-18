@@ -1,6 +1,5 @@
 import React from 'react';
 import './EnergyTab.css';
-import GeneralButton from 'GeneralComponents/GeneralButton';
 import texts from 'texts';
 import EnergyIcon from 'Assets/placeholderIcon.png';
 import GeneralTab from 'GeneralComponents/GeneralTab';
@@ -36,9 +35,9 @@ export default function EnergyTab() {
 				{texts.gameplay.energy.energyTab.perHour}
 			</div>
 
-			<GeneralButton id='getMoreEnergyButton' onButtonClick={() => getMoreButtonClickHandler()}>
+			<div className='generalButton' id='getMoreEnergyButton' onClick={() => getMoreButtonClickHandler()}>
 				{texts.gameplay.energy.energyTab.getMore}
-			</GeneralButton>
+			</div>
 		</GeneralTab>
 	);
 }
