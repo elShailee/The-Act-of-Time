@@ -7,7 +7,7 @@ import CraftingWindow from 'Screens/Gameplay/Components/Crafting/CraftingWindow'
 import SeenWindow from 'Screens/Gameplay/Components/Seen/SeenWindow';
 import { useDispatch, useSelector } from 'react-redux';
 import { unmountComponents } from 'Redux/Slices/MountedComponents';
-import { isComponentMountedSelector } from 'Redux/Selectors/MountedComponentsSelectors';
+import isComponentMountedSelector from 'Redux/Selectors/MountedComponentsSelectors';
 
 export default function AllTheFloatingWindows() {
 	const dispatch = useDispatch();
