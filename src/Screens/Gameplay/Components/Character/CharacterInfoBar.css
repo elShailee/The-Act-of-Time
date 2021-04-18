@@ -1,0 +1,96 @@
+#characterInfoBarContainer {
+	--CIB-width: 275px; /*CIB = character Info Bar 275 at default*/
+	--CIB-height: calc(var(--CIB-width) * 0.4); /*110px at default*/
+	--CIB-textPartHeight: calc(var(--CIB-height) * 0.6); /*66px at default*/
+	--halfOf-CIB-width: calc(var(--CIB-width) / 2); /*137.5px at default*/
+	--CIB-text-width: calc(var(--CIB-width) * 0.4); /*110px at default*/
+	--CIB-Image-size: calc(var(--CIB-width) * 0.32); /*88px at default*/
+	--bigFontSize: calc(var(--CIB-width) * 0.08); /*22px at default*/
+	--fontSize: calc(var(--CIB-width) * 0.06); /*16.5px at default*/
+	--CIB-font: Helvetica;
+	--XP-bar-height: calc(var(--CIB-height) * 0.05);
+	position: absolute;
+	left: calc(50% - var(--halfOf-CIB-width));
+	user-select: none;
+	top: 8px;
+}
+
+#characterInfoBar {
+	width: var(--CIB-width);
+	height: var(--CIB-height);
+	background-color: #800020;
+	text-align: center;
+	clip-path: polygon(
+		/*  left corner going down  */ 0px calc(var(--CIB-width) * 0.15),
+		/*  top left corner         */ calc(var(--CIB-width) * 0.09) 0px,
+		/*  top right corner        */ calc(var(--CIB-width) * 0.92) 0px,
+		/*  right corner            */ var(--CIB-width) calc(var(--CIB-width) * 0.08),
+		/*  bottom right corner     */ calc(var(--CIB-width) * 0.86) var(--CIB-textPartHeight),
+		/*  right middele corner    */ calc(var(--CIB-width) * 0.46) var(--CIB-textPartHeight),
+		/*  middele bottom corner   */ calc(var(--CIB-width) * 0.38) var(--CIB-height),
+		/*  left bottom corner      */ calc(var(--CIB-width) * 0.1) var(--CIB-height)
+	);
+}
+
+.characterTextCointainer {
+	position: absolute;
+	right: calc(var(--CIB-height) * 0.11);
+	width: var(--halfOf-CIB-width);
+	padding-top: calc(calc(var(--CIB-textPartHeight) - calc(var(--bigFontSize) + var(--fontSize))) / 3);
+}
+
+.characterNameText {
+	width: var(--CIB-text-width);
+	font-family: var(--CIB-font);
+	font-size: var(--bigFontSize);
+	color: white;
+}
+
+.characterLevelText {
+	width: var(--CIB-text-width);
+	font-family: var(--CIB-font);
+	font-size: var(--fontSize);
+	color: white;
+}
+
+.characterImage {
+	position: absolute;
+	left: calc(var(--CIB-height) * 0.11);
+	padding: calc(calc(var(--CIB-height) - var(--CIB-Image-size)) / 2);
+	border-radius: 50%;
+	cursor: pointer;
+	width: var(--CIB-Image-size);
+	height: var(--CIB-Image-size);
+	-webkit-user-drag: none;
+}
+
+.xpBar {
+	position: absolute;
+	height: var(--XP-bar-height);
+	top: calc(var(--CIB-height) * 0.6);
+	left: calc(var(--CIB-width) * 0.45);
+}
+
+#xpCapacity {
+	--xpCapacity-width: calc(var(--CIB-width) * 0.33);
+	background-color: #ff99b3;
+	width: var(--xpCapacity-width);
+	clip-path: polygon(
+		0 0,
+		var(--xpCapacity-width) 0,
+		calc(var(--xpCapacity-width) * 0.92) var(--XP-bar-height),
+		0 var(--XP-bar-height)
+	);
+}
+
+#xpQuantity {
+	--xpQuantity-width: calc(var(--CIB-width) * 0.16);
+	background-color: #ff4d79;
+	width: var(--xpQuantity-width);
+	clip-path: polygon(
+		0 0,
+		var(--xpQuantity-width) 0,
+		calc(var(--xpQuantity-width) * 0.96) var(--XP-bar-height),
+		0 var(--XP-bar-height)
+	);
+}

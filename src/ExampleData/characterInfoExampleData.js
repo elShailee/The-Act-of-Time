@@ -1,5 +1,5 @@
-import characterImage from 'Images/characterImage.png';
-import itemImage from 'Images/placeholderIcon.png';
+import characterImage from 'Assets/characterImage.png';
+import itemImage from 'Assets/placeholderIcon.png';
 
 const characterInfoExampleData = {
 	fromDB: {
