@@ -1,9 +1,8 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import ActionsTabItem from 'Screens/Gameplay/Components/Actions/ActionsTab/ActionsTabItem';
 import assembleActionDataItem from 'Utils/assembleActionDataObject';
 import texts from 'texts';
-import { orderedActionsArraySelector } from 'Redux/Selectors/ActionsSelectors';
-import { useSelector } from 'react-redux';
 
 const actionsItemsTypes = { tabItem: 'tabItem' }; //this is for futre use so we could have more items type
 export function renderActionTabItems(numOfItemsToRender) {
@@ -11,7 +10,7 @@ export function renderActionTabItems(numOfItemsToRender) {
 }
 
 function RenderActionItems(renderType, numOfItemsToRender) {
-	const orderedActionsArray = useSelector(orderedActionsArraySelector);
+	const orderedActionsArray = useSelector(state => state.Actions.orderedActionsArray);
 	if (!numOfItemsToRender) numOfItemsToRender = orderedActionsArray.length;
 	const itemsActionsToRender = orderedActionsArray.slice(0, numOfItemsToRender); //returns only the first numOfItemsToRender items from the state
 	const renderedActionItems = itemsActionsToRender.map((itemId, index) => {
