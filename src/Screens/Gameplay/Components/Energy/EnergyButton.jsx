@@ -2,7 +2,6 @@ import React from 'react';
 import EnergyTab from './EnergyTab';
 import './EnergyButton.css';
 import texts from 'texts';
-import GeneralButton from 'GeneralComponents/GeneralButton';
 import { useSelector, useDispatch } from 'react-redux';
 import { mountComponents, unmountComponents } from 'Redux/Slices/MountedComponents';
 
@@ -20,9 +19,9 @@ export default function EnergyButton() {
 
 	return (
 		<div id='energyButtonContainer'>
-			<GeneralButton uppercased outlined onButtonClick={onEnergyButtonClick} id='energyButton'>
+			<div className='generalButton' onClick={onEnergyButtonClick} id='energyButton'>
 				{texts.gameplay.energy.buttonTitle}
-			</GeneralButton>
+			</div>
 			{isEnergyTabOpen && <EnergyTab />}
 		</div>
 	);

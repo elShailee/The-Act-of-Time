@@ -1,6 +1,5 @@
 import React from 'react';
 import './SeenButton.css';
-import GeneralButton from 'GeneralComponents/GeneralButton';
 import texts from 'texts';
 import { mountComponents, unmountComponents } from 'Redux/Slices/MountedComponents';
 import { useDispatch, useSelector } from 'react-redux';
@@ -18,8 +17,8 @@ export default function SeenButton() {
 	};
 
 	return (
-		<GeneralButton id='seenButton' uppercased outlined onButtonClick={onSeenButtonClick}>
+		<div className='generalButton' id='seenButton' onClick={onSeenButtonClick}>
 			{texts.gameplay.seen.buttonTitle}
-		</GeneralButton>
+		</div>
 	);
 }
