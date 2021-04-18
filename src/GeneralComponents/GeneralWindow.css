@@ -23,10 +23,6 @@
         the center-right edge, so I can space from the right according to the existing buttons size in px  */
 }
 
-.generalWindowCloseButton {
-	margin-left: auto;
-}
-
 .contentContainer {
 	width: fit-content;
 	min-width: 20vw;

@@ -1,5 +1,4 @@
 import './SeenButton.css';
-import GeneralButton from 'GeneralComponents/GeneralButton';
 import texts from 'texts';
 import { useDispatch, useSelector } from 'react-redux';
 import { unmountComponents, mountComponents } from 'Redux/Slices/MountedComponents';
@@ -19,10 +18,8 @@ export default function SeenButton() {
 	};
 
 	return (
-		<animated.div style={animateSeenButton}>
-			<GeneralButton id='seenButton' uppercased outlined onButtonClick={onSeenButtonClick}>
-				{texts.gameplay.seen.buttonTitle}
-			</GeneralButton>
+		<animated.div style={animateSeenButton} className='generalButton' id='seenButton' onClick={onSeenButtonClick}>
+			{texts.gameplay.seen.buttonTitle}
 		</animated.div>
 	);
 }

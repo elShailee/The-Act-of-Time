@@ -1,6 +1,5 @@
 import React from 'react';
 import './CoinsTab.css';
-import GeneralButton from 'GeneralComponents/GeneralButton';
 import GeneralTab from 'GeneralComponents/GeneralTab';
 import texts from 'texts';
 import { useDispatch } from 'react-redux';
@@ -18,9 +17,9 @@ export default function CoinsTab() {
 			{texts.gameplay.coins.coinsTab.coinsAmountPt1}
 			XX
 			{texts.gameplay.coins.coinsTab.coinsAmountPt2}
-			<GeneralButton id='getMoreCoinsButton' onButtonClick={getMoreButtonClickHandler}>
+			<div className='generalButton' id='getMoreCoinsButton' onClick={getMoreButtonClickHandler}>
 				{texts.gameplay.coins.coinsTab.getMore}
-			</GeneralButton>
+			</div>
 		</GeneralTab>
 	);
 }
