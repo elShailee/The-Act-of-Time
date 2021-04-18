@@ -1,1 +1,1 @@
-export const isMountedComponentSelector = name => state => state.MountedComponents[name];
+export const isComponentMountedSelector = name => state => state.MountedComponents[name];

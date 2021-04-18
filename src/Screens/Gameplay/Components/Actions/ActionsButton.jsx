@@ -5,11 +5,11 @@ import texts from 'texts';
 import ActionsTab from './ActionsTab/ActionsTab';
 import { useDispatch, useSelector } from 'react-redux';
 import { unmountComponents, mountComponents } from 'Redux/Slices/MountedComponents';
-import { orderedActionsArraySelector } from 'Redux/Selectors/ActionsSelectors';
+import { isComponentMountedSelector } from 'Redux/Selectors/MountedComponentsSelectors';
 
 export default function ActionButton() {
 	const dispatch = useDispatch();
-	const isActionsTabMounted = useSelector(orderedActionsArraySelector);
+	const isActionsTabMounted = useSelector(isComponentMountedSelector('ActionsTab'));
 
 	const onActionsButtonClick = () => {
 		if (isActionsTabMounted) {
