@@ -17,17 +17,6 @@ function showItem(num) {
 		''
 	);
 }
-// function gridItem(numberOfCol, numberOfRow) {
-// 	let count = 0,
-// 		i = 0,
-// 		j = 0;
-// 	for (i; i < numberOfRow; i++) {
-// 		for (j; j < numberOfCol; j++) {
-// 			<div class='grid-item'>{showItem(count)}</div>;
-// 			count++;
-// 		}
-// 	}
-// }
 
 const FuturePlan =
 	characterInfo.fromDB.futurePlanning < 7
@@ -36,7 +25,11 @@ const FuturePlan =
 
 export default function CharacterWindow({ unmountCharacterWindow }) {
 	return (
-		<GeneralWindow unmountGeneralWindow={unmountCharacterWindow} title={<CharacterNameForCW className='nameAndLvl' />}>
+		<GeneralWindow
+			unmountGeneralWindow={unmountCharacterWindow}
+			title={<CharacterNameForCW className='nameAndLvl' />}
+			className='characterWindow'
+		>
 			<div className='CharacterWindowContainer CWB-grid'>
 				<div className='leftSideContainer CWBL-item1'>
 					<div className='CI-grid-content'>
@@ -55,7 +48,6 @@ export default function CharacterWindow({ unmountCharacterWindow }) {
 					<div className='CWBL-item2'>
 						<div className='itemTitle'>passive buffs</div>
 						<div className='CI-grid-container'>
-							{/* gridItem(5, 3); */}
 							<div className='CI-grid-item'>{showItem(0)}</div>
 							<div className='CI-grid-item'>{showItem(1)}</div>
 							<div className='CI-grid-item'>{showItem(2)}</div>

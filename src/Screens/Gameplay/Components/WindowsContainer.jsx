@@ -34,7 +34,9 @@ export default function AllTheFloatingWindows() {
 		<CraftingWindow unmountCraftingWindow={() => dispatch(unmountComponents(['CraftingWindow']))} />
 	);
 	const SeenWindowAsVar = <SeenWindow unmountSeenWindow={() => dispatch(unmountComponents(['SeenWindow']))} />;
-	const CharacterWindowAsVar = <CharacterWindow unmountCharacterWindow={() => unmountComponents(['CharacterWindow'])} />;
+	const CharacterWindowAsVar = (
+		<CharacterWindow unmountCharacterWindow={() => dispatch(unmountComponents(['CharacterWindow']))} />
+	);
 
 	return (
 		<div>
