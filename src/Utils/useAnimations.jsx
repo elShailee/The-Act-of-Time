@@ -7,7 +7,7 @@ export default function useAnimations() {
 	const atLeastOneWindowMounted = isCraftingWindowMounted || isSeenWindowMounted;
 
 	const animateCraftingButton = useSpring({
-		translateX: atLeastOneWindowMounted ? '2vw' : '0vw',
+		translateX: atLeastOneWindowMounted ? '4vh' : '0vh',
 		translateY: atLeastOneWindowMounted ? '2vh' : '0vh',
 		rotate: atLeastOneWindowMounted ? 360 : 0,
 		scale: atLeastOneWindowMounted ? 0.6 : 1,
