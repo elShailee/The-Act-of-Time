@@ -54,23 +54,23 @@ export default function CharacterWindow({ unmountCharacterWindow }) {
 					</div>
 					<div className='CWBL-item2'>
 						<div className='itemTitle'>passive buffs</div>
-						<div class='CI-grid-container'>
+						<div className='CI-grid-container'>
 							{/* gridItem(5, 3); */}
-							<div class='CI-grid-item'>{showItem(0)}</div>
-							<div class='CI-grid-item'>{showItem(1)}</div>
-							<div class='CI-grid-item'>{showItem(2)}</div>
-							<div class='CI-grid-item'>{showItem(3)}</div>
-							<div class='CI-grid-item'>{showItem(4)}</div>
-							<div class='CI-grid-item'>{showItem(5)}</div>
-							<div class='CI-grid-item'>{showItem(6)}</div>
-							<div class='CI-grid-item'>{showItem(7)}</div>
-							<div class='CI-grid-item'>{showItem(8)}</div>
-							<div class='CI-grid-item'>{showItem(9)}</div>
-							<div class='CI-grid-item'>{showItem(10)}</div>
-							<div class='CI-grid-item'>{showItem(11)}</div>
-							<div class='CI-grid-item'>{showItem(12)}</div>
-							<div class='CI-grid-item'>{showItem(13)}</div>
-							<div class='CI-grid-item'>{showItem(14)}</div>
+							<div className='CI-grid-item'>{showItem(0)}</div>
+							<div className='CI-grid-item'>{showItem(1)}</div>
+							<div className='CI-grid-item'>{showItem(2)}</div>
+							<div className='CI-grid-item'>{showItem(3)}</div>
+							<div className='CI-grid-item'>{showItem(4)}</div>
+							<div className='CI-grid-item'>{showItem(5)}</div>
+							<div className='CI-grid-item'>{showItem(6)}</div>
+							<div className='CI-grid-item'>{showItem(7)}</div>
+							<div className='CI-grid-item'>{showItem(8)}</div>
+							<div className='CI-grid-item'>{showItem(9)}</div>
+							<div className='CI-grid-item'>{showItem(10)}</div>
+							<div className='CI-grid-item'>{showItem(11)}</div>
+							<div className='CI-grid-item'>{showItem(12)}</div>
+							<div className='CI-grid-item'>{showItem(13)}</div>
+							<div className='CI-grid-item'>{showItem(14)}</div>
 						</div>
 					</div>
 				</div>

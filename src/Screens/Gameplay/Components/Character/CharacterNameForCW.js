@@ -12,7 +12,7 @@ export default function CharacterNameForCW() {
 		console.log('this trigger named onCharcterNameClick exist on characterNameForCW.js');
 	};
 	return (
-		<div class='CN-grid-container'>
+		<div className='CN-grid-container'>
 			<img
 				alt='character Face'
 				className='imageItem'
