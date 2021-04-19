@@ -36,6 +36,8 @@
 	width: 60px;
 	height: 30px;
 	font-size: 12px;
+	text-transform: none;
+	border: 0px;
 }
 
 .energyInfo {
