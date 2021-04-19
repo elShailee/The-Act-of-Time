@@ -1,15 +1,15 @@
 import React from 'react';
-import './CharacterNameForCW.css';
+import './CharacterWindowTitle.css';
 import characterInfo from 'ExampleData/characterInfoExampleData';
 
-export default function CharacterNameForCW() {
+export default function CharacterWindowTitle() {
 	const onCharcterImageClick = () => {
 		//this is a on click triger to change Character image please change when creating the window
-		console.log('this trigger named onCharcterImageClick exist on characterNameForCW.js');
+		console.log('this trigger named onCharcterImageClick exist on CharacterWindowTitle.jsx');
 	};
 	const onCharcterNameClick = () => {
 		//this is a on click triger for the Name editor please change when creating the editor
-		console.log('this trigger named onCharcterNameClick exist on characterNameForCW.js');
+		console.log('this trigger named onCharcterNameClick exist on CharacterWindowTitle.jsx');
 	};
 	return (
 		<div className='CN-grid-container'>

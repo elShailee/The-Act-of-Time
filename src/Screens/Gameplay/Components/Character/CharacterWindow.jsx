@@ -2,7 +2,7 @@ import React from 'react';
 import GeneralWindow from 'GeneralComponents/GeneralWindow';
 import './CharacterWindow.css';
 import { itemsDetailes } from 'Texts/gameplayTexts';
-import CharacterNameForCW from './CharacterNameForCW';
+import CharacterWindowTitle from './CharacterWindowTitle';
 import characterInfo from 'ExampleData/characterInfoExampleData';
 
 let secondesInHoures = 3600;
@@ -18,6 +18,18 @@ function showItem(num) {
 	);
 }
 
+// function gridItem(numberOfCol, numberOfRow) {
+// 	let count = 0,
+// 		i = 0,
+// 		j = 0;
+// 	for (i; i < numberOfRow; i++) {
+// 		for (j; j < numberOfCol; j++) {
+// 			<div class='character-info-grid-item'>{showItem(count)}</div>;
+// 			count++;
+// 		}
+// 	}
+// }
+
 const FuturePlan =
 	characterInfo.fromDB.futurePlanning < 7
 		? characterInfo.fromDB.futurePlanning + ' days'
@@ -25,14 +37,10 @@ const FuturePlan =
 
 export default function CharacterWindow({ unmountCharacterWindow }) {
 	return (
-		<GeneralWindow
-			unmountGeneralWindow={unmountCharacterWindow}
-			title={<CharacterNameForCW className='nameAndLvl' />}
-			className='characterWindow'
-		>
-			<div className='CharacterWindowContainer CWB-grid'>
-				<div className='leftSideContainer CWBL-item1'>
-					<div className='CI-grid-content'>
+		<GeneralWindow unmountGeneralWindow={unmountCharacterWindow} title={<CharacterWindowTitle />} id='characterWindow'>
+			<div id='charcaterContentContainer'>
+				<div id='leftSideContainer'>
+					<div id='character-info-grid-content'>
 						<p>
 							Joined at: {characterInfo.fromDB.joinedDate}
 							<br />
@@ -45,29 +53,30 @@ export default function CharacterWindow({ unmountCharacterWindow }) {
 							<br />
 						</p>
 					</div>
-					<div className='CWBL-item2'>
-						<div className='itemTitle'>passive buffs</div>
-						<div className='CI-grid-container'>
-							<div className='CI-grid-item'>{showItem(0)}</div>
-							<div className='CI-grid-item'>{showItem(1)}</div>
-							<div className='CI-grid-item'>{showItem(2)}</div>
-							<div className='CI-grid-item'>{showItem(3)}</div>
-							<div className='CI-grid-item'>{showItem(4)}</div>
-							<div className='CI-grid-item'>{showItem(5)}</div>
-							<div className='CI-grid-item'>{showItem(6)}</div>
-							<div className='CI-grid-item'>{showItem(7)}</div>
-							<div className='CI-grid-item'>{showItem(8)}</div>
-							<div className='CI-grid-item'>{showItem(9)}</div>
-							<div className='CI-grid-item'>{showItem(10)}</div>
-							<div className='CI-grid-item'>{showItem(11)}</div>
-							<div className='CI-grid-item'>{showItem(12)}</div>
-							<div className='CI-grid-item'>{showItem(13)}</div>
-							<div className='CI-grid-item'>{showItem(14)}</div>
+					<div>
+						<div id='itemTitle'>passive buffs</div>
+						<div id='character-info-grid-container'>
+							{/* gridItem(5, 3); */}
+							<div className='character-info-grid-item'>{showItem(0)}</div>
+							<div className='character-info-grid-item'>{showItem(1)}</div>
+							<div className='character-info-grid-item'>{showItem(2)}</div>
+							<div className='character-info-grid-item'>{showItem(3)}</div>
+							<div className='character-info-grid-item'>{showItem(4)}</div>
+							<div className='character-info-grid-item'>{showItem(5)}</div>
+							<div className='character-info-grid-item'>{showItem(6)}</div>
+							<div className='character-info-grid-item'>{showItem(7)}</div>
+							<div className='character-info-grid-item'>{showItem(8)}</div>
+							<div className='character-info-grid-item'>{showItem(9)}</div>
+							<div className='character-info-grid-item'>{showItem(10)}</div>
+							<div className='character-info-grid-item'>{showItem(11)}</div>
+							<div className='character-info-grid-item'>{showItem(12)}</div>
+							<div className='character-info-grid-item'>{showItem(13)}</div>
+							<div className='character-info-grid-item'>{showItem(14)}</div>
 						</div>
 					</div>
 				</div>
-				<div className='rightSideContainer CWBR-item1'>
-					<div className='CS-grid-container'>
+				<div id='rightSideContainer'>
+					<div id='CS-grid-container'>
 						<p>
 							Helth: 47% <br /> Sleep duration avg: 8 h/d <br /> Sleep quality: 75% <br /> Food quality:
 							{characterInfo.fromDB.foodQuality}
@@ -76,7 +85,7 @@ export default function CharacterWindow({ unmountCharacterWindow }) {
 							<br /> Memory: {characterInfo.fromDB.memory} tasks <br /> Future planning: {FuturePlan}
 						</p>
 					</div>
-					<div className='hover-box CWBR-item2'>{}</div>
+					<div id='hover-box'>{}</div>
 				</div>
 			</div>
 		</GeneralWindow>

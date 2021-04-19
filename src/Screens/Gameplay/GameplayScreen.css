@@ -1,4 +1,6 @@
 #gameplayScreen {
+	--height-unit: calc(50vh / 9);
+	--width-unit: 3.125vw;
 	font-family: Helvetica;
 }
 
