@@ -8,7 +8,7 @@ export default function GeneralWindow({ children, unmountGeneralWindow, rightSid
 
 	return (
 		<div className={composedClassName}>
-			<GeneralCloseButton className='generalButton closeButton' unmountWindow={unmountGeneralWindow} />
+			<GeneralCloseButton unmountWindow={unmountGeneralWindow} />
 			<div className='contentContainer'>{children}</div>
 		</div>
 	);
