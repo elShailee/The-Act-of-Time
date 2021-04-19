@@ -16,7 +16,7 @@
 }
 
 .rightSided {
-	right: 100px;
+	right: 10vw;
 	top: 52%;
 	transform: translate(0, -50%);
 	/*  same case as the comment above, instead this time I wanted it's anchor point to be on

@@ -7,7 +7,7 @@ export default function CraftingWindow({ unmountCraftingWindow }) {
 			<br />
 			<br />
 			<br />
-			Crafting
+			Crafting Window
 			<br />
 			<br />
 			<br />
