@@ -20,9 +20,10 @@
 }
 
 .generalButton.closeButton {
-	margin-left: auto;
-	width: 40px;
-	height: 30px;
+	float: right;
+	width: var(--width-unit);
+	height: calc(0.75 * var(--width-unit));
 	background-color: orchid;
-	border: 1px solid;
+	border: 0.1vw solid;
+	font-size: 1.5vw;
 }

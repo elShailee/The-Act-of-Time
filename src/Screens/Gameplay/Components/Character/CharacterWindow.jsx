@@ -4,6 +4,7 @@ import './CharacterWindow.css';
 import { itemsDetailes } from 'Texts/gameplayTexts';
 import CharacterWindowTitle from './CharacterWindowTitle';
 import characterInfo from 'ExampleData/characterInfoExampleData';
+import { characterInfoWindow } from 'Texts/gameplayTexts';
 
 let secondesInHoures = 3600;
 const Timep = Math.round(characterInfo.fromDB.timePlayed / secondesInHoures);
@@ -12,7 +13,7 @@ function onHover(props) {
 }
 function showItem(num) {
 	return characterInfo.fromDB.importantItems > num ? (
-		<img alt='Character_face' src={characterInfo.fromBuild.itemList[num]} onMouseOver={() => onHover(num)} />
+		<img alt='Item' src={characterInfo.fromBuild.itemList[num]} onMouseOver={() => onHover(num)} />
 	) : (
 		''
 	);
@@ -39,22 +40,25 @@ export default function CharacterWindow({ unmountCharacterWindow }) {
 	return (
 		<GeneralWindow unmountGeneralWindow={unmountCharacterWindow} title={<CharacterWindowTitle />} id='characterWindow'>
 			<div id='charcaterContentContainer'>
-				<div id='leftSideContainer'>
+				<div className='sideContainer'>
 					<div id='character-info-grid-content'>
 						<p>
-							Joined at: {characterInfo.fromDB.joinedDate}
+							{characterInfoWindow.JoinedAt} {characterInfo.fromDB.joinedDate}
 							<br />
-							Time played: {Timep} hours <br />
-							Item discovered: {characterInfo.fromDB.itemDiscovered}/{characterInfo.fromBuild.numberOfItems}
+							{characterInfoWindow.TimePlayed} {Timep} {characterInfoWindow.Hours} <br />
+							{characterInfoWindow.ItemDiscovered} {characterInfo.fromDB.itemDiscovered}/
+							{characterInfo.fromBuild.numberOfItems}
 							<br />
-							Achievments: {characterInfo.fromDB.achiementEarned}/{characterInfo.fromBuild.numberOfAchiement}
+							{characterInfoWindow.Achievments} {characterInfo.fromDB.achiementEarned}/
+							{characterInfo.fromBuild.numberOfAchiement}
 							<br />
-							Disatsteres servived: {characterInfo.fromDB.disatsteresServived}/{characterInfo.fromDB.disatsteresOcarancy}
+							{characterInfoWindow.DisatsteresServived} {characterInfo.fromDB.disatsteresServived}/
+							{characterInfo.fromDB.disatsteresOcarancy}
 							<br />
 						</p>
 					</div>
 					<div>
-						<div id='itemTitle'>passive buffs</div>
+						<div id='itemTitle'>{characterInfoWindow.ItemsTable}</div>
 						<div id='character-info-grid-container'>
 							{/* gridItem(5, 3); */}
 							<div className='character-info-grid-item'>{showItem(0)}</div>
@@ -75,14 +79,17 @@ export default function CharacterWindow({ unmountCharacterWindow }) {
 						</div>
 					</div>
 				</div>
-				<div id='rightSideContainer'>
+				<div className='sideContainer'>
 					<div id='CS-grid-container'>
 						<p>
-							Helth: 47% <br /> Sleep duration avg: 8 h/d <br /> Sleep quality: 75% <br /> Food quality:
+							{characterInfoWindow.Helth} {characterInfo.fromDB.characterHelth} <br /> {characterInfoWindow.SleepDuration}
+							{characterInfo.fromDB.avgSleepADay} {characterInfoWindow.HouresADay} <br /> {characterInfoWindow.SleepQuality}
+							{characterInfo.fromDB.sleepQuality} <br /> {characterInfoWindow.FoodQuality}
 							{characterInfo.fromDB.foodQuality}
-							<br /> Heat tolerence: {characterInfo.fromDB.heatTolerence}
-							<br /> Cold tolerence: {characterInfo.fromDB.coldTolerence}
-							<br /> Memory: {characterInfo.fromDB.memory} tasks <br /> Future planning: {FuturePlan}
+							<br /> {characterInfoWindow.HeatTolerence} {characterInfo.fromDB.heatTolerence}
+							<br /> {characterInfoWindow.ColdTolerence} {characterInfo.fromDB.coldTolerence}
+							<br /> {characterInfoWindow.Memory} {characterInfo.fromDB.memory} {characterInfoWindow.Tasks} <br />
+							{characterInfoWindow.FuturePlanning} {FuturePlan}
 						</p>
 					</div>
 					<div id='hover-box'>{}</div>

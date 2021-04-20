@@ -44,6 +44,23 @@ const gameplayTexts = {
 	},
 	characterInfoWindow: {
 		title: 'Character window',
+		JoinedAt: 'Joined at: ',
+		TimePlayed: 'Time played: ',
+		ItemDiscovered: 'Item discovered: ',
+		Achievments: 'Achievments: ',
+		DisatsteresServived: 'Disatsteres servived: ',
+		Helth: 'Helth: ',
+		SleepDuration: 'Sleep duration avg: ',
+		SleepQuality: 'Sleep quality: ',
+		FoodQuality: 'Food quality: ',
+		HeatTolerence: 'Heat tolerence: ',
+		ColdTolerence: 'Cold tolerence: ',
+		Memory: 'Memory: ',
+		FuturePlanning: 'Future planning: ',
+		Hours: ' hours',
+		HouresADay: ' h/d',
+		Tasks: ' tasks',
+		ItemsTable: 'passive buffs',
 	},
 	itemsDetailes: {
 		item: [
