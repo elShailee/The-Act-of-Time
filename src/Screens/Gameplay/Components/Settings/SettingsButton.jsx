@@ -1,6 +1,5 @@
 import React from 'react';
 import './SettingsButton.css';
-import GeneralButton from 'GeneralComponents/GeneralButton';
 import SettingsIcon from 'Assets/settingsIcon.png';
 import { mountComponents, unmountComponents } from 'Redux/Slices/MountedComponents';
 import { useDispatch, useSelector } from 'react-redux';
@@ -22,9 +21,9 @@ export default function SettingsButton() {
 
 	return (
 		<div id='settingsButtonContainer'>
-			<GeneralButton id='settingsButton' outlined onButtonClick={onSettingsButtonClick}>
+			<div className='generalButton' id='settingsButton' onClick={onSettingsButtonClick}>
 				{settingsIcon}
-			</GeneralButton>
+			</div>
 		</div>
 	);
 }

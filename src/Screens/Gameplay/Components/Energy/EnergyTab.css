@@ -1,49 +1,51 @@
 #energyTab {
-  width: 160px;
-  height: 60px;
-  padding: 10px;
-  background-color: #99bbbb;
+	width: 160px;
+	height: 60px;
+	padding: 10px;
+	background-color: #99bbbb;
 
-  display: grid;
-  grid-template-columns: 90px 60px;
-  grid-column-gap: 10px;
-  grid-template-rows: 20px 10px 10px 20px;
+	display: grid;
+	grid-template-columns: 90px 60px;
+	grid-column-gap: 10px;
+	grid-template-rows: 20px 10px 10px 20px;
 }
 
 #timeUntillFullText {
-  height: 30px;
-  grid-row-start: 1;
-  grid-row-end: 3;
+	height: 30px;
+	grid-row-start: 1;
+	grid-row-end: 3;
 }
 
 #energyAmountText {
-  height: 20px;
-  grid-row-start: 1;
-  grid-row-end: 2;
+	height: 20px;
+	grid-row-start: 1;
+	grid-row-end: 2;
 }
 
 #rechargeRateText {
-  height: 20px;
-  grid-row-start: 4;
-  grid-row-end: 5;
+	height: 20px;
+	grid-row-start: 4;
+	grid-row-end: 5;
 }
 
 #getMoreEnergyButton {
-  grid-row-start: 3;
-  grid-row-end: 5;
+	grid-row-start: 3;
+	grid-row-end: 5;
 
-  background-color: #00cccc;
-  width: 60px;
-  height: 30px;
-  font-size: 12px;
+	background-color: #00cccc;
+	width: 60px;
+	height: 30px;
+	font-size: 12px;
+	text-transform: none;
+	border: 0px;
 }
 
 .energyInfo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-  font-size: 12px;
-  background-color: #aadddd;
-  border-radius: 3px;
+	font-size: 12px;
+	background-color: #aadddd;
+	border-radius: 3px;
 }
