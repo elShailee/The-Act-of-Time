@@ -4,10 +4,11 @@ import GeneralButton from 'GeneralComponents/GeneralButton';
 import texts from 'texts';
 import { mountComponents, unmountComponents } from 'Redux/Slices/MountedComponents';
 import { useDispatch, useSelector } from 'react-redux';
+import { isComponentMountedSelector } from 'Redux/Selectors/MountedComponentsSelectors';
 
 export default function SeenButton() {
 	const dispatch = useDispatch();
-	const isSeenWindowMounted = useSelector(state => state.MountedComponents.SeenWindow);
+	const isSeenWindowMounted = useSelector(isComponentMountedSelector('SeenWindow'));
 
 	const onSeenButtonClick = () => {
 		if (isSeenWindowMounted) {

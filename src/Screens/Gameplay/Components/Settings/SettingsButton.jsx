@@ -4,7 +4,7 @@ import GeneralButton from 'GeneralComponents/GeneralButton';
 import SettingsIcon from 'Assets/settingsIcon.png';
 import { mountComponents, unmountComponents } from 'Redux/Slices/MountedComponents';
 import { useDispatch, useSelector } from 'react-redux';
-import isComponentMountedSelector from 'Redux/Selectors/MountedComponentsSelectors';
+import { isComponentMountedSelector } from 'Redux/Selectors/MountedComponentsSelectors';
 
 export default function SettingsButton() {
 	const dispatch = useDispatch();

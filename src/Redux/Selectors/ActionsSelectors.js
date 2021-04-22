@@ -1,2 +1,1 @@
-const orderedActionsArraySelector = state => state.Actions.orderedActionsArray;
-export default orderedActionsArraySelector;
+export const orderedActionsArraySelector = state => state.Actions.orderedActionsArray;
