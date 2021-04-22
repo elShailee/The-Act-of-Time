@@ -7,10 +7,10 @@ import { isComponentMountedSelector } from 'Redux/Selectors/MountedComponentsSel
 
 export default function SettingsButton() {
 	const dispatch = useDispatch();
-	const isSettingsWindowOpen = useSelector(isComponentMountedSelector('SettingsWindow'));
+	const isSettingsWindowMounted = useSelector(isComponentMountedSelector('SettingsWindow'));
 
 	const onSettingsButtonClick = () => {
-		if (isSettingsWindowOpen) {
+		if (isSettingsWindowMounted) {
 			dispatch(unmountComponents('SettingsWindow'));
 		} else {
 			dispatch(mountComponents('SettingsWindow'));

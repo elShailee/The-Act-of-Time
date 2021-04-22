@@ -8,10 +8,10 @@ import { isComponentMountedSelector } from 'Redux/Selectors/MountedComponentsSel
 
 export default function CoinsButton() {
 	const dispatch = useDispatch();
-	const isCoinsTabOpen = useSelector(isComponentMountedSelector('CoinsTab'));
+	const isCoinsTabMounted = useSelector(isComponentMountedSelector('CoinsTab'));
 
 	const onCoinsButtonClick = () => {
-		if (isCoinsTabOpen) {
+		if (isCoinsTabMounted) {
 			dispatch(unmountComponents('CoinsTab'));
 		} else {
 			dispatch(mountComponents('CoinsTab'));
@@ -23,7 +23,7 @@ export default function CoinsButton() {
 			<div className='generalButton' id='coinsButton' onClick={onCoinsButtonClick}>
 				{texts.gameplay.coins.buttonTitle}
 			</div>
-			{isCoinsTabOpen && <CoinsTab />}
+			{isCoinsTabMounted && <CoinsTab />}
 		</div>
 	);
 }
