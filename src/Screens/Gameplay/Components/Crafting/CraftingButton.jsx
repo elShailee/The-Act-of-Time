@@ -2,13 +2,15 @@ import './CraftingButton.css';
 import texts from 'texts';
 import { useDispatch, useSelector } from 'react-redux';
 import { unmountComponents, mountComponents } from 'Redux/Slices/MountedComponents';
+import { isComponentMountedSelector } from 'Redux/Selectors/MountedComponentsSelectors';
 import { animated } from 'react-spring';
 import useAnimations from 'Utils/useAnimations';
 
 export default function CraftingButton() {
 	const dispatch = useDispatch();
-	const isCraftingWindowMounted = useSelector(state => state.MountedComponents.CraftingWindow);
+	const isCraftingWindowMounted = useSelector(isComponentMountedSelector('CraftingWindow'));
 	const { animateCraftingButton, animateCraftingButtonText } = useAnimations();
+
 	const onCraftingButtonClick = () => {
 		if (isCraftingWindowMounted) {
 			dispatch(unmountComponents('CraftingWindow'));
