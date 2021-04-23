@@ -49,7 +49,7 @@ const gameplayTexts = {
 		ItemDiscovered: 'Item discovered: ',
 		Achievments: 'Achievments: ',
 		DisatsteresServived: 'Disatsteres servived: ',
-		Helth: 'Helth: ',
+		Health: 'Health: ',
 		SleepDuration: 'Sleep duration avg: ',
 		SleepQuality: 'Sleep quality: ',
 		FoodQuality: 'Food quality: ',

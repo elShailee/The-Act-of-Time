@@ -19,7 +19,7 @@ const characterInfoExampleData = {
 		memory: 5,
 		futurePlanning: 9,
 		importantItems: 3,
-		characterHelth: '47%',
+		characterHealth: '47%',
 		sleepQuality: '75%',
 		avgSleepADay: 8,
 	},
