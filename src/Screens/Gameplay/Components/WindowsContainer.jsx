@@ -8,17 +8,18 @@ import SeenWindow from 'Screens/Gameplay/Components/Seen/SeenWindow';
 import CharacterWindow from 'Screens/Gameplay/Components/Character/CharacterWindow';
 import { useDispatch, useSelector } from 'react-redux';
 import { unmountComponents } from 'Redux/Slices/MountedComponents';
+import { isComponentMountedSelector } from 'Redux/Selectors/MountedComponentsSelectors';
 
 export default function AllTheFloatingWindows() {
 	const dispatch = useDispatch();
 
-	const isCoinsPurchaseWindowMounted = useSelector(state => state.MountedComponents.CoinsPurchaseWindow);
-	const isEnergyPurchaseWindowMounted = useSelector(state => state.MountedComponents.EnergyPurchaseWindow);
-	const isSettingsWindowMounted = useSelector(state => state.MountedComponents.SettingsWindow);
-	const isActionsWindowMounted = useSelector(state => state.MountedComponents.ActionsWindow);
-	const isCraftingWindowMounted = useSelector(state => state.MountedComponents.CraftingWindow);
-	const isSeenWindowMounted = useSelector(state => state.MountedComponents.SeenWindow);
-	const isCharacterWindowMounted = useSelector(state => state.MountedComponents.CharacterWindow);
+	const isCoinsPurchaseWindowMounted = useSelector(isComponentMountedSelector('CoinsPurchaseWindow'));
+	const isEnergyPurchaseWindowMounted = useSelector(isComponentMountedSelector('EnergyPurchaseWindow'));
+	const isSettingsWindowMounted = useSelector(isComponentMountedSelector('SettingsWindow'));
+	const isActionsWindowMounted = useSelector(isComponentMountedSelector('ActionsWindow'));
+	const isCraftingWindowMounted = useSelector(isComponentMountedSelector('CraftingWindow'));
+	const isSeenWindowMounted = useSelector(isComponentMountedSelector('SeenWindow'));
+	const isCharacterWindowMounted = useSelector(isComponentMountedSelector('CharacterWindow'));
 
 	const CoinsPurchaseWindowAsVar = (
 		<CoinsPurchaseWindow unmountCoinsPurchaseWindow={() => dispatch(unmountComponents(['CoinsPurchaseWindow']))} />
