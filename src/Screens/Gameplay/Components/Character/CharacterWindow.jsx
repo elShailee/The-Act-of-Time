@@ -25,12 +25,18 @@ export default function CharacterWindow({ unmountCharacterWindow }) {
 	};
 	const gridItem = (numberOfCol, numberOfRow) => {
 		let count = 0;
-		for (var i = 0; i < numberOfRow; i++) {
-			for (var j = 0; j < numberOfCol; j++) {
-				<div className='character-info-grid-item'>{showItem(count)}</div>;
+		let arr = [];
+		for (let i = 0; i < numberOfRow; i++) {
+			for (let j = 0; j < numberOfCol; j++) {
+				arr[count] = (
+					<div key={count} className='character-info-grid-item'>
+						{showItem(count)}
+					</div>
+				);
 				count++;
 			}
 		}
+		return arr;
 	};
 	const FuturePlan =
 		fromDB('futurePlanning') < 7 ? fromDB('futurePlanning') + ' days' : Math.round(fromDB('futurePlanning') / 7) + ' weeks';
@@ -59,7 +65,7 @@ export default function CharacterWindow({ unmountCharacterWindow }) {
 					</div>
 					<div>
 						<div id='itemTitle'>{fromText('ItemsTable')}</div>
-						<div id='character-info-grid-container'>{gridItem(5, 3)}</div>
+						<div id='character-info-grid-container'>{gridItem(5, 3).map(ele => ele)}</div>
 					</div>
 				</div>
 				<div className='sideContainer'>
