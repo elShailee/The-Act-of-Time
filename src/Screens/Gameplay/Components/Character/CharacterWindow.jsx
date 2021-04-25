@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import GeneralWindow from 'GeneralComponents/GeneralWindow';
 import './CharacterWindow.css';
 import { itemsDetailes } from 'Texts/gameplayTexts';
@@ -6,18 +6,20 @@ import CharacterWindowTitle from './CharacterWindowTitle';
 import characterInfo from 'ExampleData/characterInfoExampleData';
 import { characterInfoWindow } from 'Texts/gameplayTexts';
 import characterItemHover from 'Assets/characterItemHover.png';
+import hours from 'Utils/TimingUtils/hours';
+import daysOrWeeks from 'Utils/TimingUtils/daysOrWeeks';
 
 export default function CharacterWindow({ unmountCharacterWindow }) {
-	const fromDB = data => characterInfo.fromDB[data];
-	const fromBuild = data => characterInfo.fromBuild[data];
-	const fromText = data => characterInfoWindow[data];
-	let secondesInHoures = 3600;
-	const Timep = Math.round(fromDB('timePlayed') / secondesInHoures);
-	function onHover(props) {
-		return itemsDetailes.item[props];
-	}
+	const hoverRef = useRef(null);
+	const characterInfoFromDB = data => characterInfo.fromDB[data];
+	const characterInfoFromSettings = data => characterInfo.fromBuild[data];
+	const categoriesFromText = data => characterInfoWindow[data];
+	const onHover = props => {
+		console.log('when hover should show detailes in the hover box this triger is in CharcterWindow.jsx');
+		hoverRef.current.innerHTML = itemsDetailes.item[props];
+	};
 	const showItem = num => {
-		return fromDB('importantItems') > num ? (
+		return characterInfoFromDB('importantItems') > num ? (
 			<img alt='Item' src={characterInfo.fromBuild.itemList[num]} onMouseOver={() => onHover(num)} />
 		) : (
 			''
@@ -38,8 +40,7 @@ export default function CharacterWindow({ unmountCharacterWindow }) {
 		}
 		return arr;
 	};
-	const FuturePlan =
-		fromDB('futurePlanning') < 7 ? fromDB('futurePlanning') + ' days' : Math.round(fromDB('futurePlanning') / 7) + ' weeks';
+	const FuturePlan = daysOrWeeks(characterInfoFromDB('futurePlanning'));
 
 	return (
 		<GeneralWindow
@@ -52,38 +53,44 @@ export default function CharacterWindow({ unmountCharacterWindow }) {
 				<div className='sideContainer'>
 					<div id='character-info-grid-content'>
 						<p>
-							{fromText('JoinedAt')} {fromDB('joinedDate')}
+							{categoriesFromText('JoinedAt')} {characterInfoFromDB('joinedDate')}
 							<br />
-							{fromText('TimePlayed')} {Timep} {fromText('Hours')} <br />
-							{fromText('ItemDiscovered')} {fromDB('itemDiscovered')}/{fromBuild('numberOfItems')}
+							{categoriesFromText('TimePlayed')} {hours(characterInfoFromDB('timePlayed'))} {categoriesFromText('Hours')}{' '}
 							<br />
-							{fromText('Achievments')} {fromDB('achiementEarned')}/{fromBuild('numberOfAchiement')}
+							{categoriesFromText('ItemDiscovered')} {characterInfoFromDB('itemDiscovered')}/
+							{characterInfoFromSettings('numberOfItems')}
 							<br />
-							{fromText('DisatsteresServived')} {fromDB('disatsteresServived')}/{fromDB('disatsteresOcarancy')}
+							{categoriesFromText('Achievments')} {characterInfoFromDB('achiementEarned')}/
+							{characterInfoFromSettings('numberOfAchiement')}
+							<br />
+							{categoriesFromText('DisatsteresServived')} {characterInfoFromDB('disatsteresServived')}/
+							{characterInfoFromDB('disatsteresOcarancy')}
 							<br />
 						</p>
 					</div>
 					<div>
-						<div id='itemTitle'>{fromText('ItemsTable')}</div>
+						<div id='itemTitle'>{categoriesFromText('ItemsTable')}</div>
 						<div id='character-info-grid-container'>{gridItem(5, 3).map(ele => ele)}</div>
 					</div>
 				</div>
 				<div className='sideContainer'>
 					<div id='CS-grid-container'>
 						<p>
-							{fromText('Health')} {fromDB('characterHealth')} <br /> {fromText('SleepDuration')}
-							{fromDB('avgSleepADay')} {fromText('HouresADay')} <br /> {fromText('SleepQuality')}
-							{fromDB('sleepQuality')} <br /> {fromText('FoodQuality')}
-							{fromDB('foodQuality')}
-							<br /> {fromText('HeatTolerence')} {fromDB('heatTolerence')}
-							<br /> {fromText('ColdTolerence')} {fromDB('coldTolerence')}
-							<br /> {fromText('Memory')} {fromDB('memory')} {fromText('Tasks')} <br />
-							{fromText('FuturePlanning')} {FuturePlan}
+							{categoriesFromText('Health')} {characterInfoFromDB('characterHealth')} <br />{' '}
+							{categoriesFromText('SleepDuration')}
+							{characterInfoFromDB('avgSleepADay')} {categoriesFromText('HouresADay')} <br />{' '}
+							{categoriesFromText('SleepQuality')}
+							{characterInfoFromDB('sleepQuality')} <br /> {categoriesFromText('FoodQuality')}
+							{characterInfoFromDB('foodQuality')}
+							<br /> {categoriesFromText('HeatTolerence')} {characterInfoFromDB('heatTolerence')}
+							<br /> {categoriesFromText('ColdTolerence')} {characterInfoFromDB('coldTolerence')}
+							<br /> {categoriesFromText('Memory')} {characterInfoFromDB('memory')} {categoriesFromText('Tasks')} <br />
+							{categoriesFromText('FuturePlanning')} {FuturePlan}
 						</p>
 					</div>
-					<div>
-						{/* <div id='hover-box'> */}
-						<img alt='Item hover background' className='imageItemHover' src={characterItemHover} />
+					<div id='hover-box'>
+						<img alt='Item hover background' id='hover-img' src={characterItemHover} />
+						<div id='hover-text' ref={hoverRef}></div>
 					</div>
 				</div>
 			</div>

@@ -64,9 +64,9 @@ const gameplayTexts = {
 	},
 	itemsDetailes: {
 		item: [
-			'hamer',
-			'b',
-			'c',
+			'hammer gives you more strength and power',
+			'axe',
+			'fire',
 			'd',
 			'e',
 			'f',

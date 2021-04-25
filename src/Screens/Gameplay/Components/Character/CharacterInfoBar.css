@@ -1,18 +1,18 @@
 #characterInfoBarContainer {
-	--CIB-width: 275px; /*CIB = character Info Bar 275 at default*/
-	--CIB-height: calc(var(--CIB-width) * 0.4); /*110px at default*/
-	--CIB-textPartHeight: calc(var(--CIB-height) * 0.6); /*66px at default*/
-	--halfOf-CIB-width: calc(var(--CIB-width) / 2); /*137.5px at default*/
-	--CIB-text-width: calc(var(--CIB-width) * 0.4); /*110px at default*/
-	--CIB-Image-size: calc(var(--CIB-width) * 0.32); /*88px at default*/
-	--bigFontSize: calc(var(--CIB-width) * 0.08); /*22px at default*/
-	--fontSize: calc(var(--CIB-width) * 0.06); /*16.5px at default*/
+	--CIB-width: calc(4.6 * var(--width-unit)); /*CIB = character Info Bar 4.6*width unit at default*/
+	--CIB-height: calc(var(--CIB-width) * 0.4);
+	--CIB-textPartHeight: calc(var(--CIB-height) * 0.6);
+	--halfOf-CIB-width: calc(var(--CIB-width) / 2);
+	--CIB-text-width: calc(var(--CIB-width) * 0.4);
+	--CIB-Image-size: calc(var(--CIB-width) * 0.32);
+	--bigFontSize: calc(var(--CIB-width) * 0.08);
+	--fontSize: calc(var(--CIB-width) * 0.06);
 	--CIB-font: Helvetica;
 	--XP-bar-height: calc(var(--CIB-height) * 0.05);
 	position: absolute;
 	left: calc(50% - var(--halfOf-CIB-width));
 	user-select: none;
-	top: 8px;
+	top: calc(0.5 * var(--height-unit));
 }
 
 #characterInfoBar {
@@ -21,9 +21,9 @@
 	background-color: #800020;
 	text-align: center;
 	clip-path: polygon(
-		/*  left corner going down  */ 0px calc(var(--CIB-width) * 0.15),
-		/*  top left corner         */ calc(var(--CIB-width) * 0.09) 0px,
-		/*  top right corner        */ calc(var(--CIB-width) * 0.92) 0px,
+		/*  left corner going down  */ 0 calc(var(--CIB-width) * 0.15),
+		/*  top left corner         */ calc(var(--CIB-width) * 0.09) 0,
+		/*  top right corner        */ calc(var(--CIB-width) * 0.92) 0,
 		/*  right corner            */ var(--CIB-width) calc(var(--CIB-width) * 0.08),
 		/*  bottom right corner     */ calc(var(--CIB-width) * 0.86) var(--CIB-textPartHeight),
 		/*  right middele corner    */ calc(var(--CIB-width) * 0.46) var(--CIB-textPartHeight),

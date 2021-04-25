@@ -9,8 +9,8 @@
 }
 
 .imageItem {
-	width: calc(2.5 * 3.125vw);
-	height: calc(3 * (50vh / 9));
+	width: calc(2.5 * var(--width-unit));
+	height: calc(2.5 * var(--width-unit));
 	border-radius: 50%;
 	grid-row-start: 1;
 	grid-row-end: 4;
@@ -30,8 +30,8 @@
 }
 
 .XPBar {
-	--xp-Width: calc(4.75 * 3.125vw);
-	--xp-Height: calc(0.5 * (50vh / 9));
+	--xp-Width: calc(4.75 * var(--width-unit));
+	--xp-Height: calc(0.5 * var(--width-unit));
 }
 
 .WxpCapacity {
@@ -60,7 +60,7 @@
 
 .WxpInNumbers {
 	position: relative;
-	font-size: calc(0.5 * (50vh / 9));
+	font-size: calc(0.4 * var(--width-unit));
 	text-align: center;
 	color: black;
 }
