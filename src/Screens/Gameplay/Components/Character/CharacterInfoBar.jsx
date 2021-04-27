@@ -18,13 +18,13 @@ export default function CharacterInfoBar() {
 			<div className='xpBar' id='xpQuantity'></div>
 			<div id='characterInfoBar'>
 				<div className='characterTextCointainer'>
-					<div className='characterNameText'>{characterInfo.fromDB.characterName} </div>
-					<div className='characterLevelText'>Lvl {characterInfo.fromDB.characterLevel} </div>
+					<div className='characterNameText'>{characterInfo.personalData.characterName} </div>
+					<div className='characterLevelText'>Lvl {characterInfo.personalData.characterLevel} </div>
 				</div>
 				<img
 					alt='character_face'
 					className='characterImage'
-					src={characterInfo.fromDB.characterImage}
+					src={characterInfo.personalData.characterImage}
 					onClick={onCharcterImageClick}
 				/>
 			</div>

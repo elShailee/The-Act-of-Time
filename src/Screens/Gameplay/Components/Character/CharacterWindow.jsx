@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 import GeneralWindow from 'GeneralComponents/GeneralWindow';
 import './CharacterWindow.css';
 import { itemsDetailes } from 'Texts/gameplayTexts';
@@ -10,17 +10,21 @@ import hours from 'Utils/TimingUtils/hours';
 import daysOrWeeks from 'Utils/TimingUtils/daysOrWeeks';
 
 export default function CharacterWindow({ unmountCharacterWindow }) {
-	const hoverRef = useRef(null);
-	const characterInfoFromDB = data => characterInfo.fromDB[data];
-	const characterInfoFromSettings = data => characterInfo.fromBuild[data];
+	const [hover, setHover] = useState(false);
+	const characterInfoPersonalData = data => characterInfo.personalData[data];
+	const characterInfoGlobalData = data => characterInfo.globalData[data];
 	const categoriesFromText = data => characterInfoWindow[data];
 	const onHover = props => {
-		console.log('when hover should show detailes in the hover box this triger is in CharcterWindow.jsx');
-		hoverRef.current.innerHTML = itemsDetailes.item[props];
+		setHover(itemsDetailes.item[props]);
 	};
 	const showItem = num => {
-		return characterInfoFromDB('importantItems') > num ? (
-			<img alt='Item' src={characterInfo.fromBuild.itemList[num]} onMouseOver={() => onHover(num)} />
+		return characterInfoPersonalData('importantItems') > num ? (
+			<img
+				alt='Item'
+				src={characterInfo.globalData.itemList[num]}
+				onMouseOver={() => onHover(num)}
+				onMouseLeave={() => setHover('')}
+			/>
 		) : (
 			''
 		);
@@ -40,7 +44,7 @@ export default function CharacterWindow({ unmountCharacterWindow }) {
 		}
 		return arr;
 	};
-	const FuturePlan = daysOrWeeks(characterInfoFromDB('futurePlanning'));
+	const FuturePlan = daysOrWeeks(characterInfoPersonalData('futurePlanning'));
 
 	return (
 		<GeneralWindow
@@ -53,18 +57,18 @@ export default function CharacterWindow({ unmountCharacterWindow }) {
 				<div className='sideContainer'>
 					<div id='character-info-grid-content'>
 						<p>
-							{categoriesFromText('JoinedAt')} {characterInfoFromDB('joinedDate')}
+							{categoriesFromText('JoinedAt')} {characterInfoPersonalData('joinedDate')}
 							<br />
-							{categoriesFromText('TimePlayed')} {hours(characterInfoFromDB('timePlayed'))} {categoriesFromText('Hours')}{' '}
+							{categoriesFromText('TimePlayed')} {hours(characterInfoPersonalData('timePlayed'))}{' '}
+							{categoriesFromText('Hours')} <br />
+							{categoriesFromText('ItemDiscovered')} {characterInfoPersonalData('itemDiscovered')}/
+							{characterInfoGlobalData('numberOfItems')}
 							<br />
-							{categoriesFromText('ItemDiscovered')} {characterInfoFromDB('itemDiscovered')}/
-							{characterInfoFromSettings('numberOfItems')}
+							{categoriesFromText('Achievments')} {characterInfoPersonalData('achiementEarned')}/
+							{characterInfoGlobalData('numberOfAchiement')}
 							<br />
-							{categoriesFromText('Achievments')} {characterInfoFromDB('achiementEarned')}/
-							{characterInfoFromSettings('numberOfAchiement')}
-							<br />
-							{categoriesFromText('DisatsteresServived')} {characterInfoFromDB('disatsteresServived')}/
-							{characterInfoFromDB('disatsteresOcarancy')}
+							{categoriesFromText('DisatsteresServived')} {characterInfoPersonalData('disatsteresServived')}/
+							{characterInfoPersonalData('disatsteresOcarancy')}
 							<br />
 						</p>
 					</div>
@@ -76,21 +80,22 @@ export default function CharacterWindow({ unmountCharacterWindow }) {
 				<div className='sideContainer'>
 					<div id='CS-grid-container'>
 						<p>
-							{categoriesFromText('Health')} {characterInfoFromDB('characterHealth')} <br />{' '}
+							{categoriesFromText('Health')} {characterInfoPersonalData('characterHealth')} <br />{' '}
 							{categoriesFromText('SleepDuration')}
-							{characterInfoFromDB('avgSleepADay')} {categoriesFromText('HouresADay')} <br />{' '}
+							{characterInfoPersonalData('avgSleepADay')} {categoriesFromText('HouresADay')} <br />{' '}
 							{categoriesFromText('SleepQuality')}
-							{characterInfoFromDB('sleepQuality')} <br /> {categoriesFromText('FoodQuality')}
-							{characterInfoFromDB('foodQuality')}
-							<br /> {categoriesFromText('HeatTolerence')} {characterInfoFromDB('heatTolerence')}
-							<br /> {categoriesFromText('ColdTolerence')} {characterInfoFromDB('coldTolerence')}
-							<br /> {categoriesFromText('Memory')} {characterInfoFromDB('memory')} {categoriesFromText('Tasks')} <br />
+							{characterInfoPersonalData('sleepQuality')} <br /> {categoriesFromText('FoodQuality')}
+							{characterInfoPersonalData('foodQuality')}
+							<br /> {categoriesFromText('HeatTolerence')} {characterInfoPersonalData('heatTolerence')}
+							<br /> {categoriesFromText('ColdTolerence')} {characterInfoPersonalData('coldTolerence')}
+							<br /> {categoriesFromText('Memory')} {characterInfoPersonalData('memory')} {categoriesFromText('Tasks')}{' '}
+							<br />
 							{categoriesFromText('FuturePlanning')} {FuturePlan}
 						</p>
 					</div>
 					<div id='hover-box'>
 						<img alt='Item hover background' id='hover-img' src={characterItemHover} />
-						<div id='hover-text' ref={hoverRef}></div>
+						<div id='hover-text'>{hover}</div>
 					</div>
 				</div>
 			</div>

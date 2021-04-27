@@ -2,7 +2,7 @@ import characterImage from 'Assets/characterImage.png';
 import itemImage from 'Assets/placeholderIcon.png';
 
 const characterInfoExampleData = {
-	fromDB: {
+	personalData: {
 		characterName: 'Johon Do',
 		characterImage,
 		characterLevel: 3,
@@ -23,7 +23,7 @@ const characterInfoExampleData = {
 		sleepQuality: '75%',
 		avgSleepADay: 8,
 	},
-	fromBuild: {
+	globalData: {
 		numberOfItems: 350,
 		numberOfAchiement: 50,
 		xpRequiredToNextLevel: [20, 50, 100, 250, 600],

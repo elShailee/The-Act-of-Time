@@ -9,23 +9,25 @@
 
 #charcaterContent {
 	background: #ff99b3;
-	width: calc(8.5 * 3.125vw);
-	height: calc(7.75 * (50vh / 9));
+	width: calc(8.75 * var(--width-unit));
+	height: calc(7.75 * var(--height-unit));
 	border: 0.1vh #ff4d79 solid;
 	border-radius: calc(0.1 * var(--width-unit));
-	padding: 0.5vw 0 0 0.15vw;
+	padding: 0.3vw 0.15vw 0 0.15vw;
 	display: flex;
 	flex-direction: row;
 	grid-gap: 1vw;
 	user-select: none;
+	overflow-y: auto;
 }
 
 .sideContainer {
-	width: calc(4 * 3.125vw);
-	height: calc(7.5 * (50vh / 9));
+	width: calc(4 * var(--width-unit));
+	height: calc(7.5 * var(--height-unit));
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	padding-left: calc(0.1 * var(--width-unit));
 }
 
 #character-info-grid-content {
@@ -36,35 +38,36 @@
 	text-align: left;
 	font-size: 0.9vw;
 	line-height: 3.5vh;
-	height: calc(4 * (50vh / 9));
-	width: calc(4 * 3.125vw);
+	height: calc(4 * var(--height-unit));
+	width: calc(4 * var(--width-unit));
 }
 
 #itemTitle {
 	background-color: #c65353;
 	border: 0.2vh solid #bf4040;
-	width: calc(2.4 * 3.125vw);
-	height: calc(0.8 * (50vh / 9));
+	width: calc(2.38 * var(--width-unit));
+	height: calc(0.78 * var(--width-unit));
 	font-size: 1.2vw;
+	line-height: 2.4vw;
 	color: #333333;
 }
 
 #character-info-grid-container {
 	display: grid;
-	grid-template-columns: 2.5vw 2.5vw 2.5vw 2.5vw 2.5vw;
-	grid-template-rows: calc(40vh / 9) calc(40vh / 9) calc(40vh / 9);
+	grid-template-columns:
+		calc(0.8 * var(--width-unit)) calc(0.8 * var(--width-unit)) calc(0.8 * var(--width-unit))
+		calc(0.8 * var(--width-unit)) calc(0.8 * var(--width-unit));
+	grid-template-rows: calc(0.8 * var(--width-unit)) calc(0.8 * var(--width-unit)) calc(0.8 * var(--width-unit));
 }
 
 .character-info-grid-item {
 	background-color: #cc6666;
 	border: 0.1vh solid #bf4040;
-	height: calc(0.85 * var(--height-unit));
-	width: calc(0.85 * var(--width-unit));
 }
 img {
-	width: 2.2vw;
-	height: calc(0.78 * var(--height-unit));
-	padding-right: 0.3vw;
+	width: calc(0.73 * var(--width-unit));
+	height: calc(0.73 * var(--width-unit));
+	padding-top: 0.05vw;
 }
 
 #CS-grid-container {
@@ -74,15 +77,15 @@ img {
 	border-radius: 5%;
 	text-align: left;
 	font-size: 1vw;
-	line-height: 3vh;
-	height: calc(5 * (50vh / 9));
-	width: calc(4 * 3.125vw);
+	line-height: 3.5vh;
+	height: calc(5.75 * var(--height-unit));
+	width: calc(4 * var(--width-unit));
 }
 
 #hover-box {
 	position: relative;
 	text-align: center;
-	height: calc(1.5 * var(--height-unit));
+	height: calc(1.5 * var(--width-unit));
 	width: calc(4.15 * var(--width-unit));
 }
 
@@ -93,10 +96,9 @@ img {
 
 #hover-text {
 	position: absolute;
-	top: 20%;
+	top: 25%;
 	width: 100%;
-	height: 100%;
-	font-size: 0.8vw;
-	line-height: 3vh;
+	font-size: 1.1vw;
+	line-height: 1vw;
 	color: #333333;
 }

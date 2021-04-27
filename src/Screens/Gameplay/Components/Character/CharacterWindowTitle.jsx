@@ -16,19 +16,19 @@ export default function CharacterWindowTitle() {
 			<img
 				alt='character Face'
 				className='imageItem'
-				src={characterInfo.fromDB.characterImage}
+				src={characterInfo.personalData.characterImage}
 				onClick={onCharcterImageClick}
 			/>
 			<div className='nameItem' onClick={onCharcterNameClick}>
-				{characterInfo.fromDB.characterName}
+				{characterInfo.personalData.characterName}
 			</div>
-			<div className='lvlItem'>Lvl {characterInfo.fromDB.characterLevel} </div>
+			<div className='lvlItem'>Lvl {characterInfo.personalData.characterLevel} </div>
 			<div className='XPBar'>
 				<div className='WxpCapacity' />
 				<div className='WxpQuantity' />
 				<div className='WxpInNumbers'>
-					{characterInfo.fromDB.xpAchived}/
-					{characterInfo.fromBuild.xpRequiredToNextLevel[characterInfo.fromDB.characterLevel]}
+					{characterInfo.personalData.xpAchived}/
+					{characterInfo.globalData.xpRequiredToNextLevel[characterInfo.personalData.characterLevel]}
 				</div>
 			</div>
 		</div>
