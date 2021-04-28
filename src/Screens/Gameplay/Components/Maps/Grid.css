@@ -1,0 +1,8 @@
+.grid {
+	height: 88vh;
+	margin-top: 12vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transform: scaleX(-1) rotate(90deg);
+}

@@ -1,5 +1,7 @@
 .generalTab {
-  border-radius: 5px;
-  padding: 9px;
-  font-size: 14px;
+	position: fixed;
+	z-index: 1;
+	border-radius: 5px;
+	padding: 9px;
+	font-size: 14px;
 }

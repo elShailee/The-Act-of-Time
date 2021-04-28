@@ -6,11 +6,10 @@
 	border: 1px solid #101010;
 	right: 200px;
 	margin-right: calc(var(--height-unit) / 2);
-	padding: 5%;
 }
 
 #settingsButtonIcon {
-	width: 100%;
-	height: 100%;
+	width: 75%;
+	height: 75%;
 	-webkit-user-drag: none;
 }

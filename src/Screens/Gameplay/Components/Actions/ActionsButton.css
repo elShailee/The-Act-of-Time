@@ -1,6 +1,6 @@
 #actionsButton {
 	background-color: khaki;
-	height: 40px;
+	height: var(--height-unit);
 }
 
 #actionsButtonAndTabContainer {

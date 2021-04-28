@@ -3,6 +3,7 @@ import './GameplayScreen.css';
 import 'GeneralComponents/GeneralButton.css';
 import CharacterInfoBar from 'Screens/Gameplay/Components/Character/CharacterInfoBar';
 import ActionsButton from 'Screens/Gameplay/Components/Actions/ActionsButton';
+import Grid from 'Screens/Gameplay/Components/Maps/Grid';
 import EnergyButton from 'Screens/Gameplay/Components/Energy/EnergyButton';
 import CoinsButton from 'Screens/Gameplay/Components/Coins/CoinsButton';
 import SeenButton from 'Screens/Gameplay/Components/Seen/SeenButton';
@@ -26,6 +27,10 @@ export default function GameplayScreen() {
 			<div id='upperRightButtonsContainer'>
 				<SettingsButton />
 				<ActionsButton />
+			</div>
+
+			<div id='mapContainer'>
+				<Grid />
 			</div>
 
 			<div id='disastersContainer'>
