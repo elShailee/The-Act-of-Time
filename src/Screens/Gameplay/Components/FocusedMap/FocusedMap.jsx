@@ -1,5 +1,4 @@
-import './Tile.jsx';
-import './Grid.css';
+import './FocusedMap.css';
 import Tile from './Tile.jsx';
 
 const GRID_ROW_LENGTH = 14;
