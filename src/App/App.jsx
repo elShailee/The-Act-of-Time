@@ -4,12 +4,16 @@ import GameplayScreen from 'Screens/Gameplay/GameplayScreen';
 import RenderIfBrowserValidHOC from 'App/RenderIfBrowserValidHOC';
 import store from 'Redux/store';
 import { Provider } from 'react-redux';
+import { ThemeProvider } from 'styled-components';
+import theme from 'theme';
 
 const App = () => (
 	<RenderIfBrowserValidHOC>
-		<Provider store={store}>
-			<GameplayScreen />
-		</Provider>
+		<ThemeProvider theme={theme}>
+			<Provider store={store}>
+				<GameplayScreen />
+			</Provider>
+		</ThemeProvider>
 	</RenderIfBrowserValidHOC>
 );
 
