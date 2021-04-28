@@ -54,7 +54,7 @@ export default function CharacterWindow({ unmountCharacterWindow }) {
 			containerId='charcaterContentContainer'
 		>
 			<div id='charcaterContent'>
-				<div className='sideContainer'>
+				<div className='sidesContainer'>
 					<div id='character-info-grid-content'>
 						<p>
 							{categoriesFromText('JoinedAt')} {characterInfoPersonalData('joinedDate')}
@@ -72,12 +72,12 @@ export default function CharacterWindow({ unmountCharacterWindow }) {
 							<br />
 						</p>
 					</div>
-					<div>
+					<div id='itemTable'>
 						<div id='itemTitle'>{categoriesFromText('ItemsTable')}</div>
 						<div id='character-info-grid-container'>{gridItem(5, 3).map(ele => ele)}</div>
 					</div>
 				</div>
-				<div className='sideContainer'>
+				<div className='sidesContainer'>
 					<div id='CS-grid-container'>
 						<p>
 							{categoriesFromText('Health')} {characterInfoPersonalData('characterHealth')} <br />{' '}
