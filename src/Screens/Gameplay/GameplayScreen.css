@@ -23,8 +23,9 @@
 }
 
 #mapContainer {
+	pointer-events: none;
 	position: absolute;
-	left: 31vw;
+	left: 9vw;
 	display: flex;
 }
 
