@@ -12,16 +12,7 @@ import Map from 'Screens/Gameplay/Components/Map/Map';
 import DisastersIcon from 'Screens/Gameplay/Components/Disasters/DisastersIcon';
 import DisasterCounter from 'Screens/Gameplay/Components/Disasters/DisasterCounter';
 import AllTheFloatingWindows from 'Screens/Gameplay/Components/WindowsContainer';
-import styled from 'styled-components';
 
-const Adiv = styled.div`
-	//creating a new styled component
-	background-color: ${props => props.theme.bg}; //here's the most basic way to use the theme.
-	width: 400px;
-	height: 400px;
-	top: 0px;
-	position: fixed;
-`;
 export default function GameplayScreen() {
 	return (
 		<div id='gameplayScreen'>
@@ -48,7 +39,6 @@ export default function GameplayScreen() {
 			</div>
 			<Map />
 			<AllTheFloatingWindows />
-			<Adiv />
 		</div>
 	);
 }

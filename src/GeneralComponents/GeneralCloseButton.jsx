@@ -1,9 +1,6 @@
 import React from 'react';
+import { CloseButton } from './GeneralButtons';
 
 export default function GeneralCloseButton({ unmountWindow }) {
-	return (
-		<div className='generalButton closeButton' onClick={unmountWindow}>
-			X
-		</div>
-	);
+	return <CloseButton onClick={unmountWindow}>X</CloseButton>;
 }

@@ -1,5 +1,9 @@
 const theme = {
-	bg: 'greenyellow',
+	sizes: {
+		icons: {
+			s: '19px',
+		},
+	},
 };
 
 export default theme;
