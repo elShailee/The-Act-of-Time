@@ -1,5 +1,4 @@
 #settingsButton {
-	--height-unit: calc(50vh / 9);
 	width: var(--height-unit);
 	height: var(--height-unit);
 	background-color: #778ca1;
