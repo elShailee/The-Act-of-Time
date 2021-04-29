@@ -1,38 +1,38 @@
 const mapExampleData = {
 	woods: {
-		title: 'Walking',
-		description: 'the journey might be rough, make sure to have decent supply!',
-		isDurationDynamic: true /*should decide on this specific one.*/,
+		title: 'wods',
+		description: 'a forest tile',
+		color: 'green',
 	},
 	fields: {
-		title: 'Harverting',
-		description: 'Should be straightforward, but who know what might happen?',
-		isDurationDynamic: true,
+		title: 'fields',
+		description: 'a field tile',
+		color: 'lightgreen',
 	},
 	mountens: {
-		title: 'Using Milker on Cows',
-		description: "I wonder what that'll do...",
-		isDurationDynamic: false,
+		title: 'mountens',
+		description: 'a mounten tile',
+		color: 'brown',
 	},
 	sea: {
-		title: 'Sleeping',
-		description: 'You sure deserve it, just make sure to reach safety first.',
-		isDurationDynamic: true,
+		title: 'sea',
+		description: 'a sea tile',
+		color: 'blue',
 	},
 	desert: {
-		title: 'Building Campfire',
-		description: 'Some call flames a double-edged blade, keep that in mind.',
-		isDurationDynamic: false,
+		title: 'desert',
+		description: 'a desert tile',
+		color: 'orange',
 	},
 	sand: {
-		title: 'Digging a Cave',
-		description: 'Tools makes all the difference.',
-		isDurationDynamic: false,
+		title: 'sand',
+		description: 'a sand tile',
+		color: 'yelow',
 	},
 	ice: {
-		title: 'Setting  a Bear Trap',
-		description: 'You never know what could happen...',
-		isDurationDynamic: false,
+		title: 'ice',
+		description: 'a ice tile',
+		color: '#FFFAFA', // snow white or off white #FFFFF0
 	},
 };
 
