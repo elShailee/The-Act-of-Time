@@ -1,11 +1,13 @@
+/* ~Window~ */
 .generalWindow {
-	height: calc(11.5 * var(--hight-unit));
+	height: calc(11.5 * var(--height-unit));
 	width: fit-content;
 	position: fixed;
-	display: grid;
 	background-color: #ddcc66;
 	padding: 10px;
 	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
 }
 
 .centered {
@@ -25,16 +27,22 @@
     the center-right edge, so I can space from the right according to the existing buttons size in px  */
 }
 
-.contentContainer {
-	width: fit-content;
+/* ~Title~ */
+.windowTitleContainer {
+	display: flex;
+}
+
+.windowCloseButton {
+	margin-left: auto;
+}
+
+/* ~Content~ */
+.windowContentContainer {
 	min-width: 20vw;
 	margin-top: 7px;
 	background: #ffd095;
 	border-radius: 7px;
 	border: 1px #ddb075 solid;
 	text-align: center;
-}
-.generalWindowTitle {
-	align-self: left;
-	float: left;
+	height: 100%;
 }

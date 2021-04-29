@@ -20,7 +20,6 @@
 }
 
 .generalButton.closeButton {
-	float: right;
 	width: var(--width-unit);
 	height: calc(0.75 * var(--width-unit));
 	background-color: orchid;
