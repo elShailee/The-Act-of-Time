@@ -1,0 +1,8 @@
+#discoveryButton {
+	width: var(--discoveryButton-size);
+	height: var(--discoveryButton-size);
+	background-color: chartreuse;
+	border-radius: 50%;
+	line-height: var(--discoveryButton-size);
+	font-size: 2.2vh;
+}
