@@ -13,6 +13,7 @@
 	right: var(--width-unit);
 	top: var(--height-unit);
 	display: flex;
+	z-index: 1;
 }
 
 #upperLeftButtonsContainer {
@@ -20,6 +21,7 @@
 	left: var(--width-unit);
 	top: var(--height-unit);
 	display: flex;
+	z-index: 1;
 }
 
 #mapContainer {
