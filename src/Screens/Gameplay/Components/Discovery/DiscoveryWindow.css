@@ -20,7 +20,7 @@
 
 .downWindowContentContainer {
 	width: calc(4 * var(--width-unit));
-	height: calc(6.2 * var(--height-unit));
+	height: calc(5.9 * var(--height-unit));
 	display: flex;
 	flex-direction: row;
 	grid-gap: 0.75vw;
