@@ -1,8 +1,10 @@
 import styled from 'styled-components';
-import GeneralTab from 'GeneralComponents/GeneralTab';
-import { GeneralButton } from 'GeneralComponents/GeneralButtons';
+import GeneralTab from 'GeneralComponents/GeneralTab/styles';
+import { GeneralButton } from 'GeneralComponents/GeneralButton/styles';
+import hamburgerMenuIcon from 'Assets/hamburgerMenuIcon.png';
+import xIcon from 'Assets/xIcon.png';
 
-const MoreActionsButton = styled(GeneralButton)`
+export const MoreActionsButton = styled(GeneralButton)`
 	background-color: #ffa500;
 	padding: 0.5rem;
 	width: 50%;
@@ -12,11 +14,11 @@ const MoreActionsButton = styled(GeneralButton)`
 	border: 1px solid chocolate;
 `;
 
-const Tab = styled(GeneralTab)`
+export const Tab = styled(GeneralTab)`
 	background-color: sandybrown;
 `;
 
-const TabItem = styled.div`
+export const TabItem = styled.div`
 	display: flex;
 	justify-content: space-between;
 	background-color: rgb(252, 202, 156);
@@ -26,15 +28,19 @@ const TabItem = styled.div`
 	user-select: none;
 `;
 
-const DragHandle = styled.img`
-	width: ${({ theme }) => theme.sizes.icons.s};
-	height: ${({ theme }) => theme.sizes.icons.s};
+export const DragHandle = styled.img`
+	${({ theme }) => theme.componentsSizes.smallIcons};
 `;
+DragHandle.defaultProps = {
+	src: hamburgerMenuIcon,
+	alt: 'three lines to show you can select it',
+};
 
-const AbortButton = styled.img`
-	width: ${({ theme }) => theme.sizes.icons.s};
-	height: ${({ theme }) => theme.sizes.icons.s};
+export const AbortButton = styled.img`
+	${({ theme }) => theme.componentsSizes.smallIcons};
 	cursor: pointer;
 `;
-
-export { MoreActionsButton, Tab, TabItem, DragHandle, AbortButton };
+AbortButton.defaultProps = {
+	src: xIcon,
+	onClick: () => console.log('action abort triggered at an actionTabItem'),
+};

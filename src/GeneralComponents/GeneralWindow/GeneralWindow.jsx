@@ -1,5 +1,5 @@
 import React from 'react';
-import GeneralCloseButton from 'GeneralComponents/GeneralCloseButton';
+import GeneralCloseButton from 'GeneralComponents/GeneralCloseButton/GeneralCloseButton';
 import './GeneralWindow.css';
 
 export default function GeneralWindow({ children, unmountGeneralWindow, rightSided }) {
@@ -8,7 +8,7 @@ export default function GeneralWindow({ children, unmountGeneralWindow, rightSid
 
 	return (
 		<div className={composedClassName}>
-			<GeneralCloseButton unmountWindow={unmountGeneralWindow} />
+			<GeneralCloseButton onClick={unmountGeneralWindow} />
 			<div className='contentContainer'>{children}</div>
 		</div>
 	);

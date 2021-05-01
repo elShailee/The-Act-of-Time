@@ -1,8 +1,16 @@
+const sizes = {
+	icons: {
+		s: '19px',
+	},
+};
+
 const theme = {
-	sizes: {
-		icons: {
-			s: '19px',
-		},
+	sizes,
+	componentsSizes: {
+		smallIcons: `
+			width: ${sizes.icons.s};
+			height: ${sizes.icons.s};
+		`,
 	},
 };
 

@@ -2,7 +2,7 @@ import React from 'react';
 import './EnergyTab.css';
 import texts from 'texts';
 import EnergyIcon from 'Assets/placeholderIcon.png';
-import GeneralTab from 'GeneralComponents/GeneralTab';
+import GeneralTab from 'GeneralComponents/GeneralTab/styles';
 import { useDispatch } from 'react-redux';
 import { mountComponents, unmountComponents } from 'Redux/Slices/MountedComponents';
 
