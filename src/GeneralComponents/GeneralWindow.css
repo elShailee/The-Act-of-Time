@@ -1,9 +1,13 @@
+/* ~Window~ */
 .generalWindow {
+	height: calc(11.5 * var(--height-unit));
 	width: fit-content;
 	position: fixed;
 	background-color: #ddcc66;
-	padding: 7px;
+	padding: 10px;
 	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
 }
 
 .centered {
@@ -16,20 +20,29 @@
 }
 
 .rightSided {
-	right: 10vw;
+	right: calc(4 * var(--width-unit));
 	top: 52%;
 	transform: translate(0, -50%);
 	/*  same case as the comment above, instead this time I wanted it's anchor point to be on
-        the center-right edge, so I can space from the right according to the existing buttons size in px  */
+    the center-right edge, so I can space from the right according to the existing buttons size in px  */
 }
 
-.contentContainer {
-	width: fit-content;
+/* ~Title~ */
+.windowTitleContainer {
+	display: flex;
+}
+
+.windowCloseButton {
+	margin-left: auto;
+}
+
+/* ~Content~ */
+.windowContentContainer {
 	min-width: 20vw;
-	height: 80vh;
 	margin-top: 7px;
 	background: #ffd095;
 	border-radius: 7px;
 	border: 1px #ddb075 solid;
 	text-align: center;
+	height: 100%;
 }
