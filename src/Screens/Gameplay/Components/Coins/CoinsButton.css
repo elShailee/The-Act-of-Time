@@ -1,5 +1,5 @@
 #coinsButton {
-	width: 78px;
+	width: calc(2 * var(--width-unit));
 	height: var(--height-unit);
 	background-color: #ffa500;
 }

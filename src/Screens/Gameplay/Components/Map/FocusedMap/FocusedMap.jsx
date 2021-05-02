@@ -1,8 +1,8 @@
 import './FocusedMap.css';
 import Tile from './Tile.jsx';
 
-const GRID_ROWS = 16;
-const GRID_COLS = 30;
+const GRID_ROWS = 15;
+const GRID_COLS = 26;
 
 const newNode = Tile;
 

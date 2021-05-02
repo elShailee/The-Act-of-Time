@@ -13,21 +13,12 @@
 	right: var(--width-unit);
 	top: var(--height-unit);
 	display: flex;
-	z-index: 1;
 }
 
 #upperLeftButtonsContainer {
 	position: absolute;
 	left: var(--width-unit);
 	top: var(--height-unit);
-	display: flex;
-	z-index: 1;
-}
-
-#mapContainer {
-	pointer-events: none;
-	position: absolute;
-	left: 9vw;
 	display: flex;
 }
 

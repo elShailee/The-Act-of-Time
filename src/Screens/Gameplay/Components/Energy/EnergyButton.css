@@ -1,5 +1,5 @@
 #energyButton {
-	width: 158px;
+	width: calc(4 * var(--width-unit));
 	height: var(--height-unit);
 	background-color: aqua;
 	margin-right: calc(var(--height-unit) / 2);

@@ -3,7 +3,6 @@ import './GameplayScreen.css';
 import 'GeneralComponents/GeneralButton.css';
 import CharacterInfoBar from 'Screens/Gameplay/Components/Character/CharacterInfoBar';
 import ActionsButton from 'Screens/Gameplay/Components/Actions/ActionsButton';
-import FocusedMap from 'Screens/Gameplay/Components/FocusedMap/FocusedMap';
 import EnergyButton from 'Screens/Gameplay/Components/Energy/EnergyButton';
 import CoinsButton from 'Screens/Gameplay/Components/Coins/CoinsButton';
 import SeenButton from 'Screens/Gameplay/Components/Seen/SeenButton';
@@ -17,6 +16,7 @@ import AllTheFloatingWindows from 'Screens/Gameplay/Components/WindowsContainer'
 export default function GameplayScreen() {
 	return (
 		<div id='gameplayScreen'>
+			<Map />
 			<CharacterInfoBar />
 
 			<div id='upperLeftButtonsContainer'>
@@ -29,10 +29,6 @@ export default function GameplayScreen() {
 				<ActionsButton />
 			</div>
 
-			<div id='mapContainer'>
-				<FocusedMap />
-			</div>
-
 			<div id='disastersContainer'>
 				<DisastersIcon />
 				<DisasterCounter />
@@ -42,7 +38,6 @@ export default function GameplayScreen() {
 				<SeenButton />
 				<CraftingButton />
 			</div>
-			<Map />
 			<AllTheFloatingWindows />
 		</div>
 	);

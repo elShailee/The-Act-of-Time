@@ -1,0 +1,10 @@
+.grid {
+	position: absolute;
+	margin: 0 auto;
+	left: calc(50% - calc(13 * var(--height-unit)));
+	bottom: 0;
+}
+
+.row {
+	display: flex;
+}
