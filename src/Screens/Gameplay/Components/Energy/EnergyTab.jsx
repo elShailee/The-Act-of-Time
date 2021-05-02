@@ -5,6 +5,7 @@ import EnergyIcon from 'Assets/placeholderIcon.png';
 import GeneralTab from 'GeneralComponents/GeneralTab/styles';
 import { useDispatch } from 'react-redux';
 import { mountComponents, unmountComponents } from 'Redux/Slices/MountedComponents';
+import { GeneralButton } from 'GeneralComponents/GeneralButton/styles';
 
 export default function EnergyTab() {
 	const dispatch = useDispatch();
@@ -35,9 +36,9 @@ export default function EnergyTab() {
 				{texts.gameplay.energy.energyTab.perHour}
 			</div>
 
-			<div className='generalButton' id='getMoreEnergyButton' onClick={() => getMoreButtonClickHandler()}>
+			<GeneralButton id='getMoreEnergyButton' onClick={() => getMoreButtonClickHandler()}>
 				{texts.gameplay.energy.energyTab.getMore}
-			</div>
+			</GeneralButton>
 		</GeneralTab>
 	);
 }

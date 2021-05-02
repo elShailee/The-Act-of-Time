@@ -4,6 +4,7 @@ import SettingsIcon from 'Assets/settingsIcon.png';
 import { mountComponents, unmountComponents } from 'Redux/Slices/MountedComponents';
 import { useDispatch, useSelector } from 'react-redux';
 import { isComponentMountedSelector } from 'Redux/Selectors/MountedComponentsSelectors';
+import { GeneralButton } from 'GeneralComponents/GeneralButton/styles';
 
 export default function SettingsButton() {
 	const dispatch = useDispatch();
@@ -21,9 +22,9 @@ export default function SettingsButton() {
 
 	return (
 		<div id='settingsButtonContainer'>
-			<div className='generalButton' id='settingsButton' onClick={onSettingsButtonClick}>
+			<GeneralButton id='settingsButton' onClick={onSettingsButtonClick}>
 				{settingsIcon}
-			</div>
+			</GeneralButton>
 		</div>
 	);
 }

@@ -1,5 +1,6 @@
 import './CraftingButton.css';
 import texts from 'texts';
+import { GeneralButton } from 'GeneralComponents/GeneralButton/styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { unmountComponents, mountComponents } from 'Redux/Slices/MountedComponents';
 import { isComponentMountedSelector } from 'Redux/Selectors/MountedComponentsSelectors';
@@ -19,14 +20,11 @@ export default function CraftingButton() {
 		}
 	};
 
+	const AnimatedButton = animated(GeneralButton);
+
 	return (
-		<animated.div
-			style={animateCraftingButton}
-			className='generalButton'
-			id='craftingButton'
-			onClick={onCraftingButtonClick}
-		>
+		<AnimatedButton style={animateCraftingButton} id='craftingButton' onClick={onCraftingButtonClick}>
 			<animated.div style={animateCraftingButtonText}>{texts.gameplay.crafting.buttonTitle}</animated.div>
-		</animated.div>
+		</AnimatedButton>
 	);
 }

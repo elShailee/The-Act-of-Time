@@ -5,6 +5,7 @@ import texts from 'texts';
 import { mountComponents, unmountComponents } from 'Redux/Slices/MountedComponents';
 import { useDispatch, useSelector } from 'react-redux';
 import { isComponentMountedSelector } from 'Redux/Selectors/MountedComponentsSelectors';
+import { GeneralButton } from 'GeneralComponents/GeneralButton/styles';
 
 export default function CoinsButton() {
 	const dispatch = useDispatch();
@@ -20,9 +21,9 @@ export default function CoinsButton() {
 
 	return (
 		<div id='coinsButtonContainer'>
-			<div className='generalButton' id='coinsButton' onClick={onCoinsButtonClick}>
+			<GeneralButton id='coinsButton' onClick={onCoinsButtonClick}>
 				{texts.gameplay.coins.buttonTitle}
-			</div>
+			</GeneralButton>
 			{isCoinsTabMounted && <CoinsTab />}
 		</div>
 	);

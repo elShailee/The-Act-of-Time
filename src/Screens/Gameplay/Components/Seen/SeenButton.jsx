@@ -5,6 +5,7 @@ import { unmountComponents, mountComponents } from 'Redux/Slices/MountedComponen
 import { isComponentMountedSelector } from 'Redux/Selectors/MountedComponentsSelectors';
 import { animated } from 'react-spring';
 import useAnimtions from 'Utils/useAnimations';
+import { GeneralButton } from 'GeneralComponents/GeneralButton/styles';
 
 export default function SeenButton() {
 	const dispatch = useDispatch();
@@ -19,9 +20,11 @@ export default function SeenButton() {
 		}
 	};
 
+	const AnimatedButton = animated(GeneralButton);
+
 	return (
-		<animated.div style={animateSeenButton} className='generalButton' id='seenButton' onClick={onSeenButtonClick}>
+		<AnimatedButton style={animateSeenButton} id='seenButton' onClick={onSeenButtonClick}>
 			{texts.gameplay.seen.buttonTitle}
-		</animated.div>
+		</AnimatedButton>
 	);
 }

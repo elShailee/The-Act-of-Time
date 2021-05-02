@@ -1,6 +1,5 @@
 import React from 'react';
 import './GameplayScreen.css';
-import 'GeneralComponents/GeneralButton/GeneralButton.css';
 import CharacterInfoBar from 'Screens/Gameplay/Components/Character/CharacterInfoBar';
 import ActionsButton from 'Screens/Gameplay/Components/Actions/ActionsButton';
 import EnergyButton from 'Screens/Gameplay/Components/Energy/EnergyButton';
