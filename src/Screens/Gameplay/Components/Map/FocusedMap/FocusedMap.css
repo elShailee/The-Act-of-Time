@@ -1,10 +1,11 @@
-.grid {
+#focusedMap {
+	--NumOfColumns: 26;
 	position: absolute;
-	margin: 0 auto;
-	left: calc(50% - calc(13 * var(--height-unit)));
+	left: calc(50% - calc(calc(0.5 * var(--NumOfColumns)) * var(--height-unit)));
+	/* will need to connect NumOfCoulmns logic via styled components later on. */
 	bottom: 0;
 }
 
-.row {
+.fm-row {
 	display: flex;
 }

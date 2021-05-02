@@ -1,5 +1,5 @@
 import './Tile.css';
 
 export default function Tile() {
-	return <div className='tile'></div>;
+	return <div className='fm-tile'></div>;
 }
