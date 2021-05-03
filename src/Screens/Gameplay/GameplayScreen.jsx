@@ -16,6 +16,7 @@ import AllTheFloatingWindows from 'Screens/Gameplay/Components/WindowsContainer'
 export default function GameplayScreen() {
 	return (
 		<div id='gameplayScreen'>
+			<Map />
 			<CharacterInfoBar />
 
 			<div id='upperLeftButtonsContainer'>
@@ -37,7 +38,6 @@ export default function GameplayScreen() {
 				<SeenButton />
 				<CraftingButton />
 			</div>
-			<Map />
 			<AllTheFloatingWindows />
 		</div>
 	);
