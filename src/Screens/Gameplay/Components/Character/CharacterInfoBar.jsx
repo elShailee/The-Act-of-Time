@@ -1,5 +1,7 @@
 import React from 'react';
+import { getImageFromLib } from 'Utils/utilFuncs';
 import './CharacterInfoBar.css';
+import characterImage from 'Assets/characterImage.png';
 import characterInfo from 'ExampleData/characterInfoExampleData';
 
 export default function characterInfoBar() {
@@ -19,10 +21,16 @@ export default function characterInfoBar() {
 				<img
 					alt='character face'
 					className='characterImage'
-					src={characterInfo.characterImage}
+					src={getImageFromLib(characterInfo.characterImage, lib)}
 					onClick={onCharcterImageClick}
 				/>
 			</div>
 		</div>
 	);
 }
+
+const lib = {
+	john_doe: {
+		asset: characterImage,
+	},
+};
