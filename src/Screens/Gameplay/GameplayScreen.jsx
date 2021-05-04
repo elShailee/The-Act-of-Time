@@ -28,9 +28,7 @@ export default function GameplayScreen() {
 				<ActionsButton />
 			</div>
 
-			<div id='disastersContainer'>
-				<DisasterAlert />
-			</div>
+			<DisasterAlert />
 
 			<div id='bottomRightButtonsContainer'>
 				<SeenButton />

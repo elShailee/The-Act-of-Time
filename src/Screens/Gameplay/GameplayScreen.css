@@ -22,15 +22,6 @@
 	display: flex;
 }
 
-#disastersContainer {
-	position: absolute;
-	left: 20px;
-	top: calc(100% / 3);
-	display: block;
-	width: 100%;
-	height: 100%;
-}
-
 #bottomRightButtonsContainer {
 	--seenButton-size: calc(1.5 * var(--height-unit));
 	--craftingButton-size: calc(2.5 * var(--height-unit));

@@ -1,28 +1,31 @@
-#DisastersIcon {
-	user-select: none;
-}
 #DisastersAlert {
-	height: 100%;
-}
-#disasterCounter {
-	position: relative;
-	width: 5%;
-	padding: 0.3%;
-	background-color: palegreen;
-	border: 1px solid;
-	text-align: center;
-	user-select: none;
-	left: 5.5%;
-	font-size: 0.8rem;
-	top: 3.5%;
-}
-.disasterImage {
 	position: absolute;
-	left: calc(var(--CIB-height) * 0.11);
-	padding: calc(calc(var(--CIB-height) - var(--CIB-Image-size)) / 2);
+	display: flex;
+	align-items: center;
+	left: var(--height-unit);
+	top: calc(6 * var(--height-unit));
+}
+
+.disasterCounter {
+	width: calc(2 * var(--height-unit));
+	height: calc(0.5 * var(--height-unit));
+	margin-left: calc(0.5 * var(--height-unit));
+	background-color: indianred;
+	border: 1px solid;
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	user-select: none;
+	font-size: 0.8rem;
+}
+
+.disasterImage {
+	width: calc(1.5 * var(--height-unit));
+	height: calc(1.5 * var(--height-unit));
 	border-radius: 50%;
+	padding: 5px;
+	background-color: blueviolet;
 	cursor: pointer;
-	width: 5%;
-	height: auto;
 	-webkit-user-drag: none;
 }
