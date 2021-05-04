@@ -1,16 +1,15 @@
 import styled from 'styled-components';
+import theme from 'theme';
 
 export const GeneralButton = styled.div`
-	display: flex;
-	align-items: center;
-	text-align: center;
-	justify-content: center;
-	border-radius: 5px;
-	font-size: 14px;
+	height: ${theme.componentsSizes.buttons.L};
+	${theme.centerItems}
+	border-radius: ${theme.sizes.b_radius};
+	font-size: ${theme.sizes.text.major};
 	cursor: pointer;
 	user-select: none;
 	text-transform: uppercase;
-	border: 1px solid;
+	border: ${theme.sizes.border} solid ${theme.colors.borders};
 
 	&:hover {
 		filter: brightness(115%) saturate(65%);

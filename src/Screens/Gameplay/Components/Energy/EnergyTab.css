@@ -1,5 +1,5 @@
 #energyTab {
-	width: 160px;
+	width: calc(4 * var(--height-unit));
 	height: 60px;
 	padding: 10px;
 	background-color: #99bbbb;

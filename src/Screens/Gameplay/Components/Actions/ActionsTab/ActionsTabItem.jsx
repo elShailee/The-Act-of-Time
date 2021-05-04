@@ -9,7 +9,7 @@ export default function ActionsTabItem({ actionItem, index }) {
 	return (
 		<Draggable id={actionItem.id} draggableId={actionItem.id} index={index}>
 			{provided => (
-				<TabItem {...provided.draggableProps} ref={provided.innerRef}>
+				<TabItem {...provided.draggableProps} ref={provided.innerRef} isFirst={index === 0}>
 					<DragHandle {...provided.dragHandleProps} />
 					<div>{actionItem.title}</div>
 					{' - '}

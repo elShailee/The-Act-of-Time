@@ -1,6 +1,5 @@
 #gameplayScreen {
 	--height-unit: calc(50vh / 9);
-	--width-unit: 3.125vw;
 	font-family: Helvetica;
 }
 
@@ -10,14 +9,14 @@
 
 #upperRightButtonsContainer {
 	position: absolute;
-	right: var(--width-unit);
+	right: var(--height-unit);
 	top: var(--height-unit);
 	display: flex;
 }
 
 #upperLeftButtonsContainer {
 	position: absolute;
-	left: var(--width-unit);
+	left: var(--height-unit);
 	top: var(--height-unit);
 	display: flex;
 }
@@ -27,6 +26,6 @@
 	--craftingButton-size: calc(2.5 * var(--height-unit));
 	position: absolute;
 	overflow: hidden;
-	right: calc(1.5 * var(--width-unit));
+	right: calc(1.5 * var(--height-unit));
 	bottom: calc(1.5 * var(--height-unit));
 }
