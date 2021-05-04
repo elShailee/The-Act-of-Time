@@ -1,0 +1,10 @@
+#seenButton {
+	background-color: cornflowerblue;
+	width: var(--seenButton-size);
+	height: var(--seenButton-size);
+	border-radius: 50%;
+	margin-bottom: calc(0.5 * var(--height-unit));
+	margin-left: calc(var(--craftingButton-size) / 2);
+	line-height: var(--seenButton-size);
+	font-size: 2.2vh;
+}

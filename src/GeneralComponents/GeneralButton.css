@@ -1,0 +1,28 @@
+.generalButton {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	border-radius: 5px;
+	font-size: 14px;
+	cursor: pointer;
+	user-select: none;
+	text-transform: uppercase;
+	border: 1px solid;
+}
+
+.generalButton:hover {
+	filter: brightness(115%) saturate(65%);
+}
+
+.generalButton:active {
+	filter: brightness(87%) saturate(100%);
+}
+
+.generalButton.closeButton {
+	width: var(--width-unit);
+	height: calc(0.75 * var(--width-unit));
+	background-color: orchid;
+	border: 0.1vw solid;
+	font-size: 1.5vw;
+}

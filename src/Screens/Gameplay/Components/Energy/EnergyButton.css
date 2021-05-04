@@ -1,0 +1,6 @@
+#energyButton {
+	width: calc(4 * var(--width-unit));
+	height: var(--height-unit);
+	background-color: aqua;
+	margin-right: var(--height-unit);
+}

@@ -1,0 +1,11 @@
+#mapComponent {
+	height: 100vh;
+	background-color: #26253d;
+}
+#mapNavigationTools {
+	position: absolute;
+	bottom: 30px;
+	left: 20px;
+	width: 180px;
+	height: 340px;
+}
