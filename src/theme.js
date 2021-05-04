@@ -1,4 +1,8 @@
 const sizes = {
+	units: {
+		height: units => `calc(${units} * calc(50vh / 9))`,
+		width: units => `calc(${units} * 3.125vw)`,
+	},
 	icons: {
 		s: '19px',
 	},

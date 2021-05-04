@@ -1,8 +1,6 @@
-import characterImage from 'Assets/characterImage.png';
-
 const characterInfoExampleData = {
-	characterName: 'Johon Do',
-	characterImage,
+	characterName: 'John Doe',
+	characterImage: 'john_doe',
 	characterLevel: 10,
 };
 
