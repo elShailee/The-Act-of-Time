@@ -1,0 +1,31 @@
+#DisastersAlert {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	left: var(--height-unit);
+	top: calc(6 * var(--height-unit));
+}
+
+.disasterCounter {
+	width: calc(2 * var(--height-unit));
+	height: calc(0.5 * var(--height-unit));
+	margin-left: calc(0.5 * var(--height-unit));
+	background-color: indianred;
+	border: 1px solid;
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	user-select: none;
+	font-size: 0.8rem;
+}
+
+.disasterImage {
+	width: calc(1.5 * var(--height-unit));
+	height: calc(1.5 * var(--height-unit));
+	border-radius: 50%;
+	padding: 5px;
+	background-color: blueviolet;
+	cursor: pointer;
+	-webkit-user-drag: none;
+}

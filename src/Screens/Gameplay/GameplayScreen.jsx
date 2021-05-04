@@ -9,8 +9,7 @@ import SeenButton from 'Screens/Gameplay/Components/Seen/SeenButton';
 import CraftingButton from 'Screens/Gameplay/Components/Crafting/CraftingButton';
 import SettingsButton from 'Screens/Gameplay/Components/Settings/SettingsButton';
 import Map from 'Screens/Gameplay/Components/Map/Map';
-import DisastersIcon from 'Screens/Gameplay/Components/Disasters/DisastersIcon';
-import DisasterCounter from 'Screens/Gameplay/Components/Disasters/DisasterCounter';
+import DisasterAlert from 'Screens/Gameplay/Components/Disasters/DisastersAlert';
 import AllTheFloatingWindows from 'Screens/Gameplay/Components/WindowsContainer';
 
 export default function GameplayScreen() {
@@ -29,10 +28,7 @@ export default function GameplayScreen() {
 				<ActionsButton />
 			</div>
 
-			<div id='disastersContainer'>
-				<DisastersIcon />
-				<DisasterCounter />
-			</div>
+			<DisasterAlert />
 
 			<div id='bottomRightButtonsContainer'>
 				<SeenButton />
