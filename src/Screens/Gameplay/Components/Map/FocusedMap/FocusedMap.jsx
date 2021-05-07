@@ -2,29 +2,16 @@ import './FocusedMap.css';
 import Tile from './Tile.jsx';
 
 const GRID_ROWS = 15;
-let colAmount = 14;
-let rowNumber = 0;
+const GRID_COLS = 28;
 
 const tileExampleData = { data: 'data' }; // this is a place holder , need to be removed.
 
 const tilesArray = [];
 for (let row = 0; row < GRID_ROWS; row++) {
 	const currentRow = [];
-
-	if (rowNumber >= 7) {
-		// Lower half of the focused map.
-		for (let col = 0; col < colAmount; col++) {
-			currentRow.push(tileExampleData);
-		}
-		colAmount -= 2;
-		rowNumber++;
-	} else if (row === rowNumber) {
-		// Upper half of the focused map.
-		for (let col = 0; col < colAmount; col++) {
-			currentRow.push(tileExampleData);
-		}
-		colAmount += 2;
-		rowNumber++;
+	let colAmount = 2 * Math.abs((GRID_ROWS - 1) / 2 - row);
+	for (let col = 0; col < GRID_COLS - colAmount; col++) {
+		currentRow.push(tileExampleData);
 	}
 
 	tilesArray.push(currentRow);
