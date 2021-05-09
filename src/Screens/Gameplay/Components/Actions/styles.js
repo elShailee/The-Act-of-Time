@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import theme from 'theme';
 
 export const Container = styled.div`
-	width: calc(6 * ${theme.sizes.units.height});
-	right: ${theme.sizes.units.height};
+	width: ${theme.HUnits(6)};
+	right: ${theme.HU};
 `;
 
 export const Button = styled(GeneralButton)`

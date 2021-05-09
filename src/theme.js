@@ -1,15 +1,11 @@
-const sizes = {
-	units: {
-		height: `calc(50vh / 9)`,
-		width: `3.125vw`,
-	},
-};
-
-const HUnits = num => `calc(${num} * ${sizes.units.height})`;
+const HU = `calc(50vh / 9)`;
+const HUnits = num => `calc(${num} * ${HU})`;
 
 const theme = {
+	HU,
+	HUnits,
 	sizes: {
-		...sizes,
+		HU,
 		border: HUnits(0.06),
 		b_radius: HUnits(0.1),
 		padding: HUnits(0.25),

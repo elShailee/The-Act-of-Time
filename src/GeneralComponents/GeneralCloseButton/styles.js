@@ -4,8 +4,8 @@ import theme from 'theme';
 
 export const CloseButton = styled(GeneralButton)`
 	margin-left: auto;
-	width: ${theme.sizes.units.height};
-	height: calc(0.75 * ${theme.sizes.units.height});
+	width: ${theme.HU};
+	height: ${theme.HUnits(0.75)};
 	background-color: orchid;
 	border: purple solid;
 `;
