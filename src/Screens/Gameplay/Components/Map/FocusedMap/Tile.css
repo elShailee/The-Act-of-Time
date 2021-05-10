@@ -3,3 +3,9 @@
 	width: var(--height-unit);
 	outline: 1px solid white;
 }
+
+.fm-hidden {
+	height: var(--height-unit);
+	width: var(--height-unit);
+	visibility: hidden;
+}
