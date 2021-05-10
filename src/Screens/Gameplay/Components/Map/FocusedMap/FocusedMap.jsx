@@ -1,21 +1,10 @@
 import './FocusedMap.css';
 import Tile from './Tile.jsx';
 import { insertFocusedMapPadding } from 'Utils/insertFocusedMapPadding';
+import tileExampleData from './tileExampleData.js';
 
-const GRID_ROWS = 11;
-const GRID_COLS = 16;
-
-const tileExampleData = [
-	['s', 's', 's', 's', 's', 's'],
-	['s', 's', 's', 's', 's', 's', 's', 's'],
-	['s', 's', 's', 's', 's', 's', 's', 's', 's', 's'],
-	['s', 's', 's', 's', 's', 's', 's', 's', 's', 's', 's', 's'],
-	['s', 's', 's', 's', 's', 's', 's', 's', 's', 's', 's', 's', 's', 's'],
-	['s', 's', 's', 's', 's', 's', 's', 's', 's', 's', 's', 's'],
-	['s', 's', 's', 's', 's', 's', 's', 's', 's', 's'],
-	['s', 's', 's', 's', 's', 's', 's', 's'],
-	['s', 's', 's', 's', 's', 's'],
-]; // this is a place holder , need to be removed.
+const GRID_ROWS = 15;
+const GRID_COLS = 28;
 
 const paddedFocusedMap = insertFocusedMapPadding(tileExampleData);
 
