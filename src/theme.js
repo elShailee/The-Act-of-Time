@@ -1,3 +1,5 @@
+import palette from './palette';
+
 const HU = `calc(100vh / 18)`;
 const calcHeightUnits = num => `calc(${num} * ${HU})`;
 
@@ -44,7 +46,14 @@ const theme = {
 			cursor: pointer;
 		`,
 	},
-	colors: {},
+	colors: {
+		actionsButton: palette.yellow300,
+		actionsPale: palette.orange200,
+		actionsMid: palette.orange600,
+		actionsIntense: palette.orange800,
+		basicShade: palette.black903,
+		closeButton: palette.pink700,
+	},
 };
 
 export default theme;

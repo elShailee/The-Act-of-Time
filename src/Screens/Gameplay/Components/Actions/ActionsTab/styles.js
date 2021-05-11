@@ -5,7 +5,7 @@ import hamburgerMenuIcon from 'Assets/hamburgerMenuIcon.png';
 import xIcon from 'Assets/xIcon.png';
 
 export const Tab = styled(GeneralTab)`
-	background-color: sandybrown;
+	background-color: ${({ theme }) => theme.colors.actionsMid};
 `;
 
 export const TabItem = styled.div`
@@ -14,7 +14,7 @@ export const TabItem = styled.div`
 		else return ({ theme }) => theme.sizes.borderRadius;
 	}};
 	padding: ${({ theme }) => theme.sizes.padding};
-	background-color: rgb(252, 202, 156);
+	background-color: ${({ theme }) => theme.colors.actionsPale};
 	font-size: ${({ theme }) => theme.sizes.text.minor};
 	border-radius: ${({ theme }) => theme.sizes.borderRadius};
 	${({ theme }) => theme.customStyles.nonSelectable}
@@ -46,5 +46,5 @@ export const MoreActionsButton = styled(GeneralButton)`
 	margin-left: auto;
 	margin-top: ${({ theme }) => theme.sizes.padding};
 	padding: 0 ${({ theme }) => theme.sizes.padding};
-	background-color: #ffa500;
+	background-color: ${({ theme }) => theme.colors.actionsIntense};
 `;

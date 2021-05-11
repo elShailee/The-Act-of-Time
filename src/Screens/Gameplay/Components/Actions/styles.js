@@ -7,5 +7,5 @@ export const Container = styled.div`
 `;
 
 export const Button = styled(GeneralButton)`
-	background-color: khaki;
+	background-color: ${({ theme }) => theme.colors.actionsButton};
 `;
