@@ -1,5 +1,5 @@
 import React from 'react';
-import GeneralCloseButton from 'GeneralComponents/GeneralCloseButton/GeneralCloseButton';
+import { GeneralCloseButton } from 'GeneralComponents/GeneralCloseButton/styles';
 import './GeneralWindow.css';
 
 export default function GeneralWindow({ children, unmountGeneralWindow, rightSided, title, titleId, id, containerId }) {

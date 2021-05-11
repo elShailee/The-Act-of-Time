@@ -5,30 +5,45 @@ const theme = {
 	HU: calcHeightUnits(1),
 	calcHeightUnits,
 	sizes: {
-		HU,
 		border: calcHeightUnits(0.1),
-		b_radius: calcHeightUnits(0.1),
+		borderRadius: calcHeightUnits(0.1),
 		padding: calcHeightUnits(0.25),
 		text: {
 			major: calcHeightUnits(0.4),
 			minor: calcHeightUnits(0.35),
 		},
-	},
-	componentsSizes: {
-		smallIcons: `
-			width: ${calcHeightUnits(0.4)};
-			height: ${calcHeightUnits(0.4)};
-		`,
-		buttons: {
+		buttonsHeight: {
 			L: calcHeightUnits(1),
 			M: calcHeightUnits(0.65),
 		},
 	},
-	centerItems: `	
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	`,
+	customStyles: {
+		smallIconsSize: `
+			width: ${calcHeightUnits(0.4)};
+			height: ${calcHeightUnits(0.4)};
+		`,
+		centerItems: `	
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		`,
+		highlighted: `
+			&:hover {
+				filter: brightness(115%) saturate(65%);
+			}
+		
+			&:active {
+				filter: brightness(87%) saturate(100%);
+			}
+		`,
+		nonSelectable: `
+			user-select: none;
+			-webkit-user-drag: none;
+		`,
+		clickable: `
+			cursor: pointer;
+		`,
+	},
 	colors: {},
 };
 
