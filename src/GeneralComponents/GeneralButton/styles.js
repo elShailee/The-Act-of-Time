@@ -1,15 +1,15 @@
 import styled from 'styled-components';
-import theme from 'theme';
 
 export const GeneralButton = styled.div`
-	height: ${theme.componentsSizes.buttons.L};
-	${theme.centerItems}
-	border-radius: ${theme.sizes.b_radius};
-	font-size: ${theme.sizes.text.major};
+	height: ${({ theme }) => theme.componentsSizes.buttons.L};
+	/* background-color: ${({ color }) => color}; */
+	${({ theme }) => theme.centerItems}
+	border-radius: ${({ theme }) => theme.sizes.b_radius};
+	font-size: ${({ theme }) => theme.sizes.text.major};
 	cursor: pointer;
 	user-select: none;
 	text-transform: uppercase;
-	border: ${theme.sizes.border} solid ${theme.colors.borders};
+	border: ${({ theme }) => theme.sizes.border} solid rgba(0, 0, 0, 0.4);
 
 	&:hover {
 		filter: brightness(115%) saturate(65%);

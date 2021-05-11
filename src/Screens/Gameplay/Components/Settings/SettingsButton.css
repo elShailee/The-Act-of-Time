@@ -2,7 +2,6 @@
 	width: var(--height-unit);
 	height: var(--height-unit);
 	background-color: #778ca1;
-	border: solid #101010;
 	margin-right: calc(var(--height-unit) / 2);
 }
 

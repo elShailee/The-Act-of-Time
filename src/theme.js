@@ -1,27 +1,27 @@
-const HU = `calc(50vh / 9)`;
-const HUnits = num => `calc(${num} * ${HU})`;
+const HU = `calc(100vh / 18)`;
+const calcHeightUnits = num => `calc(${num} * ${HU})`;
 
 const theme = {
-	HU,
-	HUnits,
+	HU: calcHeightUnits(1),
+	calcHeightUnits,
 	sizes: {
 		HU,
-		border: HUnits(0.06),
-		b_radius: HUnits(0.1),
-		padding: HUnits(0.25),
+		border: calcHeightUnits(0.1),
+		b_radius: calcHeightUnits(0.1),
+		padding: calcHeightUnits(0.25),
 		text: {
-			major: HUnits(0.3),
-			minor: HUnits(0.25),
+			major: calcHeightUnits(0.4),
+			minor: calcHeightUnits(0.35),
 		},
 	},
 	componentsSizes: {
 		smallIcons: `
-			width: ${HUnits(0.4)};
-			height: ${HUnits(0.4)};
+			width: ${calcHeightUnits(0.4)};
+			height: ${calcHeightUnits(0.4)};
 		`,
 		buttons: {
-			L: HUnits(1),
-			M: HUnits(0.65),
+			L: calcHeightUnits(1),
+			M: calcHeightUnits(0.65),
 		},
 	},
 	centerItems: `	
@@ -29,9 +29,7 @@ const theme = {
 		align-items: center;
 		justify-content: center;
 	`,
-	colors: {
-		borders: `rosybrown`,
-	},
+	colors: {},
 };
 
 export default theme;

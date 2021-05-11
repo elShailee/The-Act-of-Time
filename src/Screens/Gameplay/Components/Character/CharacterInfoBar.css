@@ -1,5 +1,5 @@
 #characterInfoBarContainer {
-	--CIB-width: 275px; /*CIB = character Info Bar 275 at default*/
+	--CIB-width: calc(7 * var(--height-unit)); /*CIB = character Info Bar 275 at default*/
 	--CIB-height: calc(var(--CIB-width) * 0.4); /*110px at default*/
 	--CIB-textPartHeight: calc(var(--CIB-height) * 0.6); /*66px at default*/
 	--halfOf-CIB-width: calc(var(--CIB-width) / 2); /*137.5px at default*/
@@ -12,7 +12,7 @@
 	position: absolute;
 	left: calc(50% - var(--halfOf-CIB-width));
 	user-select: none;
-	top: 8px;
+	top: calc(0.5 * var(--height-unit));
 }
 
 #characterInfoBar {
