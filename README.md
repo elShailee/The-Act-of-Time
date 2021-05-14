@@ -9,6 +9,7 @@ This project WAS NOT created by a team of experienced developers, but as a platf
  - <a href="https://github.com/shemeshx">Idan Shemesh</a>
  - <a href="https://github.com/odeyah">Odeya</a>
  - <a href="https://github.com/EyalEliyahu">Eyal Eliyahu</a>
+ - <a href="https://github.com/yageljaoui">Yagel Jaoui</a>
 
 ## Technologies
 Front:
