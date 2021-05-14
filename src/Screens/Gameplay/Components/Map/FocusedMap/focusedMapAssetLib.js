@@ -1,0 +1,27 @@
+const focusedMapAssetLib = {
+	grass1: 'Assets/FocusedMap/grass1.png',
+	grass2: 'Assets/FocusedMap/grass2.png',
+	grass3: 'Assets/FocusedMap/grass3.png',
+	path1: 'Assets/FocusedMap/path1.png',
+	path2: 'Assets/FocusedMap/path2.png',
+	path3: 'Assets/FocusedMap/path3.png',
+	sea: 'Assets/FocusedMap/sea.gif',
+	deepsea: 'Assets/FocusedMap/deepsea.gif',
+	sand: 'Assets/FocusedMap/sand.png',
+	sandRight: 'Assets/FocusedMap/sand-right.png',
+	sandCornerTopLeft: 'Assets/FocusedMap/sandcorner-tl.png',
+	sandCornerBotLeft: 'Assets/FocusedMap/sandcorner-bl.png',
+	grassPathTop: 'Assets/FocusedMap/grasspathtop.png',
+	grassPathBot: 'Assets/FocusedMap/grasspathbot.png',
+	grassPathLeft: 'Assets/FocusedMap/grasspathleft.png',
+	grassPathCornerBotLeft: 'Assets/FocusedMap/grasspathcorner-bl.png',
+	grassPathCornerTopLeft: 'Assets/FocusedMap/grasspathcorner-tl.png',
+	seaCornerBotRight: 'Assets/FocusedMap/seacorner-br.png',
+	seaCornerTopRight: 'Assets/FocusedMap/seacorner-tr.png',
+	grassRight: 'Assets/FocusedMap/grass-right.png',
+	sandGrassRight: 'Assets/FocusedMap/sandgrassright.png',
+	sandGrassCornerTopLeft: 'Assets/FocusedMap/sandgrasscorner-tl.png',
+	sandGrassCornerBotLeft: 'Assets/FocusedMap/sandgrasscorner-bl.png',
+};
+
+export default focusedMapAssetLib;

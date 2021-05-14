@@ -1,9 +1,9 @@
 import './FocusedMap.css';
 import Tile from './Tile.jsx';
 import { insertFocusedMapPadding } from 'Utils/insertFocusedMapPadding';
-import tileExampleData from './tileExampleData.js';
+import tileExampleData from './tileExampleData';
 
-const GRID_ROWS = 15;
+const GRID_ROWS = 13;
 const GRID_COLS = 28;
 
 const paddedFocusedMap = insertFocusedMapPadding(tileExampleData);
