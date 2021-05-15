@@ -2,35 +2,27 @@ import './Tile.css';
 import focusedAssets from './focusedMapAssetLib';
 
 export default function Tile({ tileData }) {
-	if (tileData === 'blocker') {
-		//border tiles
-		return <div className='fm-border fm-tile' tiledata={tileData}></div>;
+	//blocker tiles
+	if (tileData === 'blocker-right') {
+		return <div className='blocker-right fm-tile' tiledata={tileData}></div>;
+	} else if (tileData === 'blocker-left') {
+		return <div className='blocker-left fm-tile' tiledata={tileData}></div>;
+		//hidden tiles
 	} else if (tileData === 'upperBorderTile') {
-		return <div className='fm-border fm-tile' tiledata={tileData}></div>;
+		return <div className='hidden fm-tile' tiledata={tileData}></div>;
 	} else if (tileData === 'bottomBorderTile') {
-		return <div className='fm-border fm-tile' tiledata={tileData}></div>;
+		return <div className='hidden fm-tile' tiledata={tileData}></div>;
+		//teleporter tiles
 	} else if (tileData === 'upperRight') {
-		return <div className='fm-border fm-tile' tiledata={tileData}></div>;
+		return <div className='tele-upperRight fm-tile' tiledata={tileData}></div>;
 	} else if (tileData === 'upperLeft') {
-		return <div className='fm-border fm-tile' tiledata={tileData}></div>;
+		return <div className='tele-upperLeft fm-tile' tiledata={tileData}></div>;
 	} else if (tileData === 'lowerRight') {
-		return <div className='fm-border fm-tile' tiledata={tileData}></div>;
+		return <div className='tele-lowerRight fm-tile' tiledata={tileData}></div>;
 	} else if (tileData === 'lowerLeft') {
-		return <div className='fm-border fm-tile' tiledata={tileData}></div>;
-		// half-box border tiles
-	} else if (tileData === 'halfbox-upperRight') {
-		return <div className='halfbox-upperRight fm-tile' tiledata={tileData}></div>;
-	} else if (tileData === 'halfbox-upperLeft') {
-		return <div className='halfbox-upperLeft fm-tile' tiledata={tileData}></div>;
-	} else if (tileData === 'halfbox-lowerRight') {
-		return <div className='halfbox-lowerRight fm-tile' tiledata={tileData}></div>;
-	} else if (tileData === 'halfbox-lowerLeft') {
-		return <div className='halfbox-lowerLeft fm-tile' tiledata={tileData}></div>;
+		return <div className='tele-lowerLeft fm-tile' tiledata={tileData}></div>;
 	} else {
-		//content map
-		console.log(tileData);
-		console.log(focusedAssets);
-		console.log(focusedAssets[tileData]);
+		//map content
 		return <div className='fm-tile' style={{ backgroundImage: `url(${focusedAssets[tileData]})` }} />;
 	}
 }

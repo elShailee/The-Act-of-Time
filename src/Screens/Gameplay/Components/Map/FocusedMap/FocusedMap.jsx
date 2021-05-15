@@ -4,7 +4,7 @@ import { insertFocusedMapPadding } from 'Utils/insertFocusedMapPadding';
 import tileExampleData from './tileExampleData';
 
 const GRID_ROWS = 13;
-const GRID_COLS = 28;
+const GRID_COLS = 26;
 
 const paddedFocusedMap = insertFocusedMapPadding(tileExampleData);
 

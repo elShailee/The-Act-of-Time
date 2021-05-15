@@ -1,125 +1,39 @@
-:root {
-	--fm-border-color: #111111;
-}
-
 .fm-tile {
 	height: var(--height-unit);
 	width: var(--height-unit);
 	background-size: cover;
 }
 
-.fm-hidden {
+.hidden {
 	visibility: hidden;
 }
 
-.fm-border {
-	height: var(--height-unit);
-	width: var(--height-unit);
-	background-color: var(--fm-border-color);
-}
-
-.grass1 {
-	background-image: url('Assets/FocusedMap/grass1.png');
-}
-
-.grass2 {
-	background-image: url('Assets/FocusedMap/grass2.png');
-}
-
-.grass3 {
-	background-image: url('Assets/FocusedMap/grass3.png');
-}
-
-.sea {
-	background-image: url('Assets/FocusedMap/sea.gif');
-}
-
-.deepsea {
-	background-image: url('Assets/FocusedMap/deepsea.gif');
-}
-
-.sand {
-	background-image: url('Assets/FocusedMap/sand.png');
-}
-
-.sand-right {
-	background-image: url('Assets/FocusedMap/sand-right.png');
-}
-
-.sandcorner-tl {
-	background-image: url('Assets/FocusedMap/sandcorner-tl.png');
-}
-
-.sandcorner-bl {
-	background-image: url('Assets/FocusedMap/sandcorner-bl.png');
-}
-
-.path1 {
+.blocker-right {
 	background-image: url('Assets/FocusedMap/path1.png');
+	clip-path: polygon(50% 50%, 0 0, 0 100%);
 }
 
-.path2 {
-	background-image: url('Assets/FocusedMap/path2.png');
+.blocker-left {
+	background-image: url('Assets/FocusedMap/deepsea.gif');
+	clip-path: polygon(50% 50%, 100% 0, 100% 100%);
 }
 
-.path3 {
-	background-image: url('Assets/FocusedMap/path3.png');
+.tele-upperLeft {
+	background-image: url('Assets/FocusedMap/deepsea.gif');
+	clip-path: polygon(100% 100%, 100% 0, 0 100%);
 }
 
-.grasspathtop {
-	background-image: url('Assets/FocusedMap/grasspathtop.png');
+.tele-upperRight {
+	background-image: url('Assets/FocusedMap/grass2.png');
+	clip-path: polygon(0 0, 0% 100%, 100% 100%);
 }
 
-.grasspathbot {
-	background-image: url('Assets/FocusedMap/grasspathbot.png');
+.tele-lowerLeft {
+	background-image: url('Assets/FocusedMap/deepsea.gif');
+	clip-path: polygon(0 0, 100% 0, 100% 100%);
 }
 
-.grasspathleft {
-	background-image: url('Assets/FocusedMap/grasspathleft.png');
-}
-
-.grasspathcorner-bl {
-	background-image: url('Assets/FocusedMap/grasspathcorner-bl.png');
-}
-
-.grasspathcorner-tl {
-	background-image: url('Assets/FocusedMap/grasspathcorner-tl.png');
-}
-
-.seacorner-br {
-	background-image: url('Assets/FocusedMap/seacorner-br.png');
-}
-
-.seacorner-tr {
-	background-image: url('Assets/FocusedMap/seacorner-tr.png');
-}
-
-.grass-sand-r {
-	background-image: url('Assets/FocusedMap/grass-right.png'), url('Assets/FocusedMap/sand.png');
-}
-
-.grass-sandcorner-bl {
-	background-image: url('Assets/FocusedMap/grasscorner-bl.png'), url('Assets/FocusedMap/sand.png');
-}
-
-.grass-sandcorner-tl {
-	background-image: url('Assets/FocusedMap/grasscorner-tl.png'), url('Assets/FocusedMap/sand.png');
-}
-
-/* halfboxs */
-
-.halfbox-upperLeft {
-	background-image: -webkit-linear-gradient(315deg, transparent 50%, var(--fm-border-color) 50%);
-}
-
-.halfbox-upperRight {
-	background-image: -webkit-linear-gradient(225deg, transparent 50%, var(--fm-border-color) 50%);
-}
-
-.halfbox-lowerLeft {
-	background-image: -webkit-linear-gradient(45deg, transparent 50%, var(--fm-border-color) 50%);
-}
-
-.halfbox-lowerRight {
-	background-image: -webkit-linear-gradient(135deg, transparent 50%, var(--fm-border-color) 50%);
+.tele-lowerRight {
+	background-image: url('Assets/FocusedMap/grass2.png');
+	clip-path: polygon(0 0, 0% 100%, 100% 0);
 }
