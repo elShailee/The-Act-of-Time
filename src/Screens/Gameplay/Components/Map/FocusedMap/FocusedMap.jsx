@@ -20,7 +20,6 @@ for (let row = 0; row < GRID_ROWS; row++) {
 }
 
 export default function FocusedMap() {
-	console.log(tilesArray);
 	return (
 		<div id='focusedMap'>
 			{tilesArray.map((row, rowId) => {
