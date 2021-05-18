@@ -7,32 +7,32 @@
 .hidden {
 	visibility: hidden;
 }
-.blocker-right {
+.fm-blocker-right {
 	background-image: url('Assets/FocusedMap/path1.png');
 	clip-path: polygon(50% 50%, 0 0, 0 101%);
 }
 
-.blocker-left {
+.fm-blocker-left {
 	background-image: url('Assets/FocusedMap/deepsea.gif');
 	clip-path: polygon(50% 50%, 101% 0, 101% 101%);
 }
 
-.tele-upperLeft {
+.fm-upperLeft {
 	background-image: url('Assets/FocusedMap/deepsea.gif');
 	clip-path: polygon(101% 101%, 101% 0, 0 101%);
 }
 
-.tele-upperRight {
+.fm-upperRight {
 	background-image: url('Assets/FocusedMap/grass2.png');
 	clip-path: polygon(0 0, 0% 101%, 101% 101%);
 }
 
-.tele-lowerLeft {
+.fm-lowerLeft {
 	background-image: url('Assets/FocusedMap/deepsea.gif');
 	clip-path: polygon(0 0, 101% 0, 101% 101%);
 }
 
-.tele-lowerRight {
+.fm-lowerRight {
 	background-image: url('Assets/FocusedMap/grass2.png');
 	clip-path: polygon(0 0, 0% 101%, 101% 0);
 }
