@@ -4,7 +4,6 @@ const HU = `calc(100vh / 18)`;
 const calcHeightUnits = num => `calc(${num} * ${HU})`;
 
 const theme = {
-	HU: calcHeightUnits(1),
 	calcHeightUnits,
 	sizes: {
 		border: calcHeightUnits(0.1),
