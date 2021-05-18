@@ -1,3 +1,6 @@
+import tileExampleData from 'ExampleData/focusedMapExampleData';
+import focusedMapAssetLib from 'Screens/Gameplay/Components/Map/FocusedMap/focusedMapAssetLib';
+
 export default function assembleFocusedLayout(exampleData) {
 	let res = new Array(exampleData.length + 2);
 
@@ -17,28 +20,34 @@ export default function assembleFocusedLayout(exampleData) {
 			currentRow[0] = {
 				type: 'border',
 				value: 'blocker-left',
+				asset: 'deepsea',
 			};
 			currentRow[currentRow.length - 1] = {
 				type: 'border',
 				value: 'blocker-right',
+				asset: 'path2',
 			};
 		} else if (row < exampleData.length / 2) {
 			currentRow[0] = {
 				type: 'border',
 				value: 'upperLeft',
+				asset: 'deepsea',
 			};
 			currentRow[currentRow.length - 1] = {
 				type: 'border',
 				value: 'upperRight',
+				asset: 'grass2',
 			};
 		} else {
 			currentRow[0] = {
 				type: 'border',
 				value: 'lowerLeft',
+				asset: 'deepsea',
 			};
 			currentRow[currentRow.length - 1] = {
 				type: 'border',
 				value: 'lowerRight',
+				asset: 'grass2',
 			};
 		}
 

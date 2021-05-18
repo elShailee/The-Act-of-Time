@@ -8,31 +8,25 @@
 	visibility: hidden;
 }
 .fm-blocker-right {
-	background-image: url('Assets/FocusedMap/path1.png');
 	clip-path: polygon(50% 50%, 0 0, 0 101%);
 }
 
 .fm-blocker-left {
-	background-image: url('Assets/FocusedMap/deepsea.gif');
 	clip-path: polygon(50% 50%, 101% 0, 101% 101%);
 }
 
 .fm-upperLeft {
-	background-image: url('Assets/FocusedMap/deepsea.gif');
 	clip-path: polygon(101% 101%, 101% 0, 0 101%);
 }
 
 .fm-upperRight {
-	background-image: url('Assets/FocusedMap/grass2.png');
 	clip-path: polygon(0 0, 0% 101%, 101% 101%);
 }
 
 .fm-lowerLeft {
-	background-image: url('Assets/FocusedMap/deepsea.gif');
 	clip-path: polygon(0 0, 101% 0, 101% 101%);
 }
 
 .fm-lowerRight {
-	background-image: url('Assets/FocusedMap/grass2.png');
 	clip-path: polygon(0 0, 0% 101%, 101% 0);
 }
