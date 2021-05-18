@@ -1,8 +1,9 @@
 import './FocusedMap.css';
 import Tile from './Tile.jsx';
 import assembleFocusedLayout from 'Utils/FocusedMapUtils/assembleFocusedLayout';
+import exampleData from 'ExampleData/focusedMapExampleData';
 
-const tilesArray = assembleFocusedLayout();
+const tilesArray = assembleFocusedLayout(exampleData);
 
 export default function FocusedMap() {
 	return (
