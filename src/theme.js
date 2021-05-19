@@ -52,6 +52,12 @@ const theme = {
 		actionsIntense: palette.orange800,
 		basicShade: palette.black903,
 		closeButton: palette.pink700,
+		characterInfoBar: {
+			bg: palette.red800,
+			xp: palette.blue950,
+			xpbg: palette.gray800,
+			text: palette.white900,
+		},
 	},
 };
 
