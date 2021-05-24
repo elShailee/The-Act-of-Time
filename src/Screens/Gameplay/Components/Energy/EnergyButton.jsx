@@ -2,7 +2,7 @@ import React from 'react';
 import EnergyTab from './EnergyTab';
 import './EnergyButton.css';
 import texts from 'texts';
-import { GeneralButton } from 'GeneralComponents/GeneralButton/styles';
+import GeneralButton from 'GeneralComponents/GeneralButton/styles';
 import { useSelector, useDispatch } from 'react-redux';
 import { mountComponents, unmountComponents } from 'Redux/Slices/MountedComponents';
 import { isComponentMountedSelector } from 'Redux/Selectors/MountedComponentsSelectors';

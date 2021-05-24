@@ -1,4 +1,4 @@
-import { GeneralButton } from 'GeneralComponents/GeneralButton/styles';
+import GeneralButton from 'GeneralComponents/GeneralButton/styles';
 import styled from 'styled-components';
 
 export const Container = styled.div`

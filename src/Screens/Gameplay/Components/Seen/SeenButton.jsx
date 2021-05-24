@@ -5,7 +5,7 @@ import { unmountComponents, mountComponents } from 'Redux/Slices/MountedComponen
 import { isComponentMountedSelector } from 'Redux/Selectors/MountedComponentsSelectors';
 import { animated } from 'react-spring';
 import useAnimtions from 'Utils/useAnimations';
-import { GeneralButton } from 'GeneralComponents/GeneralButton/styles';
+import GeneralButton from 'GeneralComponents/GeneralButton/styles';
 
 export default function SeenButton() {
 	const dispatch = useDispatch();

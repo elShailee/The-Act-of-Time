@@ -1,6 +1,6 @@
 import './CraftingButton.css';
 import texts from 'texts';
-import { GeneralButton } from 'GeneralComponents/GeneralButton/styles';
+import GeneralButton from 'GeneralComponents/GeneralButton/styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { unmountComponents, mountComponents } from 'Redux/Slices/MountedComponents';
 import { isComponentMountedSelector } from 'Redux/Selectors/MountedComponentsSelectors';

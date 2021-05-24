@@ -5,7 +5,7 @@ import EnergyIcon from 'Assets/placeholderIcon.png';
 import GeneralTab from 'GeneralComponents/GeneralTab/styles';
 import { useDispatch } from 'react-redux';
 import { mountComponents, unmountComponents } from 'Redux/Slices/MountedComponents';
-import { GeneralButton } from 'GeneralComponents/GeneralButton/styles';
+import GeneralButton from 'GeneralComponents/GeneralButton/styles';
 
 export default function EnergyTab() {
 	const dispatch = useDispatch();

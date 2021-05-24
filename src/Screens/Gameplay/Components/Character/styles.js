@@ -6,8 +6,8 @@ const CIB_textPartHeight = CIB_height * 0.6;
 const halfOf_CIB_width = CIB_width / 2;
 const CIB_text_width = CIB_width * 0.4;
 const CIB_Image_size = CIB_width * 0.32;
-const bigFontSize = CIB_width * 0.08;
-const fontSize = CIB_width * 0.06;
+const CIB_bigFontSize = CIB_width * 0.08;
+const CIB_fontSize = CIB_width * 0.06;
 const CIB_font = `Helvetica`;
 const XP_bar_height = CIB_height * 0.05;
 const xpCapacity_width = CIB_width * 0.33;
@@ -51,21 +51,19 @@ export const TextCointainer = styled.div`
 	top: ${({ theme }) => theme.calcHeightUnits(CIB_height * 0.11)};
 `;
 
-const textStyle = theme => `
+const textBoxes = (theme, fontSize) => `
+	width: ${theme.calcHeightUnits(CIB_text_width)};
   font-family: ${CIB_font};
   color: ${theme.colors.characterInfoBar.text};
+	font-size: ${theme.calcHeightUnits(fontSize)};
 `;
 
 export const NameText = styled.div`
-	width: ${({ theme }) => theme.calcHeightUnits(CIB_text_width)};
-	font-size: ${({ theme }) => theme.calcHeightUnits(bigFontSize)};
-	${({ theme }) => textStyle(theme)}
+	${({ theme }) => textBoxes(theme, CIB_bigFontSize)}
 `;
 
 export const LevelText = styled.div`
-	width: ${({ theme }) => theme.calcHeightUnits(CIB_text_width)};
-	font-size: ${({ theme }) => theme.calcHeightUnits(fontSize)};
-	${({ theme }) => textStyle(theme)}
+	${({ theme }) => textBoxes(theme, CIB_fontSize)}
 `;
 
 export const Image = styled.img`

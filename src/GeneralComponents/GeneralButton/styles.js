@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const GeneralButton = styled.div`
+export default styled.div`
 	height: ${({ theme }) => theme.sizes.buttonsHeight.L};
 	border: ${({ theme }) => theme.sizes.border} solid ${({ theme }) => theme.colors.basicShade};
 	border-radius: ${({ theme }) => theme.sizes.borderRadius};
