@@ -13,7 +13,7 @@ export const TabItem = styled.div`
 		if (isFirst) return '0';
 		else return ({ theme }) => theme.sizes.borderRadius;
 	}};
-	padding: ${({ theme }) => theme.sizes.padding};
+	padding: ${({ theme }) => theme.sizes.padding.M};
 	background-color: ${({ theme }) => theme.colors.actionsPale};
 	font-size: ${({ theme }) => theme.sizes.text.minor};
 	border-radius: ${({ theme }) => theme.sizes.borderRadius};
@@ -40,11 +40,8 @@ AbortButton.defaultProps = {
 };
 
 export const MoreActionsButton = styled(GeneralButton)`
-	width: fit-content;
 	height: ${({ theme }) => theme.sizes.buttonsHeight.M};
-	margin-right: auto;
-	margin-left: auto;
-	margin-top: ${({ theme }) => theme.sizes.padding};
-	padding: 0 ${({ theme }) => theme.sizes.padding};
+	margin-top: ${({ theme }) => theme.sizes.padding.M};
+	padding: 0 ${({ theme }) => theme.sizes.padding.M};
 	background-color: ${({ theme }) => theme.colors.actionsIntense};
 `;

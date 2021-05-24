@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 
 const Tab = styled.div`
-	padding: ${({ theme }) => theme.sizes.padding};
+	display: flex;
+	flex-direction: column;
+	padding: ${({ theme }) => theme.sizes.padding.M};
 	font-size: ${({ theme }) => theme.sizes.text.minor};
 	border-radius: ${({ theme }) => theme.sizes.borderRadius};
-	${({ theme }) => theme.customStyles.nonSelectable}
+	align-items: center;
+	${({ theme }) => theme.customStyles.nonSelectable};
 `;
 
 export default Tab;

@@ -8,7 +8,10 @@ const theme = {
 	sizes: {
 		border: calcHeightUnits(0.1),
 		borderRadius: calcHeightUnits(0.1),
-		padding: calcHeightUnits(0.25),
+		padding: {
+			L: calcHeightUnits(0.38),
+			M: calcHeightUnits(0.25),
+		},
 		text: {
 			major: calcHeightUnits(0.4),
 			minor: calcHeightUnits(0.35),
@@ -52,6 +55,11 @@ const theme = {
 		actionsIntense: palette.orange800,
 		basicShade: palette.black903,
 		closeButton: palette.pink700,
+		coins: {
+			button: palette.orange800,
+			tab: palette.orange600,
+			moreCoinsButton: palette.orange800,
+		},
 		characterInfoBar: {
 			bg: palette.red800,
 			xp: palette.blue950,

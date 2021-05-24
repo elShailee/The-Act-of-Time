@@ -4,7 +4,7 @@ import texts from 'texts';
 import { mountComponents, unmountComponents } from 'Redux/Slices/MountedComponents';
 import { useDispatch, useSelector } from 'react-redux';
 import { isComponentMountedSelector } from 'Redux/Selectors/MountedComponentsSelectors';
-import { Button } from './styles';
+import { CoinsButton as Button } from './styles';
 
 export default function CoinsButton() {
 	const dispatch = useDispatch();
