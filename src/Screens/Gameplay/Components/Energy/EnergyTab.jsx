@@ -1,8 +1,8 @@
 import React from 'react';
 import './EnergyTab.css';
+import { Tab } from './styles';
 import texts from 'texts';
 import EnergyIcon from 'Assets/placeholderIcon.png';
-import GeneralTab from 'GeneralComponents/GeneralTab/styles';
 import { useDispatch } from 'react-redux';
 import { mountComponents, unmountComponents } from 'Redux/Slices/MountedComponents';
 import GeneralButton from 'GeneralComponents/GeneralButton/styles';
@@ -17,7 +17,7 @@ export default function EnergyTab() {
 	const energyIcon = <img src={EnergyIcon} alt='' className='tinyIcons' />;
 
 	return (
-		<GeneralTab id='energyTab'>
+		<Tab>
 			<div className='energyInfo' id='timeUntillFullText'>
 				{texts.gameplay.energy.energyTab.fullIn}
 				<br />
@@ -39,6 +39,6 @@ export default function EnergyTab() {
 			<GeneralButton id='getMoreEnergyButton' onClick={() => getMoreButtonClickHandler()}>
 				{texts.gameplay.energy.energyTab.getMore}
 			</GeneralButton>
-		</GeneralTab>
+		</Tab>
 	);
 }

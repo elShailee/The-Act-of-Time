@@ -8,6 +8,10 @@ export const Tab = styled(GeneralTab)`
 	background-color: ${({ theme }) => theme.colors.actionsMid};
 `;
 
+export const ActionsDroppable = styled.div`
+	width: 100%;
+`;
+
 export const TabItem = styled.div`
 	margin-top: ${({ isFirst }) => {
 		if (isFirst) return '0';
@@ -44,4 +48,5 @@ export const MoreActionsButton = styled(GeneralButton)`
 	margin-top: ${({ theme }) => theme.sizes.padding.M};
 	padding: 0 ${({ theme }) => theme.sizes.padding.M};
 	background-color: ${({ theme }) => theme.colors.actionsIntense};
+	font-size: ${({ theme }) => theme.sizes.text.minor};
 `;

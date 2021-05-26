@@ -6,6 +6,7 @@ const Tab = styled.div`
 	padding: ${({ theme }) => theme.sizes.padding.M};
 	font-size: ${({ theme }) => theme.sizes.text.minor};
 	border-radius: ${({ theme }) => theme.sizes.borderRadius};
+	box-sizing: border-box;
 	align-items: center;
 	${({ theme }) => theme.customStyles.nonSelectable};
 `;

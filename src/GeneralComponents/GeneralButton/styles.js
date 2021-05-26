@@ -6,6 +6,7 @@ export default styled.div`
 	border-radius: ${({ theme }) => theme.sizes.borderRadius};
 	font-size: ${({ theme }) => theme.sizes.text.major};
 	text-transform: uppercase;
+	box-sizing: border-box;
 
 	${({ theme }) => theme.customStyles.centerItems}
 	${({ theme }) => theme.customStyles.highlighted}
