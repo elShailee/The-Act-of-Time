@@ -1,18 +1,23 @@
 import React from 'react';
-import { Hexagon } from 'react-hex-engine';
 import chunkDictionary from './chunksDictionary';
 
-export default function MapChunk(hex, climate, cordinateX, cordinateY) {
-	const movmentLeft = '3.125vw';
-	const movmentUp = '50vh/9';
-	const color = climate != null ? chunkDictionary[climate].color : 'black';
-	const opacity = climate != null ? 1 : 0;
-	const style = `
-        color: ${color};
-        opacity: ${opacity}
-        Left: ${cordinateX} * ${movmentLeft}; 
-        up: ${cordinateX} * 0.5 * ${movmentUp} + ${cordinateY} * ${movmentUp};
-        `;
+export default function MapChunk(x, y, color) {
+	const width = 64;
+	const height = 55.426;
+	const side = 32;
 
-	return <Hexagon className='chunk' style={style} {...hex} key={hex.toString()} />;
+function generateHexPoints(centreX, centreY) {
+  const offsets = [
+    [(width-side)/2, 0],
+    [((width-side)/2 + side), 0],
+    [width, height/2],
+    [((width-side)/2 + side), height],
+    [(width-side)/2, height],
+    [0, height/2]
+  ];
+	const chankColor = chunkDictionary(color),
+	
+	}
+	return generateHexPoints(x, y);
+
 }
