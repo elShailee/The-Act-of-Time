@@ -2,28 +2,68 @@ import styled from 'styled-components';
 import GeneralButton from 'GeneralComponents/GeneralButton/styles';
 import GeneralTab from 'GeneralComponents/GeneralTab/styles';
 
+// Button
+
 export const Button = styled(GeneralButton)`
 	width: ${({ theme }) => theme.calcHeightUnits(4)};
 	background-color: ${({ theme }) => theme.colors.energy.button};
 	margin-right: ${({ theme }) => theme.calcHeightUnits(1)};
 `;
 
+// Tab - Exterior
+
 export const Tab = styled(GeneralTab)`
 	width: ${({ theme }) => theme.calcHeightUnits(4)};
 	height: ${({ theme }) => theme.calcHeightUnits(2)};
 	background-color: ${({ theme }) => theme.colors.energy.tab};
-	padding-top: ${({ theme }) => theme.sizes.padding.L};
 	display: grid;
-	grid-template-columns: 90px 60px;
-	grid-column-gap: 10px;
-	grid-template-rows: 20px 10px 10px 20px;
+	grid-template-columns: ${({ theme }) => theme.calcHeightUnits(1.75) + ' ' + theme.calcHeightUnits(1.5)};
+	grid-column-gap: ${({ theme }) => theme.sizes.padding.M};
+	grid-template-rows: ${({ theme }) =>
+		theme.calcHeightUnits(0.5) +
+		' ' +
+		theme.sizes.padding.M +
+		' ' +
+		theme.sizes.padding.M +
+		' ' +
+		theme.calcHeightUnits(0.5)};
 `;
 
-// export const MoreCoinsButton = styled(GeneralButton)`
-// 	height: ${({ theme }) => theme.sizes.buttonsHeight.M};
-// 	padding: 0 ${({ theme }) => theme.sizes.padding.M};
-// 	margin-top: ${({ theme }) => theme.sizes.padding.M};
-// 	background-color: ${({ theme }) => theme.colors.energy.moreEnergyButton};
-// 	font-size: ${({ theme }) => theme.sizes.text.minor};
-// 	text-transform: none;
-// `;
+// Tab - Interior
+
+const DataDisplay = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	height: 100%;
+	font-size: ${({ theme }) => theme.sizes.text.S};
+	background-color: ${({ theme }) => theme.colors.energy.dataDisplay};
+	border-radius: ${({ theme }) => theme.sizes.borderRadius.S};
+`;
+
+export const TimeUntillFullText = styled(DataDisplay)`
+	grid-row-start: 1;
+	grid-row-end: 3;
+`;
+
+export const EnergyAmountText = styled(DataDisplay)`
+	grid-row-start: 1;
+	grid-row-end: 2;
+`;
+
+export const RechargeRateText = styled(DataDisplay)`
+	grid-row-start: 4;
+	grid-row-end: 5;
+`;
+
+export const MoreEnergyButton = styled(GeneralButton)`
+	height: 100%;
+	grid-row-start: 3;
+	grid-row-end: 5;
+
+	background-color: ${({ theme }) => theme.colors.energy.moreEnergyButton};
+	font-size: ${({ theme }) => theme.sizes.text.M};
+	text-transform: none;
+	border: 0px;
+`;

@@ -7,14 +7,18 @@ const theme = {
 	calcHeightUnits,
 	sizes: {
 		border: calcHeightUnits(0.1),
-		borderRadius: calcHeightUnits(0.1),
+		borderRadius: {
+			M: calcHeightUnits(0.1),
+			S: calcHeightUnits(0.05),
+		},
 		padding: {
 			L: calcHeightUnits(0.38),
 			M: calcHeightUnits(0.25),
 		},
 		text: {
-			major: calcHeightUnits(0.35),
-			minor: calcHeightUnits(0.3),
+			L: calcHeightUnits(0.35),
+			M: calcHeightUnits(0.3),
+			S: calcHeightUnits(0.25),
 		},
 		buttonsHeight: {
 			L: calcHeightUnits(1),
@@ -63,7 +67,8 @@ const theme = {
 		energy: {
 			button: palette.blue[950],
 			tab: palette.blue[550],
-			moreEnergyButton: palette.blue[750],
+			dataDisplay: palette.blue[650],
+			moreEnergyButton: palette.blue[950],
 		},
 		characterInfoBar: {
 			bg: palette.red[800],

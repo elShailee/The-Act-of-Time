@@ -1,11 +1,9 @@
 import React from 'react';
-import './EnergyTab.css';
-import { Tab } from './styles';
+import { Tab, TimeUntillFullText, EnergyAmountText, RechargeRateText, MoreEnergyButton } from './styles';
 import texts from 'texts';
 import EnergyIcon from 'Assets/placeholderIcon.png';
 import { useDispatch } from 'react-redux';
 import { mountComponents, unmountComponents } from 'Redux/Slices/MountedComponents';
-import GeneralButton from 'GeneralComponents/GeneralButton/styles';
 
 export default function EnergyTab() {
 	const dispatch = useDispatch();
@@ -18,27 +16,27 @@ export default function EnergyTab() {
 
 	return (
 		<Tab>
-			<div className='energyInfo' id='timeUntillFullText'>
+			<TimeUntillFullText>
 				{texts.gameplay.energy.energyTab.fullIn}
 				<br />
 				XX:XX:XX
-			</div>
+			</TimeUntillFullText>
 
-			<div className='energyInfo' id='energyAmountText'>
+			<EnergyAmountText>
 				XX
 				{energyIcon}
-			</div>
+			</EnergyAmountText>
 
-			<div className='energyInfo' id='rechargeRateText'>
+			<RechargeRateText>
 				{texts.gameplay.energy.energyTab.rate}
 				XX
 				{energyIcon}
 				{texts.gameplay.energy.energyTab.perHour}
-			</div>
+			</RechargeRateText>
 
-			<GeneralButton id='getMoreEnergyButton' onClick={() => getMoreButtonClickHandler()}>
+			<MoreEnergyButton onClick={() => getMoreButtonClickHandler()}>
 				{texts.gameplay.energy.energyTab.getMore}
-			</GeneralButton>
+			</MoreEnergyButton>
 		</Tab>
 	);
 }

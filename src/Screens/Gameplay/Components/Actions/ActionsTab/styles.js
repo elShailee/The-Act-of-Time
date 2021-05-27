@@ -15,12 +15,12 @@ export const ActionsDroppable = styled.div`
 export const TabItem = styled.div`
 	margin-top: ${({ isFirst }) => {
 		if (isFirst) return '0';
-		else return ({ theme }) => theme.sizes.borderRadius;
+		else return ({ theme }) => theme.sizes.borderRadius.M;
 	}};
 	padding: ${({ theme }) => theme.sizes.padding.M};
 	background-color: ${({ theme }) => theme.colors.actionsPale};
-	font-size: ${({ theme }) => theme.sizes.text.minor};
-	border-radius: ${({ theme }) => theme.sizes.borderRadius};
+	font-size: ${({ theme }) => theme.sizes.text.M};
+	border-radius: ${({ theme }) => theme.sizes.borderRadius.M};
 	${({ theme }) => theme.customStyles.nonSelectable}
 	${({ theme }) => theme.customStyles.centerItems}
 	justify-content: space-between;
@@ -48,5 +48,5 @@ export const MoreActionsButton = styled(GeneralButton)`
 	margin-top: ${({ theme }) => theme.sizes.padding.M};
 	padding: 0 ${({ theme }) => theme.sizes.padding.M};
 	background-color: ${({ theme }) => theme.colors.actionsIntense};
-	font-size: ${({ theme }) => theme.sizes.text.minor};
+	font-size: ${({ theme }) => theme.sizes.text.M};
 `;

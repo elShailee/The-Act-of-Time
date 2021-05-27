@@ -19,6 +19,6 @@ export const MoreCoinsButton = styled(GeneralButton)`
 	padding: 0 ${({ theme }) => theme.sizes.padding.M};
 	margin-top: ${({ theme }) => theme.sizes.padding.M};
 	background-color: ${({ theme }) => theme.colors.coins.moreCoinsButton};
-	font-size: ${({ theme }) => theme.sizes.text.minor};
+	font-size: ${({ theme }) => theme.sizes.text.M};
 	text-transform: none;
 `;
