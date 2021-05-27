@@ -5,7 +5,7 @@ import hamburgerMenuIcon from 'Assets/hamburgerMenuIcon.png';
 import xIcon from 'Assets/xIcon.png';
 
 export const Tab = styled(GeneralTab)`
-	background-color: ${({ theme }) => theme.colors.actionsMid};
+	background-color: ${({ theme }) => theme.colors.actions.tabBg};
 `;
 
 export const ActionsDroppable = styled.div`
@@ -18,7 +18,7 @@ export const TabItem = styled.div`
 		else return ({ theme }) => theme.sizes.borderRadius.M;
 	}};
 	padding: ${({ theme }) => theme.sizes.padding.M};
-	background-color: ${({ theme }) => theme.colors.actionsPale};
+	background-color: ${({ theme }) => theme.colors.actions.itemBg};
 	font-size: ${({ theme }) => theme.sizes.text.M};
 	border-radius: ${({ theme }) => theme.sizes.borderRadius.M};
 	${({ theme }) => theme.customStyles.nonSelectable}
@@ -47,6 +47,6 @@ export const MoreActionsButton = styled(GeneralButton)`
 	height: ${({ theme }) => theme.sizes.buttonsHeight.M};
 	margin-top: ${({ theme }) => theme.sizes.padding.M};
 	padding: 0 ${({ theme }) => theme.sizes.padding.M};
-	background-color: ${({ theme }) => theme.colors.actionsIntense};
+	background-color: ${({ theme }) => theme.colors.actions.moreActionsButton};
 	font-size: ${({ theme }) => theme.sizes.text.M};
 `;

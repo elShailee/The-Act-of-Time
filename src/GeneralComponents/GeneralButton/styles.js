@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export default styled.div`
 	height: ${({ theme }) => theme.sizes.buttonsHeight.L};
-	border: ${({ theme }) => theme.sizes.border} solid ${({ theme }) => theme.colors.basicShade};
+	border: ${({ theme }) => theme.sizes.border} solid ${({ theme }) => theme.colors.generalButton.borderShade};
 	border-radius: ${({ theme }) => theme.sizes.borderRadius.M};
 	font-size: ${({ theme }) => theme.sizes.text.L};
 	text-transform: uppercase;

@@ -53,12 +53,18 @@ const theme = {
 		`,
 	},
 	colors: {
-		actionsButton: palette.yellow[300],
-		actionsPale: palette.orange[200],
-		actionsMid: palette.orange[600],
-		actionsIntense: palette.orange[800],
-		basicShade: palette.black[903],
-		closeButton: palette.pink[700],
+		generalButton: {
+			borderShade: palette.black[903],
+		},
+		generalCloseButton: {
+			bg: palette.pink[700],
+		},
+		actions: {
+			button: palette.yellow[300],
+			itemBg: palette.orange[200],
+			tabBg: palette.orange[600],
+			moreActionsButton: palette.orange[800],
+		},
 		coins: {
 			button: palette.orange[800],
 			tab: palette.orange[600],
