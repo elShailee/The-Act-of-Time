@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import GeneralButton from 'GeneralComponents/GeneralButton/styles';
-import GeneralTab from 'GeneralComponents/GeneralTab/styles';
+import { GeneralButton } from 'GeneralComponents/GeneralButton/styles';
+import { GeneralTab } from 'GeneralComponents/GeneralTab/styles';
 
 export const CoinsButton = styled(GeneralButton)`
 	width: ${({ theme }) => theme.calcHeightUnits(2)};

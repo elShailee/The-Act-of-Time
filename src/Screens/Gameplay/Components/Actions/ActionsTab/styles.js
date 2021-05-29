@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import GeneralTab from 'GeneralComponents/GeneralTab/styles';
-import GeneralButton from 'GeneralComponents/GeneralButton/styles';
+import { GeneralTab } from 'GeneralComponents/GeneralTab/styles';
+import { GeneralButton } from 'GeneralComponents/GeneralButton/styles';
 import hamburgerMenuIcon from 'Assets/hamburgerMenuIcon.png';
 import xIcon from 'Assets/xIcon.png';
 
@@ -27,17 +27,21 @@ export const TabItem = styled.div`
 `;
 
 export const DragHandle = styled.img`
-	${({ theme }) => theme.customStyles.smallIconsSize};
+	width: ${({ theme }) => theme.sizes.components.smallIcons};
+	height: ${({ theme }) => theme.sizes.components.smallIcons};
 `;
+
 DragHandle.defaultProps = {
 	src: hamburgerMenuIcon,
 	alt: 'three lines to show you can select it',
 };
 
 export const AbortButton = styled.img`
-	${({ theme }) => theme.customStyles.smallIconsSize};
+	width: ${({ theme }) => theme.sizes.components.smallIcons};
+	height: ${({ theme }) => theme.sizes.components.smallIcons};
 	cursor: pointer;
 `;
+
 AbortButton.defaultProps = {
 	src: xIcon,
 	onClick: () => console.log('action abort triggered at an actionTabItem'),

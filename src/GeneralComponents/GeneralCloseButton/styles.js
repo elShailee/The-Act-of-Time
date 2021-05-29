@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import GeneralButton from 'GeneralComponents/GeneralButton/styles';
+import { GeneralButton } from 'GeneralComponents/GeneralButton/styles';
 
 export const GeneralCloseButton = styled(GeneralButton)`
 	width: ${({ theme }) => theme.calcHeightUnits(1)};

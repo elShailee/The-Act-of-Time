@@ -16,6 +16,7 @@ const theme = {
 			M: calcHeightUnits(0.25),
 		},
 		text: {
+			XL: calcHeightUnits(0.4),
 			L: calcHeightUnits(0.35),
 			M: calcHeightUnits(0.3),
 			S: calcHeightUnits(0.25),
@@ -24,12 +25,13 @@ const theme = {
 			L: calcHeightUnits(1),
 			M: calcHeightUnits(0.75),
 		},
+		components: {
+			smallIcons: calcHeightUnits(0.35),
+			craftingButton: calcHeightUnits(2.5),
+			seenButton: calcHeightUnits(1.5),
+		},
 	},
 	customStyles: {
-		smallIconsSize: `
-			width: ${calcHeightUnits(0.4)};
-			height: ${calcHeightUnits(0.4)};
-		`,
 		centerItems: `	
 			display: flex;
 			align-items: center;
@@ -81,6 +83,9 @@ const theme = {
 			xp: palette.blue[950],
 			xpbg: palette.gray[800],
 			text: palette.white[900],
+		},
+		crafting: {
+			button: palette.green[950],
 		},
 	},
 };

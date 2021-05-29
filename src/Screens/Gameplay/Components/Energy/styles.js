@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import GeneralButton from 'GeneralComponents/GeneralButton/styles';
-import GeneralTab from 'GeneralComponents/GeneralTab/styles';
+import { GeneralButton } from 'GeneralComponents/GeneralButton/styles';
+import { GeneralTab } from 'GeneralComponents/GeneralTab/styles';
+import Image from 'Assets/placeholderIcon.png';
 
 // Button
 
@@ -67,3 +68,12 @@ export const MoreEnergyButton = styled(GeneralButton)`
 	text-transform: none;
 	border: 0px;
 `;
+
+export const EnergyIcon = styled.img`
+	width: ${({ theme }) => theme.sizes.components.smallIcons};
+	height: ${({ theme }) => theme.sizes.components.smallIcons};
+`;
+
+EnergyIcon.defaultProps = {
+	src: Image,
+};

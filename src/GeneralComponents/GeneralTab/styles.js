@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Tab = styled.div`
+export const GeneralTab = styled.div`
 	display: flex;
 	flex-direction: column;
 	padding: ${({ theme }) => theme.sizes.padding.M};
@@ -10,5 +10,3 @@ const Tab = styled.div`
 	align-items: center;
 	${({ theme }) => theme.customStyles.nonSelectable};
 `;
-
-export default Tab;

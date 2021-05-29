@@ -1,6 +1,5 @@
-import './CraftingButton.css';
 import texts from 'texts';
-import GeneralButton from 'GeneralComponents/GeneralButton/styles';
+import { Button } from './styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { unmountComponents, mountComponents } from 'Redux/Slices/MountedComponents';
 import { isComponentMountedSelector } from 'Redux/Selectors/MountedComponentsSelectors';
@@ -20,7 +19,7 @@ export default function CraftingButton() {
 		}
 	};
 
-	const AnimatedButton = animated(GeneralButton);
+	const AnimatedButton = animated(Button);
 
 	return (
 		<AnimatedButton style={animateCraftingButton} id='craftingButton' onClick={onCraftingButtonClick}>

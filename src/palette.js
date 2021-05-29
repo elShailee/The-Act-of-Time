@@ -15,6 +15,9 @@ const palette = {
 		650: `rgb(170,221,221)`,
 		950: `rgb(0,255,255)`,
 	},
+	green: {
+		950: `rgb(127,255,0)`,
+	},
 };
 
 export default palette;
