@@ -26,6 +26,6 @@
 	--discoveryButton-size: calc(2.5 * var(--height-unit));
 	position: absolute;
 	overflow: hidden;
-	right: calc(1.5 * var(--height-unit));
-	bottom: calc(1.5 * var(--height-unit));
+	right: calc(1 * var(--height-unit));
+	bottom: calc(1 * var(--height-unit));
 }

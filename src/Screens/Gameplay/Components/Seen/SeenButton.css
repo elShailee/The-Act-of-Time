@@ -6,5 +6,5 @@
 	margin-bottom: calc(0.5 * var(--height-unit));
 	margin-left: calc(var(--discoveryButton-size) / 2);
 	line-height: var(--seenButton-size);
-	font-size: 2.2vh;
+	font-size: calc(0.75 * var(--height-unit));
 }

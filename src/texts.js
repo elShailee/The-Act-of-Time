@@ -34,10 +34,10 @@ const texts = {
 			},
 		},
 		discovery: {
-			buttonTitle: 'Discovery',
+			buttonTitle: 'D',
 		},
 		seen: {
-			buttonTitle: 'Seen',
+			buttonTitle: 'S',
 		},
 		map: {
 			zoomSlider: {

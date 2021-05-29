@@ -9,7 +9,7 @@ import useAnimations from 'Utils/useAnimations';
 export default function DiscoveryButton() {
 	const dispatch = useDispatch();
 	const isDiscoveryWindowMounted = useSelector(isComponentMountedSelector('DiscoveryWindow'));
-	const { animateDiscoveryButton, animateDiscoveryButtonText } = useAnimations();
+	const { animateDiscoveryButton } = useAnimations();
 
 	const onDiscoveryButtonClick = () => {
 		if (isDiscoveryWindowMounted) {
@@ -22,8 +22,8 @@ export default function DiscoveryButton() {
 	const AnimatedButton = animated(Button);
 
 	return (
-		<AnimatedButton style={animateDiscoveryButton} id='discoveryButton' onClick={onDiscoveryButtonClick}>
-			<animated.div style={animateDiscoveryButtonText}>{texts.gameplay.discovery.buttonTitle}</animated.div>
+		<AnimatedButton style={animateDiscoveryButton} onClick={onDiscoveryButtonClick}>
+			{texts.gameplay.discovery.buttonTitle}
 		</AnimatedButton>
 	);
 }

@@ -16,7 +16,7 @@ const theme = {
 			M: calcHeightUnits(0.25),
 		},
 		text: {
-			XL: calcHeightUnits(0.4),
+			XL: calcHeightUnits(1.25),
 			L: calcHeightUnits(0.35),
 			M: calcHeightUnits(0.3),
 			S: calcHeightUnits(0.25),
