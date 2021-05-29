@@ -27,7 +27,7 @@ const theme = {
 		},
 		components: {
 			smallIcons: calcHeightUnits(0.35),
-			craftingButton: calcHeightUnits(2.5),
+			discoveryButton: calcHeightUnits(2.5),
 			seenButton: calcHeightUnits(1.5),
 		},
 	},
@@ -84,7 +84,7 @@ const theme = {
 			xpbg: palette.gray[800],
 			text: palette.white[900],
 		},
-		crafting: {
+		discovery: {
 			button: palette.green[950],
 		},
 	},

@@ -33,8 +33,8 @@ const texts = {
 				title: 'Disaster',
 			},
 		},
-		crafting: {
-			buttonTitle: 'Crafting',
+		discovery: {
+			buttonTitle: 'Discovery',
 		},
 		seen: {
 			buttonTitle: 'Seen',

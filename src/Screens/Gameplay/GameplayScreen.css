@@ -23,7 +23,7 @@
 
 #bottomRightButtonsContainer {
 	--seenButton-size: calc(1.5 * var(--height-unit));
-	--craftingButton-size: calc(2.5 * var(--height-unit));
+	--discoveryButton-size: calc(2.5 * var(--height-unit));
 	position: absolute;
 	overflow: hidden;
 	right: calc(1.5 * var(--height-unit));

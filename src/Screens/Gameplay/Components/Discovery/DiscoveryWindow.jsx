@@ -1,13 +1,13 @@
 import React from 'react';
 import GeneralWindow from 'GeneralComponents/GeneralWindow/GeneralWindow';
 
-export default function CraftingWindow({ unmountCraftingWindow }) {
+export default function DiscoveryWindow({ unmountDiscoveryWindow }) {
 	return (
-		<GeneralWindow unmountGeneralWindow={unmountCraftingWindow} rightSided>
+		<GeneralWindow unmountGeneralWindow={unmountDiscoveryWindow} rightSided>
 			<br />
 			<br />
 			<br />
-			Crafting Window
+			Discovery Window
 			<br />
 			<br />
 			<br />
