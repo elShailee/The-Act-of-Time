@@ -1,6 +1,6 @@
 const characterInfoExampleData = {
 	characterName: 'John Doe',
-	characterImage: 'john_doe',
+	characterImage: 'char1',
 	characterLevel: 10,
 };
 

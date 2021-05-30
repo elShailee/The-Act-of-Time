@@ -11,7 +11,6 @@ export const Tab = styled(GeneralTab)`
 	width: ${({ theme }) => theme.calcHeightUnits(4)};
 	height: ${({ theme }) => theme.calcHeightUnits(2)};
 	background-color: ${({ theme }) => theme.colors.coins.tab};
-	padding-top: ${({ theme }) => theme.sizes.padding.L};
 `;
 
 export const MoreCoinsButton = styled(GeneralButton)`

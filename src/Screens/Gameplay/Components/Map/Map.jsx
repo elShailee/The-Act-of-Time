@@ -1,17 +1,16 @@
 import React from 'react';
-import './Map.css';
+import { BG, NavToolsContainer, ZoomSlider, MapCompass } from './styles';
 import FocusedMap from './FocusedMap/FocusedMap';
-import MapCompass from './MapCompass';
-import ZoomSlider from './ZoomSlider';
+import texts from 'texts';
 
 export default function Map() {
 	return (
-		<div id='mapComponent'>
+		<BG>
 			<FocusedMap />
-			<div id='mapNavigationTools'>
-				<MapCompass />
-				<ZoomSlider />
-			</div>
-		</div>
+			<NavToolsContainer>
+				<ZoomSlider>{texts.gameplay.map.zoomSlider.title}</ZoomSlider>
+				<MapCompass>{texts.gameplay.map.mapCompass.title}</MapCompass>
+			</NavToolsContainer>
+		</BG>
 	);
 }

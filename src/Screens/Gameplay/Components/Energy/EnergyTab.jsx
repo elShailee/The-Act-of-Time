@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tab, TimeUntillFullText, EnergyAmountText, RechargeRateText, MoreEnergyButton, EnergyIcon } from './styles';
+import { Tab, TimeUntillFullText, Amount, RechargeRate, MoreEnergyButton, Icon } from './styles';
 import texts from 'texts';
 import { useDispatch } from 'react-redux';
 import { mountComponents, unmountComponents } from 'Redux/Slices/MountedComponents';
@@ -19,17 +19,17 @@ export default function EnergyTab() {
 				XX:XX:XX
 			</TimeUntillFullText>
 
-			<EnergyAmountText>
+			<Amount>
 				XX
-				<EnergyIcon />
-			</EnergyAmountText>
+				<Icon />
+			</Amount>
 
-			<RechargeRateText>
+			<RechargeRate>
 				{texts.gameplay.energy.energyTab.rate}
 				XX
-				<EnergyIcon />
+				<Icon />
 				{texts.gameplay.energy.energyTab.perHour}
-			</RechargeRateText>
+			</RechargeRate>
 
 			<MoreEnergyButton onClick={() => getMoreButtonClickHandler()}>
 				{texts.gameplay.energy.energyTab.getMore}

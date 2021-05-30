@@ -48,12 +48,12 @@ export const TimeUntillFullText = styled(DataDisplay)`
 	grid-row-end: 3;
 `;
 
-export const EnergyAmountText = styled(DataDisplay)`
+export const Amount = styled(DataDisplay)`
 	grid-row-start: 1;
 	grid-row-end: 2;
 `;
 
-export const RechargeRateText = styled(DataDisplay)`
+export const RechargeRate = styled(DataDisplay)`
 	grid-row-start: 4;
 	grid-row-end: 5;
 `;
@@ -69,11 +69,11 @@ export const MoreEnergyButton = styled(GeneralButton)`
 	border: 0px;
 `;
 
-export const EnergyIcon = styled.img`
+export const Icon = styled.img`
 	width: ${({ theme }) => theme.sizes.components.smallIcons};
 	height: ${({ theme }) => theme.sizes.components.smallIcons};
 `;
 
-EnergyIcon.defaultProps = {
+Icon.defaultProps = {
 	src: Image,
 };

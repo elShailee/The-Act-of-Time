@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import characterInfo from 'ExampleData/characterInfoExampleData';
+import { getImageFromLib } from 'Utils/utilFuncs';
+import { lib } from 'Assets/character/lib';
 
 const CIB_width = 7;
 const CIB_height = CIB_width * 0.4;
@@ -20,18 +23,17 @@ export const BarContainer = styled.div`
 	${({ theme }) => theme.customStyles.nonSelectable}
 `;
 
-const bgPolygon = theme => {
-	const calc = num => theme.calcHeightUnits(num);
+const bgPolygon = calcHU => {
 	return `
     clip-path: polygon(
-      /*left corner going down*/  0                         ${calc(CIB_width * 0.15)},
-      /*top left corner*/         ${calc(CIB_width * 0.09)} 0,
-      /*top right corner*/        ${calc(CIB_width * 0.92)} 0,
-      /*right corner*/            ${calc(CIB_width)}        ${calc(CIB_width * 0.08)},
-      /*bottom right corner*/     ${calc(CIB_width * 0.86)} ${calc(CIB_textPartHeight)},
-      /*right middele corner*/    ${calc(CIB_width * 0.46)} ${calc(CIB_textPartHeight)},
-      /*middele bottom corner*/   ${calc(CIB_width * 0.38)} ${calc(CIB_height)},
-      /*left bottom corner*/      ${calc(CIB_width * 0.1)}  ${calc(CIB_height)}
+      /*left corner going down*/  0                         	${calcHU(CIB_width * 0.15)},
+      /*top left corner*/         ${calcHU(CIB_width * 0.09)} 0,
+      /*top right corner*/        ${calcHU(CIB_width * 0.92)} 0,
+      /*right corner*/            ${calcHU(CIB_width)}        ${calcHU(CIB_width * 0.08)},
+      /*bottom right corner*/     ${calcHU(CIB_width * 0.86)} ${calcHU(CIB_textPartHeight)},
+      /*right middele corner*/    ${calcHU(CIB_width * 0.46)} ${calcHU(CIB_textPartHeight)},
+      /*middele bottom corner*/   ${calcHU(CIB_width * 0.38)} ${calcHU(CIB_height)},
+      /*left bottom corner*/      ${calcHU(CIB_width * 0.1)}  ${calcHU(CIB_height)}
     );
   `;
 };
@@ -41,7 +43,7 @@ export const BarBG = styled.div`
 	height: ${({ theme }) => theme.calcHeightUnits(CIB_height)};
 	background-color: ${({ theme }) => theme.colors.characterInfoBar.bg};
 	text-align: center;
-	${({ theme }) => bgPolygon(theme)}
+	${({ theme }) => bgPolygon(theme.calcHeightUnits)}
 `;
 
 export const TextCointainer = styled.div`
@@ -76,6 +78,17 @@ export const Image = styled.img`
 	${({ theme }) => theme.customStyles.clickable}
 	${({ theme }) => theme.customStyles.nonSelectable}
 `;
+
+const onCharcterImageClick = () => {
+	//this is a on click triger for the Character Info window please change when creating the window
+	console.log('this trigger exist on characterInfoBar.js');
+};
+
+Image.defaultProps = {
+	src: getImageFromLib(characterInfo.characterImage, lib),
+	onClick: onCharcterImageClick,
+	alt: 'character face',
+};
 
 const xpBars = (theme, width) => `
 	position: absolute;

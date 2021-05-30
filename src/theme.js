@@ -8,6 +8,7 @@ const theme = {
 	sizes: {
 		border: calcHeightUnits(0.1),
 		borderRadius: {
+			XXL: calcHeightUnits(0.5),
 			M: calcHeightUnits(0.1),
 			S: calcHeightUnits(0.05),
 		},
@@ -74,18 +75,27 @@ const theme = {
 		},
 		energy: {
 			button: palette.blue[950],
-			tab: palette.blue[550],
-			dataDisplay: palette.blue[650],
+			tab: palette.blue[650],
+			dataDisplay: palette.blue[750],
 			moreEnergyButton: palette.blue[950],
 		},
 		characterInfoBar: {
 			bg: palette.red[800],
 			xp: palette.blue[950],
-			xpbg: palette.gray[800],
+			xpbg: palette.gray[500],
 			text: palette.white[900],
+		},
+		disasters: {
+			image: palette.purple[950],
+			counter: palette.purple[900],
 		},
 		discovery: {
 			button: palette.green[950],
+		},
+		map: {
+			bg: palette.blue[300],
+			zoomSlider: palette.gray[500],
+			compass: palette.gray[300],
 		},
 	},
 };
