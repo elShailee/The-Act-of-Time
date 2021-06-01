@@ -11,7 +11,6 @@ const CIB_text_width = CIB_width * 0.4;
 const CIB_Image_size = CIB_width * 0.32;
 const CIB_bigFontSize = CIB_width * 0.08;
 const CIB_fontSize = CIB_width * 0.06;
-const CIB_font = `Helvetica`;
 const XP_bar_height = CIB_height * 0.05;
 const xpCapacity_width = CIB_width * 0.33;
 const xpQuantity_width = CIB_width * 0.16;
@@ -19,21 +18,20 @@ const xpQuantity_width = CIB_width * 0.16;
 export const BarContainer = styled.div`
 	position: absolute;
 	left: calc(50% - ${({ theme }) => theme.calcHeightUnits(halfOf_CIB_width)});
-	top: ${({ theme }) => theme.calcHeightUnits(0.5)};
-	${({ theme }) => theme.customStyles.nonSelectable}
+	top: ${({ theme }) => theme.sizes.padding.XL};
 `;
 
 const bgPolygon = calcHU => {
 	return `
     clip-path: polygon(
-      /*left corner going down*/  0                         	${calcHU(CIB_width * 0.15)},
-      /*top left corner*/         ${calcHU(CIB_width * 0.09)} 0,
-      /*top right corner*/        ${calcHU(CIB_width * 0.92)} 0,
-      /*right corner*/            ${calcHU(CIB_width)}        ${calcHU(CIB_width * 0.08)},
-      /*bottom right corner*/     ${calcHU(CIB_width * 0.86)} ${calcHU(CIB_textPartHeight)},
-      /*right middele corner*/    ${calcHU(CIB_width * 0.46)} ${calcHU(CIB_textPartHeight)},
-      /*middele bottom corner*/   ${calcHU(CIB_width * 0.38)} ${calcHU(CIB_height)},
-      /*left bottom corner*/      ${calcHU(CIB_width * 0.1)}  ${calcHU(CIB_height)}
+      /* center left */					   		0                         					${calcHU(CIB_width * 0.15)},
+      /* top left */            			${calcHU(CIB_width * 0.09)} 				0,
+      /* top right */           			${calcHU(CIB_width * 0.92)} 				0,
+      /* center right */         			${calcHU(CIB_width)}        				${calcHU(CIB_width * 0.08)},
+      /* bottom right */        			${calcHU(CIB_width * 0.86)} 				${calcHU(CIB_textPartHeight)},
+      /* center center */       			${calcHU(CIB_width * 0.46)} 				${calcHU(CIB_textPartHeight)},
+      /* bottom center */       			${calcHU(CIB_width * 0.38)} 				${calcHU(CIB_height)},
+      /* bottom left */         			${calcHU(CIB_width * 0.1)}  				${calcHU(CIB_height)}
     );
   `;
 };
@@ -55,7 +53,6 @@ export const TextCointainer = styled.div`
 
 const textBoxes = (theme, fontSize) => `
 	width: ${theme.calcHeightUnits(CIB_text_width)};
-  font-family: ${CIB_font};
   color: ${theme.colors.characterInfoBar.text};
 	font-size: ${theme.calcHeightUnits(fontSize)};
 `;
@@ -76,7 +73,7 @@ export const Image = styled.img`
 	padding: ${({ theme }) => theme.calcHeightUnits((CIB_height - CIB_Image_size) / 2)};
 	border-radius: 50%;
 	${({ theme }) => theme.customStyles.clickable}
-	${({ theme }) => theme.customStyles.nonSelectable}
+	${({ theme }) => theme.customStyles.nonSelectable};
 `;
 
 const onCharcterImageClick = () => {

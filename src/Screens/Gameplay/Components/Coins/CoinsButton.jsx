@@ -19,7 +19,7 @@ export default function CoinsButton() {
 	};
 
 	return (
-		<div id='coinsButtonContainer'>
+		<div>
 			<Button onClick={onCoinsButtonClick}>{texts.gameplay.coins.buttonTitle}</Button>
 			{isCoinsTabMounted && <CoinsTab />}
 		</div>

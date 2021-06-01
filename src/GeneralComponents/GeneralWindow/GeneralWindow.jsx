@@ -1,20 +1,19 @@
 import React from 'react';
-import { GeneralCloseButton } from 'GeneralComponents/GeneralCloseButton/styles';
-import './GeneralWindow.css';
+import { WindowContainer, TitleContainer, CloseButton, ContentContainer } from './styles';
 
 export default function GeneralWindow({ children, unmountGeneralWindow, rightSided, title, titleId, id, containerId }) {
-	let composedClassName = 'generalWindow centered';
-	if (rightSided) composedClassName = 'generalWindow rightSided';
+	let position;
+	if (rightSided) {
+		position = 'rightSided';
+	} else position = 'centered';
 
 	return (
-		<div className={composedClassName} id={id}>
-			<div className='windowTitleContainer' id={titleId}>
+		<WindowContainer position={position}>
+			<TitleContainer>
 				{title}
-				<GeneralCloseButton className='windowCloseButton' onClick={unmountGeneralWindow} />
-			</div>
-			<div className='windowContentContainer' id={containerId}>
-				{children}
-			</div>
-		</div>
+				<CloseButton onClick={unmountGeneralWindow} />
+			</TitleContainer>
+			<ContentContainer>{children}</ContentContainer>
+		</WindowContainer>
 	);
 }

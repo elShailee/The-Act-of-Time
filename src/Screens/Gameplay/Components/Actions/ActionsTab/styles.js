@@ -21,7 +21,6 @@ export const TabItem = styled.div`
 	background-color: ${({ theme }) => theme.colors.actions.itemBg};
 	font-size: ${({ theme }) => theme.sizes.text.M};
 	border-radius: ${({ theme }) => theme.sizes.borderRadius.M};
-	${({ theme }) => theme.customStyles.nonSelectable}
 	${({ theme }) => theme.customStyles.centerItems}
 	justify-content: space-between;
 `;

@@ -7,5 +7,4 @@ export const GeneralTab = styled.div`
 	border-radius: ${({ theme }) => theme.sizes.borderRadius.M};
 	box-sizing: border-box;
 	${({ theme }) => theme.customStyles.centerItems}
-	${({ theme }) => theme.customStyles.nonSelectable};
 `;

@@ -8,7 +8,7 @@ import Image from 'Assets/placeholderIcon.png';
 export const Button = styled(GeneralButton)`
 	width: ${({ theme }) => theme.calcHeightUnits(4)};
 	background-color: ${({ theme }) => theme.colors.energy.button};
-	margin-right: ${({ theme }) => theme.calcHeightUnits(1)};
+	margin-right: ${({ theme }) => theme.sizes.padding.XXL};
 `;
 
 // Tab - Exterior

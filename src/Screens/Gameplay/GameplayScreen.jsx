@@ -1,5 +1,5 @@
 import React from 'react';
-import './GameplayScreen.css';
+import { Container, TopLeftContainer, TopRightContainer, BotRightContainer } from './styles';
 import CharacterInfoBar from 'Screens/Gameplay/Components/Character/CharacterInfoBar';
 import ActionsButton from 'Screens/Gameplay/Components/Actions/ActionsButton';
 import EnergyButton from 'Screens/Gameplay/Components/Energy/EnergyButton';
@@ -13,27 +13,27 @@ import AllTheFloatingWindows from 'Screens/Gameplay/Components/WindowsContainer'
 
 export default function GameplayScreen() {
 	return (
-		<div id='gameplayScreen'>
+		<Container>
 			<Map />
 			<CharacterInfoBar />
 
-			<div id='upperLeftButtonsContainer'>
+			<TopLeftContainer>
 				<EnergyButton />
 				<CoinsButton />
-			</div>
+			</TopLeftContainer>
 
-			<div id='upperRightButtonsContainer'>
+			<TopRightContainer>
 				<SettingsButton />
 				<ActionsButton />
-			</div>
+			</TopRightContainer>
 
 			<DisasterAlert />
 
-			<div id='bottomRightButtonsContainer'>
+			<BotRightContainer>
 				<SeenButton />
 				<DiscoveryButton />
-			</div>
+			</BotRightContainer>
 			<AllTheFloatingWindows />
-		</div>
+		</Container>
 	);
 }

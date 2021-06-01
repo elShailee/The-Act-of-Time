@@ -1,6 +1,6 @@
 import palette from './palette';
 
-const HU = `calc(100vh / 18)`;
+export const HU = `min(calc(100vh / 18), calc(100vw / 32))`;
 const calcHeightUnits = num => `calc(${num} * ${HU})`;
 
 const theme = {
@@ -9,15 +9,20 @@ const theme = {
 		border: calcHeightUnits(0.1),
 		borderRadius: {
 			XXL: calcHeightUnits(0.5),
+			L: calcHeightUnits(0.2),
 			M: calcHeightUnits(0.1),
 			S: calcHeightUnits(0.05),
 		},
 		padding: {
+			XXL: calcHeightUnits(1),
+			XL: calcHeightUnits(0.5),
 			L: calcHeightUnits(0.38),
 			M: calcHeightUnits(0.25),
+			S: calcHeightUnits(0.15),
 		},
 		text: {
-			XL: calcHeightUnits(1.25),
+			XXL: calcHeightUnits(1.25),
+			XL: calcHeightUnits(0.75),
 			L: calcHeightUnits(0.35),
 			M: calcHeightUnits(0.3),
 			S: calcHeightUnits(0.25),
@@ -28,8 +33,6 @@ const theme = {
 		},
 		components: {
 			smallIcons: calcHeightUnits(0.35),
-			discoveryButton: calcHeightUnits(2.5),
-			seenButton: calcHeightUnits(1.5),
 		},
 	},
 	customStyles: {
@@ -54,24 +57,31 @@ const theme = {
 		clickable: `
 			cursor: pointer;
 		`,
+		noBorder: `
+			border-color: ${palette.transparent};
+		`,
 	},
 	colors: {
 		generalButton: {
 			borderShade: palette.black[903],
 		},
 		generalCloseButton: {
-			bg: palette.pink[700],
+			bg: palette.orange[450],
+		},
+		generalWindow: {
+			bg: palette.yellow[350],
+			contentBg: palette.yellow[750],
 		},
 		actions: {
-			button: palette.yellow[300],
-			itemBg: palette.orange[200],
-			tabBg: palette.orange[600],
-			moreActionsButton: palette.orange[800],
+			button: palette.yellow[750],
+			itemBg: palette.orange[650],
+			tabBg: palette.orange[250],
+			moreActionsButton: palette.orange[500],
 		},
 		coins: {
-			button: palette.orange[800],
-			tab: palette.orange[600],
-			moreCoinsButton: palette.orange[800],
+			button: palette.orange[500],
+			tab: palette.orange[250],
+			moreCoinsButton: palette.orange[500],
 		},
 		energy: {
 			button: palette.blue[950],
@@ -80,14 +90,14 @@ const theme = {
 			moreEnergyButton: palette.blue[950],
 		},
 		characterInfoBar: {
-			bg: palette.red[800],
+			bg: palette.red[500],
 			xp: palette.blue[950],
 			xpbg: palette.gray[500],
 			text: palette.white[900],
 		},
 		disasters: {
-			image: palette.purple[950],
-			counter: palette.purple[900],
+			image: palette.purple[800],
+			counter: palette.purple[800],
 		},
 		discovery: {
 			button: palette.green[950],
@@ -96,6 +106,9 @@ const theme = {
 			bg: palette.blue[300],
 			zoomSlider: palette.gray[500],
 			compass: palette.gray[300],
+		},
+		settings: {
+			button: palette.gray[500],
 		},
 	},
 };

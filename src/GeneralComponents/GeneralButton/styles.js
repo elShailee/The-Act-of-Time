@@ -10,6 +10,5 @@ export const GeneralButton = styled.div`
 
 	${({ theme }) => theme.customStyles.centerItems}
 	${({ theme }) => theme.customStyles.highlighted}
-	${({ theme }) => theme.customStyles.nonSelectable}
 	${({ theme }) => theme.customStyles.clickable}
 `;

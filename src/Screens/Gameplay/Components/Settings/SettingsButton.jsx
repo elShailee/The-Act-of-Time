@@ -1,10 +1,8 @@
 import React from 'react';
-import './SettingsButton.css';
-import SettingsIcon from 'Assets/settingsIcon.png';
+import { Button, Icon } from './styles';
 import { mountComponents, unmountComponents } from 'Redux/Slices/MountedComponents';
 import { useDispatch, useSelector } from 'react-redux';
 import { isComponentMountedSelector } from 'Redux/Selectors/MountedComponentsSelectors';
-import { GeneralButton } from 'GeneralComponents/GeneralButton/styles';
 
 export default function SettingsButton() {
 	const dispatch = useDispatch();
@@ -18,13 +16,9 @@ export default function SettingsButton() {
 		}
 	};
 
-	const settingsIcon = <img src={SettingsIcon} alt='' id='settingsButtonIcon' />;
-
 	return (
-		<div id='settingsButtonContainer'>
-			<GeneralButton id='settingsButton' onClick={onSettingsButtonClick}>
-				{settingsIcon}
-			</GeneralButton>
-		</div>
+		<Button onClick={onSettingsButtonClick}>
+			<Icon />
+		</Button>
 	);
 }

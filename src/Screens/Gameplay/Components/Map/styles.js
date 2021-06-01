@@ -1,14 +1,16 @@
 import styled from 'styled-components';
 
 export const BG = styled.div`
+	width: ${({ theme }) => theme.calcHeightUnits(32)};
 	height: ${({ theme }) => theme.calcHeightUnits(18)};
+	position: absolute;
 	background-color: ${({ theme }) => theme.colors.map.bg};
 `;
 
 export const NavToolsContainer = styled.div`
 	position: absolute;
-	bottom: ${({ theme }) => theme.calcHeightUnits(1)};
-	left: ${({ theme }) => theme.calcHeightUnits(1)};
+	bottom: ${({ theme }) => theme.sizes.padding.XXL};
+	left: ${({ theme }) => theme.sizes.padding.XXL};
 	width: fit-content;
 `;
 export const ZoomSlider = styled.div`

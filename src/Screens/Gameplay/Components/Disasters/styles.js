@@ -9,7 +9,7 @@ export const Container = styled.div`
 	display: flex;
 	position: absolute;
 	align-items: center;
-	left: ${({ theme }) => theme.calcHeightUnits(1)};
+	left: ${({ theme }) => theme.sizes.padding.XXL};
 	top: ${({ theme }) => theme.calcHeightUnits(6)};
 `;
 
@@ -24,14 +24,13 @@ export const ImageButtonWrapper = styled(GeneralButton)`
 	height: ${({ theme }) => theme.calcHeightUnits(1.5)};
 	border-radius: 50%;
 	background-color: ${({ theme }) => theme.colors.disasters.image};
-	border-color: rgba(0, 0, 0, 0); //make border-color	 transparent to override semi-opace default border.
+	${({ theme }) => theme.customStyles.noBorder};
 `;
 
 export const Image = styled.img`
-	width: 100%;
 	height: 100%;
 	border-radius: 50%;
-	-webkit-user-drag: none;
+	${({ theme }) => theme.customStyles.nonSelectable};
 `;
 
 Image.defaultProps = {

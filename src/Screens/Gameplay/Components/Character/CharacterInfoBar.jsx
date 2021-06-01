@@ -4,7 +4,7 @@ import { BarContainer, BarBG, NameText, LevelText, Image, XPCapacity, XPQuantity
 
 export default function characterInfoBar() {
 	return (
-		<BarContainer id='characterInfoBarContainer'>
+		<BarContainer>
 			<XPCapacity />
 			<XPQuantity />
 			<BarBG>
