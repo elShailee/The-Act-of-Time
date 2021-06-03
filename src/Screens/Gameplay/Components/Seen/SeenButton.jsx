@@ -1,15 +1,14 @@
-import { Button } from './styles';
 import texts from 'texts';
+import { Button } from './styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { unmountComponents, mountComponents } from 'Redux/Slices/MountedComponents';
 import { isComponentMountedSelector } from 'Redux/Selectors/MountedComponentsSelectors';
-import { animated } from 'react-spring';
-import useAnimtions from 'Utils/useAnimations';
+import useAnimations from 'Utils/useAnimations';
 
 export default function SeenButton() {
 	const dispatch = useDispatch();
 	const isSeenWindowMounted = useSelector(isComponentMountedSelector('SeenWindow'));
-	const { animateSeenButton } = useAnimtions();
+	const { animateSeenButton } = useAnimations();
 
 	const onSeenButtonClick = () => {
 		if (isSeenWindowMounted) {
@@ -19,11 +18,9 @@ export default function SeenButton() {
 		}
 	};
 
-	const AnimatedButton = animated(Button);
-
 	return (
-		<AnimatedButton style={animateSeenButton} id='seenButton' onClick={onSeenButtonClick}>
+		<Button style={animateSeenButton} id='seenButton' onClick={onSeenButtonClick}>
 			{texts.gameplay.seen.buttonTitle}
-		</AnimatedButton>
+		</Button>
 	);
 }

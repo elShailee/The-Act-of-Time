@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import { GeneralButton } from 'GeneralComponents/GeneralButton/styles';
 import { discoveryButtonSize } from 'Screens/Gameplay/Components/Discovery/styles';
+import { animated } from 'react-spring';
 
 export const seenButtonSize = 1.5;
 
-export const Button = styled(GeneralButton)`
+export const Button = styled(animated(GeneralButton))`
 	background-color: cornflowerblue;
 	width: ${({ theme }) => theme.calcHeightUnits(seenButtonSize)};
 	height: ${({ theme }) => theme.calcHeightUnits(seenButtonSize)};

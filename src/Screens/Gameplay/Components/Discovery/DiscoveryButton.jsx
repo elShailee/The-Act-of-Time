@@ -3,7 +3,6 @@ import { Button } from './styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { unmountComponents, mountComponents } from 'Redux/Slices/MountedComponents';
 import { isComponentMountedSelector } from 'Redux/Selectors/MountedComponentsSelectors';
-import { animated } from 'react-spring';
 import useAnimations from 'Utils/useAnimations';
 
 export default function DiscoveryButton() {
@@ -19,11 +18,9 @@ export default function DiscoveryButton() {
 		}
 	};
 
-	const AnimatedButton = animated(Button);
-
 	return (
-		<AnimatedButton style={animateDiscoveryButton} onClick={onDiscoveryButtonClick}>
+		<Button style={animateDiscoveryButton} onClick={onDiscoveryButtonClick}>
 			{texts.gameplay.discovery.buttonTitle}
-		</AnimatedButton>
+		</Button>
 	);
 }

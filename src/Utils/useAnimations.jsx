@@ -7,14 +7,14 @@ export default function useAnimations() {
 	const isAtLeastOneWindowMounted = isDiscoveryWindowMounted || isSeenWindowMounted;
 
 	const animateDiscoveryButton = useSpring({
-		translateX: isAtLeastOneWindowMounted ? '4vh' : '0vh',
-		translateY: isAtLeastOneWindowMounted ? '2vh' : '0vh',
+		translateX: isAtLeastOneWindowMounted ? '30%' : '0%',
+		translateY: isAtLeastOneWindowMounted ? '20%' : '0%',
 		rotate: isAtLeastOneWindowMounted ? 360 : 0,
 		scale: isAtLeastOneWindowMounted ? 0.6 : 1,
 	});
 
 	const animateSeenButton = useSpring({
-		translateY: isAtLeastOneWindowMounted ? '5vh' : '0vh',
+		translateY: isAtLeastOneWindowMounted ? '66.666%' : '0%',
 	});
 
 	return { animateDiscoveryButton, animateSeenButton };
