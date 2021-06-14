@@ -1,36 +1,34 @@
-import React from 'react';
-import { Hexagon, HexEngine, GridGenerator } from 'react-hex-engine';
+// import React from 'react';
 import 'Screens/Gameplay/Components/Map/WorldMap.css';
-import MapChunk from 'Screens/Gameplay/Components/Map/MapChunk';
-import chunksExampleData from 'ExampleData/chunksExampleData';
+// import MapChunk from 'Screens/Gameplay/Components/Map/MapChunk';
+// import chunksExampleData from 'ExampleData/chunksExampleData';
 // import RenderWorldMap from 'Utils/MapUtils/RenderWorldMap'; Hexagon,
 
 const HexMap = () => {
-	const flat = true;
-	const size = { x: 5, y: 5 };
-	const origin = { x: 0, y: 4 };
-	const spacing = 1.0;
-	const width = 1820;
-	const height = 930;
-	const viewBox = { x: -35, y: -35, width: 70, height: 70 };
+	// const flat = true;
+	// const size = { x: 5, y: 5 };
+	// const origin = { x: 0, y: 4 };
+	// const spacing = 1.0;
+	// const width = 1820;
+	// const height = 930;
+	// const viewBox = { x: -35, y: -35, width: 70, height: 70 };
 
-	return (
-		<HexEngine
-			id='HexMap'
-			width={width}
-			height={height}
-			viewBox={viewBox}
-			flat={flat}
-			size={size}
-			origin={origin}
-			spacing={spacing}
-		>
-			{GridGenerator.hexagon(2).map(hex =>
-				chunksExampleData.map(chunk => MapChunk(hex, chunk.climate, chunk.cordinateX, chunk.cordinateY)),
-				// <Hexagon {...hex} key={hex.toString()} />
-			)}
-		</HexEngine>
-	);
+	return 1;
+	// <HexEngine
+	// 	id='HexMap'
+	// 	width={width}
+	// 	height={height}
+	// 	viewBox={viewBox}
+	// 	flat={flat}
+	// 	size={size}
+	// 	origin={origin}
+	// 	spacing={spacing}
+	// >
+	// 	{GridGenerator.hexagon(2).map(hex =>
+	// 		chunksExampleData.map(chunk => MapChunk(hex, chunk.climate, chunk.cordinateX, chunk.cordinateY)),
+	// 		// <Hexagon {...hex} key={hex.toString()} />
+	// 	)}
+	// </HexEngine>
 };
 
 export default function WorldMap() {
