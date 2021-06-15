@@ -7,8 +7,8 @@ import Image from 'Assets/placeholderIcon.png';
 
 export const Button = styled(GeneralButton)`
 	width: ${({ theme }) => theme.calcHeightUnits(4)};
-	background-color: ${({ theme }) => theme.colors.energy.button};
 	margin-right: ${({ theme }) => theme.sizes.padding.XXL};
+	background-color: ${({ theme }) => theme.colors.energy.button};
 `;
 
 // Tab - Exterior
@@ -33,9 +33,7 @@ export const Tab = styled(GeneralTab)`
 // Tab - Interior
 
 const DataDisplay = styled.div`
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	${({ theme }) => theme.customStyles.centerItems}
 	text-align: center;
 	height: 100%;
 	font-size: ${({ theme }) => theme.sizes.text.S};

@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import iconAsset from 'Assets/settingsIcon.png';
 
 export const Button = styled(GeneralButton)`
-	width: ${({ theme }) => theme.calcHeightUnits(1)};
-	background-color: ${({ theme }) => theme.colors.settings.button};
+	width: ${({ theme }) => theme.sizes.buttonsHeight.L};
 	margin-right: ${({ theme }) => theme.sizes.padding.XL};
+	background-color: ${({ theme }) => theme.colors.settings.button};
 `;
 
 export const Icon = styled.img`

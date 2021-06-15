@@ -3,7 +3,7 @@ import GeneralWindow from 'GeneralComponents/GeneralWindow/GeneralWindow';
 
 export default function DiscoveryWindow({ unmountDiscoveryWindow }) {
 	return (
-		<GeneralWindow unmountGeneralWindow={unmountDiscoveryWindow} rightSided>
+		<GeneralWindow unmountGeneralWindow={unmountDiscoveryWindow} position='rightSided'>
 			<br />
 			<br />
 			<br />

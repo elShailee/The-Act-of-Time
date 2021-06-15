@@ -6,7 +6,7 @@ import { animated } from 'react-spring';
 export const seenButtonSize = 1.5;
 
 export const Button = styled(animated(GeneralButton))`
-	background-color: cornflowerblue;
+	background-color: ${({ theme }) => theme.colors.seen.bg};
 	width: ${({ theme }) => theme.calcHeightUnits(seenButtonSize)};
 	height: ${({ theme }) => theme.calcHeightUnits(seenButtonSize)};
 	border-radius: 50%;

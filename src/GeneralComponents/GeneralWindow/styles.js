@@ -4,7 +4,7 @@ import { GeneralCloseButton } from 'GeneralComponents/GeneralCloseButton/styles'
 /* ~Window~ */
 
 const positions = {
-	centered: theme => `
+	center: theme => `
   `,
 	rightSided: theme => `
 	  right: ${theme.calcHeightUnits(1)};

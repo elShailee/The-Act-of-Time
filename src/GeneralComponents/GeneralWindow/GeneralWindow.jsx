@@ -1,12 +1,8 @@
 import React from 'react';
 import { WindowContainer, TitleContainer, CloseButton, ContentContainer } from './styles';
 
-export default function GeneralWindow({ children, unmountGeneralWindow, rightSided, title, titleId, id, containerId }) {
-	let position;
-	if (rightSided) {
-		position = 'rightSided';
-	} else position = 'centered';
-
+export default function GeneralWindow({ children, unmountGeneralWindow, position, title }) {
+	if (position === undefined) position = 'center';
 	return (
 		<WindowContainer position={position}>
 			<TitleContainer>

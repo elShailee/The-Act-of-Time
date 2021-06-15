@@ -38,7 +38,7 @@ DragHandle.defaultProps = {
 export const AbortButton = styled.img`
 	width: ${({ theme }) => theme.sizes.components.smallIcons};
 	height: ${({ theme }) => theme.sizes.components.smallIcons};
-	cursor: pointer;
+	${({ theme }) => theme.customStyles.clickable}
 `;
 
 AbortButton.defaultProps = {

@@ -63,7 +63,7 @@ const theme = {
 	},
 	colors: {
 		generalButton: {
-			borderShade: palette.black[903],
+			border: palette.black[903],
 		},
 		generalCloseButton: {
 			bg: palette.orange[450],
@@ -106,6 +106,9 @@ const theme = {
 			bg: palette.blue[300],
 			zoomSlider: palette.gray[500],
 			compass: palette.gray[300],
+		},
+		seen: {
+			bg: palette.blue[500],
 		},
 		settings: {
 			button: palette.gray[500],
