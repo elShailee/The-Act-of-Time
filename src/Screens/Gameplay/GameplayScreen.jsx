@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, TopLeftContainer, TopRightContainer, BotRightContainer } from './styles';
+import { BG, Container, TopLeftContainer, TopRightContainer, BotRightContainer } from './styles';
 import CharacterInfoBar from 'Screens/Gameplay/Components/Character/CharacterInfoBar';
 import ActionsButton from 'Screens/Gameplay/Components/Actions/ActionsButton';
 import EnergyButton from 'Screens/Gameplay/Components/Energy/EnergyButton';
@@ -13,27 +13,29 @@ import AllTheFloatingWindows from 'Screens/Gameplay/Components/WindowsContainer'
 
 export default function GameplayScreen() {
 	return (
-		<Container>
-			<Map />
-			<CharacterInfoBar />
+		<BG>
+			<Container>
+				<Map />
+				<CharacterInfoBar />
 
-			<TopLeftContainer>
-				<EnergyButton />
-				<CoinsButton />
-			</TopLeftContainer>
+				<TopLeftContainer>
+					<EnergyButton />
+					<CoinsButton />
+				</TopLeftContainer>
 
-			<TopRightContainer>
-				<SettingsButton />
-				<ActionsButton />
-			</TopRightContainer>
+				<TopRightContainer>
+					<SettingsButton />
+					<ActionsButton />
+				</TopRightContainer>
 
-			<DisasterAlert />
+				<DisasterAlert />
 
-			<BotRightContainer>
-				<SeenButton />
-				<DiscoveryButton />
-			</BotRightContainer>
-			<AllTheFloatingWindows />
-		</Container>
+				<BotRightContainer>
+					<SeenButton />
+					<DiscoveryButton />
+				</BotRightContainer>
+				<AllTheFloatingWindows />
+			</Container>
+		</BG>
 	);
 }

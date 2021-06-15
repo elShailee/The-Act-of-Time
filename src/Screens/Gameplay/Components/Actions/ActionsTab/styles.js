@@ -13,9 +13,9 @@ export const ActionsDroppable = styled.div`
 `;
 
 export const TabItem = styled.div`
-	margin-top: ${({ isFirst }) => {
+	margin-top: ${({ isFirst, theme }) => {
 		if (isFirst) return '0';
-		else return ({ theme }) => theme.sizes.borderRadius.M;
+		else return theme.sizes.borderRadius.M;
 	}};
 	padding: ${({ theme }) => theme.sizes.padding.M};
 	background-color: ${({ theme }) => theme.colors.actions.itemBg};

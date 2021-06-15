@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+export const BG = styled.div`
+	height: 100vh;
+	background-color: rgb(12, 12, 29);
+`;
+
 export const Container = styled.div`
 	width: ${({ theme }) => theme.calcHeightUnits(32)}; //set the 16:9 ratio
 	height: ${({ theme }) => theme.calcHeightUnits(18)};

@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import GameplayScreen from 'Screens/Gameplay/GameplayScreen';
 import RenderIfBrowserValidHOC from 'App/RenderIfBrowserValidHOC';
 import store from 'Redux/store';

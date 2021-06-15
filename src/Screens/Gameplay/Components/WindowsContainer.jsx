@@ -1,6 +1,6 @@
 import React from 'react';
-import CoinsPurchaseWindow from 'Screens/Gameplay/Components/Coins/CoinsPurchaseWindow';
 import EnergyPurchaseWindow from 'Screens/Gameplay/Components/Energy/EnergyPurchaseWindow';
+import CoinsPurchaseWindow from 'Screens/Gameplay/Components/Coins/CoinsPurchaseWindow';
 import SettingsWindow from 'Screens/Gameplay/Components/Settings/SettingsWindow';
 import ActionsWindow from 'Screens/Gameplay/Components/Actions/ActionsWindow';
 import DiscoveryWindow from 'Screens/Gameplay/Components/Discovery/DiscoveryWindow';
@@ -12,18 +12,18 @@ import { isComponentMountedSelector } from 'Redux/Selectors/MountedComponentsSel
 export default function AllTheFloatingWindows() {
 	const dispatch = useDispatch();
 
-	const isCoinsPurchaseWindowMounted = useSelector(isComponentMountedSelector('CoinsPurchaseWindow'));
 	const isEnergyPurchaseWindowMounted = useSelector(isComponentMountedSelector('EnergyPurchaseWindow'));
+	const isCoinsPurchaseWindowMounted = useSelector(isComponentMountedSelector('CoinsPurchaseWindow'));
 	const isSettingsWindowMounted = useSelector(isComponentMountedSelector('SettingsWindow'));
 	const isActionsWindowMounted = useSelector(isComponentMountedSelector('ActionsWindow'));
 	const isDiscoveryWindowMounted = useSelector(isComponentMountedSelector('DiscoveryWindow'));
 	const isSeenWindowMounted = useSelector(isComponentMountedSelector('SeenWindow'));
 
-	const CoinsPurchaseWindowAsVar = (
-		<CoinsPurchaseWindow unmountCoinsPurchaseWindow={() => dispatch(unmountComponents(['CoinsPurchaseWindow']))} />
-	);
 	const EnergyPurchaseWindowAsVar = (
 		<EnergyPurchaseWindow unmountEnergyPurchaseWindow={() => dispatch(unmountComponents(['EnergyPurchaseWindow']))} />
+	);
+	const CoinsPurchaseWindowAsVar = (
+		<CoinsPurchaseWindow unmountCoinsPurchaseWindow={() => dispatch(unmountComponents(['CoinsPurchaseWindow']))} />
 	);
 	const SettingsWindowAsVar = (
 		<SettingsWindow unmountSettingsWindow={() => dispatch(unmountComponents(['SettingsWindow']))} />
@@ -36,8 +36,8 @@ export default function AllTheFloatingWindows() {
 
 	return (
 		<div>
-			{isCoinsPurchaseWindowMounted && CoinsPurchaseWindowAsVar}
 			{isEnergyPurchaseWindowMounted && EnergyPurchaseWindowAsVar}
+			{isCoinsPurchaseWindowMounted && CoinsPurchaseWindowAsVar}
 			{isSettingsWindowMounted && SettingsWindowAsVar}
 			{isActionsWindowMounted && ActionsWindowAsVar}
 			{isDiscoveryWindowMounted && DiscoveryWindowAsVar}
