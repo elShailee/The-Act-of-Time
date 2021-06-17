@@ -57,7 +57,7 @@ const theme = {
 		clickable: `
 			cursor: pointer;
 		`,
-		noBorder: `
+		noBorderShading: `
 			border-color: ${palette.transparent};
 		`,
 	},

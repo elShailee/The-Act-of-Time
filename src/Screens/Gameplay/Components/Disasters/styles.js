@@ -6,11 +6,10 @@ import { GeneralButton } from 'GeneralComponents/GeneralButton/styles';
 import { GeneralTab } from 'GeneralComponents/GeneralTab/styles';
 
 export const Container = styled.div`
-	display: flex;
 	position: absolute;
-	align-items: center;
 	left: ${({ theme }) => theme.sizes.padding.XXL};
 	top: ${({ theme }) => theme.calcHeightUnits(6)};
+	${({ theme }) => theme.customStyles.centerItems}
 `;
 
 export const CounterContainer = styled(GeneralTab)`
@@ -24,7 +23,7 @@ export const ImageButtonWrapper = styled(GeneralButton)`
 	height: ${({ theme }) => theme.calcHeightUnits(1.5)};
 	border-radius: 50%;
 	background-color: ${({ theme }) => theme.colors.disasters.image};
-	${({ theme }) => theme.customStyles.noBorder};
+	${({ theme }) => theme.customStyles.noBorderShading};
 `;
 
 export const Image = styled.img`
