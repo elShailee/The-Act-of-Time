@@ -66,7 +66,7 @@ const theme = {
 			border: palette.black[903],
 		},
 		generalCloseButton: {
-			bg: palette.orange[450],
+			bg: palette.brown[830],
 		},
 		generalWindow: {
 			bg: palette.yellow[350],
@@ -74,13 +74,13 @@ const theme = {
 		},
 		actions: {
 			button: palette.yellow[750],
-			itemBg: palette.orange[650],
-			tabBg: palette.orange[250],
+			itemBg: palette.brown[910],
+			tabBg: palette.brown[750],
 			moreActionsButton: palette.orange[500],
 		},
 		coins: {
 			button: palette.orange[500],
-			tab: palette.orange[250],
+			tab: palette.brown[750],
 			moreCoinsButton: palette.orange[500],
 		},
 		energy: {

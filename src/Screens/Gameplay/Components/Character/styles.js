@@ -28,7 +28,7 @@ const bgPolygon = calcHU => {
 	return `
     clip-path: polygon(
       /* center left */					   		0                         					${calcHU(CIB_height * 0.375)},
-      /* top left */            			${calcHU(CIB_width * 0.1)} 				0,
+      /* top left */            			${calcHU(CIB_width * 0.1)} 					0,
       /* top right */           			${calcHU(CIB_width * 0.92)} 				0,
       /* center right */         			${calcHU(CIB_width)}        				${calcHU(CIB_height * 0.2)},
       /* bottom right */        			${calcHU(CIB_width * 0.86)} 				${calcHU(CIB_rightSideHeight)},
