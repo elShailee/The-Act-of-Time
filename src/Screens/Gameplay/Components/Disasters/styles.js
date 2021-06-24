@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import disastersData from 'ExampleData/disastersExampleData';
-import { getImageFromLib } from 'Utils/utilFuncs';
-import { lib } from 'Assets/disasters/lib';
+import { getDisasterImage } from 'Assets/disasters/lib';
 import { GeneralButton } from 'GeneralComponents/GeneralButton/styles';
 import { GeneralTab } from 'GeneralComponents/GeneralTab/styles';
 
@@ -33,5 +32,5 @@ export const Image = styled.img`
 `;
 
 Image.defaultProps = {
-	src: getImageFromLib(disastersData.image, lib),
+	src: getDisasterImage(disastersData.image),
 };

@@ -36,7 +36,7 @@ const DataDisplay = styled.div`
 	${({ theme }) => theme.customStyles.centerItems}
 	text-align: center;
 	height: 100%;
-	font-size: ${({ theme }) => theme.sizes.text.S};
+	font-size: ${({ theme }) => theme.sizes.text.XS};
 	background-color: ${({ theme }) => theme.colors.energy.dataDisplay};
 	border-radius: ${({ theme }) => theme.sizes.borderRadius.S};
 `;
@@ -62,7 +62,7 @@ export const MoreEnergyButton = styled(GeneralButton)`
 	grid-row-end: 5;
 
 	background-color: ${({ theme }) => theme.colors.energy.moreEnergyButton};
-	font-size: ${({ theme }) => theme.sizes.text.M};
+	font-size: ${({ theme }) => theme.sizes.text.S};
 	text-transform: none;
 	border: 0px;
 `;

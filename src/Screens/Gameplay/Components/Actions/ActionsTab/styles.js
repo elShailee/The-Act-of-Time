@@ -19,7 +19,7 @@ export const TabItem = styled.div`
 	}};
 	padding: ${({ theme }) => theme.sizes.padding.M};
 	background-color: ${({ theme }) => theme.colors.actions.itemBg};
-	font-size: ${({ theme }) => theme.sizes.text.M};
+	font-size: ${({ theme }) => theme.sizes.text.S};
 	border-radius: ${({ theme }) => theme.sizes.borderRadius.M};
 	${({ theme }) => theme.customStyles.centerItems}
 	justify-content: space-between;
@@ -51,5 +51,5 @@ export const MoreActionsButton = styled(GeneralButton)`
 	margin-top: ${({ theme }) => theme.sizes.padding.M};
 	padding: 0 ${({ theme }) => theme.sizes.padding.M};
 	background-color: ${({ theme }) => theme.colors.actions.moreActionsButton};
-	font-size: ${({ theme }) => theme.sizes.text.M};
+	font-size: ${({ theme }) => theme.sizes.text.S};
 `;

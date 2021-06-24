@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import characterInfo from 'ExampleData/characterInfoExampleData';
-import { getImageFromLib } from 'Utils/utilFuncs';
-import { lib } from 'Assets/character/lib';
+import { getCharacterImage } from 'Assets/character/lib';
 
+// CIB = CharacterInfoBar
 // consts for polygon
 const CIB_width = 7;
 const CIB_height = CIB_width * 0.4;
@@ -43,15 +43,15 @@ export const BarBG = styled.div`
 	width: ${({ theme }) => theme.calcHeightUnits(CIB_width)};
 	height: ${({ theme }) => theme.calcHeightUnits(CIB_height)};
 	background-color: ${({ theme }) => theme.colors.characterInfoBar.bg};
-	text-align: center;
 	${({ theme }) => bgPolygon(theme.calcHeightUnits)}
 `;
 
 export const TextCointainer = styled.div`
 	position: absolute;
-	right: ${({ theme }) => theme.calcHeightUnits(CIB_height * 0.11)};
 	width: ${({ theme }) => theme.calcHeightUnits(CIB_halfOfWidth)};
 	top: ${({ theme }) => theme.calcHeightUnits(CIB_height * 0.11)};
+	right: ${({ theme }) => theme.calcHeightUnits(CIB_height * 0.11)};
+	text-align: center;
 `;
 
 const textBox = (theme, fontSize) => `
@@ -76,7 +76,7 @@ export const Image = styled.img`
 	padding: ${({ theme }) => theme.calcHeightUnits((CIB_height - CIB_imageSize) / 2)};
 	border-radius: 50%;
 	${({ theme }) => theme.customStyles.clickable}
-	${({ theme }) => theme.customStyles.nonSelectable};
+	${({ theme }) => theme.customStyles.nonSelectable}
 `;
 
 const onCharcterImageClick = () => {
@@ -85,7 +85,7 @@ const onCharcterImageClick = () => {
 };
 
 Image.defaultProps = {
-	src: getImageFromLib(characterInfo.characterImage, lib),
+	src: getCharacterImage(characterInfo.characterImage),
 	onClick: onCharcterImageClick,
 	alt: 'character face',
 };

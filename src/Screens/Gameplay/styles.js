@@ -12,7 +12,7 @@ export const Container = styled.div`
 	left: calc(50vw - ${({ theme }) => theme.calcHeightUnits(16)}); //horizontal center
 	top: calc(50vh - ${({ theme }) => theme.calcHeightUnits(9)}); //vetical centering
 	font-family: Helvetica;
-	font-size: ${({ theme }) => theme.sizes.text.L};
+	font-size: ${({ theme }) => theme.sizes.text.M};
 	${({ theme }) => theme.customStyles.centerItems}
 	${({ theme }) => theme.customStyles.nonSelectable};
 `;

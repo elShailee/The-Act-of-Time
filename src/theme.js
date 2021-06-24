@@ -23,9 +23,10 @@ const theme = {
 		text: {
 			XXL: calcHeightUnits(1.25),
 			XL: calcHeightUnits(0.75),
-			L: calcHeightUnits(0.35),
-			M: calcHeightUnits(0.3),
-			S: calcHeightUnits(0.25),
+			L: calcHeightUnits(0.5),
+			M: calcHeightUnits(0.35),
+			S: calcHeightUnits(0.3),
+			XS: calcHeightUnits(0.25),
 		},
 		buttonsHeight: {
 			L: calcHeightUnits(1),
@@ -63,7 +64,7 @@ const theme = {
 	},
 	colors: {
 		generalButton: {
-			border: palette.black[903],
+			border: palette.black[103],
 		},
 		generalCloseButton: {
 			bg: palette.brown[830],
