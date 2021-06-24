@@ -19,7 +19,7 @@ export default function SeenButton() {
 	};
 
 	return (
-		<Button style={animateSeenButton} id='seenButton' onClick={onSeenButtonClick}>
+		<Button style={animateSeenButton} onClick={onSeenButtonClick}>
 			{texts.gameplay.seen.buttonTitle}
 		</Button>
 	);

@@ -5,10 +5,10 @@ import { animated } from 'react-spring';
 export const discoveryButtonSize = 2.5;
 
 export const Button = styled(animated(GeneralButton))`
-	width: ${({ theme }) => theme.calcHeightUnits(discoveryButtonSize)};
-	height: ${({ theme }) => theme.calcHeightUnits(discoveryButtonSize)};
+	width: ${({ theme }) => theme.calcSizeUnits(discoveryButtonSize)};
+	height: ${({ theme }) => theme.calcSizeUnits(discoveryButtonSize)};
 	background-color: ${({ theme }) => theme.colors.discovery.button};
-	border-radius: 50%;
-	line-height: ${({ theme }) => theme.calcHeightUnits(discoveryButtonSize)};
+	border-radius: ${({ theme }) => theme.sizes.borderRadius.Max};
+	line-height: ${({ theme }) => theme.calcSizeUnits(discoveryButtonSize)};
 	font-size: ${({ theme }) => theme.sizes.text.XXL};
 `;

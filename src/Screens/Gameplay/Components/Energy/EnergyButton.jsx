@@ -19,7 +19,7 @@ export default function EnergyButton() {
 	};
 
 	return (
-		<div id='energyButtonContainer'>
+		<div>
 			<Button onClick={onEnergyButtonClick}>{texts.gameplay.energy.buttonTitle}</Button>
 			{isEnergyTabMounted && <EnergyTab />}
 		</div>

@@ -15,10 +15,10 @@
             "description": "Shorthand theme destructuring"
         },
 
-        "Calculate Height Units": {
-            "prefix": "chu",
-            "body": ["${({ theme }) => theme.calcHeightUnits($1)}"],
-            "description": "Calculate Height Units via theme.calcHeightUnits"
+        "Calculate Size Units": {
+            "prefix": "csu",
+            "body": ["${({ theme }) => theme.calcSizeUnits($1)}"],
+            "description": "Calculate Size Units via theme.calcSizeUnits"
         }
         
      ** at javascript snippets:

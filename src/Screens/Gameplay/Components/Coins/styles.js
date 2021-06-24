@@ -3,13 +3,13 @@ import { GeneralButton } from 'GeneralComponents/GeneralButton/styles';
 import { GeneralTab } from 'GeneralComponents/GeneralTab/styles';
 
 export const CoinsButton = styled(GeneralButton)`
-	width: ${({ theme }) => theme.calcHeightUnits(2)};
+	width: ${({ theme }) => theme.calcSizeUnits(2)};
 	background-color: ${({ theme }) => theme.colors.coins.button};
 `;
 
 export const Tab = styled(GeneralTab)`
-	width: ${({ theme }) => theme.calcHeightUnits(4)};
-	height: ${({ theme }) => theme.calcHeightUnits(2)};
+	width: ${({ theme }) => theme.calcSizeUnits(4)};
+	height: ${({ theme }) => theme.calcSizeUnits(2)};
 	background-color: ${({ theme }) => theme.colors.coins.tab};
 `;
 

@@ -6,7 +6,7 @@ import Image from 'Assets/placeholderIcon.png';
 // Button
 
 export const Button = styled(GeneralButton)`
-	width: ${({ theme }) => theme.calcHeightUnits(4)};
+	width: ${({ theme }) => theme.calcSizeUnits(4)};
 	margin-right: ${({ theme }) => theme.sizes.padding.XXL};
 	background-color: ${({ theme }) => theme.colors.energy.button};
 `;
@@ -14,34 +14,27 @@ export const Button = styled(GeneralButton)`
 // Tab - Exterior
 
 export const Tab = styled(GeneralTab)`
-	width: ${({ theme }) => theme.calcHeightUnits(4)};
-	height: ${({ theme }) => theme.calcHeightUnits(2)};
+	width: ${({ theme }) => theme.calcSizeUnits(4)};
+	height: ${({ theme }) => theme.calcSizeUnits(2)};
 	background-color: ${({ theme }) => theme.colors.energy.tab};
 	display: grid;
-	grid-template-columns: ${({ theme }) => theme.calcHeightUnits(1.75) + ' ' + theme.calcHeightUnits(1.5)};
+	grid-template-columns: ${({ theme }) => theme.calcSizeUnits(1.75) + ' ' + theme.calcSizeUnits(1.5)};
 	grid-column-gap: ${({ theme }) => theme.sizes.padding.M};
 	grid-template-rows: ${({ theme }) =>
-		theme.calcHeightUnits(0.5) +
-		' ' +
-		theme.sizes.padding.M +
-		' ' +
-		theme.sizes.padding.M +
-		' ' +
-		theme.calcHeightUnits(0.5)};
+		theme.calcSizeUnits(0.5) + ' ' + theme.sizes.padding.M + ' ' + theme.sizes.padding.M + ' ' + theme.calcSizeUnits(0.5)};
 `;
 
 // Tab - Interior
 
 const DataDisplay = styled.div`
 	${({ theme }) => theme.customStyles.centerItems}
-	text-align: center;
 	height: 100%;
 	font-size: ${({ theme }) => theme.sizes.text.XS};
 	background-color: ${({ theme }) => theme.colors.energy.dataDisplay};
-	border-radius: ${({ theme }) => theme.sizes.borderRadius.S};
+	border-radius: ${({ theme }) => theme.sizes.borderRadius.M};
 `;
 
-export const TimeUntillFullText = styled(DataDisplay)`
+export const TimeUntillFull = styled(DataDisplay)`
 	grid-row-start: 1;
 	grid-row-end: 3;
 `;
@@ -64,14 +57,14 @@ export const MoreEnergyButton = styled(GeneralButton)`
 	background-color: ${({ theme }) => theme.colors.energy.moreEnergyButton};
 	font-size: ${({ theme }) => theme.sizes.text.S};
 	text-transform: none;
-	border: 0px;
+	${({ theme }) => theme.customStyles.noBorderShading}
 `;
 
-export const Icon = styled.img`
-	width: ${({ theme }) => theme.sizes.components.smallIcons};
-	height: ${({ theme }) => theme.sizes.components.smallIcons};
+export const EnergyIcon = styled.img`
+	width: ${({ theme }) => theme.sizes.icons.XS};
+	height: ${({ theme }) => theme.sizes.icons.XS};
 `;
 
-Icon.defaultProps = {
+EnergyIcon.defaultProps = {
 	src: Image,
 };

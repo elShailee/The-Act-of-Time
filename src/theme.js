@@ -1,39 +1,41 @@
 import palette from './palette';
 
 export const HU = `min(calc(100vh / 18), calc(100vw / 32))`;
-const calcHeightUnits = num => `calc(${num} * ${HU})`;
+const calcSizeUnits = num => `calc(${num} * ${HU})`;
 
 const theme = {
-	calcHeightUnits,
+	calcSizeUnits,
 	sizes: {
-		border: calcHeightUnits(0.1),
+		border: calcSizeUnits(0.1),
 		borderRadius: {
-			XXL: calcHeightUnits(0.5),
-			L: calcHeightUnits(0.2),
-			M: calcHeightUnits(0.1),
-			S: calcHeightUnits(0.05),
+			Max: '50%',
+			XXL: calcSizeUnits(0.5),
+			L: calcSizeUnits(0.2),
+			M: calcSizeUnits(0.1),
+			S: calcSizeUnits(0.05),
 		},
 		padding: {
-			XXL: calcHeightUnits(1),
-			XL: calcHeightUnits(0.5),
-			L: calcHeightUnits(0.38),
-			M: calcHeightUnits(0.25),
-			S: calcHeightUnits(0.15),
+			XXL: calcSizeUnits(1),
+			XL: calcSizeUnits(0.5),
+			L: calcSizeUnits(0.38),
+			M: calcSizeUnits(0.25),
+			S: calcSizeUnits(0.15),
 		},
 		text: {
-			XXL: calcHeightUnits(1.25),
-			XL: calcHeightUnits(0.75),
-			L: calcHeightUnits(0.5),
-			M: calcHeightUnits(0.35),
-			S: calcHeightUnits(0.3),
-			XS: calcHeightUnits(0.25),
+			XXL: calcSizeUnits(1.25),
+			XL: calcSizeUnits(0.75),
+			L: calcSizeUnits(0.5),
+			M: calcSizeUnits(0.35),
+			S: calcSizeUnits(0.3),
+			XS: calcSizeUnits(0.25),
 		},
 		buttonsHeight: {
-			L: calcHeightUnits(1),
-			M: calcHeightUnits(0.75),
+			L: calcSizeUnits(1),
+			M: calcSizeUnits(0.75),
 		},
-		components: {
-			smallIcons: calcHeightUnits(0.35),
+		icons: {
+			XL: calcSizeUnits(1.5),
+			XS: calcSizeUnits(0.35),
 		},
 	},
 	customStyles: {
@@ -41,6 +43,7 @@ const theme = {
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			text-align: center;
 		`,
 		highlighted: `
 			&:hover {
@@ -63,6 +66,9 @@ const theme = {
 		`,
 	},
 	colors: {
+		gameplayScreen: {
+			spacer: palette.blue[200],
+		},
 		generalButton: {
 			border: palette.black[103],
 		},
@@ -86,7 +92,7 @@ const theme = {
 		},
 		energy: {
 			button: palette.blue[950],
-			tab: palette.blue[650],
+			tab: palette.blue[550],
 			dataDisplay: palette.blue[750],
 			moreEnergyButton: palette.blue[950],
 		},
@@ -104,7 +110,7 @@ const theme = {
 			button: palette.green[950],
 		},
 		map: {
-			bg: palette.blue[300],
+			bg: palette.blue[350],
 			zoomSlider: palette.gray[500],
 			compass: palette.gray[300],
 		},

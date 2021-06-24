@@ -26,8 +26,8 @@ export const TabItem = styled.div`
 `;
 
 export const DragHandle = styled.img`
-	width: ${({ theme }) => theme.sizes.components.smallIcons};
-	height: ${({ theme }) => theme.sizes.components.smallIcons};
+	width: ${({ theme }) => theme.sizes.icons.XS};
+	height: ${({ theme }) => theme.sizes.icons.XS};
 `;
 
 DragHandle.defaultProps = {
@@ -36,8 +36,8 @@ DragHandle.defaultProps = {
 };
 
 export const AbortButton = styled.img`
-	width: ${({ theme }) => theme.sizes.components.smallIcons};
-	height: ${({ theme }) => theme.sizes.components.smallIcons};
+	width: ${({ theme }) => theme.sizes.icons.XS};
+	height: ${({ theme }) => theme.sizes.icons.XS};
 	${({ theme }) => theme.customStyles.clickable}
 `;
 

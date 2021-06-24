@@ -19,8 +19,8 @@ Icon.defaultProps = {
 };
 
 export const Range = styled.input`
-	height: ${({ theme }) => theme.calcHeightUnits(0.5)};
-	width: ${({ theme }) => theme.calcHeightUnits(4)};
+	height: ${({ theme }) => theme.calcSizeUnits(0.5)};
+	width: ${({ theme }) => theme.calcSizeUnits(4)};
 `;
 
 Range.defaultProps = {

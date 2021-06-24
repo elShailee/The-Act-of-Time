@@ -2,15 +2,15 @@ import styled from 'styled-components';
 
 export const BG = styled.div`
 	height: 100vh;
-	background-color: rgb(12, 12, 29);
+	background-color: ${({ theme }) => theme.colors.gameplayScreen.spacer};
 `;
 
 export const Container = styled.div`
-	width: ${({ theme }) => theme.calcHeightUnits(32)}; //set the 16:9 ratio
-	height: ${({ theme }) => theme.calcHeightUnits(18)};
+	width: ${({ theme }) => theme.calcSizeUnits(32)}; //set the 16:9 ratio
+	height: ${({ theme }) => theme.calcSizeUnits(18)};
 	position: absolute;
-	left: calc(50vw - ${({ theme }) => theme.calcHeightUnits(16)}); //horizontal center
-	top: calc(50vh - ${({ theme }) => theme.calcHeightUnits(9)}); //vetical centering
+	left: calc(50vw - ${({ theme }) => theme.calcSizeUnits(16)}); //horizontal center
+	top: calc(50vh - ${({ theme }) => theme.calcSizeUnits(9)}); //vetical centering
 	font-family: Helvetica;
 	font-size: ${({ theme }) => theme.sizes.text.M};
 	${({ theme }) => theme.customStyles.centerItems}

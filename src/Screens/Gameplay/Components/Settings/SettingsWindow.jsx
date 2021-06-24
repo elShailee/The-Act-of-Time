@@ -9,22 +9,22 @@ export default function SettingsWindow({ unmountSettingsWindow }) {
 				<br />
 				<label htmlFor='masterVolume'>Master</label>
 				<br />
-				<Range min='0' max='100' defaultValue='73' step='1' name='masterVolume' id='masterVolume' />
+				<Range defaultValue='73' />
 				<hr />
 				<br />
 				<label htmlFor='music'>Music</label>
 				<br />
-				<Range min='0' max='100' defaultValue='32' step='1' name='music' id='music' />
+				<Range defaultValue='32' />
 				<hr />
 				<br />
 				<label htmlFor='sfx'>SFX</label>
 				<br />
-				<Range min='0' max='100' defaultValue='55' step='1' name='sfx' id='sfx' />
+				<Range defaultValue='55' />
 				<hr />
 				<br />
 				<label htmlFor='ambient'>Ambient</label>
 				<br />
-				<Range min='0' max='100' defaultValue='41' step='1' name='ambient' id='ambient' />
+				<Range defaultValue='41' />
 				<hr />
 				<br />
 			</form>

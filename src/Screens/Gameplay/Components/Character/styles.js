@@ -20,7 +20,7 @@ const xpQuantity_width = CIB_width * 0.16;
 
 export const BarContainer = styled.div`
 	position: absolute;
-	left: calc(50% - ${({ theme }) => theme.calcHeightUnits(CIB_halfOfWidth)});
+	left: calc(50% - ${({ theme }) => theme.calcSizeUnits(CIB_halfOfWidth)});
 	top: ${({ theme }) => theme.sizes.padding.XL};
 `;
 
@@ -40,24 +40,25 @@ const bgPolygon = calcHU => {
 };
 
 export const BarBG = styled.div`
-	width: ${({ theme }) => theme.calcHeightUnits(CIB_width)};
-	height: ${({ theme }) => theme.calcHeightUnits(CIB_height)};
+	width: ${({ theme }) => theme.calcSizeUnits(CIB_width)};
+	height: ${({ theme }) => theme.calcSizeUnits(CIB_height)};
 	background-color: ${({ theme }) => theme.colors.characterInfoBar.bg};
-	${({ theme }) => bgPolygon(theme.calcHeightUnits)}
+	${({ theme }) => bgPolygon(theme.calcSizeUnits)}
 `;
 
 export const TextCointainer = styled.div`
+	width: ${({ theme }) => theme.calcSizeUnits(CIB_halfOfWidth)};
 	position: absolute;
-	width: ${({ theme }) => theme.calcHeightUnits(CIB_halfOfWidth)};
-	top: ${({ theme }) => theme.calcHeightUnits(CIB_height * 0.11)};
-	right: ${({ theme }) => theme.calcHeightUnits(CIB_height * 0.11)};
-	text-align: center;
+	top: ${({ theme }) => theme.calcSizeUnits(CIB_height * 0.11)};
+	right: ${({ theme }) => theme.calcSizeUnits(CIB_height * 0.11)};
+	${({ theme }) => theme.customStyles.centerItems}
+	flex-direction: column;
 `;
 
 const textBox = (theme, fontSize) => `
-	width: ${theme.calcHeightUnits(CIB_textBoxWidth)};
+	width: ${theme.calcSizeUnits(CIB_textBoxWidth)};
   color: ${theme.colors.characterInfoBar.text};
-	font-size: ${theme.calcHeightUnits(fontSize)};
+	font-size: ${theme.calcSizeUnits(fontSize)};
 `;
 
 export const NameText = styled.div`
@@ -69,12 +70,12 @@ export const LevelText = styled.div`
 `;
 
 export const Image = styled.img`
-	width: ${({ theme }) => theme.calcHeightUnits(CIB_imageSize)};
-	height: ${({ theme }) => theme.calcHeightUnits(CIB_imageSize)};
+	width: ${({ theme }) => theme.calcSizeUnits(CIB_imageSize)};
+	height: ${({ theme }) => theme.calcSizeUnits(CIB_imageSize)};
 	position: absolute;
-	left: ${({ theme }) => theme.calcHeightUnits(CIB_height * 0.11)};
-	padding: ${({ theme }) => theme.calcHeightUnits((CIB_height - CIB_imageSize) / 2)};
-	border-radius: 50%;
+	left: ${({ theme }) => theme.calcSizeUnits(CIB_height * 0.11)};
+	padding: ${({ theme }) => theme.calcSizeUnits((CIB_height - CIB_imageSize) / 2)};
+	border-radius: ${({ theme }) => theme.sizes.borderRadius.Max};
 	${({ theme }) => theme.customStyles.clickable}
 	${({ theme }) => theme.customStyles.nonSelectable}
 `;
@@ -92,25 +93,25 @@ Image.defaultProps = {
 
 const xpBars = (theme, width) => `
 	position: absolute;
-	height: ${theme.calcHeightUnits(xpBarHeight)};
-	top: ${theme.calcHeightUnits(CIB_rightSideHeight)};
-	left: ${theme.calcHeightUnits(CIB_width * 0.45)};
+	height: ${theme.calcSizeUnits(xpBarHeight)};
+	top: ${theme.calcSizeUnits(CIB_rightSideHeight)};
+	left: ${theme.calcSizeUnits(CIB_width * 0.45)};
   clip-path: polygon(
 		0                                      0,
-		${theme.calcHeightUnits(width)}        0,
-		${theme.calcHeightUnits(width * 0.92)} ${theme.calcHeightUnits(xpBarHeight)},
-		0                                      ${theme.calcHeightUnits(xpBarHeight)}
+		${theme.calcSizeUnits(width)}        0,
+		${theme.calcSizeUnits(width * 0.92)} ${theme.calcSizeUnits(xpBarHeight)},
+		0                                      ${theme.calcSizeUnits(xpBarHeight)}
   );
 `;
 
 export const XPCapacity = styled.div`
 	${({ theme }) => xpBars(theme, xpCapacity_width)}
 	background-color: ${({ theme }) => theme.colors.characterInfoBar.xpbg};
-	width: ${({ theme }) => theme.calcHeightUnits(xpCapacity_width)};
+	width: ${({ theme }) => theme.calcSizeUnits(xpCapacity_width)};
 `;
 
 export const XPQuantity = styled.div`
 	${({ theme }) => xpBars(theme, xpQuantity_width)}
 	background-color: ${({ theme }) => theme.colors.characterInfoBar.xp};
-	width: ${({ theme }) => theme.calcHeightUnits(xpQuantity_width)};
+	width: ${({ theme }) => theme.calcSizeUnits(xpQuantity_width)};
 `;
