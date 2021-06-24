@@ -33,11 +33,11 @@ const texts = {
 				title: 'Disaster',
 			},
 		},
-		crafting: {
-			buttonTitle: 'Crafting',
+		discovery: {
+			buttonTitle: 'D',
 		},
 		seen: {
-			buttonTitle: 'Seen',
+			buttonTitle: 'S',
 		},
 		map: {
 			zoomSlider: {

@@ -1,12 +1,11 @@
 import React from 'react';
-import './GameplayScreen.css';
-import 'GeneralComponents/GeneralButton.css';
+import { BG, Container, TopLeftContainer, TopRightContainer, BotRightContainer } from './styles';
 import CharacterInfoBar from 'Screens/Gameplay/Components/Character/CharacterInfoBar';
 import ActionsButton from 'Screens/Gameplay/Components/Actions/ActionsButton';
 import EnergyButton from 'Screens/Gameplay/Components/Energy/EnergyButton';
 import CoinsButton from 'Screens/Gameplay/Components/Coins/CoinsButton';
 import SeenButton from 'Screens/Gameplay/Components/Seen/SeenButton';
-import CraftingButton from 'Screens/Gameplay/Components/Crafting/CraftingButton';
+import DiscoveryButton from 'Screens/Gameplay/Components/Discovery/DiscoveryButton';
 import SettingsButton from 'Screens/Gameplay/Components/Settings/SettingsButton';
 import Map from 'Screens/Gameplay/Components/Map/Map';
 import DisasterAlert from 'Screens/Gameplay/Components/Disasters/DisastersAlert';
@@ -14,27 +13,29 @@ import AllTheFloatingWindows from 'Screens/Gameplay/Components/WindowsContainer'
 
 export default function GameplayScreen() {
 	return (
-		<div id='gameplayScreen'>
-			<Map />
-			<CharacterInfoBar />
+		<BG>
+			<Container>
+				<Map />
+				<CharacterInfoBar />
 
-			<div id='upperLeftButtonsContainer'>
-				<EnergyButton />
-				<CoinsButton />
-			</div>
+				<TopLeftContainer>
+					<EnergyButton />
+					<CoinsButton />
+				</TopLeftContainer>
 
-			<div id='upperRightButtonsContainer'>
-				<SettingsButton />
-				<ActionsButton />
-			</div>
+				<TopRightContainer>
+					<SettingsButton />
+					<ActionsButton />
+				</TopRightContainer>
 
-			<DisasterAlert />
+				<DisasterAlert />
 
-			<div id='bottomRightButtonsContainer'>
-				<SeenButton />
-				<CraftingButton />
-			</div>
-			<AllTheFloatingWindows />
-		</div>
+				<BotRightContainer>
+					<SeenButton />
+					<DiscoveryButton />
+				</BotRightContainer>
+				<AllTheFloatingWindows />
+			</Container>
+		</BG>
 	);
 }

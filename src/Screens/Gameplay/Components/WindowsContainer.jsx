@@ -1,9 +1,9 @@
 import React from 'react';
-import CoinsPurchaseWindow from 'Screens/Gameplay/Components/Coins/CoinsPurchaseWindow';
 import EnergyPurchaseWindow from 'Screens/Gameplay/Components/Energy/EnergyPurchaseWindow';
+import CoinsPurchaseWindow from 'Screens/Gameplay/Components/Coins/CoinsPurchaseWindow';
 import SettingsWindow from 'Screens/Gameplay/Components/Settings/SettingsWindow';
 import ActionsWindow from 'Screens/Gameplay/Components/Actions/ActionsWindow';
-import CraftingWindow from 'Screens/Gameplay/Components/Crafting/CraftingWindow';
+import DiscoveryWindow from 'Screens/Gameplay/Components/Discovery/DiscoveryWindow';
 import SeenWindow from 'Screens/Gameplay/Components/Seen/SeenWindow';
 import { useDispatch, useSelector } from 'react-redux';
 import { unmountComponents } from 'Redux/Slices/MountedComponents';
@@ -12,35 +12,35 @@ import { isComponentMountedSelector } from 'Redux/Selectors/MountedComponentsSel
 export default function AllTheFloatingWindows() {
 	const dispatch = useDispatch();
 
-	const isCoinsPurchaseWindowMounted = useSelector(isComponentMountedSelector('CoinsPurchaseWindow'));
 	const isEnergyPurchaseWindowMounted = useSelector(isComponentMountedSelector('EnergyPurchaseWindow'));
+	const isCoinsPurchaseWindowMounted = useSelector(isComponentMountedSelector('CoinsPurchaseWindow'));
 	const isSettingsWindowMounted = useSelector(isComponentMountedSelector('SettingsWindow'));
 	const isActionsWindowMounted = useSelector(isComponentMountedSelector('ActionsWindow'));
-	const isCraftingWindowMounted = useSelector(isComponentMountedSelector('CraftingWindow'));
+	const isDiscoveryWindowMounted = useSelector(isComponentMountedSelector('DiscoveryWindow'));
 	const isSeenWindowMounted = useSelector(isComponentMountedSelector('SeenWindow'));
 
-	const CoinsPurchaseWindowAsVar = (
-		<CoinsPurchaseWindow unmountCoinsPurchaseWindow={() => dispatch(unmountComponents(['CoinsPurchaseWindow']))} />
-	);
 	const EnergyPurchaseWindowAsVar = (
 		<EnergyPurchaseWindow unmountEnergyPurchaseWindow={() => dispatch(unmountComponents(['EnergyPurchaseWindow']))} />
+	);
+	const CoinsPurchaseWindowAsVar = (
+		<CoinsPurchaseWindow unmountCoinsPurchaseWindow={() => dispatch(unmountComponents(['CoinsPurchaseWindow']))} />
 	);
 	const SettingsWindowAsVar = (
 		<SettingsWindow unmountSettingsWindow={() => dispatch(unmountComponents(['SettingsWindow']))} />
 	);
 	const ActionsWindowAsVar = <ActionsWindow unmountActionsWindow={() => dispatch(unmountComponents(['ActionsWindow']))} />;
-	const CraftingWindowAsVar = (
-		<CraftingWindow unmountCraftingWindow={() => dispatch(unmountComponents(['CraftingWindow']))} />
+	const DiscoveryWindowAsVar = (
+		<DiscoveryWindow unmountDiscoveryWindow={() => dispatch(unmountComponents(['DiscoveryWindow']))} />
 	);
 	const SeenWindowAsVar = <SeenWindow unmountSeenWindow={() => dispatch(unmountComponents(['SeenWindow']))} />;
 
 	return (
 		<div>
-			{isCoinsPurchaseWindowMounted && CoinsPurchaseWindowAsVar}
 			{isEnergyPurchaseWindowMounted && EnergyPurchaseWindowAsVar}
+			{isCoinsPurchaseWindowMounted && CoinsPurchaseWindowAsVar}
 			{isSettingsWindowMounted && SettingsWindowAsVar}
 			{isActionsWindowMounted && ActionsWindowAsVar}
-			{isCraftingWindowMounted && CraftingWindowAsVar}
+			{isDiscoveryWindowMounted && DiscoveryWindowAsVar}
 			{isSeenWindowMounted && SeenWindowAsVar}
 		</div>
 	);

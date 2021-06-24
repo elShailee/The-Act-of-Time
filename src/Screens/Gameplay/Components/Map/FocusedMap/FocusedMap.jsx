@@ -1,5 +1,4 @@
-import './FocusedMap.css';
-import Tile from './Tile.jsx';
+import { Container, FmRow, Tile } from './styles';
 
 const GRID_ROWS = 15;
 const GRID_COLS = 26;
@@ -17,16 +16,16 @@ for (let row = 0; row < GRID_ROWS; row++) {
 
 export default function FocusedMap() {
 	return (
-		<div id='focusedMap'>
+		<Container numOfCols={GRID_COLS}>
 			{tilesArray.map((row, rowId) => {
 				return (
-					<div key={rowId} className='fm-row'>
+					<FmRow key={rowId}>
 						{row.map((tileData, tileId) => {
 							return <Tile key={tileId} tileData={tileData} />;
 						})}
-					</div>
+					</FmRow>
 				);
 			})}
-		</div>
+		</Container>
 	);
 }

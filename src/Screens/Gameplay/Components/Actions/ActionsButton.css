@@ -1,9 +1,0 @@
-#actionsButton {
-	background-color: khaki;
-	height: var(--height-unit);
-}
-
-#actionsButtonAndTabContainer {
-	width: 280px;
-	right: 20px;
-}

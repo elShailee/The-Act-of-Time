@@ -1,0 +1,38 @@
+ 1. install the extention `vscode-styled-components` for autocompleting and coloring of css in strings.
+ 2. install the extention `color-highlight` for coloring colors in code.
+     - in the `color-highlight`'s settings, I like to have the configuration:
+            Marker Typer : background
+            Match Words: true
+3. I really like these following custom snippets:
+    (to add them, go to "Settings" at the bottom left corner -> "User Snippets".
+     also, this is just something I made for myself, feel free to exclude or edit.)
+     
+     ** at global snippets:
+     
+        "Style from theme": {
+            "prefix": "$t",
+            "body": ["${({ theme }) => theme.$1 }"],
+            "description": "Shorthand theme destructuring"
+        },
+
+        "Calculate Size Units": {
+            "prefix": "csu",
+            "body": ["${({ theme }) => theme.calcSizeUnits($1)}"],
+            "description": "Calculate Size Units via theme.calcSizeUnits"
+        }
+        
+     ** at javascript snippets:
+    
+        "import styled-components":{
+            "prefix": "s-c",
+            "body":[ "import styled from 'styled-components';"],
+            "description": "Imports styled-components"
+        },
+        
+     ** at javascriptreact:
+     
+        "import from styles.js":{
+            "prefix": "impst",
+            "body":[ "import { $1 } from './styles';"],
+            "description": "Imports Components from adjacent styles.js file"
+        },

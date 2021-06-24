@@ -5,13 +5,13 @@ import { isAnObject } from 'Utils/utilFuncs';
 const initialState = {
 	ActionsTab: false,
 	ActionsWindow: false,
-	SettingsWindow: false,
-	EnergyPurchaseWindow: false,
 	CoinsPurchaseWindow: false,
 	CoinsTab: false,
+	DiscoveryWindow: false,
+	EnergyPurchaseWindow: false,
 	EnergyTab: false,
-	CraftingWindow: false,
 	SeenWindow: false,
+	SettingsWindow: false,
 };
 const MountedComponentsSlice = createSlice({
 	name: 'MountedComponents',
