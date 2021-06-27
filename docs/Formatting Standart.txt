@@ -1,0 +1,22 @@
+ In VSCode:
+ 
+ 1. Make Sure to have the Extension "Prettier - Code formatter" by "esbenp.prettier-vscode" installed.
+ 2. Press ctrl+shift+P.
+ 3. Type "sett".
+ 3. Choose the suggestion "Preferences: Open Settings (JSON)".
+ 4. Inside the settings.json file that opened, inside the main { } brackets - paste the following:
+
+	"editor.formatOnSave": true,
+	"editor.tabSize": 2,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"prettier.printWidth": 125,
+	"prettier.arrowParens": "avoid",
+	"prettier.singleQuote": true,
+	"prettier.jsxSingleQuote": true,
+	"prettier.packageManager": "yarn",
+	"prettier.trailingComma": "all",
+	"prettier.useTabs": true,
+	"prettier.tabWidth": 2,
+	
+ 5. (Notice the Commas)
+ 6. Delete/Comment duplicate object keys if there are any (other lines configuring the same settings).

@@ -1,9 +1,9 @@
 import React from 'react';
-import GeneralWindow from 'GeneralComponents/GeneralWindow';
+import GeneralWindow from 'GeneralComponents/GeneralWindow/GeneralWindow';
 
 export default function SeenWindow({ unmountSeenWindow }) {
 	return (
-		<GeneralWindow unmountGeneralWindow={unmountSeenWindow} rightSided>
+		<GeneralWindow unmountGeneralWindow={unmountSeenWindow} position='rightSided'>
 			<br />
 			<br />
 			<br />

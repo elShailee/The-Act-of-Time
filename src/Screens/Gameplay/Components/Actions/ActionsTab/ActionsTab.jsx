@@ -1,6 +1,5 @@
 import React from 'react';
-import './ActionsTab.css';
-import GeneralTab from 'GeneralComponents/GeneralTab';
+import { MoreActionsButton, Tab } from './styles';
 import FirstFewActions from './FirstFewActions';
 import texts from 'texts';
 import { useDispatch } from 'react-redux';
@@ -15,11 +14,9 @@ export default function ActionsTab() {
 	};
 
 	return (
-		<GeneralTab id='actionsTab'>
+		<Tab>
 			<FirstFewActions />
-			<div className='generalButton' id='moreActionsBtn' onClick={onActionsButtonClick}>
-				{texts.gameplay.actions.actionsTab.moreOptions}
-			</div>
-		</GeneralTab>
+			<MoreActionsButton onClick={onActionsButtonClick}>{texts.gameplay.actions.actionsTab.moreOptions}</MoreActionsButton>
+		</Tab>
 	);
 }

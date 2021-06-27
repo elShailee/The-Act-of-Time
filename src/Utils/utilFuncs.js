@@ -5,7 +5,7 @@ export function isAnObject(variable) {
 }
 
 export function getImageFromLib(imgName, lib) {
-	if (lib[imgName] !== undefined) return lib[imgName].asset;
+	if (lib[imgName] !== undefined) return lib[imgName];
 	else {
 		console.log(texts.errors.imageNotFound);
 		return null;
