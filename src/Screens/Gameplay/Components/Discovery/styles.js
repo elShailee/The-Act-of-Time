@@ -1,7 +1,6 @@
 import { GeneralButton } from 'GeneralComponents/GeneralButton/styles';
 import styled from 'styled-components';
 import { animated } from 'react-spring';
-import GeneralNavBar from 'GeneralComponents/GeneralNavBar/GeneralNavBar';
 
 export const discoveryButtonSize = 2.5;
 
@@ -14,6 +13,11 @@ export const Button = styled(animated(GeneralButton))`
 	font-size: ${({ theme }) => theme.sizes.text.XXL};
 `;
 
-export const WindowNavbar = styled(GeneralNavBar)`
-	background-color: ${({ theme }) => theme.colors.discovery.windowNavbar};
+export const windowBarStyle = theme => `
+	background-color: ${theme.colors.discovery.windowNavBar};
+	margin-right: ${theme.sizes.padding.M}
+`;
+
+export const windowNavButtonStyle = theme => `
+	background-color: ${theme.colors.discovery.windowNavBar};
 `;

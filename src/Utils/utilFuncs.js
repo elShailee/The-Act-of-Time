@@ -1,17 +1,21 @@
 import texts from 'texts';
 
-export function isAnArray(variable) {
+export const isAnArray = variable => {
 	return variable instanceof Object && variable instanceof Array;
-}
+};
 
-export function isADictionary(variable) {
+export const isADictionary = variable => {
 	return variable instanceof Object && !(variable instanceof Array);
-}
+};
 
-export function getImageFromLib(imgName, lib) {
+export const getImageFromLib = (imgName, lib) => {
 	if (lib[imgName] !== undefined) return lib[imgName];
 	else {
 		console.log(texts.errors.imageNotFound);
 		return null;
 	}
-}
+};
+
+export const useCustomStyle = (customStyle, theme) => {
+	if (customStyle !== undefined) return customStyle(theme);
+};

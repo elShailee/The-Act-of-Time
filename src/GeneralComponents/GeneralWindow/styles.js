@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { GeneralCloseButton } from 'GeneralComponents/GeneralCloseButton/styles';
+import { useCustomStyle } from 'Utils/utilFuncs';
 
 /* ~Window~ */
 
@@ -24,15 +25,18 @@ export const WindowContainer = styled.div`
 	padding: ${({ theme }) => theme.sizes.padding.M};
 	border-radius: ${({ theme }) => theme.sizes.borderRadius.M};
 	${({ theme, position }) => positions[position](theme)}
+	${({ customStyle, theme }) => useCustomStyle(customStyle, theme)}
 `;
 
 /* ~Title~ */
 export const TitleContainer = styled.div`
 	${({ theme }) => theme.customStyles.centerItems}
+	${({ customStyle, theme }) => useCustomStyle(customStyle, theme)}
 `;
 
 export const CloseButton = styled(GeneralCloseButton)`
 	margin-left: auto;
+	${({ customStyle, theme }) => useCustomStyle(customStyle, theme)}
 `;
 
 /* ~Content~ */
@@ -43,4 +47,5 @@ export const ContentContainer = styled.div`
 
 	background: ${({ theme }) => theme.colors.generalWindow.contentBg};
 	border-radius: ${({ theme }) => theme.sizes.borderRadius.L};
+	${({ customStyle, theme }) => useCustomStyle(customStyle, theme)}
 `;

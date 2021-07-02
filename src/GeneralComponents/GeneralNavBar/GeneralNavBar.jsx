@@ -1,9 +1,9 @@
 import React from 'react';
 import texts from 'texts';
 import { isADictionary, isAnArray } from 'Utils/utilFuncs';
-import { NavBar, NavButton, Spacer } from './styles';
+import { NavBar, NavButton, NavSpacer } from './styles';
 
-export default function GeneralNavBar({ buttons }) {
+export default function GeneralNavBar({ buttons, barStyle, buttonStyle, spacerStyle }) {
 	const renderButtons = () => {
 		if (!isAnArray(buttons) || buttons.length === 0) {
 			console.log(texts.errors.invalidButtonsDictionary);
@@ -22,12 +22,12 @@ export default function GeneralNavBar({ buttons }) {
 				buttons.forEach((button, index) => {
 					const isNotLast = index !== buttons.length - 1;
 					arrayWithSpacers.push(
-						<NavButton onClick={button.func} key={index * 2}>
+						<NavButton onClick={button.func} customStyle={buttonStyle} key={index * 2}>
 							{button.title}
 						</NavButton>,
 					);
 					if (isNotLast) {
-						arrayWithSpacers.push(<Spacer key={index * 2 + 1} />);
+						arrayWithSpacers.push(<NavSpacer customStyle={spacerStyle} key={index * 2 + 1} />);
 					}
 				});
 				return arrayWithSpacers.map(component => {
@@ -37,5 +37,5 @@ export default function GeneralNavBar({ buttons }) {
 		}
 	};
 
-	return <NavBar>{renderButtons()}</NavBar>;
+	return <NavBar customStyle={barStyle}>{renderButtons()}</NavBar>;
 }

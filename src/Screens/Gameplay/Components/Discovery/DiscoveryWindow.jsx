@@ -1,19 +1,21 @@
 import React from 'react';
 import GeneralWindow from 'GeneralComponents/GeneralWindow/GeneralWindow';
-import { WindowNavbar } from './styles';
+import GeneralNavBar from 'GeneralComponents/GeneralNavBar/GeneralNavBar';
+import { windowBarStyle, windowNavButtonStyle } from './styles';
 
 export default function DiscoveryWindow({ unmountDiscoveryWindow }) {
-	const buttons = [
+	const navBarButtons = [
 		{
-			title: 'Crafting',
-			func: () => console.log('Crafting'),
+			title: 'Craft',
+			func: () => console.log('Craft'),
 		},
 		{
-			title: 'Harvesting',
-			func: () => console.log('Harvesting'),
+			title: 'Harvest',
+			func: () => console.log('Harvest'),
 		},
 	];
-	const title = <WindowNavbar buttons={buttons} />;
+
+	const title = <GeneralNavBar buttons={navBarButtons} barStyle={windowBarStyle} buttonStyle={windowNavButtonStyle} />;
 
 	return (
 		<GeneralWindow unmountGeneralWindow={unmountDiscoveryWindow} position='rightSided' title={title}>
