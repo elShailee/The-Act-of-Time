@@ -75,6 +75,9 @@ const theme = {
 		generalCloseButton: {
 			bg: palette.brown[830],
 		},
+		generalNavBar: {
+			defaultBG: palette.gray[500],
+		},
 		generalWindow: {
 			bg: palette.yellow[350],
 			contentBg: palette.yellow[750],
@@ -108,6 +111,7 @@ const theme = {
 		},
 		discovery: {
 			button: palette.green[950],
+			windowNavbar: palette.brown[750],
 		},
 		map: {
 			bg: palette.blue[350],

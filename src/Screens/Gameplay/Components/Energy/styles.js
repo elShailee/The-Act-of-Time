@@ -57,7 +57,7 @@ export const MoreEnergyButton = styled(GeneralButton)`
 	background-color: ${({ theme }) => theme.colors.energy.moreEnergyButton};
 	font-size: ${({ theme }) => theme.sizes.text.S};
 	text-transform: none;
-	${({ theme }) => theme.customStyles.noBorderShading}
+	border: 0px;
 `;
 
 export const EnergyIcon = styled.img`

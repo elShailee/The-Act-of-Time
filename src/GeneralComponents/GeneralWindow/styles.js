@@ -5,9 +5,10 @@ import { GeneralCloseButton } from 'GeneralComponents/GeneralCloseButton/styles'
 
 const positions = {
 	center: theme => `
+		transform: translateX(-50%);
   `,
 	rightSided: theme => `
-	  right: ${theme.calcSizeUnits(1)};
+	  right: ${theme.calcSizeUnits(3.5)};
   `,
 };
 
@@ -15,7 +16,6 @@ export const WindowContainer = styled.div`
 	height: ${({ theme }) => theme.calcSizeUnits(11.5)};
 	width: fit-content;
 	position: absolute;
-	transform: translateX(-50%);
 	top: ${({ theme }) => theme.calcSizeUnits(3.8)};
 	display: flex;
 	flex-direction: column;

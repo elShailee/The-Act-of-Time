@@ -1,7 +1,11 @@
 import texts from 'texts';
 
-export function isAnObject(variable) {
-	return typeof variable === 'object';
+export function isAnArray(variable) {
+	return variable instanceof Object && variable instanceof Array;
+}
+
+export function isADictionary(variable) {
+	return variable instanceof Object && !(variable instanceof Array);
 }
 
 export function getImageFromLib(imgName, lib) {

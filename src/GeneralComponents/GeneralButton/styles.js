@@ -7,6 +7,7 @@ export const GeneralButton = styled.div`
 	font-size: ${({ theme }) => theme.sizes.text.M};
 	text-transform: uppercase;
 	box-sizing: border-box;
+	overflow: hidden;
 
 	${({ theme }) => theme.customStyles.centerItems}
 	${({ theme }) => theme.customStyles.highlighted}
