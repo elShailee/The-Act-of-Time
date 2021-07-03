@@ -1,9 +1,9 @@
 import { GeneralButton } from 'GeneralComponents/GeneralButton/styles';
 import { GeneralTab } from 'GeneralComponents/GeneralTab/styles';
 import styled from 'styled-components';
-import { useCustomStyle } from 'Utils/utilFuncs';
+import { useCustomStyle } from 'Utils/styleFuncs';
 
-export const NavBar = styled(GeneralTab)`
+export const Bar = styled(GeneralTab)`
 	width: 100%;
 	height: min(100%, ${({ theme }) => theme.sizes.buttonsHeight.M});
 	background-color: ${({ theme }) => theme.colors.generalNavBar.defaultBG};
@@ -14,7 +14,7 @@ export const NavBar = styled(GeneralTab)`
 	${({ customStyle, theme }) => useCustomStyle(customStyle, theme)}
 `;
 
-export const NavButton = styled(GeneralButton)`
+export const Button = styled(GeneralButton)`
 	background-color: ${({ theme }) => theme.colors.generalNavBar.defaultBG};
 	width: 100%;
 	height: 100%;
@@ -24,9 +24,9 @@ export const NavButton = styled(GeneralButton)`
 	${({ customStyle, theme }) => useCustomStyle(customStyle, theme)}
 `;
 
-export const NavSpacer = styled.div`
+export const Spacer = styled.div`
 	${({ customStyle, theme }) => useCustomStyle(customStyle, theme)}
 `;
-NavSpacer.defaultProps = {
+Spacer.defaultProps = {
 	children: '|',
 };

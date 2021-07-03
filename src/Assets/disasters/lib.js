@@ -1,5 +1,5 @@
 import wolvesImg from './wolves.png';
-import { getImageFromLib } from 'Utils/utilFuncs';
+import { getImageFromLib } from 'Utils/styleFuncs';
 
 const lib = {
 	wolves: wolvesImg,

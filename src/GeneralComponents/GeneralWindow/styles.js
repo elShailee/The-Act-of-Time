@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { GeneralCloseButton } from 'GeneralComponents/GeneralCloseButton/styles';
-import { useCustomStyle } from 'Utils/utilFuncs';
+import { useCustomStyle } from 'Utils/styleFuncs';
 
 /* ~Window~ */
 
@@ -9,7 +9,7 @@ const positions = {
 		transform: translateX(-50%);
   `,
 	rightSided: theme => `
-	  right: ${theme.calcSizeUnits(3.5)};
+	  right: ${theme.calcSizeUnits(4.5)};
   `,
 };
 

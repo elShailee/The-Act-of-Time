@@ -15,7 +15,7 @@ export default function DiscoveryWindow({ unmountDiscoveryWindow }) {
 		},
 	];
 
-	const title = <GeneralNavBar buttons={navBarButtons} barStyle={windowBarStyle} buttonStyle={windowNavButtonStyle} />;
+	const title = <GeneralNavBar buttonsArray={navBarButtons} barStyle={windowBarStyle} buttonStyle={windowNavButtonStyle} />;
 
 	return (
 		<GeneralWindow unmountGeneralWindow={unmountDiscoveryWindow} position='rightSided' title={title}>
