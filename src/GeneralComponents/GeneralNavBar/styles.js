@@ -1,7 +1,7 @@
 import { GeneralButton } from 'GeneralComponents/GeneralButton/styles';
 import { GeneralTab } from 'GeneralComponents/GeneralTab/styles';
 import styled from 'styled-components';
-import { useCustomStyle } from 'Utils/styleFuncs';
+import { useCustomStyle } from 'Utils/styleUtils';
 
 export const Bar = styled(GeneralTab)`
 	width: 100%;

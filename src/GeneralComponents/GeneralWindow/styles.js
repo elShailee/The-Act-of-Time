@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { GeneralCloseButton } from 'GeneralComponents/GeneralCloseButton/styles';
-import { useCustomStyle } from 'Utils/styleFuncs';
+import { useCustomStyle } from 'Utils/styleUtils';
 
 /* ~Window~ */
 

@@ -1,5 +1,5 @@
 import char1Img from './char1.png';
-import { getImageFromLib } from 'Utils/styleFuncs';
+import { getImageFromLib } from 'Utils/styleUtils';
 
 const lib = {
 	char1: char1Img,
