@@ -1,18 +1,32 @@
 import styled from 'styled-components';
+import { getTileImg } from 'Assets/focusedMap/lib';
+
+const tileSize = 0.92;
 
 export const Container = styled.div`
 	position: absolute;
-	left: ${({ theme, numOfCols }) => theme.calcSizeUnits((32 - numOfCols) / 2)};
-	bottom: 0;
+	left: ${({ theme, numOfCols }) => theme.calcSizeUnits((32 - numOfCols * tileSize) / 2)};
+	bottom: ${({ theme }) => theme.calcSizeUnits(tileSize / 2)};
 `;
 
 export const FmRow = styled.div`
-	display: flex;
+	${({ theme }) => theme.customStyles.centerItems};
 `;
 
-const TileSize = 1;
 export const Tile = styled.div`
-	height: ${({ theme }) => theme.calcSizeUnits(TileSize)};
-	width: ${({ theme }) => theme.calcSizeUnits(TileSize)};
-	outline: ${({ theme }) => theme.calcSizeUnits(0.01)} solid white;
+	height: ${({ theme }) => theme.calcSizeUnits(tileSize)};
+	width: ${({ theme }) => theme.calcSizeUnits(tileSize)};
+	${({ tileData, theme }) => {
+		if (tileData.type === 'image') {
+			return `
+				background-image: url(${getTileImg(tileData.value)});
+				background-size: cover;
+			`;
+		}
+		if (tileData.type === 'border') {
+			return `
+				background-color: ${theme.colors.focusedMap.border};
+			`;
+		}
+	}}
 `;
