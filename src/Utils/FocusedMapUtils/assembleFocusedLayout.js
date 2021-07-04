@@ -1,14 +1,14 @@
 export default function assembleFocusedLayout(exampleData) {
-	let res = new Array(exampleData.length + 2);
+	let result = new Array(exampleData.length + 2);
 
-	let first = new Array(exampleData[0].length);
-	let last = new Array(exampleData[0].length);
+	let topRow = new Array(exampleData[0].length);
+	let bottomRow = new Array(exampleData[0].length);
 	for (let i = 0; i < exampleData[0].length; i++) {
-		first[i] = { type: 'border', value: 'topBorderTile' };
-		last[i] = { type: 'border', value: 'bottomBorderTile' };
+		topRow[i] = { type: 'border', value: 'topBorderTile' };
+		bottomRow[i] = { type: 'border', value: 'bottomBorderTile' };
 	}
-	res[0] = first;
-	res[res.length - 1] = last;
+	result[0] = topRow;
+	result[result.length - 1] = bottomRow;
 
 	for (let row = 0; row < exampleData.length; row++) {
 		let currentRow = new Array(exampleData[row].length + 2);
@@ -49,8 +49,8 @@ export default function assembleFocusedLayout(exampleData) {
 			};
 		}
 
-		res[row + 1] = currentRow;
+		result[row + 1] = currentRow;
 	}
 
-	return res;
+	return result;
 }

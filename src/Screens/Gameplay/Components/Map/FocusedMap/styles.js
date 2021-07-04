@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { getTileImg } from 'Assets/FocusedMap/lib';
+import { getTileImg } from 'Assets/focusedMap/lib';
 
 const tileSize = 0.92;
 

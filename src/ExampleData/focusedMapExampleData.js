@@ -1,4 +1,4 @@
-export const tileExampleData = [
+const tileExampleData = [
 	[
 		'deepsea',
 		'sea',
