@@ -1,13 +1,7 @@
-import texts from 'texts';
+export const checkIfArray = variable => {
+	return variable instanceof Object && variable instanceof Array;
+};
 
-export function isAnObject(variable) {
-	return typeof variable === 'object';
-}
-
-export function getImageFromLib(imgName, lib) {
-	if (lib[imgName] !== undefined) return lib[imgName];
-	else {
-		console.log(texts.errors.imageNotFound);
-		return null;
-	}
-}
+export const checkIfDictionary = variable => {
+	return variable instanceof Object && !(variable instanceof Array);
+};

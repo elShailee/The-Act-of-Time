@@ -1,13 +1,15 @@
 import styled from 'styled-components';
 import { GeneralCloseButton } from 'GeneralComponents/GeneralCloseButton/styles';
+import { applyCustomStyle } from 'Utils/styleUtils';
 
 /* ~Window~ */
 
 const positions = {
 	center: theme => `
+		transform: translateX(-50%);
   `,
 	rightSided: theme => `
-	  right: ${theme.calcSizeUnits(1)};
+	  right: ${theme.calcSizeUnits(4.5)};
   `,
 };
 
@@ -15,7 +17,6 @@ export const WindowContainer = styled.div`
 	height: ${({ theme }) => theme.calcSizeUnits(11.5)};
 	width: fit-content;
 	position: absolute;
-	transform: translateX(-50%);
 	top: ${({ theme }) => theme.calcSizeUnits(3.8)};
 	display: flex;
 	flex-direction: column;
@@ -24,15 +25,18 @@ export const WindowContainer = styled.div`
 	padding: ${({ theme }) => theme.sizes.padding.M};
 	border-radius: ${({ theme }) => theme.sizes.borderRadius.M};
 	${({ theme, position }) => positions[position](theme)}
+	${({ customStyle, theme }) => applyCustomStyle(customStyle, theme)}
 `;
 
 /* ~Title~ */
 export const TitleContainer = styled.div`
 	${({ theme }) => theme.customStyles.centerItems}
+	${({ customStyle, theme }) => applyCustomStyle(customStyle, theme)}
 `;
 
 export const CloseButton = styled(GeneralCloseButton)`
 	margin-left: auto;
+	${({ customStyle, theme }) => applyCustomStyle(customStyle, theme)}
 `;
 
 /* ~Content~ */
@@ -43,4 +47,5 @@ export const ContentContainer = styled.div`
 
 	background: ${({ theme }) => theme.colors.generalWindow.contentBg};
 	border-radius: ${({ theme }) => theme.sizes.borderRadius.L};
+	${({ customStyle, theme }) => applyCustomStyle(customStyle, theme)}
 `;

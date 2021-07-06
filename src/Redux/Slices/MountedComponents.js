@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import texts from 'texts';
-import { isAnObject } from 'Utils/utilFuncs';
+import { checkIfArray } from 'Utils/utilFuncs';
 
 const initialState = {
 	ActionsTab: false,
@@ -31,7 +31,7 @@ const MountedComponentsSlice = createSlice({
 });
 
 const componentsArrayValidator = arrayOfComponentsNames => {
-	if (!isAnObject(arrayOfComponentsNames) || arrayOfComponentsNames === undefined) {
+	if (!checkIfArray(arrayOfComponentsNames) || arrayOfComponentsNames === undefined) {
 		return false;
 	}
 	return true;

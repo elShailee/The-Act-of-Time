@@ -61,19 +61,25 @@ const theme = {
 		clickable: `
 			cursor: pointer;
 		`,
+		borderShading: _theme => `
+			border: ${_theme.sizes.border} solid ${_theme.colors.shading.border};
+		`,
 		noBorderShading: `
 			border-color: ${palette.transparent};
 		`,
 	},
 	colors: {
+		shading: {
+			border: palette.black[103],
+		},
 		gameplayScreen: {
 			spacer: palette.blue[200],
 		},
-		generalButton: {
-			border: palette.black[103],
-		},
 		generalCloseButton: {
 			bg: palette.brown[830],
+		},
+		generalNavBar: {
+			defaultBG: palette.gray[500],
 		},
 		generalWindow: {
 			bg: palette.yellow[350],
@@ -108,6 +114,7 @@ const theme = {
 		},
 		discovery: {
 			button: palette.green[950],
+			windowNavBar: palette.brown[750],
 		},
 		map: {
 			bg: palette.blue[350],
