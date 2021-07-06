@@ -54,7 +54,7 @@ const texts = {
 		invalidComponentsToMount: 'please pass a string or an array of strings to either mountComponent() or unmountComponent()',
 		imageNotFound: 'No image found to match given data.',
 		invalidButtonsArray:
-			"please make sure to pass an Array of Objects to GeneralNavBar.\nEach cell need to be an object with the keys 'title' and 'func'.",
+			"GeneralNavBar Error: please make sure to pass an Array of Objects to GeneralNavBar.\nEach cell need to be an object with the keys 'title' and 'func'.",
 	},
 };
 export default texts;

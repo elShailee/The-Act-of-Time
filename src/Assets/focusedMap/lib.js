@@ -21,7 +21,7 @@ import grassRight from 'Assets/focusedMap/grass-right.png';
 import sandGrassRight from 'Assets/focusedMap/sandgrassright.png';
 import sandGrassCornerTopLeft from 'Assets/focusedMap/sandgrasscorner-tl.png';
 import sandGrassCornerBotLeft from 'Assets/focusedMap/sandgrasscorner-bl.png';
-import { getImageFromLib } from 'Utils/utilFuncs';
+import { getImageFromLib } from 'Utils/styleUtils';
 
 const lib = {
 	grass1,

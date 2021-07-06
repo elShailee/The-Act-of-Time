@@ -8,6 +8,6 @@ export const getImageFromLib = (imgName, lib) => {
 	}
 };
 
-export const useCustomStyle = (customStyle, theme) => {
+export const applyCustomStyle = (customStyle, theme) => {
 	if (customStyle !== undefined) return customStyle(theme);
 };
