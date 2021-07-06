@@ -127,6 +127,9 @@ const theme = {
 		settings: {
 			button: palette.gray[500],
 		},
+		focusedMap: {
+			border: palette.blue[200],
+		},
 	},
 };
 
