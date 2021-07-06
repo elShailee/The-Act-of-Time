@@ -12,12 +12,3 @@ export const Button = styled(animated(GeneralButton))`
 	line-height: ${({ theme }) => theme.calcSizeUnits(discoveryButtonSize)};
 	font-size: ${({ theme }) => theme.sizes.text.XXL};
 `;
-
-export const windowBarStyle = theme => `
-	background-color: ${theme.colors.discovery.windowNavBar};
-	margin-right: ${theme.sizes.padding.M}
-`;
-
-export const windowNavButtonStyle = theme => `
-	background-color: ${theme.colors.discovery.windowNavBar};
-`;
