@@ -18,16 +18,16 @@ This project WAS NOT created by a team of experienced developers, but as a platf
 
 ## Technologies
 
-Front:
+Front: &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  **(-)** Not Yet Implemented
 
 - ReactJS (Redux and Hooks)
 - CSS (Styled Components)
 
-Backend:
+Backend: **(-)**
 
 - NodeJS (Express)
 - OAuth
 
-DataBase:
+DataBase: **(-)**
 
 - MongoDb (Mongoose)
