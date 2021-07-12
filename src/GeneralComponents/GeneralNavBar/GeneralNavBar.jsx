@@ -3,7 +3,7 @@ import texts from 'texts';
 import { checkIfDictionary, checkIfArray } from 'Utils/utilFuncs';
 import { Bar, Button, Spacer } from './styles';
 
-export default function GeneralNavBar({ buttonsArray: inputButtonsArray, barStyle, buttonStyle, spacerStyle }) {
+export default function GeneralNavBar({ buttons: inputButtonsArray, barStyle, buttonStyle, spacerStyle }) {
 	const validateButtonsArray = () => {
 		if (!checkIfArray(inputButtonsArray) || inputButtonsArray.length === 0) {
 			return false;
