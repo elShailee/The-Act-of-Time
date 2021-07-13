@@ -22,58 +22,63 @@ const darkGreenBorder = theme => `
 border: ${theme.sizes.border.S} solid ${theme.colors.discovery.window.borders};
 `;
 
-export const WindowContainerStyles = theme => `
+const WindowContainer = theme => `
 	background-color: ${theme.colors.discovery.window.container};
 	${darkGreenBorder(theme)}
 `;
 
-export const BarStyle = theme => `
+const NavBar = theme => `
 	height: ${theme.sizes.buttonsHeight.M};
 	margin-right: ${theme.sizes.padding.S};
 	${darkGreenBorder(theme)}
 	background-color: ${theme.colors.discovery.window.navBar};
 `;
 
-export const ButtonStyle = theme => `
+const NavButton = theme => `
 	background-color: ${theme.colors.discovery.window.navBar};
 `;
 
-export const PressedButtonStyle = theme => `
+const PressedNavButton = theme => `
 	background-color: ${theme.colors.discovery.window.pressedNavButton};
 `;
 
-export const SpacerStyle = theme => `
+const NavSpacer = theme => `
 	color: ${theme.colors.discovery.window.navSpacer};
 `;
 
-export const CloseButtonStyle = theme => `
+const CloseButton = theme => `
 	background-color: ${theme.colors.discovery.window.closeButton};
 	${darkGreenBorder(theme)}
 `;
 
-export const WindowContentContainerStyles = theme => `
+const WindowContentContainer = theme => `
 	width: ${theme.calcSizeUnits(10)};
 	${darkGreenBorder(theme)}
 `;
 
-const upperInterfacesStyles = theme => `
-	height: 43%;
-	background-color: ${theme.colors.discovery.window.contentContainer};
-	border-radius: ${theme.sizes.borderRadius.L} ${theme.sizes.borderRadius.L} 0 0;
-	${theme.customStyles.centerItems}
-`;
+const upperPartHeight = 43;
 
-export const CraftContainer = styled(GeneralTab)`
-	${({ theme }) => upperInterfacesStyles(theme)}
-`;
-
-export const HarvestContainer = styled(GeneralTab)`
-	${({ theme }) => upperInterfacesStyles(theme)}
+export const UpperInterface = styled(GeneralTab)`
+	height: ${upperPartHeight}%;
+	background-color: ${({ theme }) => theme.colors.discovery.window.contentContainer};
+	border-radius: ${({ theme }) => theme.sizes.borderRadius.L} ${({ theme }) => theme.sizes.borderRadius.L} 0 0;
+	${({ theme }) => theme.customStyles.centerItems}
 `;
 
 export const InventoryContainer = styled(GeneralTab)`
+	height: ${100 - upperPartHeight}%;
 	background-color: ${({ theme }) => theme.colors.discovery.window.contentContainer};
-	height: 57%;
 	border-top: ${({ theme }) => theme.sizes.border.S} solid ${({ theme }) => theme.colors.discovery.window.spacer};
 	border-radius: 0 0 ${({ theme }) => theme.sizes.borderRadius.L} ${({ theme }) => theme.sizes.borderRadius.L};
 `;
+
+const nonComponentStyles = {
+	WindowContainer,
+	NavBar,
+	NavButton,
+	PressedNavButton,
+	NavSpacer,
+	CloseButton,
+	WindowContentContainer,
+};
+export default nonComponentStyles;

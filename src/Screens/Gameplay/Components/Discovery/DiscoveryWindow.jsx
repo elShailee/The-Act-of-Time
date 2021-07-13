@@ -1,18 +1,7 @@
 import React, { useState } from 'react';
 import GeneralWindow from 'GeneralComponents/GeneralWindow/GeneralWindow';
 import GeneralNavBar from 'GeneralComponents/GeneralNavBar/GeneralNavBar';
-import {
-	CraftContainer,
-	HarvestContainer,
-	InventoryContainer,
-	WindowContentContainerStyles,
-	WindowContainerStyles,
-	BarStyle,
-	ButtonStyle,
-	PressedButtonStyle,
-	SpacerStyle,
-	CloseButtonStyle,
-} from './styles';
+import styles, { UpperInterface, InventoryContainer } from './styles';
 
 export default function DiscoveryWindow({ unmountDiscoveryWindow }) {
 	const [activeInterface, setActiveInterface] = useState('Craft');
@@ -31,10 +20,10 @@ export default function DiscoveryWindow({ unmountDiscoveryWindow }) {
 	const tabsNavBar = (
 		<GeneralNavBar
 			buttons={navBarButtons}
-			barStyle={BarStyle}
-			buttonStyle={ButtonStyle}
-			pressedButtonStyle={PressedButtonStyle}
-			spacerStyle={SpacerStyle}
+			barStyle={styles.NavBar}
+			buttonStyle={styles.NavButton}
+			pressedButtonStyle={styles.PressedNavButton}
+			spacerStyle={styles.NavSpacer}
 		/>
 	);
 
@@ -43,12 +32,12 @@ export default function DiscoveryWindow({ unmountDiscoveryWindow }) {
 			unmountGeneralWindow={unmountDiscoveryWindow}
 			position='rightSided'
 			title={tabsNavBar}
-			contentContainerStyle={WindowContentContainerStyles}
-			windowContainerStyle={WindowContainerStyles}
-			closeButtonStyle={CloseButtonStyle}
+			contentContainerStyle={styles.WindowContentContainer}
+			windowContainerStyle={styles.WindowContainer}
+			closeButtonStyle={styles.CloseButton}
 		>
-			{activeInterface === 'Craft' && <CraftContainer>Crafting Interface</CraftContainer>}
-			{activeInterface === 'Harvest' && <HarvestContainer>Harvesting Interface</HarvestContainer>}
+			{activeInterface === 'Craft' && <UpperInterface>Crafting Interface</UpperInterface>}
+			{activeInterface === 'Harvest' && <UpperInterface>Harvesting Interface</UpperInterface>}
 			<InventoryContainer />
 		</GeneralWindow>
 	);
