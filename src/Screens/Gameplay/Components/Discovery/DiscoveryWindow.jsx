@@ -17,7 +17,7 @@ export default function DiscoveryWindow({ unmountDiscoveryWindow }) {
 		},
 	];
 
-	const tabsNavBar = (
+	const TabsNavBar = (
 		<GeneralNavBar
 			buttons={navBarButtons}
 			barStyle={styles.NavBar}
@@ -31,7 +31,7 @@ export default function DiscoveryWindow({ unmountDiscoveryWindow }) {
 		<GeneralWindow
 			unmountGeneralWindow={unmountDiscoveryWindow}
 			position='rightSided'
-			title={tabsNavBar}
+			title={TabsNavBar}
 			contentContainerStyle={styles.WindowContentContainer}
 			windowContainerStyle={styles.WindowContainer}
 			closeButtonStyle={styles.CloseButton}

@@ -126,7 +126,6 @@ const theme = {
 				navBar: palette.green[850],
 				pressedNavButton: palette.green[910],
 				navSpacer: palette.green[350],
-				spacer: palette.green[350],
 			},
 		},
 		map: {

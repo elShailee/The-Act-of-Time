@@ -62,7 +62,6 @@ export const UpperInterface = styled(GeneralTab)`
 	height: ${upperPartHeight}%;
 	background-color: ${({ theme }) => theme.colors.discovery.window.contentContainer};
 	border-radius: ${({ theme }) => theme.sizes.borderRadius.L} ${({ theme }) => theme.sizes.borderRadius.L} 0 0;
-	${({ theme }) => theme.customStyles.centerItems}
 `;
 
 export const InventoryContainer = styled(GeneralTab)`
