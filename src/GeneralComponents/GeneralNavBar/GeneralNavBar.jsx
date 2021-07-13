@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import texts from 'texts';
 import { checkIfDictionary, checkIfArray } from 'Utils/utilFuncs';
 import { Bar, Button, Spacer } from './styles';
 
-export default function GeneralNavBar({ buttons: inputButtonsArray, barStyle, buttonStyle, spacerStyle }) {
+export default function GeneralNavBar({
+	buttons: inputButtonsArray,
+	barStyle,
+	buttonStyle,
+	pressedButtonStyle,
+	spacerStyle,
+}) {
 	const validateButtonsArray = () => {
 		if (!checkIfArray(inputButtonsArray) || inputButtonsArray.length === 0) {
 			return false;
@@ -17,6 +23,8 @@ export default function GeneralNavBar({ buttons: inputButtonsArray, barStyle, bu
 		return true;
 	};
 
+	const [pressedButton, setPressedButton] = useState(0);
+
 	const renderButtons = () => {
 		const isButtonsArrayValid = validateButtonsArray();
 		if (!isButtonsArrayValid) {
@@ -25,7 +33,15 @@ export default function GeneralNavBar({ buttons: inputButtonsArray, barStyle, bu
 			let assembledButtonsArray = [];
 			inputButtonsArray.forEach((button, index) => {
 				assembledButtonsArray.push(
-					<Button onClick={button.func} customStyle={buttonStyle} key={index * 2}>
+					<Button
+						onClick={() => {
+							setPressedButton(index);
+							button.func();
+						}}
+						customStyle={buttonStyle}
+						customPressedStyle={pressedButton === index ? pressedButtonStyle : null}
+						key={index * 2}
+					>
 						{button.title}
 					</Button>,
 				);

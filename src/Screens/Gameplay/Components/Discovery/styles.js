@@ -35,7 +35,11 @@ export const BarStyle = theme => `
 `;
 
 export const ButtonStyle = theme => `
-	background-color: ${theme.colors.discovery.window.navBotton};
+	background-color: ${theme.colors.discovery.window.navBar};
+`;
+
+export const PressedButtonStyle = theme => `
+	background-color: ${theme.colors.discovery.window.pressedNavButton};
 `;
 
 export const SpacerStyle = theme => `
@@ -43,7 +47,7 @@ export const SpacerStyle = theme => `
 `;
 
 export const CloseButtonStyle = theme => `
-	background-color: ${theme.colors.discovery.window.closeBotton};
+	background-color: ${theme.colors.discovery.window.closeButton};
 	${darkGreenBorder(theme)}
 `;
 

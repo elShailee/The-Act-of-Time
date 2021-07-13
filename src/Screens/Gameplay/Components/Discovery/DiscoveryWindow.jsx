@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import GeneralWindow from 'GeneralComponents/GeneralWindow/GeneralWindow';
+import GeneralNavBar from 'GeneralComponents/GeneralNavBar/GeneralNavBar';
 import {
 	CraftContainer,
 	HarvestContainer,
@@ -8,10 +9,10 @@ import {
 	WindowContainerStyles,
 	BarStyle,
 	ButtonStyle,
+	PressedButtonStyle,
 	SpacerStyle,
 	CloseButtonStyle,
 } from './styles';
-import GeneralNavBar from 'GeneralComponents/GeneralNavBar/GeneralNavBar';
 
 export default function DiscoveryWindow({ unmountDiscoveryWindow }) {
 	const [activeInterface, setActiveInterface] = useState('Craft');
@@ -28,7 +29,13 @@ export default function DiscoveryWindow({ unmountDiscoveryWindow }) {
 	];
 
 	const tabsNavBar = (
-		<GeneralNavBar buttons={navBarButtons} barStyle={BarStyle} buttonStyle={ButtonStyle} spacerStyle={SpacerStyle} />
+		<GeneralNavBar
+			buttons={navBarButtons}
+			barStyle={BarStyle}
+			buttonStyle={ButtonStyle}
+			pressedButtonStyle={PressedButtonStyle}
+			spacerStyle={SpacerStyle}
+		/>
 	);
 
 	return (

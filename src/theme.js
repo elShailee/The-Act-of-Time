@@ -120,11 +120,11 @@ const theme = {
 			button: palette.green[680],
 			window: {
 				borders: palette.green[350],
-				closeBotton: palette.green[910],
+				closeButton: palette.green[910],
 				container: palette.green[680],
 				contentContainer: palette.green[910],
 				navBar: palette.green[850],
-				navBotton: palette.green[850],
+				pressedNavButton: palette.green[910],
 				navSpacer: palette.green[350],
 				spacer: palette.green[350],
 			},
