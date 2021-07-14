@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import GeneralWindow from 'GeneralComponents/GeneralWindow/GeneralWindow';
 import GeneralNavBar from 'GeneralComponents/GeneralNavBar/GeneralNavBar';
 import styles, { UpperInterface, InventoryContainer } from './styles_window';
+import CraftingInterface from './CraftingInterface';
 
 export default function DiscoveryWindow({ unmountDiscoveryWindow }) {
 	const [activeInterface, setActiveInterface] = useState('Craft');
@@ -36,8 +37,10 @@ export default function DiscoveryWindow({ unmountDiscoveryWindow }) {
 			windowContainerStyle={styles.WindowContainer}
 			closeButtonStyle={styles.CloseButton}
 		>
-			{activeInterface === 'Craft' && <UpperInterface>Crafting Interface</UpperInterface>}
-			{activeInterface === 'Harvest' && <UpperInterface>Harvesting Interface</UpperInterface>}
+			<UpperInterface>
+				{activeInterface === 'Craft' && <CraftingInterface />}
+				{activeInterface === 'Harvest' && 'Harvesting Interface'}
+			</UpperInterface>
 			<InventoryContainer />
 		</GeneralWindow>
 	);
