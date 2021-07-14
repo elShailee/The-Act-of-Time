@@ -1,6 +1,6 @@
-import { GeneralButton } from 'GeneralComponents/GeneralButton/styles';
 import styled from 'styled-components';
 import { animated } from 'react-spring';
+import { GeneralButton } from 'GeneralComponents/GeneralButton/styles';
 
 export const discoveryButtonSize = 2.5;
 

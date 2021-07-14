@@ -22,6 +22,7 @@ export const Button = styled(GeneralButton)`
 	text-transform: none;
 	${({ theme }) => theme.customStyles.noBorderShading}
 	${({ customStyle, theme }) => applyCustomStyle(customStyle, theme)}
+	${({ customPressedStyle, theme }) => applyCustomStyle(customPressedStyle, theme)}
 `;
 
 export const Spacer = styled.div`

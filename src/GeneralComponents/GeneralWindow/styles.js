@@ -14,16 +14,17 @@ const positions = {
 };
 
 export const WindowContainer = styled.div`
-	height: ${({ theme }) => theme.calcSizeUnits(11.5)};
+	height: ${({ theme }) => theme.calcSizeUnits(13)};
 	width: fit-content;
 	position: absolute;
-	top: ${({ theme }) => theme.calcSizeUnits(3.8)};
+	top: ${({ theme }) => theme.calcSizeUnits(3.3)};
 	display: flex;
 	flex-direction: column;
 
 	background-color: ${({ theme }) => theme.colors.generalWindow.bg};
 	padding: ${({ theme }) => theme.sizes.padding.M};
 	border-radius: ${({ theme }) => theme.sizes.borderRadius.M};
+	box-sizing: border-box;
 	${({ theme, position }) => positions[position](theme)}
 	${({ customStyle, theme }) => applyCustomStyle(customStyle, theme)}
 `;
@@ -45,6 +46,7 @@ export const ContentContainer = styled.div`
 	min-width: ${({ theme }) => theme.calcSizeUnits(6)};
 	margin-top: ${({ theme }) => theme.sizes.padding.S};
 
+	box-sizing: border-box;
 	background: ${({ theme }) => theme.colors.generalWindow.contentBg};
 	border-radius: ${({ theme }) => theme.sizes.borderRadius.L};
 	${({ customStyle, theme }) => applyCustomStyle(customStyle, theme)}

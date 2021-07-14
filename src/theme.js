@@ -6,7 +6,10 @@ const calcSizeUnits = num => `calc(${num} * ${HU})`;
 const theme = {
 	calcSizeUnits,
 	sizes: {
-		border: calcSizeUnits(0.1),
+		border: {
+			L: calcSizeUnits(0.1),
+			S: calcSizeUnits(0.03),
+		},
 		borderRadius: {
 			Max: '50%',
 			XXL: calcSizeUnits(0.5),
@@ -62,13 +65,14 @@ const theme = {
 			cursor: pointer;
 		`,
 		borderShading: _theme => `
-			border: ${_theme.sizes.border} solid ${_theme.colors.shading.border};
+			border: ${_theme.sizes.border.L} solid ${_theme.colors.shading.border};
 		`,
 		noBorderShading: `
 			border-color: ${palette.transparent};
 		`,
 	},
 	colors: {
+		transparent: palette.transparent,
 		shading: {
 			border: palette.black[103],
 		},
@@ -113,8 +117,16 @@ const theme = {
 			counter: palette.purple[800],
 		},
 		discovery: {
-			button: palette.green[950],
-			windowNavBar: palette.brown[750],
+			button: palette.green[680],
+			window: {
+				borders: palette.green[350],
+				closeButton: palette.green[910],
+				container: palette.green[680],
+				contentContainer: palette.green[910],
+				navBar: palette.green[850],
+				pressedNavButton: palette.green[910],
+				navSpacer: palette.green[350],
+			},
 		},
 		map: {
 			bg: palette.blue[350],

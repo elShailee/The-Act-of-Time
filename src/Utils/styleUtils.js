@@ -9,5 +9,5 @@ export const getImageFromLib = (imgName, lib) => {
 };
 
 export const applyCustomStyle = (customStyle, theme) => {
-	if (customStyle !== undefined) return customStyle(theme);
+	if (customStyle !== undefined && customStyle !== null) return customStyle(theme);
 };

@@ -1,5 +1,5 @@
 import texts from 'texts';
-import { Button } from './styles';
+import { Button } from './styles_button';
 import { useDispatch, useSelector } from 'react-redux';
 import { unmountComponents, mountComponents } from 'Redux/Slices/MountedComponents';
 import { isComponentMountedSelector } from 'Redux/Selectors/MountedComponentsSelectors';
