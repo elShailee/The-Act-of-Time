@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import GeneralWindow from 'GeneralComponents/GeneralWindow/GeneralWindow';
 import GeneralNavBar from 'GeneralComponents/GeneralNavBar/GeneralNavBar';
-import styles, { UpperInterface, InventoryContainer } from './styles';
+import styles, { UpperInterface, InventoryContainer } from './styles_window';
 
 export default function DiscoveryWindow({ unmountDiscoveryWindow }) {
 	const [activeInterface, setActiveInterface] = useState('Craft');
