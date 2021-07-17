@@ -6,6 +6,7 @@ export const TestingStyledDroppable = styled.div`
 	border: ${({ theme }) => theme.sizes.border.S} solid gray;
 	box-sizing: border-box;
 	background-color: darkgray;
+	${({ theme }) => theme.customStyles.centerItems}
 `;
 
 export const TestingStyledItem = styled.div`
