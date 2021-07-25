@@ -3,6 +3,8 @@ import GeneralWindow from 'GeneralComponents/GeneralWindow/GeneralWindow';
 import GeneralNavBar from 'GeneralComponents/GeneralNavBar/GeneralNavBar';
 import styles, { UpperInterface, InventoryContainer } from './styles_window';
 import CraftingInterface from './CraftingInterface';
+import { DragDropContext } from 'react-beautiful-dnd';
+import { applyItemPlacement } from 'Utils/dndUtils';
 
 export default function DiscoveryWindow({ unmountDiscoveryWindow }) {
 	const [activeInterface, setActiveInterface] = useState('Craft');
@@ -28,20 +30,26 @@ export default function DiscoveryWindow({ unmountDiscoveryWindow }) {
 		/>
 	);
 
+	const [dndDroppablesState, setDndDroppablesState] = useState({});
+
 	return (
-		<GeneralWindow
-			unmountGeneralWindow={unmountDiscoveryWindow}
-			position='rightSided'
-			title={TabsNavBar}
-			contentContainerStyle={styles.WindowContentContainer}
-			windowContainerStyle={styles.WindowContainer}
-			closeButtonStyle={styles.CloseButton}
-		>
-			<UpperInterface>
-				{activeInterface === 'Craft' && <CraftingInterface />}
-				{activeInterface === 'Harvest' && 'Harvesting Interface'}
-			</UpperInterface>
-			<InventoryContainer />
-		</GeneralWindow>
+		<DragDropContext onDragEnd={result => applyItemPlacement(result, dndDroppablesState, setDndDroppablesState)}>
+			<GeneralWindow
+				unmountGeneralWindow={unmountDiscoveryWindow}
+				position='rightSided'
+				title={TabsNavBar}
+				contentContainerStyle={styles.WindowContentContainer}
+				windowContainerStyle={styles.WindowContainer}
+				closeButtonStyle={styles.CloseButton}
+			>
+				<UpperInterface>
+					{activeInterface === 'Craft' && (
+						<CraftingInterface dndState={dndDroppablesState} setDndState={setDndDroppablesState} />
+					)}
+					{activeInterface === 'Harvest' && 'Harvesting Interface'}
+				</UpperInterface>
+				<InventoryContainer />
+			</GeneralWindow>
+		</DragDropContext>
 	);
 }

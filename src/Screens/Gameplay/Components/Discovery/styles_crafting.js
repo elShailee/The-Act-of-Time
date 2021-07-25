@@ -12,5 +12,5 @@ export const TestingStyledDroppable = styled.div`
 export const TestingStyledItem = styled.div`
 	width: ${({ theme }) => theme.calcSizeUnits(0.75)};
 	height: ${({ theme }) => theme.calcSizeUnits(0.75)};
-	background-color: #66d;
+	${({ theme }) => theme.customStyles.centerItems}/* background-color: #66d; */
 `;

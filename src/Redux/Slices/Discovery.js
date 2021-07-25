@@ -13,6 +13,14 @@ const initialState = {
 	},
 };
 
+const getStateByStateCode = (state, stateCode) => {
+	const matches = {
+		'CR-IN': state.craft.input,
+		'CR-RS': state.craft.result,
+	};
+	return matches[stateCode];
+};
+
 const DiscoverySlice = createSlice({
 	name: 'Discovery',
 	initialState,
@@ -21,18 +29,16 @@ const DiscoverySlice = createSlice({
 			const { source, destination /*, draggableId*/ } = action.payload;
 			if (destination === null) return state;
 			const sourceIndex = parseInt(source.droppableId.substr(0, 3));
+			const sourceStateCode = source.droppableId.substr(4, 5);
 			const destinationIndex = parseInt(destination.droppableId.substr(0, 3));
+			const destinationStateCode = destination.droppableId.substr(4, 5);
 
-			let newCraftInput = Array.from(state.craft.input);
-			newCraftInput[sourceIndex] = '';
-			newCraftInput[destinationIndex] = state.craft.input[sourceIndex];
-			return {
-				...state,
-				craft: {
-					...state.craft,
-					input: newCraftInput,
-				},
-			};
+			const newState = JSON.parse(JSON.stringify(state));
+			const sourceState = getStateByStateCode(newState, sourceStateCode);
+			const destinationState = getStateByStateCode(newState, destinationStateCode);
+			destinationState[destinationIndex] = sourceState[sourceIndex];
+			sourceState[sourceIndex] = null;
+			return newState;
 		},
 	},
 });

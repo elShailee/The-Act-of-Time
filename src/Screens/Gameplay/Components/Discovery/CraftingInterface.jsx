@@ -1,34 +1,30 @@
 import React from 'react';
-import { DragDropContext } from 'react-beautiful-dnd';
-import { useDispatch } from 'react-redux';
-import { craftInputItems, craftResultItems } from 'Redux/Selectors/DiscoveryItemsSelectors';
-import { applyItemPlacement } from 'Redux/Slices/Discovery';
 import { renderDroppablesGrid } from 'Utils/dndUtils';
 
-export default function CraftingInterface() {
-	const dispatch = useDispatch();
+export default function CraftingInterface({ dndState, setDndState }) {
 	const gridConfig = {
 		rows: 3,
 		cols: 3,
 		draggablesType: 'DiscoveryItems',
-		selector: craftInputItems,
 		isDropDisabled: false,
 		isDragDisabled: false,
-		isValueFixed: true,
+		isValueFixed: false,
+		isInventory: false,
 	};
 	const gridConfig2 = {
 		rows: 2,
 		cols: 2,
 		draggablesType: 'DiscoveryItems',
-		selector: craftResultItems,
-		isDropDisabled: false,
+		isDropDisabled: true,
 		isDragDisabled: false,
 		isValueFixed: true,
+		isInventory: true,
 	};
+
 	return (
-		<DragDropContext onDragEnd={result => dispatch(applyItemPlacement(result))}>
-			{renderDroppablesGrid(gridConfig)}
-			{renderDroppablesGrid(gridConfig2)}
-		</DragDropContext>
+		<div>
+			{renderDroppablesGrid(gridConfig, dndState, setDndState)}
+			{renderDroppablesGrid(gridConfig2, dndState, setDndState)}
+		</div>
 	);
 }
