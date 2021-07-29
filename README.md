@@ -1,5 +1,7 @@
 # The Act of Time
 
+![grab-landing-page](https://github.com/elShailee/The-Act-of-Time/blob/feature/create-craft%26harvest-interfaces/docs/Status%20Showcase.gif)
+
 ## Description
 
 This web game is a students project, worked by several students from the Open University of Israel. <br />
@@ -18,7 +20,7 @@ This project WAS NOT created by a team of experienced developers, but as a platf
 
 ## Technologies
 
-Front: &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  **(-)** Not Yet Implemented
+Front: &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; **(-)** Not Yet Implemented
 
 - ReactJS (Redux and Hooks)
 - CSS (Styled Components)
