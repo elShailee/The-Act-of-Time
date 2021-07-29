@@ -1,6 +1,6 @@
 # The Act of Time
 
-![grab-landing-page](https://github.com/elShailee/The-Act-of-Time/blob/feature/create-craft%26harvest-interfaces/docs/Status%20Showcase.gif)
+![grab-landing-page](https://github.com/elShailee/The-Act-of-Time/blob/master/docs/Status%20Showcase.gif)
 
 ## Description
 
