@@ -57,17 +57,8 @@ export default function DiscoveryWindow({ unmountDiscoveryWindow }) {
 		/>
 	);
 
-	useEffect(() => {
-		// console.log(droppablesState);
-	}, [droppablesState]);
-
 	return (
-		<DragDropContext
-			onDragEnd={result => {
-				setDroppablesState(applyItemPlacement(result, droppablesState));
-				// console.log(droppablesState);
-			}}
-		>
+		<DragDropContext onDragEnd={result => setDroppablesState(applyItemPlacement(result, droppablesState))}>
 			<GeneralWindow
 				unmountGeneralWindow={unmountDiscoveryWindow}
 				position='rightSided'
