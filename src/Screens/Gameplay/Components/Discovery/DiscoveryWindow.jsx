@@ -11,9 +11,8 @@ const craftingInputConfig = {
 	rows: 3,
 	cols: 3,
 	draggablesType: 'DiscoveryItems',
-	isDropDisabled: false,
 	isDragDisabled: false,
-	isValueFixed: false,
+	isDropDisabled: false,
 	isInventory: false,
 };
 const inventoryConfig = {
@@ -21,9 +20,8 @@ const inventoryConfig = {
 	rows: 2,
 	cols: 2,
 	draggablesType: 'DiscoveryItems',
-	isDropDisabled: true,
 	isDragDisabled: false,
-	isValueFixed: true,
+	isDropDisabled: false,
 	isInventory: true,
 };
 
