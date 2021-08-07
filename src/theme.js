@@ -127,6 +127,10 @@ const theme = {
 				pressedNavButton: palette.green[910],
 				navSpacer: palette.green[350],
 			},
+			crafting: {
+				droppableBG: palette.green[850],
+				droppableOutline: palette.gray[400],
+			},
 		},
 		map: {
 			bg: palette.blue[350],

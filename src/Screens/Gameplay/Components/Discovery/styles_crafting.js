@@ -3,14 +3,8 @@ import styled from 'styled-components';
 export const TestingStyledDroppable = styled.div`
 	width: ${({ theme }) => theme.calcSizeUnits(1)};
 	height: ${({ theme }) => theme.calcSizeUnits(1)};
-	border: ${({ theme }) => theme.sizes.border.S} solid gray;
+	outline: ${({ theme }) => theme.sizes.border.S} solid ${({ theme }) => theme.colors.discovery.crafting.droppableOutline};
 	box-sizing: border-box;
-	background-color: darkgray;
+	background-color: ${({ theme }) => theme.colors.discovery.crafting.droppableBG};
 	${({ theme }) => theme.customStyles.centerItems}
-`;
-
-export const TestingStyledItem = styled.div`
-	width: ${({ theme }) => theme.calcSizeUnits(0.75)};
-	height: ${({ theme }) => theme.calcSizeUnits(0.75)};
-	${({ theme }) => theme.customStyles.centerItems}/* background-color: #66d; */
 `;

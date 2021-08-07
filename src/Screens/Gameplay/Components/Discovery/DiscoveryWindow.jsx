@@ -4,7 +4,7 @@ import GeneralNavBar from 'GeneralComponents/GeneralNavBar/GeneralNavBar';
 import styles, { UpperInterface, InventoryContainer } from './styles_window';
 import CraftingInterface from './CraftingInterface';
 import { DragDropContext } from 'react-beautiful-dnd';
-import { applyItemPlacement, writeGridDataByConfig, renderDroppablesGrid /*deleteGridDataByConfig*/ } from 'Utils/dndUtils';
+import { applyItemPlacement, writeGridDataByConfig, renderDroppablesGrid } from 'Utils/dndUtils';
 
 const craftingInputConfig = {
 	name: 'craftingInputConfig',
@@ -17,8 +17,8 @@ const craftingInputConfig = {
 };
 const inventoryConfig = {
 	name: 'inventoryConfig',
-	rows: 2,
-	cols: 2,
+	rows: 6,
+	cols: 9,
 	draggablesType: 'DiscoveryItems',
 	isDragDisabled: false,
 	isDropDisabled: false,
