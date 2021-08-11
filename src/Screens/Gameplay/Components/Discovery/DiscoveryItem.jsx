@@ -3,11 +3,29 @@ import { Draggable } from 'react-beautiful-dnd';
 import { getDiscoveryImage } from 'Assets/discovery/lib';
 
 export default function DiscoveryItem({ content, id }) {
+	const nonAnimatedStyle = (style, snapshot) => {
+		if (!snapshot.isDropAnimating) {
+			return style;
+		}
+		return {
+			...style,
+			// cannot be 0, but make it super tiny
+			transitionDuration: `0.001s`,
+		};
+	};
+
+	const imageObject = content ? getDiscoveryImage(content) : null;
+
 	return (
 		<Draggable draggableId={id} index={0}>
-			{provided => (
-				<div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-					{content && <img src={getDiscoveryImage(content)} alt='' />}
+			{(provided, snapshot) => (
+				<div
+					ref={provided.innerRef}
+					{...provided.draggableProps}
+					{...provided.dragHandleProps}
+					style={nonAnimatedStyle(provided.draggableProps.style, snapshot)}
+				>
+					{content && <img src={imageObject.image} alt='' title={imageObject.name} />}
 				</div>
 			)}
 		</Draggable>

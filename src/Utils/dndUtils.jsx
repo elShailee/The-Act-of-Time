@@ -54,7 +54,6 @@ const createGeneralDroppable = (row, col, gridConfig, state) => {
 };
 
 export const applyItemPlacement = (result, droppablesState) => {
-	console.log(droppablesState, result);
 	const { source, destination } = result;
 	if (destination === null) return droppablesState;
 	const newState = {
