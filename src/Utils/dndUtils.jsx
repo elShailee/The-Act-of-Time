@@ -20,7 +20,7 @@ export const writeGridDataByConfig = (gridConfig, state) => {
 	return newState;
 };
 export const renderDroppablesGrid = (gridConfig, state) => {
-	const result = [];
+	let result = [];
 	for (let row = 0; row < gridConfig.rows; row++) {
 		let resultRow = [];
 		for (let col = 0; col < gridConfig.cols; col++) {
@@ -34,6 +34,11 @@ export const renderDroppablesGrid = (gridConfig, state) => {
 		);
 		result.push(resultRow);
 	}
+	result = (
+		<div style={{ display: 'flex', flexDirection: 'column' }} key={gridConfig.name}>
+			{result}
+		</div>
+	);
 	return result;
 };
 

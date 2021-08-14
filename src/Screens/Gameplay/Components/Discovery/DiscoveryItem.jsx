@@ -1,7 +1,7 @@
 import React from 'react';
 import { Draggable } from 'react-beautiful-dnd';
 import { getDiscoveryImage } from 'Assets/discovery/lib';
-import { ItemImage } from './styles_crafting';
+import { ItemImage } from './styles_window';
 
 export default function DiscoveryItem({ content, id }) {
 	const nonAnimatedStyle = (style, snapshot) => {
@@ -10,7 +10,7 @@ export default function DiscoveryItem({ content, id }) {
 		}
 		return {
 			...style,
-			// cannot be 0, but make it super tiny
+			// cannot be exactly 0, due to react-beautiful-dnd's mechanics
 			transitionDuration: `0.001s`,
 		};
 	};

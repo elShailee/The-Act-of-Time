@@ -1,4 +1,9 @@
+import { GeneralTab } from 'GeneralComponents/GeneralTab/styles';
 import styled from 'styled-components';
+
+export const CraftingInterfaceContainer = styled(GeneralTab)`
+	flex-direction: row;
+`;
 
 export const TestingStyledDroppable = styled.div`
 	width: ${({ theme }) => theme.calcSizeUnits(1)};
@@ -7,9 +12,4 @@ export const TestingStyledDroppable = styled.div`
 	box-sizing: border-box;
 	background-color: ${({ theme }) => theme.colors.discovery.crafting.droppableBG};
 	${({ theme }) => theme.customStyles.centerItems}
-`;
-
-export const ItemImage = styled.img`
-	width: ${({ theme }) => theme.sizes.icons.M};
-	height: ${({ theme }) => theme.sizes.icons.M};
 `;

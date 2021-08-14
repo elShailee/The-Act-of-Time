@@ -60,6 +60,11 @@ export const InventoryContainer = styled(GeneralTab)`
 	border-radius: 0 0 ${({ theme }) => theme.sizes.borderRadius.L} ${({ theme }) => theme.sizes.borderRadius.L};
 `;
 
+export const ItemImage = styled.img`
+	width: ${({ theme }) => theme.sizes.icons.M};
+	height: ${({ theme }) => theme.sizes.icons.M};
+`;
+
 const nonComponentStyles = {
 	WindowContainer,
 	NavBar,
