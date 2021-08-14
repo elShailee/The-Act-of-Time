@@ -38,6 +38,7 @@ const theme = {
 		},
 		icons: {
 			XL: calcSizeUnits(1.5),
+			M: calcSizeUnits(0.75),
 			XS: calcSizeUnits(0.35),
 		},
 	},

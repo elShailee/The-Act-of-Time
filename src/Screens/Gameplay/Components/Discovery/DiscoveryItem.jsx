@@ -1,6 +1,7 @@
 import React from 'react';
 import { Draggable } from 'react-beautiful-dnd';
 import { getDiscoveryImage } from 'Assets/discovery/lib';
+import { ItemImage } from './styles_crafting';
 
 export default function DiscoveryItem({ content, id }) {
 	const nonAnimatedStyle = (style, snapshot) => {
@@ -25,7 +26,7 @@ export default function DiscoveryItem({ content, id }) {
 					{...provided.dragHandleProps}
 					style={nonAnimatedStyle(provided.draggableProps.style, snapshot)}
 				>
-					{content && <img src={imageObject.image} alt='' title={imageObject.name} />}
+					{content && <ItemImage src={imageObject.image} alt='' title={imageObject.name} />}
 				</div>
 			)}
 		</Draggable>

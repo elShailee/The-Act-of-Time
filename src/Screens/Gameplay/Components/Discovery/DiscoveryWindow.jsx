@@ -17,7 +17,7 @@ const craftingInputConfig = {
 };
 const inventoryConfig = {
 	name: 'inventoryConfig',
-	rows: 6,
+	rows: 10,
 	cols: 9,
 	draggablesType: 'DiscoveryItems',
 	isDragDisabled: false,

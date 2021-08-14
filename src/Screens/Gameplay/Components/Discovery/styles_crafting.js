@@ -8,3 +8,8 @@ export const TestingStyledDroppable = styled.div`
 	background-color: ${({ theme }) => theme.colors.discovery.crafting.droppableBG};
 	${({ theme }) => theme.customStyles.centerItems}
 `;
+
+export const ItemImage = styled.img`
+	width: ${({ theme }) => theme.sizes.icons.M};
+	height: ${({ theme }) => theme.sizes.icons.M};
+`;

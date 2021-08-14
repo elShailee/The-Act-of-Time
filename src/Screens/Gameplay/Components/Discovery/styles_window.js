@@ -35,11 +35,11 @@ const CloseButton = theme => `
 `;
 
 const WindowContentContainer = theme => `
-	width: ${theme.calcSizeUnits(10)};
 	${darkGreenBorder(theme)}
+	height:92.5%;					//compansation for navbar height
 `;
 
-const upperPartHeight = 43;
+const upperPartHeight = 43; //height of top part in %'s of contentContainer
 
 export const UpperInterface = styled(GeneralTab)`
 	height: ${upperPartHeight}%;
@@ -49,6 +49,12 @@ export const UpperInterface = styled(GeneralTab)`
 
 export const InventoryContainer = styled(GeneralTab)`
 	height: ${100 - upperPartHeight}%;
+	::-webkit-scrollbar {
+		display: none;
+	}
+	padding: 0px;
+	justify-content: start;
+	overflow-y: scroll;
 	background-color: ${({ theme }) => theme.colors.discovery.window.contentContainer};
 	border-top: ${({ theme }) => theme.sizes.border.S} solid ${({ theme }) => theme.colors.discovery.window.spacer};
 	border-radius: 0 0 ${({ theme }) => theme.sizes.borderRadius.L} ${({ theme }) => theme.sizes.borderRadius.L};
