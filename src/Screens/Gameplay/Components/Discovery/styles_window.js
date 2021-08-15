@@ -63,6 +63,7 @@ export const InventoryContainer = styled(GeneralTab)`
 export const ItemImage = styled.img`
 	width: ${({ theme }) => theme.sizes.icons.M};
 	height: ${({ theme }) => theme.sizes.icons.M};
+	${({ theme }) => theme.customStyles.nonSelectable}
 `;
 
 const nonComponentStyles = {

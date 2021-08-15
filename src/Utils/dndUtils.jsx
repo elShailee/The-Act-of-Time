@@ -8,11 +8,16 @@ export const writeGridDataByConfig = (gridConfig, state) => {
 
 	for (let row = 0; row < gridConfig.rows; row++) {
 		for (let col = 0; col < gridConfig.cols; col++) {
-			const index = `${gridConfig.name}_r${row}c${col}`;
-			const val = characterData.items[row * gridConfig.cols + col];
+			const stateIndex = `${gridConfig.name}_r${row}c${col}`;
+			const itemIndex = row * gridConfig.cols + col + 1;
+			const isFound = characterData.items[itemIndex];
 			newState = {
 				...newState,
-				[index]: { value: gridConfig.isInventory ? val : null, isInventory: gridConfig.isInventory },
+				[stateIndex]: {
+					value: gridConfig.isInventory ? (isFound ? itemIndex : `i${itemIndex}`) : null,
+					isInventory: gridConfig.isInventory,
+					isFound,
+				},
 			};
 		}
 	}
@@ -51,7 +56,11 @@ const createGeneralDroppable = (row, col, gridConfig, state) => {
 			{provided => (
 				<TestingStyledDroppable {...provided.droppableProps} ref={provided.innerRef}>
 					{provided.placeholder}
-					<DiscoveryItem content={itemInState ? itemInState.value : null} id={id} />
+					<DiscoveryItem
+						content={itemInState ? itemInState.value : null}
+						isFound={itemInState ? itemInState.isFound : false}
+						id={id}
+					/>
 				</TestingStyledDroppable>
 			)}
 		</Droppable>
@@ -74,6 +83,7 @@ export const applyItemPlacement = (result, droppablesState) => {
 	const newDestinationDraggable = { ...droppablesState[destination.droppableId] };
 	if (!newDestinationDraggable.isInventory) {
 		newDestinationDraggable.value = droppablesState[source.droppableId].value;
+		newDestinationDraggable.isFound = droppablesState[source.droppableId].isFound;
 	}
 	newState[destination.droppableId] = newDestinationDraggable;
 
