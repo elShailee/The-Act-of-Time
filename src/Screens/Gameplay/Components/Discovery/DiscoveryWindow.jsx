@@ -15,6 +15,15 @@ const craftingInputConfig = {
 	isDropDisabled: false,
 	isInventory: false,
 };
+const craftingOutputConfig = {
+	name: 'craftingOutputConfig',
+	rows: 1,
+	cols: 1,
+	draggablesType: 'DiscoveryItems',
+	isDragDisabled: false,
+	isDropDisabled: true,
+	isInventory: false,
+};
 const inventoryConfig = {
 	name: 'inventoryConfig',
 	rows: 10,
@@ -67,7 +76,10 @@ export default function DiscoveryWindow({ unmountDiscoveryWindow }) {
 			>
 				<UpperInterface>
 					{activeInterface === 'Craft' && (
-						<CraftingInterface renderInput={() => renderDroppablesGrid(craftingInputConfig, droppablesState)} />
+						<CraftingInterface
+							renderInput={() => renderDroppablesGrid(craftingInputConfig, droppablesState)}
+							renderOutput={() => renderDroppablesGrid(craftingOutputConfig, droppablesState)}
+						/>
 					)}
 					{activeInterface === 'Harvest' && 'Harvesting Interface'}
 				</UpperInterface>

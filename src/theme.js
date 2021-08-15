@@ -37,7 +37,9 @@ const theme = {
 			M: calcSizeUnits(0.75),
 		},
 		icons: {
+			XXL: calcSizeUnits(2),
 			XL: calcSizeUnits(1.5),
+			L: calcSizeUnits(1),
 			M: calcSizeUnits(0.75),
 			XS: calcSizeUnits(0.35),
 		},
@@ -131,6 +133,7 @@ const theme = {
 			crafting: {
 				droppableBG: palette.green[850],
 				droppableOutline: palette.gray[400],
+				arrow: palette.green[850],
 			},
 		},
 		map: {
