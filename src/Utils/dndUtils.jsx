@@ -1,4 +1,5 @@
 import characterData from 'ExampleData/characterInfoExampleData';
+import { itemsLib } from 'Assets/discovery/lib';
 import { Droppable } from 'react-beautiful-dnd';
 import { TestingStyledDroppable } from 'Screens/Gameplay/Components/Discovery/styles_crafting';
 import DiscoveryItem from 'Screens/Gameplay/Components/Discovery/DiscoveryItem';
@@ -10,11 +11,12 @@ export const writeGridDataByConfig = (gridConfig, state) => {
 		for (let col = 0; col < gridConfig.cols; col++) {
 			const stateIndex = `${gridConfig.name}_r${row}c${col}`;
 			const itemIndex = row * gridConfig.cols + col + 1;
-			const isFound = characterData.items[itemIndex];
+			const isFound = characterData.items.find(item => item === itemIndex) === itemIndex;
+			const isAnItem = itemsLib[itemIndex] !== undefined;
 			newState = {
 				...newState,
 				[stateIndex]: {
-					value: gridConfig.isInventory ? (isFound ? itemIndex : `i${itemIndex}`) : null,
+					itemIndex: gridConfig.isInventory && isAnItem ? itemIndex : null,
 					isInventory: gridConfig.isInventory,
 					isFound,
 				},
@@ -57,7 +59,7 @@ const createGeneralDroppable = (row, col, gridConfig, state) => {
 				<TestingStyledDroppable {...provided.droppableProps} ref={provided.innerRef}>
 					{provided.placeholder}
 					<DiscoveryItem
-						content={itemInState ? itemInState.value : null}
+						itemIndex={itemInState ? itemInState.itemIndex : null}
 						isFound={itemInState ? itemInState.isFound : false}
 						id={id}
 					/>
@@ -76,13 +78,13 @@ export const applyItemPlacement = (result, droppablesState) => {
 
 	const newSourceDraggable = { ...droppablesState[source.droppableId] };
 	if (!newSourceDraggable.isInventory) {
-		newSourceDraggable.value = null;
+		newSourceDraggable.itemIndex = null;
 	}
 	newState[source.droppableId] = newSourceDraggable;
 
 	const newDestinationDraggable = { ...droppablesState[destination.droppableId] };
 	if (!newDestinationDraggable.isInventory) {
-		newDestinationDraggable.value = droppablesState[source.droppableId].value;
+		newDestinationDraggable.itemIndex = droppablesState[source.droppableId].itemIndex;
 		newDestinationDraggable.isFound = droppablesState[source.droppableId].isFound;
 	}
 	newState[destination.droppableId] = newDestinationDraggable;
