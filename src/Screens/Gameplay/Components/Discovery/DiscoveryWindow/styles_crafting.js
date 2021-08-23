@@ -5,7 +5,7 @@ export const CraftingInterfaceContainer = styled(GeneralTab)`
 	flex-direction: row;
 `;
 
-export const TestingStyledDroppable = styled.div`
+export const DiscoveryItemDroppable = styled.div`
 	width: ${({ theme }) => theme.sizes.icons.L};
 	height: ${({ theme }) => theme.sizes.icons.L};
 	outline: ${({ theme }) => theme.sizes.border.S} solid ${({ theme }) => theme.colors.discovery.crafting.droppableOutline};
@@ -14,7 +14,7 @@ export const TestingStyledDroppable = styled.div`
 	${({ theme }) => theme.customStyles.centerItems}
 `;
 
-export const LocalSvg = styled.svg`
+export const ArrowSvg = styled.svg`
 	width: ${({ theme }) => theme.sizes.icons.XXL};
 	height: ${({ theme }) => theme.sizes.icons.XXL};
 	margin: 0 ${({ theme }) => theme.sizes.padding.XXL};

@@ -3,7 +3,7 @@ import EnergyPurchaseWindow from 'Screens/Gameplay/Components/Energy/EnergyPurch
 import CoinsPurchaseWindow from 'Screens/Gameplay/Components/Coins/CoinsPurchaseWindow';
 import SettingsWindow from 'Screens/Gameplay/Components/Settings/SettingsWindow';
 import ActionsWindow from 'Screens/Gameplay/Components/Actions/ActionsWindow';
-import DiscoveryWindow from 'Screens/Gameplay/Components/Discovery/DiscoveryWindow';
+import DiscoveryWindow from 'Screens/Gameplay/Components/Discovery/DiscoveryWindow/DiscoveryWindow';
 import SeenWindow from 'Screens/Gameplay/Components/Seen/SeenWindow';
 import { useDispatch, useSelector } from 'react-redux';
 import { unmountComponents } from 'Redux/Slices/MountedComponents';

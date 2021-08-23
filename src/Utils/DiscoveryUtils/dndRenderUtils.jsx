@@ -1,0 +1,46 @@
+import { Droppable } from 'react-beautiful-dnd';
+import { DiscoveryItemDroppable } from 'Screens/Gameplay/Components/Discovery/DiscoveryWindow/styles_crafting';
+import DiscoveryItem from 'Screens/Gameplay/Components/Discovery/DiscoveryWindow/DiscoveryItem';
+
+export const renderDroppablesGrid = (gridConfig, state) => {
+	let result = [];
+	for (let row = 0; row < gridConfig.rows; row++) {
+		let resultRow = [];
+		for (let col = 0; col < gridConfig.cols; col++) {
+			const resultCell = createGeneralDroppable(row, col, gridConfig, state);
+			resultRow.push(resultCell);
+		}
+		resultRow = (
+			<div style={{ display: 'flex', flexDirection: 'row' }} key={gridConfig.name + '_row' + row}>
+				{resultRow}
+			</div>
+		);
+		result.push(resultRow);
+	}
+	result = (
+		<div style={{ display: 'flex', flexDirection: 'column' }} key={gridConfig.name}>
+			{result}
+		</div>
+	);
+	return result;
+};
+
+const createGeneralDroppable = (row, col, gridConfig, state) => {
+	const id = `${gridConfig.name}_r${row}c${col}`;
+	const itemInState = state[id] ? state[id] : null;
+
+	return (
+		<Droppable type={gridConfig.draggablesType} droppableId={id} key={id} isDropDisabled={gridConfig.isDropDisabled}>
+			{provided => (
+				<DiscoveryItemDroppable {...provided.droppableProps} ref={provided.innerRef}>
+					{provided.placeholder}
+					<DiscoveryItem
+						itemIndex={itemInState ? itemInState.itemIndex : null}
+						isFound={itemInState ? itemInState.isFound : false}
+						id={id}
+					/>
+				</DiscoveryItemDroppable>
+			)}
+		</Droppable>
+	);
+};

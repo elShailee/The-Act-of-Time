@@ -1,7 +1,7 @@
-export const checkIfArray = variable => {
+export const isAnArray = variable => {
 	return variable instanceof Object && variable instanceof Array;
 };
 
-export const checkIfDictionary = variable => {
+export const isADictionary = variable => {
 	return variable instanceof Object && !(variable instanceof Array);
 };
