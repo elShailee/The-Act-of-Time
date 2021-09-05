@@ -10,13 +10,20 @@ export default function GeneralWindow({
 	titleContainerStyle,
 	closeButtonStyle,
 	contentContainerStyle,
+	onClose,
 }) {
 	if (position === undefined) position = 'center';
 	return (
 		<WindowContainer position={position} customStyle={windowContainerStyle}>
 			<TitleContainer customStyle={titleContainerStyle}>
 				{title}
-				<CloseButton onClick={unmountGeneralWindow} customStyle={closeButtonStyle} />
+				<CloseButton
+					onClick={() => {
+						unmountGeneralWindow();
+						onClose();
+					}}
+					customStyle={closeButtonStyle}
+				/>
 			</TitleContainer>
 			<ContentContainer customStyle={contentContainerStyle}>{children}</ContentContainer>
 		</WindowContainer>

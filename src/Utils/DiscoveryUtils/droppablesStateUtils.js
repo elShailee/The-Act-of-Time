@@ -1,8 +1,8 @@
 import characterData from 'ExampleData/characterInfoExampleData';
 import { itemsLib } from 'Assets/discovery/lib';
 
-export const generateGridDataByConfig = (gridConfig, state) => {
-	let newState = { ...state };
+export const generateGridDataByConfig = (gridConfig, droppablesState) => {
+	let newState = { ...droppablesState };
 
 	for (let row = 0; row < gridConfig.rows; row++) {
 		for (let col = 0; col < gridConfig.cols; col++) {

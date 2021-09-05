@@ -4,7 +4,7 @@ import NavBar from './NavBar';
 import styles, { UpperInterface, InventoryContainer } from './styles_window';
 import CraftingInterface from './CraftingInterface';
 import { DragDropContext } from 'react-beautiful-dnd';
-import { renderDroppablesGrid } from 'Utils/DiscoveryUtils/dndRenderUtils';
+import { renderDroppablesGrid, clearCraftingInput } from 'Utils/DiscoveryUtils/dndRenderUtils';
 import { generateGridDataByConfig, handleItemPlacement } from 'Utils/DiscoveryUtils/droppablesStateUtils';
 import gridConfigs from 'Utils/DiscoveryUtils/gridsConfigs';
 
@@ -42,6 +42,7 @@ export default function DiscoveryWindow({ unmountDiscoveryWindow }) {
 				contentContainerStyle={styles.WindowContentContainer}
 				windowContainerStyle={styles.WindowContainer}
 				closeButtonStyle={styles.CloseButton}
+				onClose={() => clearCraftingInput({ droppablesState, setDroppablesState })}
 			>
 				<UpperInterface>
 					{activeInterface === 'Craft' && memoizedCrafting}
