@@ -2,12 +2,12 @@ import { Droppable } from 'react-beautiful-dnd';
 import { DiscoveryItemDroppable } from 'Screens/Gameplay/Components/Discovery/DiscoveryWindow/styles_crafting';
 import DiscoveryItem from 'Screens/Gameplay/Components/Discovery/DiscoveryWindow/DiscoveryItem';
 
-export const renderDroppablesGrid = (gridConfig, state) => {
+export const renderDroppablesGrid = ({ gridConfig, droppablesState }) => {
 	let result = [];
 	for (let row = 0; row < gridConfig.rows; row++) {
 		let resultRow = [];
 		for (let col = 0; col < gridConfig.cols; col++) {
-			const resultCell = createGeneralDroppable(row, col, gridConfig, state);
+			const resultCell = createGeneralDroppable(row, col, gridConfig, droppablesState);
 			resultRow.push(resultCell);
 		}
 		resultRow = (
@@ -25,9 +25,9 @@ export const renderDroppablesGrid = (gridConfig, state) => {
 	return result;
 };
 
-const createGeneralDroppable = (row, col, gridConfig, state) => {
+const createGeneralDroppable = (row, col, gridConfig, droppablesState) => {
 	const id = `${gridConfig.name}_r${row}c${col}`;
-	const itemInState = state[id] ? state[id] : null;
+	const itemInState = droppablesState[id] ? droppablesState[id] : null;
 
 	return (
 		<Droppable type={gridConfig.draggablesType} droppableId={id} key={id} isDropDisabled={gridConfig.isDropDisabled}>

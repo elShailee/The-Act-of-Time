@@ -30,7 +30,9 @@ export default function AllTheFloatingWindows() {
 	);
 	const ActionsWindowAsVar = <ActionsWindow unmountActionsWindow={() => dispatch(unmountComponents(['ActionsWindow']))} />;
 	const DiscoveryWindowAsVar = (
-		<DiscoveryWindow unmountDiscoveryWindow={() => dispatch(unmountComponents(['DiscoveryWindow']))} />
+		<div style={{ visibility: isDiscoveryWindowMounted ? 'visible' : 'hidden' }}>
+			<DiscoveryWindow unmountDiscoveryWindow={() => dispatch(unmountComponents(['DiscoveryWindow']))} />
+		</div>
 	);
 	const SeenWindowAsVar = <SeenWindow unmountSeenWindow={() => dispatch(unmountComponents(['SeenWindow']))} />;
 
@@ -40,7 +42,7 @@ export default function AllTheFloatingWindows() {
 			{isCoinsPurchaseWindowMounted && CoinsPurchaseWindowAsVar}
 			{isSettingsWindowMounted && SettingsWindowAsVar}
 			{isActionsWindowMounted && ActionsWindowAsVar}
-			{isDiscoveryWindowMounted && DiscoveryWindowAsVar}
+			{DiscoveryWindowAsVar}
 			{isSeenWindowMounted && SeenWindowAsVar}
 		</div>
 	);
