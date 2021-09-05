@@ -2,6 +2,7 @@ import texts from 'texts';
 import { Button } from './styles_button';
 import { useDispatch, useSelector } from 'react-redux';
 import { unmountComponents, mountComponents } from 'Redux/Slices/MountedComponents';
+import { clearPlayerChanges } from 'Redux/Slices/DiscoveryDroppables';
 import { isComponentMountedSelector } from 'Redux/Selectors/MountedComponentsSelectors';
 import useAnimations from 'Utils/useAnimations';
 
@@ -13,6 +14,7 @@ export default function DiscoveryButton() {
 	const onDiscoveryButtonClick = () => {
 		if (isDiscoveryWindowMounted) {
 			dispatch(unmountComponents('DiscoveryWindow'));
+			dispatch(clearPlayerChanges());
 		} else {
 			dispatch(mountComponents('DiscoveryWindow'));
 		}

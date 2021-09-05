@@ -1,7 +1,6 @@
 import { Droppable } from 'react-beautiful-dnd';
 import { DiscoveryItemDroppable } from 'Screens/Gameplay/Components/Discovery/DiscoveryWindow/styles_crafting';
 import DiscoveryItem from 'Screens/Gameplay/Components/Discovery/DiscoveryWindow/DiscoveryItem';
-import gridConfigs from './gridsConfigs';
 
 export const renderDroppablesGrid = ({ gridConfig, droppablesState }) => {
 	let result = [];
@@ -44,25 +43,4 @@ const createGeneralDroppable = (row, col, gridConfig, droppablesState) => {
 			)}
 		</Droppable>
 	);
-};
-
-const clearGridData = ({ gridConfig, droppablesState, setDroppablesState }) => {
-	let newState = { ...droppablesState };
-	for (let row = 0; row < gridConfig.rows; row++) {
-		for (let col = 0; col < gridConfig.cols; col++) {
-			const stateIndex = `${gridConfig.name}_r${row}c${col}`;
-			newState = {
-				...newState,
-				[stateIndex]: {
-					itemIndex: null,
-					isInventory: false,
-				},
-			};
-		}
-	}
-	setDroppablesState(newState);
-};
-
-export const clearCraftingInput = ({ droppablesState, setDroppablesState }) => {
-	clearGridData({ gridConfig: gridConfigs.craftingInputConfig, droppablesState, setDroppablesState });
 };

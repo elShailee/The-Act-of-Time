@@ -4,19 +4,20 @@ import NavBar from './NavBar';
 import styles, { UpperInterface, InventoryContainer } from './styles_window';
 import CraftingInterface from './CraftingInterface';
 import { DragDropContext } from 'react-beautiful-dnd';
-import { renderDroppablesGrid, clearCraftingInput } from 'Utils/DiscoveryUtils/dndRenderUtils';
-import { generateGridDataByConfig, handleItemPlacement } from 'Utils/DiscoveryUtils/droppablesStateUtils';
+import { renderDroppablesGrid } from 'Utils/DiscoveryUtils/dndRenderUtils';
 import gridConfigs from 'Utils/DiscoveryUtils/gridsConfigs';
+import { useDispatch, useSelector } from 'react-redux';
+import { initializeState, DragEndHandler, clearPlayerChanges } from 'Redux/Slices/DiscoveryDroppables';
+import { discoveryDroppablesSelector } from 'Redux/Selectors/DiscoveryDroppablesSelector';
 
 export default function DiscoveryWindow({ unmountDiscoveryWindow }) {
 	const [activeInterface, setActiveInterface] = useState('Craft');
-	const [droppablesState, setDroppablesState] = useState({});
+	const droppablesState = useSelector(discoveryDroppablesSelector);
+	const dispatch = useDispatch();
 
 	useEffect(() => {
-		const craftingInputStateData = generateGridDataByConfig(gridConfigs.craftingInputConfig, {});
-		const inventoryStateData = generateGridDataByConfig(gridConfigs.inventoryConfig, {});
-		setDroppablesState({ ...craftingInputStateData, ...inventoryStateData });
-	}, []);
+		dispatch(initializeState());
+	}, [dispatch]);
 
 	const memoizedInventory = useMemo(
 		() => renderDroppablesGrid({ gridConfig: gridConfigs.inventoryConfig, droppablesState }),
@@ -34,7 +35,7 @@ export default function DiscoveryWindow({ unmountDiscoveryWindow }) {
 	);
 
 	return (
-		<DragDropContext onDragEnd={result => setDroppablesState(handleItemPlacement(result, droppablesState))}>
+		<DragDropContext onDragEnd={result => dispatch(DragEndHandler(result))}>
 			<GeneralWindow
 				unmountGeneralWindow={unmountDiscoveryWindow}
 				position='rightSided'
@@ -42,7 +43,7 @@ export default function DiscoveryWindow({ unmountDiscoveryWindow }) {
 				contentContainerStyle={styles.WindowContentContainer}
 				windowContainerStyle={styles.WindowContainer}
 				closeButtonStyle={styles.CloseButton}
-				onClose={() => clearCraftingInput({ droppablesState, setDroppablesState })}
+				onClose={() => dispatch(clearPlayerChanges())}
 			>
 				<UpperInterface>
 					{activeInterface === 'Craft' && memoizedCrafting}
