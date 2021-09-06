@@ -20,7 +20,7 @@ export default function GeneralWindow({
 				<CloseButton
 					onClick={() => {
 						unmountGeneralWindow();
-						onClose();
+						if (onClose) onClose();
 					}}
 					customStyle={closeButtonStyle}
 				/>
