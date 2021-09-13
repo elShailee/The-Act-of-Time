@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import EnergyPurchaseWindow from 'Screens/Gameplay/Components/Energy/EnergyPurchaseWindow';
 import CoinsPurchaseWindow from 'Screens/Gameplay/Components/Coins/CoinsPurchaseWindow';
 import SettingsWindow from 'Screens/Gameplay/Components/Settings/SettingsWindow';
@@ -19,22 +19,34 @@ export default function AllTheFloatingWindows() {
 	const isDiscoveryWindowMounted = useSelector(isComponentMountedSelector('DiscoveryWindow'));
 	const isSeenWindowMounted = useSelector(isComponentMountedSelector('SeenWindow'));
 
-	const EnergyPurchaseWindowAsVar = (
-		<EnergyPurchaseWindow unmountEnergyPurchaseWindow={() => dispatch(unmountComponents(['EnergyPurchaseWindow']))} />
+	const EnergyPurchaseWindowAsVar = useMemo(
+		() => <EnergyPurchaseWindow unmountEnergyPurchaseWindow={() => dispatch(unmountComponents(['EnergyPurchaseWindow']))} />,
+		[dispatch],
 	);
-	const CoinsPurchaseWindowAsVar = (
-		<CoinsPurchaseWindow unmountCoinsPurchaseWindow={() => dispatch(unmountComponents(['CoinsPurchaseWindow']))} />
+	const CoinsPurchaseWindowAsVar = useMemo(
+		() => <CoinsPurchaseWindow unmountCoinsPurchaseWindow={() => dispatch(unmountComponents(['CoinsPurchaseWindow']))} />,
+		[dispatch],
 	);
-	const SettingsWindowAsVar = (
-		<SettingsWindow unmountSettingsWindow={() => dispatch(unmountComponents(['SettingsWindow']))} />
+	const SettingsWindowAsVar = useMemo(
+		() => <SettingsWindow unmountSettingsWindow={() => dispatch(unmountComponents(['SettingsWindow']))} />,
+		[dispatch],
 	);
-	const ActionsWindowAsVar = <ActionsWindow unmountActionsWindow={() => dispatch(unmountComponents(['ActionsWindow']))} />;
-	const DiscoveryWindowAsVar = (
-		<div style={{ visibility: isDiscoveryWindowMounted ? 'visible' : 'hidden' }}>
-			<DiscoveryWindow unmountDiscoveryWindow={() => dispatch(unmountComponents(['DiscoveryWindow']))} />
-		</div>
+	const ActionsWindowAsVar = useMemo(
+		() => <ActionsWindow unmountActionsWindow={() => dispatch(unmountComponents(['ActionsWindow']))} />,
+		[dispatch],
 	);
-	const SeenWindowAsVar = <SeenWindow unmountSeenWindow={() => dispatch(unmountComponents(['SeenWindow']))} />;
+	const DiscoveryWindowAsVar = useMemo(
+		() => (
+			<div style={{ visibility: isDiscoveryWindowMounted ? 'visible' : 'hidden' }}>
+				<DiscoveryWindow unmountDiscoveryWindow={() => dispatch(unmountComponents(['DiscoveryWindow']))} />
+			</div>
+		),
+		[dispatch, isDiscoveryWindowMounted],
+	);
+	const SeenWindowAsVar = useMemo(
+		() => <SeenWindow unmountSeenWindow={() => dispatch(unmountComponents(['SeenWindow']))} />,
+		[dispatch],
+	);
 
 	return (
 		<div>

@@ -34,12 +34,14 @@ export default function DiscoveryWindow({ unmountDiscoveryWindow }) {
 		[droppablesState],
 	);
 
+	const navBar = useMemo(() => <NavBar setActiveInterface={setActiveInterface} />, [setActiveInterface]);
+
 	return (
 		<DragDropContext onDragEnd={result => dispatch(DragEndHandler(result))}>
 			<GeneralWindow
 				unmountGeneralWindow={unmountDiscoveryWindow}
 				position='rightSided'
-				title={<NavBar setActiveInterface={setActiveInterface} />}
+				title={navBar}
 				contentContainerStyle={styles.WindowContentContainer}
 				windowContainerStyle={styles.WindowContainer}
 				closeButtonStyle={styles.CloseButton}
