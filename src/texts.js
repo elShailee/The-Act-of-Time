@@ -57,6 +57,7 @@ const texts = {
 			"GeneralNavBar Error: please make sure to pass an Array of Objects to GeneralNavBar.\nEach cell need to be an object with the keys 'title' and 'func'.",
 		invalidProps_renderDroppablesGrid:
 			"Please make sure to pass the 'renderDroppablesGrid` function valid parameters:\n\n(positive_int rows, positive_int columns, nonEmpty_String type)",
+		invalidOnClose_GeneralWindow: "Please pass a function as a parameter to GeneralWindow's onClose propertie",
 	},
 };
 export default texts;

@@ -1,5 +1,5 @@
 import texts from 'texts';
-import { Button } from './styles_button';
+import { Button } from './styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { unmountComponents, mountComponents } from 'Redux/Slices/MountedComponents';
 import { clearPlayerChanges } from 'Redux/Slices/DiscoveryDroppables';
