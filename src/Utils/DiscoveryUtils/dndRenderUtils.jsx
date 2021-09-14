@@ -1,5 +1,5 @@
 import { Droppable } from 'react-beautiful-dnd';
-import { DiscoveryItemDroppable } from 'Screens/Gameplay/Components/Discovery/DiscoveryWindow/styles_crafting';
+import { DiscoveryItemDroppable } from 'Screens/Gameplay/Components/Discovery/DiscoveryWindow/styles_window';
 import DiscoveryItem from 'Screens/Gameplay/Components/Discovery/DiscoveryWindow/DiscoveryItem';
 
 export const renderDroppablesGrid = ({ gridConfig, droppablesState }) => {

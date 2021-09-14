@@ -60,6 +60,15 @@ export const InventoryContainer = styled(GeneralTab)`
 	border-radius: 0 0 ${({ theme }) => theme.sizes.borderRadius.L} ${({ theme }) => theme.sizes.borderRadius.L};
 `;
 
+export const DiscoveryItemDroppable = styled.div`
+	width: ${({ theme }) => theme.sizes.icons.L};
+	height: ${({ theme }) => theme.sizes.icons.L};
+	outline: ${({ theme }) => theme.sizes.border.S} solid ${({ theme }) => theme.colors.discovery.crafting.droppableOutline};
+	box-sizing: border-box;
+	background-color: ${({ theme }) => theme.colors.discovery.crafting.droppableBG};
+	${({ theme }) => theme.customStyles.centerItems}
+`;
+
 export const ItemImage = styled.img`
 	width: ${({ theme }) => theme.sizes.icons.M};
 	height: ${({ theme }) => theme.sizes.icons.M};
