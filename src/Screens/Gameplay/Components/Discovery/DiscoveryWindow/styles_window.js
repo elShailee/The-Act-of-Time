@@ -39,16 +39,16 @@ const WindowContentContainer = theme => `
 	height:92.5%;					//compansation for navbar height
 `;
 
-const upperPartHeight = 43; //height of top part in %'s of contentContainer
+const discoveryInterfaceHeight = 43; //height of top part in %'s of contentContainer
 
 export const UpperInterface = styled(GeneralTab)`
-	height: ${upperPartHeight}%;
+	height: ${discoveryInterfaceHeight}%;
 	background-color: ${({ theme }) => theme.colors.discovery.window.contentContainer};
 	border-radius: ${({ theme }) => theme.sizes.borderRadius.L} ${({ theme }) => theme.sizes.borderRadius.L} 0 0;
 `;
 
 export const InventoryContainer = styled(GeneralTab)`
-	height: ${100 - upperPartHeight}%;
+	height: ${100 - discoveryInterfaceHeight}%;
 	::-webkit-scrollbar {
 		display: none;
 	}
@@ -63,9 +63,8 @@ export const InventoryContainer = styled(GeneralTab)`
 export const DiscoveryItemDroppable = styled.div`
 	width: ${({ theme }) => theme.sizes.icons.L};
 	height: ${({ theme }) => theme.sizes.icons.L};
-	outline: ${({ theme }) => theme.sizes.border.S} solid ${({ theme }) => theme.colors.discovery.crafting.droppableOutline};
-	box-sizing: border-box;
-	background-color: ${({ theme }) => theme.colors.discovery.crafting.droppableBG};
+	outline: ${({ theme }) => theme.sizes.border.S} solid ${({ theme }) => theme.colors.discovery.window.droppableOutline};
+	background-color: ${({ theme }) => theme.colors.discovery.window.droppableBG};
 	${({ theme }) => theme.customStyles.centerItems}
 `;
 
