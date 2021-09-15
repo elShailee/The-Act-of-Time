@@ -5,16 +5,14 @@ export const generateGridDataByConfig = gridConfig => {
 
 	for (let row = 0; row < gridConfig.rows; row++) {
 		for (let col = 0; col < gridConfig.cols; col++) {
-			const stateIndex = `${gridConfig.name}_r${row}c${col}`;
+			const droppableId = `${gridConfig.name}_r${row}c${col}`;
 			const itemIndex = row * gridConfig.cols + col + 1;
 			const isAnItem = itemsLib[itemIndex] !== undefined;
 			newState = {
 				...newState,
-				[stateIndex]: {
+				[droppableId]: {
 					itemIndex: gridConfig.isInventory && isAnItem ? itemIndex : null,
 					isInventory: gridConfig.isInventory,
-					isDragDisabled: gridConfig.isDragDisabled,
-					isDropDisabled: gridConfig.isDropDisabled,
 				},
 			};
 		}
@@ -23,25 +21,24 @@ export const generateGridDataByConfig = gridConfig => {
 	return newState;
 };
 
-export const applyItemDrag = ({ droppablesState, result }) => {
+export const appliedItemDrag = ({ droppablesState, result }) => {
 	const { source, destination } = result;
 	if (destination === null) return droppablesState;
 	const newState = {
 		...droppablesState,
 	};
 
-	const newSourceDraggable = { ...droppablesState[source.droppableId] };
-	if (!newSourceDraggable.isInventory) {
-		newSourceDraggable.itemIndex = null;
+	const newSourceDroppable = { ...droppablesState[source.droppableId] };
+	if (!newSourceDroppable.isInventory) {
+		newSourceDroppable.itemIndex = null;
 	}
-	newState[source.droppableId] = newSourceDraggable;
+	newState[source.droppableId] = newSourceDroppable;
 
-	const newDestinationDraggable = { ...droppablesState[destination.droppableId] };
-	if (!newDestinationDraggable.isInventory) {
-		newDestinationDraggable.itemIndex = droppablesState[source.droppableId].itemIndex;
-		newDestinationDraggable.isFound = droppablesState[source.droppableId].isFound;
+	const newDestinationDroppable = { ...droppablesState[destination.droppableId] };
+	if (!newDestinationDroppable.isInventory) {
+		newDestinationDroppable.itemIndex = droppablesState[source.droppableId].itemIndex;
 	}
-	newState[destination.droppableId] = newDestinationDraggable;
+	newState[destination.droppableId] = newDestinationDroppable;
 
 	return newState;
 };
