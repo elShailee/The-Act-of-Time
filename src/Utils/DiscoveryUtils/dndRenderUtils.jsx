@@ -36,8 +36,8 @@ const createGeneralDroppable = (row, col, gridConfig, droppablesState) => {
 					{provided.placeholder}
 					<DiscoveryItem
 						itemIndex={itemInState ? itemInState.itemIndex : null}
-						isFound={itemInState ? itemInState.isFound : false}
 						id={id}
+						isDragDisabled={itemInState ? itemInState.isDragDisabled : null}
 					/>
 				</DiscoveryItemDroppable>
 			)}

@@ -2,8 +2,10 @@ import React from 'react';
 import { Draggable } from 'react-beautiful-dnd';
 import { getDiscoveryImage } from 'Assets/discovery/lib';
 import { ItemImage } from './styles_window';
+import characterData from 'ExampleData/characterInfoExampleData';
 
-export default function DiscoveryItem({ itemIndex, id, isFound }) {
+export default function DiscoveryItem({ itemIndex, id, isDragDisabled }) {
+	//create a custom style to avoid dropping animation from react-beautiful-dnd.
 	const nonAnimatedStyle = (style, snapshot) => {
 		if (!snapshot.isDropAnimating) {
 			return style;
@@ -16,9 +18,10 @@ export default function DiscoveryItem({ itemIndex, id, isFound }) {
 	};
 
 	const imageObject = itemIndex ? getDiscoveryImage(itemIndex) : null;
+	const isFound = characterData.items.find(item => item === itemIndex) === itemIndex;
 
 	return (
-		<Draggable draggableId={id} index={0} isDragDisabled={!isFound}>
+		<Draggable draggableId={id} index={0} isDragDisabled={!isFound || isDragDisabled}>
 			{(provided, snapshot) => (
 				<div
 					ref={provided.innerRef}

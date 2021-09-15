@@ -1,4 +1,3 @@
-import characterData from 'ExampleData/characterInfoExampleData';
 import { itemsLib } from 'Assets/discovery/lib';
 
 export const generateGridDataByConfig = gridConfig => {
@@ -8,14 +7,14 @@ export const generateGridDataByConfig = gridConfig => {
 		for (let col = 0; col < gridConfig.cols; col++) {
 			const stateIndex = `${gridConfig.name}_r${row}c${col}`;
 			const itemIndex = row * gridConfig.cols + col + 1;
-			const isFound = characterData.items.find(item => item === itemIndex) === itemIndex;
 			const isAnItem = itemsLib[itemIndex] !== undefined;
 			newState = {
 				...newState,
 				[stateIndex]: {
 					itemIndex: gridConfig.isInventory && isAnItem ? itemIndex : null,
 					isInventory: gridConfig.isInventory,
-					isFound,
+					isDragDisabled: gridConfig.isDragDisabled,
+					isDropDisabled: gridConfig.isDropDisabled,
 				},
 			};
 		}
