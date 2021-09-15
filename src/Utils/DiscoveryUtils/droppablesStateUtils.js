@@ -1,6 +1,15 @@
 import { itemsLib } from 'Assets/discovery/lib';
+import texts from 'texts';
 
-export const generateGridDataByConfig = gridConfig => {
+export const getDroppablesGridState = gridConfig => {
+	const { name, rows, cols, droppablesType } = gridConfig;
+	const isValidGridConfig = name.length > 0 && rows > 0 && cols > 0 && droppablesType.length > 1;
+
+	if (!isValidGridConfig) {
+		console.log(texts.errors.invalidProps_getDroppablesGridState);
+		return {};
+	}
+
 	let newState = {};
 
 	for (let row = 0; row < gridConfig.rows; row++) {

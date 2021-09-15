@@ -24,15 +24,7 @@ export default function DiscoveryWindow({ unmountDiscoveryWindow }) {
 		[droppablesState],
 	);
 
-	const memoizedCrafting = useMemo(
-		() => (
-			<CraftingInterface
-				renderInput={() => renderDroppablesGrid({ gridConfig: gridConfigs.craftingInputConfig, droppablesState })}
-				renderOutput={() => renderDroppablesGrid({ gridConfig: gridConfigs.craftingOutputConfig, droppablesState })}
-			/>
-		),
-		[droppablesState],
-	);
+	const memoizedCrafting = useMemo(() => <CraftingInterface />, []);
 
 	const navBar = useMemo(() => <NavBar setActiveInterface={setActiveInterface} />, [setActiveInterface]);
 

@@ -18,7 +18,9 @@ export default function DiscoveryItem({ itemIndex, id, isDragDisabled }) {
 	};
 
 	const imageObject = itemIndex ? getDiscoveryImage(itemIndex) : null;
-	const isFound = characterData.items.find(item => item === itemIndex) === itemIndex;
+
+	const itemIndexInCharacterData = characterData.items.find(item => item === itemIndex);
+	const isFound = itemIndexInCharacterData === itemIndex;
 
 	return (
 		<Draggable draggableId={id} index={0} isDragDisabled={!isFound || isDragDisabled}>
@@ -30,11 +32,7 @@ export default function DiscoveryItem({ itemIndex, id, isDragDisabled }) {
 					style={nonAnimatedStyle(provided.draggableProps.style, snapshot)}
 				>
 					{imageObject && (
-						<ItemImage
-							src={isFound ? imageObject.image : imageObject.silhouette}
-							alt=''
-							title={isFound ? imageObject.name : ''}
-						/>
+						<ItemImage src={isFound ? imageObject.image : imageObject.silhouette} title={isFound ? imageObject.name : ''} />
 					)}
 				</div>
 			)}

@@ -17,8 +17,10 @@ export default function GeneralWindow({
 
 	const onClose = () => {
 		unmountGeneralWindow();
-		if (typeof onCloseParameter === 'function') onCloseParameter();
-		else console.log(texts.errors.invalidOnClose_GeneralWindow);
+		if (onCloseParameter) {
+			if (typeof onCloseParameter === 'function') onCloseParameter();
+			else console.log(texts.errors.invalidOnClose_GeneralWindow);
+		}
 	};
 
 	return (

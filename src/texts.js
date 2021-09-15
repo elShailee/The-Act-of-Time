@@ -49,15 +49,15 @@ const texts = {
 		},
 	},
 	errors: {
+		imageNotFound: 'No image found to match given data.',
 		invalidBrowser:
 			'This Application is not supported for this browser, please try to open it using an up-to-date version of Google Chrome, Mozilla Firefox, or Microsoft Edge.',
-		invalidComponentsToMount: 'please pass a string or an array of strings to either mountComponent() or unmountComponent()',
-		imageNotFound: 'No image found to match given data.',
 		invalidButtonsArray:
 			"GeneralNavBar Error: please make sure to pass an Array of Objects to GeneralNavBar.\nEach cell need to be an object with the keys 'title' and 'func'.",
-		invalidProps_renderDroppablesGrid:
-			"Please make sure to pass the 'renderDroppablesGrid` function valid parameters:\n\n(positive_int rows, positive_int columns, nonEmpty_String type)",
-		invalidOnClose_GeneralWindow: "Please pass a function as a parameter to GeneralWindow's onClose propertie",
+		invalidComponentsToMount: 'please pass a string or an array of strings to either mountComponent() or unmountComponent()',
+		invalidOnClose_GeneralWindow: "Please only pass functions as a parameter to GeneralWindow's onClose propertie",
+		invalidProps_getDroppablesGridState:
+			"Please make sure to pass the 'getDroppablesGridState` function valid parameters:\n\n(positive_int rows, positive_int columns, nonEmpty_String type)",
 	},
 };
 export default texts;

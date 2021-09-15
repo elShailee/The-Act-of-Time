@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { appliedItemDrag, generateGridDataByConfig } from 'Utils/DiscoveryUtils/droppablesStateUtils';
+import { appliedItemDrag, getDroppablesGridState } from 'Utils/DiscoveryUtils/droppablesStateUtils';
 import gridConfigs from 'Utils/DiscoveryUtils/gridsConfigs';
 
 const initialState = { hasPlayerDragged: false };
@@ -9,9 +9,12 @@ const DiscoveryDroppablesSlice = createSlice({
 	initialState,
 	reducers: {
 		initializeState: (state, action) => {
-			const craftingInputStateData = generateGridDataByConfig(gridConfigs.craftingInputConfig);
-			const inventoryStateData = generateGridDataByConfig(gridConfigs.inventoryConfig);
-			return { hasPlayerDragged: false, ...craftingInputStateData, ...inventoryStateData };
+			let newState = { hasPlayerDragged: false };
+			for (const gridConfig in gridConfigs) {
+				const gridState = getDroppablesGridState(gridConfigs[gridConfig]);
+				newState = { ...newState, ...gridState };
+			}
+			return newState;
 		},
 		dragEndHandler: (state, action) => {
 			const newState = appliedItemDrag({ droppablesState: Object.assign({}, state), result: action.payload });
