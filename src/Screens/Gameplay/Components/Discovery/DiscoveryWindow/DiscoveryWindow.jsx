@@ -7,7 +7,7 @@ import { DragDropContext } from 'react-beautiful-dnd';
 import { renderDroppablesGrid } from 'Utils/DiscoveryUtils/dndRenderUtils';
 import gridConfigs from 'Utils/DiscoveryUtils/gridsConfigs';
 import { useDispatch, useSelector } from 'react-redux';
-import { initializeState, DragEndHandler, clearPlayerChanges } from 'Redux/Slices/DiscoveryDroppables';
+import { initializeState, dragEndHandler, clearPlayerChanges } from 'Redux/Slices/DiscoveryDroppables';
 import { discoveryDroppablesSelector } from 'Redux/Selectors/DiscoveryDroppablesSelector';
 
 export default function DiscoveryWindow({ unmountDiscoveryWindow }) {
@@ -37,7 +37,7 @@ export default function DiscoveryWindow({ unmountDiscoveryWindow }) {
 	const navBar = useMemo(() => <NavBar setActiveInterface={setActiveInterface} />, [setActiveInterface]);
 
 	return (
-		<DragDropContext onDragEnd={result => dispatch(DragEndHandler(result))}>
+		<DragDropContext onDragEnd={result => dispatch(dragEndHandler(result))}>
 			<GeneralWindow
 				unmountGeneralWindow={unmountDiscoveryWindow}
 				position='rightSided'

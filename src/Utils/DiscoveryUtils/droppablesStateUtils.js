@@ -45,20 +45,3 @@ export const applyItemDrag = ({ droppablesState, result }) => {
 
 	return newState;
 };
-
-export const clearGridData = ({ gridConfig, droppablesState }) => {
-	let newState = { ...droppablesState };
-	for (let row = 0; row < gridConfig.rows; row++) {
-		for (let col = 0; col < gridConfig.cols; col++) {
-			const stateIndex = `${gridConfig.name}_r${row}c${col}`;
-			newState = {
-				...newState,
-				[stateIndex]: {
-					itemIndex: null,
-					isInventory: false,
-				},
-			};
-		}
-	}
-	return newState;
-};
