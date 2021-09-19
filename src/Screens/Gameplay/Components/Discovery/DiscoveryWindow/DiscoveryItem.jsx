@@ -19,7 +19,7 @@ export default function DiscoveryItem({ itemIndex, id, isDragDisabled }) {
 
 	const imageObject = itemIndex ? getDiscoveryImage(itemIndex) : null;
 
-	const itemIndexInCharacterData = characterData.items.find(item => item === itemIndex);
+	const itemIndexInCharacterData = characterData.discoveredItems.find(item => item === itemIndex);
 	const isFound = itemIndexInCharacterData === itemIndex;
 
 	return (
