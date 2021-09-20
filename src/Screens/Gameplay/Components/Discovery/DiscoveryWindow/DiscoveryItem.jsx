@@ -3,8 +3,14 @@ import { Draggable } from 'react-beautiful-dnd';
 import { getDiscoveryImage } from 'Assets/discovery/lib';
 import { ItemImage } from './styles_window';
 import characterData from 'ExampleData/characterInfoExampleData';
+import { useSelector } from 'react-redux';
+import { discoveryDroppablesSelector } from 'Redux/Selectors/DiscoveryDroppablesSelector';
 
-export default function DiscoveryItem({ itemIndex, id, isDragDisabled }) {
+export default function DiscoveryItem({ id, isDragDisabled }) {
+	const droppablesState = useSelector(discoveryDroppablesSelector);
+	const itemInState = droppablesState[id] ? droppablesState[id] : null;
+	const itemIndex = itemInState ? itemInState.itemIndex : null;
+
 	//create a custom style to avoid dropping animation from react-beautiful-dnd.
 	const nonAnimatedStyle = (style, snapshot) => {
 		if (!snapshot.isDropAnimating) {

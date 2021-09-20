@@ -6,23 +6,18 @@ import CraftingInterface from './CraftingInterface';
 import { DragDropContext } from 'react-beautiful-dnd';
 import { renderDroppablesGrid } from 'Utils/DiscoveryUtils/dndRenderUtils';
 import gridConfigs from 'Utils/DiscoveryUtils/gridsConfigs';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch /*, useSelector*/ } from 'react-redux';
 import { initializeState, dragEndHandler, clearPlayerChanges } from 'Redux/Slices/DiscoveryDroppables';
-import { discoveryDroppablesSelector } from 'Redux/Selectors/DiscoveryDroppablesSelector';
 
 export default function DiscoveryWindow({ unmountDiscoveryWindow }) {
 	const [activeInterface, setActiveInterface] = useState('Craft');
-	const droppablesState = useSelector(discoveryDroppablesSelector);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
 		dispatch(initializeState());
 	}, [dispatch]);
 
-	const memoizedInventory = useMemo(
-		() => renderDroppablesGrid({ gridConfig: gridConfigs.inventoryConfig, droppablesState }),
-		[droppablesState],
-	);
+	const memoizedInventory = useMemo(() => renderDroppablesGrid({ gridConfig: gridConfigs.inventoryConfig }), []);
 
 	const memoizedCrafting = useMemo(() => <CraftingInterface />, []);
 

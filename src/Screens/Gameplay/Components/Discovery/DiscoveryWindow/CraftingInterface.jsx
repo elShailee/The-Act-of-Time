@@ -1,14 +1,11 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { discoveryDroppablesSelector } from 'Redux/Selectors/DiscoveryDroppablesSelector';
 import { renderDroppablesGrid } from 'Utils/DiscoveryUtils/dndRenderUtils';
 import gridConfigs from 'Utils/DiscoveryUtils/gridsConfigs';
 import { CraftingInterfaceContainer, ArrowSvg } from './styles_crafting';
 
 export default function CraftingInterface() {
-	const droppablesState = useSelector(discoveryDroppablesSelector);
-	const inputGrid = renderDroppablesGrid({ gridConfig: gridConfigs.craftingInputConfig, droppablesState });
-	const outputGrid = renderDroppablesGrid({ gridConfig: gridConfigs.craftingOutputConfig, droppablesState });
+	const inputGrid = renderDroppablesGrid({ gridConfig: gridConfigs.craftingInputConfig });
+	const outputGrid = renderDroppablesGrid({ gridConfig: gridConfigs.craftingOutputConfig });
 
 	const svgFrameSize = 24;
 
