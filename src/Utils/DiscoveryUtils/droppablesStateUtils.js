@@ -30,7 +30,7 @@ export const getDroppablesGridState = gridConfig => {
 	return newState;
 };
 
-export const appliedItemDrag = ({ droppablesState, result }) => {
+export const getDroppablesStateAfterDrag = ({ droppablesState, result }) => {
 	const { source, destination } = result;
 
 	const sourceDroppable = droppablesState[source.droppableId];

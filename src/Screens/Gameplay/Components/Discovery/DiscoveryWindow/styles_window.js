@@ -52,6 +52,7 @@ export const InventoryContainer = styled(GeneralTab)`
 	::-webkit-scrollbar {
 		display: none;
 	}
+	scrollbar-width: none;
 	padding: 0px;
 	justify-content: start;
 	overflow-y: scroll;
