@@ -32,22 +32,23 @@ export const getDroppablesGridState = gridConfig => {
 
 export const appliedItemDrag = ({ droppablesState, result }) => {
 	const { source, destination } = result;
-	if (destination === null) return droppablesState;
-	const newState = {
-		...droppablesState,
-	};
 
-	const newSourceDroppable = { ...droppablesState[source.droppableId] };
-	if (!newSourceDroppable.isInventory) {
-		newSourceDroppable.itemIndex = null;
-	}
-	newState[source.droppableId] = newSourceDroppable;
+	const sourceDroppable = droppablesState[source.droppableId];
+	const destinationDroppable = droppablesState[destination?.droppableId];
 
-	const newDestinationDroppable = { ...droppablesState[destination.droppableId] };
-	if (!newDestinationDroppable.isInventory) {
-		newDestinationDroppable.itemIndex = droppablesState[source.droppableId].itemIndex;
+	const newState = { ...droppablesState };
+	const newSourceDroppable = { ...sourceDroppable };
+	const newDestinationDroppable = { ...destinationDroppable };
+
+	if (!sourceDroppable.isInventory) {
+		newSourceDroppable.itemIndex = destinationDroppable?.itemIndex;
+		newState[source.droppableId] = newSourceDroppable;
 	}
-	newState[destination.droppableId] = newDestinationDroppable;
+
+	if (destinationDroppable) {
+		newDestinationDroppable.itemIndex = sourceDroppable.itemIndex;
+		newState[destination.droppableId] = newDestinationDroppable;
+	}
 
 	return newState;
 };

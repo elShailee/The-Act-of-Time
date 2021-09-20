@@ -23,7 +23,7 @@ const gridConfigs = {
 		cols: 9,
 		droppablesType: 'DiscoveryItems',
 		isDragDisabled: false,
-		isDropDisabled: false,
+		isDropDisabled: true,
 		isInventory: true,
 	},
 };
