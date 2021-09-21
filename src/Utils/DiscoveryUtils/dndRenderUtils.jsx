@@ -22,7 +22,7 @@ export const renderDroppablesGrid = ({ gridConfig }) => {
 
 const itemDroppableGenerator = (row, col, gridConfig) => {
 	const id = `${gridConfig.name}_r${row}c${col}`;
-	const itemIndex = row * gridConfig.cols + col + 1;
+	const itemIndex = row * gridConfig.cols + col;
 
 	const itemIndexIfFound = characterInfoExampleData.discoveredItems.find(item => item === itemIndex);
 	const isFound = itemIndexIfFound === itemIndex;

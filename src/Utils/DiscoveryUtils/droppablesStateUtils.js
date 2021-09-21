@@ -15,7 +15,7 @@ export const getDroppablesGridState = gridConfig => {
 	for (let row = 0; row < gridConfig.rows; row++) {
 		for (let col = 0; col < gridConfig.cols; col++) {
 			const droppableId = `${gridConfig.name}_r${row}c${col}`;
-			const itemIndex = row * gridConfig.cols + col + 1;
+			const itemIndex = row * gridConfig.cols + col;
 			const isAnItem = itemsLib[itemIndex] !== undefined;
 			newState = {
 				...newState,
