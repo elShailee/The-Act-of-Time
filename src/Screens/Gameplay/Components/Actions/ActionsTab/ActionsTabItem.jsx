@@ -1,11 +1,9 @@
 import React from 'react';
 import { TabItem, DragHandle, AbortButton } from './styles';
 import { Draggable } from 'react-beautiful-dnd';
-import { useCountdown } from 'Utils/TimingUtils/useCountdown';
+import Countdown from './Countdown';
 
 export default function ActionsTabItem({ actionItem, index }) {
-	const countdown = useCountdown(actionItem.endingTime);
-
 	return (
 		<Draggable id={actionItem.id} draggableId={actionItem.id} index={index}>
 			{provided => (
@@ -13,7 +11,9 @@ export default function ActionsTabItem({ actionItem, index }) {
 					<DragHandle {...provided.dragHandleProps} />
 					<div>{actionItem.title}</div>
 					{' - '}
-					<div>{countdown}</div>
+					<div>
+						<Countdown actionItem={actionItem} />
+					</div>
 					<AbortButton />
 				</TabItem>
 			)}
