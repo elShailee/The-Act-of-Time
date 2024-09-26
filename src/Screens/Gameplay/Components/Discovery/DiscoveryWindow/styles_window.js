@@ -35,23 +35,44 @@ const CloseButton = theme => `
 `;
 
 const WindowContentContainer = theme => `
-	width: ${theme.calcSizeUnits(10)};
 	${darkGreenBorder(theme)}
+	height:92.5%;					//compansation for navbar height
 `;
 
-const upperPartHeight = 43;
+const discoveryInterfaceHeight = 43; //height of top part in %'s of contentContainer
 
 export const UpperInterface = styled(GeneralTab)`
-	height: ${upperPartHeight}%;
+	height: ${discoveryInterfaceHeight}%;
 	background-color: ${({ theme }) => theme.colors.discovery.window.contentContainer};
 	border-radius: ${({ theme }) => theme.sizes.borderRadius.L} ${({ theme }) => theme.sizes.borderRadius.L} 0 0;
 `;
 
 export const InventoryContainer = styled(GeneralTab)`
-	height: ${100 - upperPartHeight}%;
+	height: ${100 - discoveryInterfaceHeight}%;
+	::-webkit-scrollbar {
+		display: none;
+	}
+	scrollbar-width: none;
+	padding: 0px;
+	justify-content: start;
+	overflow-y: scroll;
 	background-color: ${({ theme }) => theme.colors.discovery.window.contentContainer};
 	border-top: ${({ theme }) => theme.sizes.border.S} solid ${({ theme }) => theme.colors.discovery.window.spacer};
 	border-radius: 0 0 ${({ theme }) => theme.sizes.borderRadius.L} ${({ theme }) => theme.sizes.borderRadius.L};
+`;
+
+export const DiscoveryItemDroppable = styled.div`
+	width: ${({ theme }) => theme.sizes.icons.L};
+	height: ${({ theme }) => theme.sizes.icons.L};
+	outline: ${({ theme }) => theme.sizes.border.S} solid ${({ theme }) => theme.colors.discovery.window.droppableOutline};
+	background-color: ${({ theme }) => theme.colors.discovery.window.droppableBG};
+	${({ theme }) => theme.customStyles.centerItems}
+`;
+
+export const ItemImage = styled.img`
+	width: ${({ theme }) => theme.sizes.icons.M};
+	height: ${({ theme }) => theme.sizes.icons.M};
+	${({ theme }) => theme.customStyles.nonSelectable}
 `;
 
 const nonComponentStyles = {

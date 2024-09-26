@@ -10,8 +10,10 @@ import SettingsButton from 'Screens/Gameplay/Components/Settings/SettingsButton'
 import Map from 'Screens/Gameplay/Components/Map/Map';
 import DisasterAlert from 'Screens/Gameplay/Components/Disasters/DisastersAlert';
 import AllTheFloatingWindows from 'Screens/Gameplay/Components/WindowsContainer';
+import { resetScrollPositionOnRefresh } from 'Utils/utilFuncs';
 
 export default function GameplayScreen() {
+	resetScrollPositionOnRefresh();
 	return (
 		<BG>
 			<Container>
